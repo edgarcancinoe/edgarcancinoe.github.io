@@ -2,9 +2,9 @@
 
 ---
 
-### Category Name 1 
+### Time Series forecasting
 
-[Project 1 Title](/sample_page)
+[Product demand forecasting model using LSTM neural network](/sample_page)
 <img src="images/dummy_thumbnail.jpg?raw=true"/>
 
 ---
