@@ -1,10 +1,11 @@
-title: J Edgar Hernandez Cancino # your name (or website title) here
+title: J. Edgar H. Cancino # your name (or website title) here
 logo: "/images/logo.png?raw=true" # your photo (or logo) here
 description: > # your text below (remove <br> elements if you don't need line breaks)
-  About
-  <br>B.S.in Robotics and digital systems engineering, graduating in June, 2024<br>
-  Experience 
-  <br>My background in data science and machine learning is both academic and self-taught. I have completed various courses and projects in these fields, both in school and on my own initiative. I have applied my skills and knowledge to real-world problems and datasets, and evaluated my results using appropriate metrics and methods.<br>
+  B.S.in Robotics and Digital Systems Engineering (June, 2024)
+  <br><br>
+  My background in data science and machine learning is both academic and self-taught. 
+  <br><br>
+  I have completed various courses and projects in these fields, both in school and on my own initiative. I have applied my skills and knowledge to real-world problems and datasets, and evaluated my results using appropriate metrics and methods.
   <a href="https://www.linkedin.com/in/edgar-cancino/">View My LinkedIn Profile</a> 
   
 theme: jekyll-theme-minimal
