@@ -2,7 +2,7 @@
 
 ---
 
-### Time Series forecasting
+### Time Series Forecasting
 
 [Product demand forecasting model using LSTM neural network](/sample_page)
 <img src="images/dummy_thumbnail.jpg?raw=true"/>
@@ -15,7 +15,7 @@
 
 ---
 
-### Regression
+### Regression Projects
 
 - [Warehouse Loading Time Prediction Model using Support Vector Regression (SVR)](http://example.com/)
 - [Project 2 Title](http://example.com/)
