@@ -9,12 +9,6 @@
 <img src="images/LSTM.png?raw=true"/>
 
 ---
-[Project 2 Title](/pdf/sample_presentation.pdf)
-
----
-[Project 3 Title](http://example.com/)
-
----
 
 ### Regression
 
@@ -22,6 +16,6 @@
 
 ---
 ### Classification
-- [Next-day rainfall prediction - Various methods (2021)](http:/edgarcancinoe.github.io/pdf/Ciencia_De_Datos-2.pdf)
+- [Next-day rainfall prediction - Various methods (2021)](/pdf/Ciencia_De_Datos-2.pdf)
 
 ---
