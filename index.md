@@ -17,10 +17,9 @@
 
 ### Regression Projects
 
-- [Truck loading time estimation model using Support Vector Regression (2023)](http://example.com/)
+- [Truck load time estimator using Support Vector Regression (2023)](http://example.com/)
 
 ---
-Ciencia_De_Datos-2.pdf
 ### Classification Projects
 - [Rainfall Prediction (2021)](http:/edgarcancinoe.github.io/pdf/Ciencia_De_Datos-2.pdf)
 
