@@ -2,7 +2,7 @@
 
 ---
 ### Certifications and diplomas
-[Diploma in Data Science](/pdf/JOSE EDGAR HERNANDEZ.pdf)
+[Diploma in Data Science (2021)](/pdf/JOSE EDGAR HERNANDEZ.pdf)
 ---
 
 ### Time Series Forecasting
@@ -19,6 +19,6 @@
 
 ---
 ### Classification
-- [Next-day rainfall prediction - Various methods (In spanish, 2021)](/pdf/Ciencia_De_Datos-2.pdf)
+- [Next-day rainfall prediction - Various methods (Spanish, 2021)](/pdf/Ciencia_De_Datos-2.pdf)
 
 ---
