@@ -1,6 +1,9 @@
 ## Personal Data Science & ML Portfolio
 
 ---
+### Certifications and diplomas
+[Diploma in Data Science](/pdf/JOSE EDGAR HERNANDEZ.pdf)
+---
 
 ### Time Series Forecasting
 
