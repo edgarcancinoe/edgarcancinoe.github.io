@@ -1,7 +1,7 @@
 # Data Science & ML Portfolio
 
 ---
-### Certifications and diplomas
+## Credentials
 <small>
 [Specialized Program: Machine Learning (2023) - Stanford/DeepLearning.AI](/pdf/JOSE EDGAR HERNANDEZ.pdf)
 
