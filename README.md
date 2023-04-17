@@ -1,5 +1,4 @@
 ## Data Science & ML Personal Portfolio
 
 ### J. Edgar Hernandez Cancino Estrada
-
-<img src="images/demo.gif?raw=true"/>
+#### B.S. in Robotics And Digital Systems Engineering
