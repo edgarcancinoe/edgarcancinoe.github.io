@@ -12,8 +12,6 @@
 ---
 ## Projects
 
----
-
 ### Time Series Forecasting
 
 [Product demand forecast - SARIMA & LSTM Neural Network (2023)](/sample_page)
