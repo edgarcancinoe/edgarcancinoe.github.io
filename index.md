@@ -17,7 +17,7 @@
 
 ### Regression Projects
 
-- [Warehouse Loading Time Prediction Model using Support Vector Regression (2023)](http://example.com/)
+- [Truck loading time estimation model using Support Vector Regression (2023)](http://example.com/)
 - [Project 2 Title](http://example.com/)
 - [Project 3 Title](http://example.com/)
 
