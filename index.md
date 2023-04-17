@@ -1,4 +1,4 @@
-# Personal Data Science & ML Portfolio
+# Data Science & ML Portfolio
 
 ---
 ### Certifications and diplomas
