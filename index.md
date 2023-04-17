@@ -2,6 +2,9 @@
 
 ---
 ### Certifications and diplomas
+
+[Specialized Program: Machine Learning (2023)](/pdf/JOSE EDGAR HERNANDEZ.pdf)
+[CS50 introduction to Artificial Intelligence (2023)](/pdf/JOSE EDGAR HERNANDEZ.pdf)
 [Diploma in Data Science (2021)](/pdf/JOSE EDGAR HERNANDEZ.pdf)
 
 ---
