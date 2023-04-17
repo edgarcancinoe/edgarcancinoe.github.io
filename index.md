@@ -3,6 +3,7 @@
 ---
 ### Certifications and diplomas
 [Diploma in Data Science (2021)](/pdf/JOSE EDGAR HERNANDEZ.pdf)
+
 ---
 
 ### Time Series Forecasting
