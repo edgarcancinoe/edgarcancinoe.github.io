@@ -21,6 +21,6 @@
 
 ---
 ### Classification Projects
-- [Rainfall Prediction (2021)](http:/edgarcancinoe.github.io/pdf/Ciencia_De_Datos-2.pdf)
+- [Next-day rainfall prediction - Various methods (2021)](http:/edgarcancinoe.github.io/pdf/Ciencia_De_Datos-2.pdf)
 
 ---
