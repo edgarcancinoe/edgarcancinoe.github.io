@@ -4,8 +4,8 @@
 
 ### Time Series Forecasting
 
-[Product demand forecasting model using LSTM neural network (2023)](/sample_page)
-<img src="images/dummy_thumbnail.jpg?raw=true"/>
+[Product demand forecasting model using SARIMA & LSTM neural network (2023)](/sample_page)
+<img src="images/Screenshot 2023-04-17 at 0.45.31.png?raw=true"/>
 
 ---
 [Project 2 Title](/pdf/sample_presentation.pdf)
