@@ -1,4 +1,4 @@
-## Personal Data Science & ML Portfolio
+# Personal Data Science & ML Portfolio
 
 ---
 ### Certifications and diplomas
@@ -8,6 +8,9 @@
 [CS50 introduction to Artificial Intelligence (2023)](/pdf/JOSE EDGAR HERNANDEZ.pdf)
 
 [Diploma in Data Science (2021)](/pdf/JOSE EDGAR HERNANDEZ.pdf)
+
+---
+## Projects
 
 ---
 
