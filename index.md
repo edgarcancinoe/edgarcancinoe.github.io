@@ -15,12 +15,12 @@
 
 ---
 
-### Regression Projects
+### Regression
 
 - [Truck load time estimator using Support Vector Regression (2023)](http://example.com/)
 
 ---
-### Classification Projects
+### Classification
 - [Next-day rainfall prediction - Various methods (2021)](http:/edgarcancinoe.github.io/pdf/Ciencia_De_Datos-2.pdf)
 
 ---
