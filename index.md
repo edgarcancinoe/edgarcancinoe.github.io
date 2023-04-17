@@ -4,7 +4,7 @@
 
 ### Time Series Forecasting
 
-[Product demand forecasting model - SARIMA & LSTM neural network (2023)](/sample_page)
+[Product demand forecasting model - SARIMA & LSTM Neural Network (2023)](/sample_page)
 <img src="images/Screenshot 2023-04-17 at 0.45.31.png?raw=true"/>
 <img src="images/LSTM.png?raw=true"/>
 
@@ -16,6 +16,6 @@
 
 ---
 ### Classification
-- [Next-day rainfall prediction - Various methods (2021)](/pdf/Ciencia_De_Datos-2.pdf)
+- [Next-day rainfall prediction model - Various methods (In spanish, 2021)](/pdf/Ciencia_De_Datos-2.pdf)
 
 ---
