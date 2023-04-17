@@ -9,6 +9,7 @@
 
 [Diploma in Data Science (2021) - ITPE](/pdf/JOSE EDGAR HERNANDEZ.pdf)
 </small>
+
 ---
 ## Projects
 
