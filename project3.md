@@ -1,10 +1,17 @@
-## This can be your internal website page / project page
+## Predictive Analysis for product demand forecast
 
-**Project description:** Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+**Project description:** Using times-series forecasting models to estimate
+product demand on lens frames for a distributor company.
 
-### 1. Suggest hypotheses about the causes of observed phenomena
+### Abstract
 
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. 
+This document presents the application of statistical and machine learning methods for predicting the sales of lens frames of a distributor company in Mexico. The project’s goal was to generate product demand forecasts two years into the future by grouping products by brand and using the information as input for an future Supply Chain Management strategy (SCM). Time-series forecasting models, specifically SARIMA and LSTM neural networks, were employed and their performance capture the sales trends and patterns was evaluated and compared.
+This report provides a comprehensive documentation of the entire development and decision-making processes involved in the project.
+
+#### Keywords:
+times-series, forecasting, SARIMA, LSTM, neural networks, ma- chine learning, data science
+
+[xxx]Viewcode(/pdf/pa_sarima_lstm)
 
 ```javascript
 if (isAwesome){
