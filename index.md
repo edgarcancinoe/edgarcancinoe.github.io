@@ -14,7 +14,7 @@
 
 ### Time Series Forecasting
 
-[Predictive Analysis for product demand - SARIMA & LSTM Neural Network (2023)](/project3.md)
+[Predictive Analysis for product demand - SARIMA & LSTM Neural Network (2023)](/project3)
   
 Implemented satistic models and a recurrent neural network to make a 2 year forecast of product demand for Polimeros Opticos de Mexico.
   
