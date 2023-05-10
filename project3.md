@@ -1,6 +1,8 @@
 ## Predictive Analysis for product demand forecast
 
-**Project description:** Using times-series forecasting models to estimate
+**Project description:** 
+
+Using times-series forecasting models to estimate
 product demand on lens frames for a distributor company.
 
 ### Abstract
