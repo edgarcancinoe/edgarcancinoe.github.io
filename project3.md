@@ -13,28 +13,21 @@ This report provides a comprehensive documentation of the entire development and
 #### Keywords:
 times-series, forecasting, SARIMA, LSTM, neural networks, machine learning, data science
 
-[View project's report pdf](/pdf/pa_sarima_lstm.pdf)
+[View project report (PDF)](/pdf/pa_sarima_lstm.pdf)
 
-```javascript
-if (isAwesome){
-  return true
-}
-```
 
-### 2. Assess assumptions on which statistical inference will be based
+### 1. User story
 
-```javascript
-if (isAwesome){
-  return true
-}
-```
+This project was completed as a freelancing job. The team in charge of acquiring stock for the distributor company, required an accurate demand forecast, necessary to determine the appropriate amount of product to purchase in order to meet customer demand and ensure that their stock would not run out at any time.
 
-### 3. Support the selection of appropriate statistical tools and techniques
+### 3. Background
+Predictive analysis has huge potential on Supply Chain Management, as it allows companies to make informed decisions on inventory management and efficiently plan their re-stocking strategies.
+As the goal is to produce an accurate and robust forecast, two powerful forecasting methods are applied and compared: SARIMA and LSTM.
 
-<img src="images/dummy_thumbnail.jpg?raw=true"/>
+##### SARIMA
+Seasonal Autorregresive Integrated Moving Average is a time-series statistical method, particularly effective in describin clear periodic patterns.
+##### LSTM
+Type of recurrent neural network, highly effective for the analysis of sequential data and capturing long-term dependencies in time-series.
 
-### 4. Provide a basis for further data collection through surveys or experiments
-
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. 
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+### 4. Approach
+Both methods are applied in a training subset consisting on 42 of the 48 months of data, and evaluated on the remaining test subset. In the ultimate deliverable for stakeholders, the user is provided with the option to choose their preferred forecasting approach (SARIMA or LSTM), or employing a train-test methodology to determine the most suitable method for each individual brand.
