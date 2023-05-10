@@ -25,7 +25,7 @@ Implemented satistic models and a recurrent neural network to make a 2 year fore
 
 ### Regression
 
-[Truck load time estimator - Support Vector Regression (2023)](http://example.com/)
+[Regressor for truck loading time estimation - Support Vector Regression (2023)](http://example.com/)
   
 Development of a time-estimating model to predict the time it takes to load trucks given product quantity, its dimensions and number of workers for a Kimberly Clark distirbution plant in Ramos Arizpe, Mexico.
   
