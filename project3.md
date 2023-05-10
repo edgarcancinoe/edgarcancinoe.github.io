@@ -11,7 +11,7 @@ This report provides a comprehensive documentation of the entire development and
 #### Keywords:
 times-series, forecasting, SARIMA, LSTM, neural networks, ma- chine learning, data science
 
-[xxx]Viewcode(/pdf/pa_sarima_lstm)
+[View project's report pdf](/pdf/pa_sarima_lstm)
 
 ```javascript
 if (isAwesome){
