@@ -24,9 +24,9 @@ This project was completed as a freelancing job. The team in charge of acquiring
 Predictive analysis has huge potential on Supply Chain Management, as it allows companies to make informed decisions on inventory management and efficiently plan their re-stocking strategies.
 As the goal is to produce an accurate and robust forecast, two powerful forecasting methods are applied and compared: SARIMA and LSTM.
 
-##### SARIMA
+##### * SARIMA
 Seasonal Autorregresive Integrated Moving Average is a time-series statistical method, particularly effective in describin clear periodic patterns.
-##### LSTM
+##### * LSTM
 Type of recurrent neural network, highly effective for the analysis of sequential data and capturing long-term dependencies in time-series.
 
 ### 4. Approach
