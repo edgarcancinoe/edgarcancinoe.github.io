@@ -28,7 +28,7 @@ Implemented satistic models and a recurrent neural network to make a 2 year fore
   
 Development of a time-estimating model to predict the time it takes to load trucks given product quantity, its dimensions and number of workers for a Kimberly Clark distirbution plant in Ramos Arizpe, Mexico.
 
-**Keywords:** regression, neural network, support vector regression, svr, ridge
+**Keywords**: regression, neural network, support vector regression, svr, ridge
   
 ---
 
