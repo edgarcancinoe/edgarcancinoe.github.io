@@ -36,4 +36,6 @@ Development of a time-estimating model to predict the time it takes to load truc
 ---
 
 [Visual servoing of xArm 6](/xarm6_visual_servoing)
+  
+  
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/yTxkO5lXrIg/0.jpg)](https://youtu.be/yTxkO5lXrIg)
