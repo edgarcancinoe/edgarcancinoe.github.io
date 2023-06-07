@@ -1,4 +1,4 @@
-# Data Science & ML Portfolio
+# Machine Learning & Robotics Portfolio
 
 ---
 ## Credentials
@@ -10,7 +10,7 @@
 [Diploma in Data Science (2021)  -  ITPE](/pdf/JOSE EDGAR HERNANDEZ.pdf)
 
 ---
-## Projects
+## Machine Learning Projects
 
 ### Time Series Forecasting
 
@@ -37,3 +37,9 @@ Development of a time-estimating model to predict the time it takes to load truc
 My first data science project, implemented KNN, logistic regression, and random forests to predict whether it will rain or not on a next day given a day's meteorological data (so much for a Markov assumption here...).
   
 ---
+
+## Robotics Projects
+  
+---
+
+### xArm6 visual servoing
