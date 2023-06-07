@@ -3,9 +3,9 @@
 ---
 ## Credentials
 <small>
-[Specialized Program: Machine Learning (2023)  -  Stanford/DeepLearning.AI](/pdf/JOSE EDGAR HERNANDEZ.pdf)<br>
+[Specialized Program: Machine Learning (Ongoing)  -  Stanford/DeepLearning.AI](/pdf/JOSE EDGAR HERNANDEZ.pdf)<br>
 <small>
-[CS50 Introduction to Artificial Intelligence (2023)  -  HarvardX](/pdf/JOSE EDGAR HERNANDEZ.pdf)<br>
+[CS50 Introduction to Artificial Intelligence (Ongoing)  -  HarvardX](/pdf/JOSE EDGAR HERNANDEZ.pdf)<br>
 <small>
 [Diploma in Data Science (2021)  -  ITPE](/pdf/JOSE EDGAR HERNANDEZ.pdf)
 
@@ -43,3 +43,4 @@ My first data science project, implemented KNN, logistic regression, and random 
 ---
 
 ### xArm6 visual servoing
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/yTxkO5lXrIg/0.jpg)](https://youtu.be/yTxkO5lXrIg)
