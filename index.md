@@ -12,7 +12,7 @@
 ---
 ## Machine Learning Projects
 
-### [Predictive Analysis for product demand (2023)](/project3)
+### [Predictive analysis for product demand (2023)](/project3)
 
 Implemented SARIMA satistic model and a LSTM recurrent neural network to make a 2 year forecast of product demand for Polimeros Opticos de Mexico.
   
