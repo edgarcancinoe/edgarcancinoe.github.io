@@ -1,7 +1,7 @@
 # Machine Learning & Robotics Portfolio
 
 ---
-## Credentials
+#### Credentials
 <small>
 [Specialized Program: Machine Learning (Ongoing)  -  Stanford/DeepLearning.AI](/pdf/JOSE EDGAR HERNANDEZ.pdf)<br>
 <small>
