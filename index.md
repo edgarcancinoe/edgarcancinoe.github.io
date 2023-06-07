@@ -41,4 +41,4 @@ My first data science project, implemented KNN, logistic regression, and random 
 ---
 
 ### xArm6 visual servoing
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/yTxkO5lXrIg/0.jpg)](https://youtu.be/yTxkO5lXrIg)
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/yTxkO5lXrIg/3.jpg)](https://youtu.be/yTxkO5lXrIg)
