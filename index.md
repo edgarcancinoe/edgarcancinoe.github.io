@@ -38,6 +38,7 @@ Development of a time-estimating model to predict the time it takes to load truc
 
 ### [Visual Servoing of xArm (2023)](/xarm6_visual_servoing)
 
+Click to watch video
 Python project for visual servoing of a 6-DOF robotic arm (xArm 6). An external camera and QR codes are used to identify the arm's end effector and target positions.
   
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/yTxkO5lXrIg/0.jpg)](https://youtu.be/yTxkO5lXrIg)
