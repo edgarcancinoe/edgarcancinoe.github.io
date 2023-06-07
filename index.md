@@ -12,7 +12,6 @@
 ---
 ## Machine Learning Projects
 
-### [Predictive analysis for product demand (2023)](/project3)
   <big> [Predictive analysis for product demand (2023)](/project3) </big>
 
 Implemented SARIMA satistic model and a LSTM recurrent neural network to make a 2 year forecast of product demand for Polimeros Opticos de Mexico.
@@ -25,7 +24,7 @@ Implemented SARIMA satistic model and a LSTM recurrent neural network to make a 
 ---
 
 
-### [Regressor for truck load time estimation (2023)](http://example.com/)
+<big>[Regressor for truck load time estimation (2023)](http://example.com/)</big>
   
 Development of a time-estimating model to predict the time it takes to load trucks given product quantity, its dimensions and number of workers for a Kimberly Clark distirbution plant in Ramos Arizpe, Mexico.<br>Ridge Regression, Support Vector Regression and a Neural Network were implemented and their performances compared.
 
@@ -36,7 +35,7 @@ Development of a time-estimating model to predict the time it takes to load truc
   
 ## Robotics Projects
   
-### [Visual Servoing of xArm (2023)](/xarm6_visual_servoing)
+<big>[Visual Servoing of xArm (2023)](/xarm6_visual_servoing)</big>
 
 Python project for visual servoing of a 6-DOF robotic arm (xArm 6). An external camera and QR codes are used to identify the arm's end effector and target positions.
  
