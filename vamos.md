@@ -63,12 +63,12 @@ Three regression models were applied and compared to estimate the maneuver durat
 
 The models effectively mimic the target variable's behavior and response to changes in the most relevant variables.
 <div style="text-align: center">
-<i>Number of stevedores</i>
+<i>Response to changes in number of stevedores</i>
 </div>
-<img src="images/vamos/volumes_and_stevedores_target_pallet.png?raw=true" style="display: inline-block; width: 750px; height: auto;"/>
+<img src="images/vamos/volumes_and_stevedores_target_bulk.png?raw=true" style="display: inline-block; width: 750px; height: auto;"/>
       <img src="images/vamos/Neural Network (deg=2)_volumes_and_stevedores.png?raw=true" style="display: inline-block; width: 750px; height: auto;"/>
 <div style="text-align: justify">
-<i>Volume</i>
+<i>Response to changes in volume</i>
 </div>
 
   <div  style="text-align: center;">
@@ -76,8 +76,21 @@ The models effectively mimic the target variable's behavior and response to chan
   <img src="images/vamos/Multi-layer%20Perceptron%20with%20quadratic%20features_predictions_VolumeCategory_bulk.png?raw=true" style="display: inline-block; width: 750px; height: auto;"/>
   </div>
 <br>
-
+<br>
 Similar plots are shown for the pallet operation models.
+<div style="text-align: center">
+<i>Response to changes in number of stevedores</i>
+</div>
+<img src="images/vamos/volumes_and_stevedores_target_pallet.png?raw=true" style="display: inline-block; width: 750px; height: auto;"/>
+<img src="images/vamos/Neural Network (deg=2)_volumes_and_stevedores_pallet?raw=true" style="display: inline-block; width: 750px; height: auto;"/>
+<div style="text-align: justify">
+<i>Response to changes in volume</i>
+</div>
 
+  <div  style="text-align: center;">
+  <img src="images/vamos/target_vs_qty_target_volume_pallet.png?raw=true" style="display: inline-block; width: 750px; height: auto;"/>
+  <img src="images/vamos/Multi-layer%20Perceptron%20with%20quadratic%20features_predictions_VolumeCategory_pallet.png?raw=true" style="display: inline-block; width: 750px; height: auto;"/>
+  </div>
+<br>
 
 
