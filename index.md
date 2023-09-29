@@ -1,4 +1,4 @@
-|# Machine Learning & Robotics Portfolio
+# Machine Learning & Robotics Portfolio
 
 ---
 **Education**<br>
@@ -22,7 +22,7 @@ E.G.D. June, 2024</small>
 
 ---
 
-<big>[Regression models for estimating semi-trailer truck loading duration (2023)](http://example.com/)</big>
+<big>[Regression models for estimating semi-trailer truck loading duration (2023)](/vamos)</big>
 
 <div style="text-align: justify"> Application of machine learning models to estimate the duration of semi-trailer truck loading maneuvers for a tissue paper distribution plant, for both bulk and pallet operations, given product quantity, physical dimensions, and number of active operators. </div>
 
