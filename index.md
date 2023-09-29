@@ -25,7 +25,7 @@ E.G.D. June, 2024</small>
 
 <div style="text-align: justify"> Application of machine learning models to estimate the duration of semi-trailer truck loading maneuvers for a tissue paper distribution plant, for both bulk and pallet operations, given product quantity, physical dimensions, and number of active operators. </div>
 
-<br><br>
+<br>
 
 <img src="images/target_vs_qty_target_volume_bulk.png?raw=true"/>
 
