@@ -66,8 +66,8 @@ Key tasks:
 
 <big>[Visual Servoing of xArm (2023)](/xarm6_visual_servoing)</big>
 
-Python project for visual servoing of a 6-DOF robotic arm (xArm 6). An external camera and QR codes are used to identify the arm's end effector and target positions.
- 
+<div style="text-align: justify"> Python project for visual servoing of a 6-DOF robotic arm (xArm 6). An external camera and QR codes are used to identify the arm's end effector and target positions.</div>
+
 <br>
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/yTxkO5lXrIg/0.jpg)](https://youtu.be/yTxkO5lXrIg)
 
