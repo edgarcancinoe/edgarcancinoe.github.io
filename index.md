@@ -17,7 +17,8 @@
 
 Application of machine learning models to estimate the duration of semi-trailer truck loading maneuvers for a tissue paper distribution plant, for both bulk and pallet operations, given product quantity, physical dimensions, and number of active operators.
 
-<img src="images/Multi-layer Perceptron with quadratic features_predictions_VolumeCategory_bulk?raw=true"/>
+<img src="images/Multi-layer%20Perceptron%20with%20quadratic%20features_predictions_VolumeCategory_bulk.pngraw=true"/>
+
 <img src="images/target_vs_qty_target_volume_bulk?raw=true"/>
 
 Key tasks:
