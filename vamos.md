@@ -108,4 +108,18 @@ Similar plots are shown for pallet operation models.
   </div>
 <br>
 
+#### Results and score metrics
 
+<div  style="text-align: justify;">
+Below, the test score results for each of the models, after 8-fold cross-validation.
+</div>
+
+<div  style="text-align: center;">
+**_Bulk operations_**
+  <img src="images/vamos/bulkresults.png?raw=true" style="display: inline-block; width: 750px; height: auto;"/>
+</div>
+
+<div  style="text-align: center;">
+**_Pallet operations_**
+  <img src="images/vamos/palletresults.png?raw=true" style="display: inline-block; width: 750px; height: auto;"/>
+</div>
