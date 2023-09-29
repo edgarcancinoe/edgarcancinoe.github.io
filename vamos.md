@@ -80,15 +80,16 @@ The models effectively mimic the target variable's behavior and response to chan
 <br>
 Similar plots are shown for pallet operation models.
 <div style="text-align: center">
-<i>Response to changes in number of stevedores</i><br>
+<i>Response to changes in number of stevedores</i>
 </div>
+<br>
 <img src="images/vamos/volumes_and_stevedores_target_pallet.png?raw=true" style="display: inline-block; width: 750px; height: auto;"/>
 <img src="images/vamos/SVR (deg=2)_volumes_and_stevedores_pallet.png?raw=true" style="display: inline-block; width: 750px; height: auto;"/>
 
 <div style="text-align: center">
-<i>Response to changes in pallet dimension</i><br>
+<i>Response to changes in pallet dimension</i>
 </div>
-
+<br>
   <div  style="text-align: center;">
   <img src="images/vamos/target_vs_qty_target_dimension_pallet.png?raw=true" style="display: inline-block; width: 750px; height: auto;"/>
   <img src="images/vamos/SVR (deg=2)_predictions_DimensionCategory_pallet.png?raw=true" style="display: inline-block; width: 750px; height: auto;"/>
