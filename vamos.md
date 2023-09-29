@@ -38,19 +38,26 @@ This project was completed as a freelancing job. <br><br>
 #### Data
 <div style="text-align: justify">
 A manually collected dataset consisting in more than 27,000 operations was utilized, gathered from a specific distribution plant where these take place. Data held high variation and recording noise, and most features had low correlation to the target variable.
+</div>
 <br><br>
-Three regression models were applied and compared to try to estimate the maneuver durations:
+  <div  style="text-align: center;">
+  <img src="images/vamos/bulkcorr.png?raw=true" style="display: inline-block;"/>
+  <img src="images/vamos/palletcorr.png?raw=true" style="display: inline-block;"/>
+  </div>
+<br><br>
+
+Product quantity, number of stevedores and dimensional features held a relationship to target variable, which can be visualized in the following plots:
+
+
+#### Modeling
+Three regression models were applied and compared to estimate the maneuver durations:<br>
   
 * Ridge Regression<br>
 * Support Vector Regression (SVR)<br>
 * Multi-Layer Perceptron (MLP)<br>
 
 <br><br>
-Type of recurrent neural network, highly effective for the analysis of sequential data and capturing long-term dependencies in time-series.
 
-### 4. Approach
-<div style="text-align: justify">
-Both methods are applied in a training subset consisting on 42 of the 48 months of data, and evaluated on the remaining test subset. In the ultimate deliverable for stakeholders, the user is provided with the option to choose their preferred forecasting approach (SARIMA or LSTM), or employing a train-test methodology to determine the most suitable method for each individual brand.
-</div>
+
 
 
