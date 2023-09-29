@@ -26,9 +26,9 @@ Tecnologico de Monterrey (June, 2024)</small>
 
 <br>
 
-<img src="images/target_vs_qty_target_volume_bulk.png?raw=true"/>
+<img src="images/vamos/target_vs_qty_target_volume_bulk.png?raw=true"/>
 
-<img src="images/Multi-layer%20Perceptron%20with%20quadratic%20features_predictions_VolumeCategory_bulk.png?raw=true"/>
+<img src="images/vamos/Multi-layer%20Perceptron%20with%20quadratic%20features_predictions_VolumeCategory_bulk.png?raw=true"/>
 
 
 Key tasks:
