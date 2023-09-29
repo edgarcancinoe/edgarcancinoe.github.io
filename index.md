@@ -35,7 +35,10 @@ Key tasks:
 - Data cleaning (invalid data and outlier elimination, Gaussian noise addition).
 - Feature engineering and data augmentation (discovered useful relationships in the data and engineered an invalid data recovery strategy).
 - Model tuning and training (implementation of Ridge Regression, Support Vector Regression and a Multi-Layer Perceptron NN).
-- Whole process documentation (The intention to publish the process documentation and results is currently pending, awaiting revision for privacy considerations).
+
+
+The intention to publish the process documentation and results is currently pending, awaiting revision for privacy considerations.
+
   
   <small>**Keywords**: regression, multi-layer perceptron, neural network, support vector regression, svr, ridge</small>
 
