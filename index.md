@@ -4,8 +4,7 @@
 **Education**<br>
 B.S. in Robotics and Digital Systems Engineering 
 <small><br>
-Tecnologico de Monterrey        
-E.G.D. June, 2024</small>
+Tecnologico de Monterrey (June, 2024)</small>
 
 **Certifications**
 <br>
