@@ -63,6 +63,17 @@ Three regression models were applied and compared to estimate the maneuver durat
 
 <br><br>
 
+The models effectively mimic the target variable's behavior and response to changes in the most relevant variables:
+
+<br><br>
+  <div  style="text-align: center;">
+    
+  <img src="images/vamos/target_vs_qty_target_volume_bulk.png?raw=true" style="display: inline-block; width: 500px; height: auto;"/>
+  <img src="images/vamos/Multi-layer%20Perceptron%20with%20quadratic%20features_predictions_VolumeCategory_bulk.png?raw=true" style="display: inline-block; width: 500px; height: auto;"/>
+      <img src="images/vamos/palletcorr.png?raw=true" style="display: inline-block; width: 500px; height: auto;"/>
+
+  </div>
+<br><br>
 
 
 
