@@ -69,8 +69,9 @@ Key tasks:
 
 Python project for visual servoing of a 6-DOF robotic arm (xArm 6). An external camera and QR codes are used to identify the arm's end effector and target positions.
  
-Click on image to watch video<br>
+<br>
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/yTxkO5lXrIg/0.jpg)](https://youtu.be/yTxkO5lXrIg)
 
+<small><b>Click on image to watch video</b></small><br>
   <small>**Keywords**: computer vision, opencv, ros, xarm, moveit</small>
 
