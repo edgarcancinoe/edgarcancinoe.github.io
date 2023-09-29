@@ -60,7 +60,8 @@ Key tasks:
 
   <small>**Keywords**: time series, forecasting, lstm, sarima, recurrent neural network</small>
 
-  
+<br>
+
 ## Robotics Projects
 ---
 
