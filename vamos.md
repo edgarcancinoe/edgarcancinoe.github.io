@@ -117,11 +117,13 @@ Below, the test score results for each of the models, after 8-fold cross-validat
 <div  style="text-align: center;">
   
 **_Bulk operations_**
+<br>
   <img src="images/vamos/bulkresults.png?raw=true" style="display: inline-block; width: 250px; height: auto;"/>
 </div>
 
 <div  style="text-align: center;">
   
 **_Pallet operations_**
+<br>
   <img src="images/vamos/palletresults.png?raw=true" style="display: inline-block; width: 250px; height: auto;"/>
 </div>
