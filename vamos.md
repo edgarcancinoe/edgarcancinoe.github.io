@@ -78,12 +78,12 @@ The models effectively mimic the target variable's behavior and response to chan
   </div>
 <br>
 <br>
-Similar plots are shown for the pallet operation models.
+Similar plots are shown for pallet operation models.
 <div style="text-align: center">
 <i>Response to changes in number of stevedores</i><br>
 </div>
 <img src="images/vamos/volumes_and_stevedores_target_pallet.png?raw=true" style="display: inline-block; width: 750px; height: auto;"/>
-<img src="images/vamos/Neural Network (deg=2)_volumes_and_stevedores_pallet?raw=true" style="display: inline-block; width: 750px; height: auto;"/>
+<img src="images/vamos/SVR (deg=2)_volumes_and_stevedores_pallet?raw=true" style="display: inline-block; width: 750px; height: auto;"/>
 
 <div style="text-align: center">
 <i>Response to changes in volume</i><br>
