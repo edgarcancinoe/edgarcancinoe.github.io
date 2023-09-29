@@ -63,7 +63,7 @@ Three regression models were applied and compared to estimate the maneuver durat
 
 The models effectively mimic the target variable's behavior and response to changes in the most relevant variables.
 <div style="text-align: center">
-<i>Response to changes in number of stevedores</i>
+<i><b>Response to changes in number of stevedores</b></i>
 </div>
 
 <br>
@@ -72,7 +72,7 @@ The models effectively mimic the target variable's behavior and response to chan
       <img src="images/vamos/Neural Network (deg=2)_volumes_and_stevedores.png?raw=true" style="display: inline-block; width: 750px; height: auto;"/>
       <br>
 <div style="text-align: center">
-<i>Response to changes in volume</i>
+<i><b>Response to changes in volume</b></i>
 </div>
 
 <br>
@@ -86,7 +86,7 @@ The models effectively mimic the target variable's behavior and response to chan
 <br>
 Similar plots are shown for pallet operation models.
 <div style="text-align: center">
-<i>Response to changes in number of stevedores</i>
+<i><b>Response to changes in number of stevedores</b></i>
 </div>
 
 <br>
@@ -98,7 +98,7 @@ Similar plots are shown for pallet operation models.
 
 <br>
   
-<i>Response to changes in pallet dimension</i>
+<i><b>Response to changes in pallet dimension</b></i>
 
 </div>
 <br>
