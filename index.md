@@ -2,7 +2,8 @@
 
 ---
 **Education**<br>
-B.S. in Robotics and Digital Systems Engineering (E.G.D. June, 2024)
+B.S. in Robotics and Digital Systems Engineering 
+Tecnologico de Monterrey, Monterrey, Mexico. E.G.D. June, 2024
 <small>
 [Specialized Program: Machine Learning (Ongoing)  -  Stanford/DeepLearning.AI](/pdf/JOSE EDGAR HERNANDEZ.pdf)<br><small>
 [CS50 Introduction to Artificial Intelligence (Ongoing)  -  HarvardX](/pdf/JOSE EDGAR HERNANDEZ.pdf)<br>
@@ -18,7 +19,7 @@ B.S. in Robotics and Digital Systems Engineering (E.G.D. June, 2024)
 
 <div style="text-align: justify"> Application of machine learning models to estimate the duration of semi-trailer truck loading maneuvers for a tissue paper distribution plant, for both bulk and pallet operations, given product quantity, physical dimensions, and number of active operators. </div>
 
-
+---
 <img src="images/target_vs_qty_target_volume_bulk.png?raw=true"/>
 
 <img src="images/Multi-layer%20Perceptron%20with%20quadratic%20features_predictions_VolumeCategory_bulk.png?raw=true"/>
