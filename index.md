@@ -15,7 +15,7 @@
 
 <big>[Regression models for estimating semi-trailer truck loading duration (2023)](http://example.com/)</big>
 
-Application of machine learning models to estimate the duration of semi-trailer truck loading maneuvers for a tissue paper distribution plant, for both bulk and pallet operations, given product quantity, physical dimensions, and number of active operators.
+<div style="text-align: justify"> Application of machine learning models to estimate the duration of semi-trailer truck loading maneuvers for a tissue paper distribution plant, for both bulk and pallet operations, given product quantity, physical dimensions, and number of active operators. </div>
 
 <img src="images/Multi-layer%20Perceptron%20with%20quadratic%20features_predictions_VolumeCategory_bulk.png?raw=true"/>
 
