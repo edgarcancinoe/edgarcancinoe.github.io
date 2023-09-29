@@ -28,9 +28,9 @@ Tecnologico de Monterrey, Monterrey, Mexico. E.G.D. June, 2024
 
 
 Key tasks:
-- Data cleaning (invalid data and outlier elimination, Gaussian noise addition)
+- Data cleaning (invalid data and outlier elimination, Gaussian noise addition).
 - Feature engineering and data augmentation (discovered useful relationships in the data and engineered an invalid data recovery strategy).
-- Model tuning and training (implementation of Ridge Regression, Support Vector Regression and a Multi-Layer Perceptron NN)
+- Model tuning and training (implementation of Ridge Regression, Support Vector Regression and a Multi-Layer Perceptron NN).
   
   <small>**Keywords**: regression, multi-layer perceptron, neural network, support vector regression, svr, ridge</small>
   
@@ -39,7 +39,7 @@ Key tasks:
 
   <big> [Predictive analysis for product demand (2023)](/project3) </big>
 
-Implemented SARIMA satistic model and a LSTM recurrent neural network to make a 2 year forecast of product demand for Polimeros Opticos de Mexico.
+Implemented SARIMA satistic model and a LSTM Recurrent Neural Network to make a 2 year forecast of product demand for a glasses frame distributor company.
   
   
 <img src="images/Screenshot 2023-04-17 at 0.45.31.png?raw=true"/>
