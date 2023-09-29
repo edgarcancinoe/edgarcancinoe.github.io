@@ -37,6 +37,7 @@ Key tasks:
 
 Implemented SARIMA satistic model and a LSTM recurrent neural network to make a 2 year forecast of product demand for Polimeros Opticos de Mexico.
   
+  
 <img src="images/Screenshot 2023-04-17 at 0.45.31.png?raw=true"/>
 <img src="images/LSTM.png?raw=true"/>
   
