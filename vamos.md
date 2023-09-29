@@ -47,7 +47,12 @@ A manually collected dataset consisting in more than 27,000 operations was utili
 <br><br>
 
 Product quantity, number of stevedores and dimensional features held a relationship to target variable, which can be visualized in the following plots:
-
+<br><br>
+  <div  style="text-align: center;">
+  <img src="images/vamos/plot_Num%20Stevedores.png?raw=true" style="display: inline-block; width: 500px; height: auto;"/>
+  <img src="images/vamos/plot_Volume%20(scaled).png?raw=true" style="display: inline-block; width: 500px; height: auto;"/>
+  </div>
+<br><br>
 
 #### Modeling
 Three regression models were applied and compared to estimate the maneuver durations:<br>
