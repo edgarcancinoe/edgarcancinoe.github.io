@@ -41,8 +41,8 @@ A manually collected dataset consisting in more than 27,000 operations was utili
 </div>
 <br><br>
   <div  style="text-align: center;">
-  <img src="images/vamos/bulkcorr.png?raw=true" style="display: inline-block; width: 0.4; height: auto;"/>
-  <img src="images/vamos/palletcorr.png?raw=true" style="display: inline-block; width: 0.3; height: auto;"/>
+  <img src="images/vamos/bulkcorr.png?raw=true" style="display: inline-block; width: 4; height: auto;"/>
+  <img src="images/vamos/palletcorr.png?raw=true" style="display: inline-block; width: 4; height: auto;"/>
   </div>
 <br><br>
 
