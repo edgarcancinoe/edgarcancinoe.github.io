@@ -5,7 +5,8 @@
 B.S. in Robotics and Digital Systems Engineering 
 <br>
 <small>
-Tecnologico de Monterrey, Monterrey, Mexico.        E.G.D. June, 2024
+Tecnologico de Monterrey<br>        
+E.G.D. June, 2024</small>
 
 **Certifications**
 <br>
