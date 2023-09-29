@@ -17,16 +17,17 @@
 
 <div style="text-align: justify"> Application of machine learning models to estimate the duration of semi-trailer truck loading maneuvers for a tissue paper distribution plant, for both bulk and pallet operations, given product quantity, physical dimensions, and number of active operators. </div>
 
+<img src="images/target_vs_qty_target_volume_bulk.png?raw=true"/>
+
 <img src="images/Multi-layer%20Perceptron%20with%20quadratic%20features_predictions_VolumeCategory_bulk.png?raw=true"/>
 
-<img src="images/target_vs_qty_target_volume_bulk.png?raw=true"/>
 
 Key tasks:
 - Data cleaning (invalid data and outlier elimination, Gaussian noise addition)
 - Feature engineering and data augmentation (discovered useful relationships in the data and engineered an invalid data recovery strategy).
 - Model tuning and training (implementation of Ridge Regression, Support Vector Regression and a Multi-Layer Perceptron NN)
   
-  <small>**Keywords**: regression, neural network, support vector regression, svr, ridge</small>
+  <small>**Keywords**: regression, multi-layer perceptron, neural network, support vector regression, svr, ridge</small>
   
 
 ---
@@ -38,7 +39,7 @@ Implemented SARIMA satistic model and a LSTM recurrent neural network to make a 
 <img src="images/Screenshot 2023-04-17 at 0.45.31.png?raw=true"/>
 <img src="images/LSTM.png?raw=true"/>
   
-  <small>**Keywords**: time series, forecasting, lstm, sarima</small>
+  <small>**Keywords**: time series, forecasting, lstm, sarima, recurrent neural network</small>
 
 ---
 
