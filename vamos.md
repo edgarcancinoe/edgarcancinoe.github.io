@@ -33,9 +33,8 @@ This project was completed as a freelancing job. <br><br>
 </div>
 
 
-### 3. Approach
+### 2. Data
 
-#### Data
 <div style="text-align: justify">
 A manually collected dataset consisting in more than 27,000 operations was utilized, gathered from a specific distribution plant where these take place. Data held high variation and recording noise, and most features had low correlation to the target variable.
 </div>
@@ -54,7 +53,7 @@ Product quantity, number of stevedores and dimensional features held a relations
   </div>
 <br><br>
 
-#### Modeling
+### 3. Approach
 Three regression models were applied and compared to estimate the maneuver durations:<br>
   
 * Ridge Regression<br>
@@ -108,7 +107,7 @@ Similar plots are shown for pallet operation models.
   </div>
 <br>
 
-#### Results and score metrics
+### 4. Results and score metrics
 
 <div  style="text-align: justify;">
 Below, the test score results for each of the models, after 8-fold cross-validation.
