@@ -2,7 +2,7 @@
 
 **Project description:** 
 <div style="text-align: justify">
-Application of machine learning models to estimate the duration of semi-trailer truck loading maneuvers for a tissue paper distribution plant, for both bulk and pallet operations, given product quantity, physical dimensions,and number of active operators.
+Application of <b>machine learning models to estimate the duration of semi-trailer truck loading maneuvers</b> for a tissue paper distribution plant, for both bulk and pallet operations, given product quantity, physical dimensions,and number of active operators.
 </div>
 <br>
 
@@ -14,7 +14,7 @@ Ridge and Support Vector Regression, and a Multi-Layer Perceptron Neural Network
 </div>
 
 #### Keywords:
-Regression, Ridge, Support Vector Regression, Machine Learning, Neural Network, Multi-Layer Perceptron
+regression, ridge, support vector regression, machine learning, neural network, multi-layer perceptron
 
 <br>
 
