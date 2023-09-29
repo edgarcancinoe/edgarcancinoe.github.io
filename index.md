@@ -1,4 +1,4 @@
-# Machine Learning & Robotics Portfolio
+|# Machine Learning & Robotics Portfolio
 
 ---
 **Education**<br>
@@ -15,7 +15,7 @@ E.G.D. June, 2024</small>
 [CS50 Introduction to Artificial Intelligence (Ongoing)  -  HarvardX](/pdf/JOSE EDGAR HERNANDEZ.pdf)<br>
 <small>
 [Diploma in Data Science (2021)  -  ITPE](/pdf/JOSE EDGAR HERNANDEZ.pdf)
-
+<br>
 
 
 ## Data Science / Machine Learning
