@@ -13,9 +13,11 @@ Tecnologico de Monterrey, Monterrey, Mexico. E.G.D. June, 2024
 <small>
 [Diploma in Data Science (2021)  -  ITPE](/pdf/JOSE EDGAR HERNANDEZ.pdf)
 
----
+
+
 ## Data Science / Machine Learning
 
+---
 
 <big>[Regression models for estimating semi-trailer truck loading duration (2023)](http://example.com/)</big>
 
