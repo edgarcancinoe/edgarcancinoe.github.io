@@ -59,16 +59,16 @@ Three regression models were applied and compared to estimate the maneuver durat
   
 * Ridge Regression<br>
 * Support Vector Regression (SVR)<br>
-* Multi-Layer Perceptron (MLP)<br>
+* Multi-Layer Perceptron (MLP)<br><br>
 
 The models effectively mimic the target variable's behavior and response to changes in the most relevant variables.
 
-* Number of stevedores
+<i>Number of stevedores</i>
 
 <img src="images/vamos/volumes_and_stevedores_target_pallet.png?raw=true" style="display: inline-block; width: 750px; height: auto;"/>
       <img src="images/vamos/Neural Network (deg=2)_volumes_and_stevedores.png?raw=true" style="display: inline-block; width: 750px; height: auto;"/>
       
-* Volume
+<i>Volume</i>
 
   <div  style="text-align: center;">
   <img src="images/vamos/target_vs_qty_target_volume_bulk.png?raw=true" style="display: inline-block; width: 750px; height: auto;"/>
