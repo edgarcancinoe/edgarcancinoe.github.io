@@ -63,12 +63,13 @@ Three regression models were applied and compared to estimate the maneuver durat
 
 The models effectively mimic the target variable's behavior and response to changes in the most relevant variables.
 <div style="text-align: center">
-<i>Response to changes in number of stevedores</i>
+<i>Response to changes in number of stevedores</i><br>
 </div>
 <img src="images/vamos/volumes_and_stevedores_target_bulk.png?raw=true" style="display: inline-block; width: 750px; height: auto;"/>
       <img src="images/vamos/Neural Network (deg=2)_volumes_and_stevedores.png?raw=true" style="display: inline-block; width: 750px; height: auto;"/>
-<div style="text-align: justify">
-<i>Response to changes in volume</i>
+      <br>
+<div style="text-align: center">
+<i>Response to changes in volume</i><br>
 </div>
 
   <div  style="text-align: center;">
@@ -79,12 +80,13 @@ The models effectively mimic the target variable's behavior and response to chan
 <br>
 Similar plots are shown for the pallet operation models.
 <div style="text-align: center">
-<i>Response to changes in number of stevedores</i>
+<i>Response to changes in number of stevedores</i><br>
 </div>
 <img src="images/vamos/volumes_and_stevedores_target_pallet.png?raw=true" style="display: inline-block; width: 750px; height: auto;"/>
 <img src="images/vamos/Neural Network (deg=2)_volumes_and_stevedores_pallet?raw=true" style="display: inline-block; width: 750px; height: auto;"/>
-<div style="text-align: justify">
-<i>Response to changes in volume</i>
+
+<div style="text-align: center">
+<i>Response to changes in volume</i><br>
 </div>
 
   <div  style="text-align: center;">
