@@ -8,8 +8,23 @@
 <small>
 [Diploma in Data Science (2021)  -  ITPE](/pdf/JOSE EDGAR HERNANDEZ.pdf)
 
+
 ---
-## Machine Learning Projects
+## Data Science / Machine Learning
+
+
+<big>[Regression models for estimating semi-trailer truck loading duration (2023)](http://example.com/)</big>
+
+Application of machine learning models to estimate the duration of semi-trailer truck loading maneuvers for a tissue paper distribution plant, for both bulk and pallet operations, given product quantity, physical dimensions, and number of active operators.
+
+- Cleaning data
+- Data Engineering
+- Model tuning and training
+- 
+  <small>**Keywords**: regression, neural network, support vector regression, svr, ridge</small>
+  
+
+---
 
   <big> [Predictive analysis for product demand (2023)](/project3) </big>
 
@@ -20,15 +35,6 @@ Implemented SARIMA satistic model and a LSTM recurrent neural network to make a 
   
   <small>**Keywords**: time series, forecasting, lstm, sarima</small>
 
----
-
-
-<big>[Regressor for truck load time estimation (2023)](http://example.com/)</big>
-  
-Development of a time-estimating model to predict the time it takes to load trucks given product quantity, its dimensions and number of workers for a Kimberly Clark distirbution plant in Ramos Arizpe, Mexico.<br>Ridge Regression, Support Vector Regression and a Neural Network were implemented and their performances compared.
-
-  <small>**Keywords**: regression, neural network, support vector regression, svr, ridge</small>
-  
 ---
 
   
