@@ -5,6 +5,7 @@
 B.S. in Robotics and Digital Systems Engineering 
 Tecnologico de Monterrey, Monterrey, Mexico. E.G.D. June, 2024
 
+**Certifications**
 <br>
 <small>
 [Specialized Program: Machine Learning (Ongoing)  -  Stanford/DeepLearning.AI](/pdf/JOSE EDGAR HERNANDEZ.pdf)<br><small>
@@ -12,7 +13,6 @@ Tecnologico de Monterrey, Monterrey, Mexico. E.G.D. June, 2024
 <small>
 [Diploma in Data Science (2021)  -  ITPE](/pdf/JOSE EDGAR HERNANDEZ.pdf)
 
-**Certifications**
 ---
 ## Data Science / Machine Learning
 
