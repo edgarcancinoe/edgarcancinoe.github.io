@@ -111,7 +111,7 @@ Similar plots are shown for pallet operation models.
 
 <div  style="text-align: justify;">
 Below, the test score results for each of the models, after 8-fold cross-validation.
-</div>
+</div><br>
 
 <div  style="text-align: center;">
   
