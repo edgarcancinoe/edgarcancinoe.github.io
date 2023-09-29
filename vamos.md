@@ -61,7 +61,7 @@ Three regression models were applied and compared to estimate the maneuver durat
 * Support Vector Regression (SVR)<br>
 * Multi-Layer Perceptron (MLP)<br>
 
-<br><br>
+<br>
 
 The models effectively mimic the target variable's behavior and response to changes in the most relevant variables.
 
