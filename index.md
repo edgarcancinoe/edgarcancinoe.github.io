@@ -17,10 +17,11 @@
 
 Application of machine learning models to estimate the duration of semi-trailer truck loading maneuvers for a tissue paper distribution plant, for both bulk and pallet operations, given product quantity, physical dimensions, and number of active operators.
 
-- Cleaning data
-- Data Engineering
-- Model tuning and training
-- 
+Key tasks:
+- Data cleaning (invalid data and outlier elimination, Gaussian noise addition)
+- Feature engineering and data augmentation (discovered useful relationships in the data and engineered an invalid data recovery strategy).
+- Model tuning and training (implementation of Ridge Regression, Support Vector Regression and a Multi-Layer Perceptron NN)
+  
   <small>**Keywords**: regression, neural network, support vector regression, svr, ridge</small>
   
 
