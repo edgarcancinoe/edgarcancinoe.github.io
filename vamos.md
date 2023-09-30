@@ -12,7 +12,7 @@ This project consistes in the application of machine learning regression models 
 The models are based on various factors, including product quantity, weight and spatial dimensions of the products, and the number of operators involved in the loading process.<br><br>
 Ridge and Support Vector Regression, and a Multi-Layer Perceptron Neural Network were employed. Furthermore, individual models were developed for both bulk and pallet loading maneuvers, taking into account the unique characteristics and requirements of each loading scenario.<br>
 </div>
-
+<br>
 <b>Keywords</b>:<br>
 regression, ridge, support vector regression, machine learning, neural network, multi-layer perceptron
 
