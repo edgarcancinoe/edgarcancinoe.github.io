@@ -22,7 +22,9 @@ Tecnologico de Monterrey (June, 2024)</small>
 ---
 
 <big>[1. Regression models for estimating semi-trailer truck loading duration (2023)](/vamos)</big><br>
-<small><b>python, pandas, keras, tensorflow, scikit-learn, numpy, matplotlib</b></small><br>
+
+<div style="text-align: center"><small><b>python - pandas - keras - tensorflow - scikit-learn - numpy - matplotlib</b></small></div><br>
+
 <div style="text-align: justify"> Application of machine learning models to estimate the duration of semi-trailer truck loading maneuvers for a tissue paper distribution plant, for both bulk and pallet operations, given product quantity, physical dimensions, and number of active operators. </div>
 
 <br>
@@ -66,7 +68,7 @@ Key tasks:
 ---
 
 <big>[2. Visual Servoing of xArm (2023)](/xarm6_visual_servoing)</big><br>
-<small><b>python, ros, opencv, moveit, xarm6, ubuntu</b></small><br>
+<div style="text-align: center"><small><b>python - ros - opencv - moveit - xarm6 - ubuntu</b></small></div><br>
 
 <div style="text-align: justify"> Python project for visual servoing of a 6-DOF robotic arm (xArm 6). An external camera and QR codes are used to identify the arm's end effector and target positions.</div>
 
