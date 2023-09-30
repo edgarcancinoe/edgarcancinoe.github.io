@@ -13,7 +13,7 @@ The models are based on various factors, including product quantity, weight and 
 Ridge and Support Vector Regression, and a Multi-Layer Perceptron Neural Network were employed. Furthermore, individual models were developed for both bulk and pallet loading maneuvers, taking into account the unique characteristics and requirements of each loading scenario.<br><br>
 </div>
 
-#### Keywords:
+##### Keywords:
 regression, ridge, support vector regression, machine learning, neural network, multi-layer perceptron
 
 <br>
