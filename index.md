@@ -20,7 +20,7 @@ Tecnologico de Monterrey (June, 2024)</small>
 
 ---
 
-<big>[Regression models for estimating semi-trailer truck loading duration (2023)](/vamos)</big>
+<big>[1. Regression models for estimating semi-trailer truck loading duration (2023)](/vamos)</big>
 
 <div style="text-align: justify"> Application of machine learning models to estimate the duration of semi-trailer truck loading maneuvers for a tissue paper distribution plant, for both bulk and pallet operations, given product quantity, physical dimensions, and number of active operators. </div>
 
@@ -44,7 +44,7 @@ The intention to publish the process documentation and results is currently pend
 
 ---
 
-  <big> [Predictive analysis for product demand (2023)](/project3) </big>
+  <big> [2. Predictive analysis for product demand (2023)](/project3) </big>
 
 Implemented SARIMA satistic model and a LSTM Recurrent Neural Network to make a 2 year forecast of product demand for a glasses frame distributor company.
   
@@ -64,7 +64,7 @@ Key tasks:
 ## Robotics Projects
 ---
 
-<big>[Visual Servoing of xArm (2023)](/xarm6_visual_servoing)</big>
+<big>[2. Visual Servoing of xArm (2023)](/xarm6_visual_servoing)</big>
 
 <div style="text-align: justify"> Python project for visual servoing of a 6-DOF robotic arm (xArm 6). An external camera and QR codes are used to identify the arm's end effector and target positions.</div>
 
