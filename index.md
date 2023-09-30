@@ -49,6 +49,8 @@ The intention to publish the process documentation and results is currently pend
 
   <big> [2. Predictive analysis for product demand (2023)](/project3) </big>
 
+<div style="text-align: center"><small><b>python - pandas - keras - tensorflow - scikit-learn - numpy - matplotlib</b><br><br></small></div>
+
 Implemented SARIMA satistic model and a LSTM Recurrent Neural Network to make a 2 year forecast of product demand for a glasses frame distributor company.
   
   
