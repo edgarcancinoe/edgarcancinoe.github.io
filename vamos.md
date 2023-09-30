@@ -119,7 +119,7 @@ Below, the test score results for each of the models, after 8-fold cross-validat
 <br>
   <img src="images/vamos/bulkresults.png?raw=true" style="display: inline-block; width: 250px; height: auto;"/>
 </div>
-
+<br>
 <div  style="text-align: center;">
   
 <i><b>Pallet operations</b></i>
