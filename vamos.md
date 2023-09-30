@@ -39,17 +39,17 @@ This project was completed as a freelancing job. <br><br>
 A manually collected dataset consisting in more than 27,000 operations was utilized, gathered from a specific distribution plant where these take place. Data held high variation and recording noise, and most features had low correlation to the target variable.
 </div>
 <br><br>
-  <div  style="text-align: center; width:500px">
-  <img src="images/vamos/bulkcorr.png?raw=true" style="display: inline-block; width: 500px; height: auto;"/>
-  <img src="images/vamos/palletcorr.png?raw=true" style="display: inline-block; width: 500px; height: auto;"/>
+  <div  style="text-align: center; width:400px">
+  <img src="images/vamos/bulkcorr.png?raw=true" style="display: inline-block; width: 400px; height: auto;"/>
+  <img src="images/vamos/palletcorr.png?raw=true" style="display: inline-block; width: 400px; height: auto;"/>
   </div>
 <br><br>
 
 Product quantity, number of stevedores and dimensional features held a relationship to target variable, which can be visualized in the following plots:
 <br><br>
-  <div  style="text-align: center; width:500px">
-  <img src="images/vamos/plot_Num%20Stevedores.png?raw=true" style="display: inline-block; width: 500px; height: auto;"/>
-  <img src="images/vamos/plot_Volume%20(scaled).png?raw=true" style="display: inline-block; width: 500px; height: auto;"/>
+  <div  style="text-align: center; width:400px">
+  <img src="images/vamos/plot_Num%20Stevedores.png?raw=true" style="display: inline-block; width: 400px; height: auto;"/>
+  <img src="images/vamos/plot_Volume%20(scaled).png?raw=true" style="display: inline-block; width: 400px; height: auto;"/>
   </div>
 <br><br>
 
