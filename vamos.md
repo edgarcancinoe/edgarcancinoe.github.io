@@ -10,7 +10,7 @@ Application of <b>machine learning models to estimate the duration of semi-trail
 <div style="text-align: justify">
 This project consistes in the application of machine learning regression models for estimating the loading times of trailers carrying tissue paper products.<br><br>
 The models are based on various factors, including product quantity, weight and spatial dimensions of the products, and the number of operators involved in the loading process.<br><br>
-Ridge and Support Vector Regression, and a Multi-Layer Perceptron Neural Network were employed. Furthermore, individual models were developed for both bulk and pallet loading maneuvers, taking into account the unique characteristics and requirements of each loading scenario.<br><br>
+Ridge and Support Vector Regression, and a Multi-Layer Perceptron Neural Network were employed. Furthermore, individual models were developed for both bulk and pallet loading maneuvers, taking into account the unique characteristics and requirements of each loading scenario.<br>
 </div>
 
 ##### Keywords:
