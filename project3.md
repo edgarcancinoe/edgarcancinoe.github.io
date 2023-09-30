@@ -10,7 +10,7 @@ This document presents the application of statistical and machine learning metho
 This report provides a comprehensive documentation of the entire development and decision-making processes involved in the project.
 </div>
 
-#### Keywords:
+<b>Keywords:</b>
 times-series, forecasting, SARIMA, LSTM, neural networks, machine learning, data science
 
 [View project report (PDF)](/pdf/pa_sarima_lstm.pdf)
