@@ -15,13 +15,14 @@ Tecnologico de Monterrey (June, 2024)</small>
 [Diploma in Data Science (2021)  -  ITPE](/pdf/JOSE EDGAR HERNANDEZ.pdf)
 <br>
 
+<br>
 
 ## Data Science / Machine Learning
 
 ---
 
 <big>[1. Regression models for estimating semi-trailer truck loading duration (2023)](/vamos)</big>
-
+<small>python, pandas, keras, tensorflow, scikit-learn, numpy, matplotlib</small><br>
 <div style="text-align: justify"> Application of machine learning models to estimate the duration of semi-trailer truck loading maneuvers for a tissue paper distribution plant, for both bulk and pallet operations, given product quantity, physical dimensions, and number of active operators. </div>
 
 <br>
