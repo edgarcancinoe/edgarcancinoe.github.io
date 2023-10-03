@@ -29,6 +29,7 @@ Predictive analysis has huge potential on Supply Chain Management, as it allows 
 
 * SARIMA
 Seasonal Autorregresive Integrated Moving Average is a time-series statistical method, particularly effective in describin clear periodic patterns.
+
 * LSTM
 Type of recurrent neural network, highly effective for the analysis of sequential data and capturing long-term dependencies in time-series.
 
