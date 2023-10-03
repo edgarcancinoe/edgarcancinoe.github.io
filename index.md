@@ -77,8 +77,6 @@ Key tasks:
 
 <br>
 
-<img src="images/visualservoing.gif?raw=true"/>
-
 <small><a href="https://www.youtube.com/watch?v=lhTBHQspGjc">Watch on Youtube</a></small><br>
 
 Key tasks:
