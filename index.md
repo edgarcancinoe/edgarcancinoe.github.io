@@ -79,7 +79,7 @@ Key tasks:
 
 <img src="images/visualservoing.gif?raw=true"/>
 
-<small><a href="[https://youtu.be/yTxkO5lXrIg](https://youtu.be/lhTBHQspGjc)">Watch on Youtube</a></small><br>
+<small><a href="https://www.youtube.com/watch?v=lhTBHQspGjc">Watch on Youtube</a></small><br>
 
 Key tasks:
 - Development of Computer Vision-based line follower.
