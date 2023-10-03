@@ -84,11 +84,10 @@ Key tasks:
 - Implementation of PI linear controller for navigation.
 - Application of trained YOLOv5 model in Nvidia Jetson Nano edge device for transit signals recognition.
 
-  <small>**Keywords**: control, yolo, deep learning, ros, edge ai, nvidia, computer vision, autonomous driving/small>
+  <small>**Keywords**: control, yolo, deep learning, ros, edge ai, nvidia, computer vision, autonomous driving</small>
 
 <br>
 
-  
 ---
 
 <big>[3. Visual Servoing of xArm (2023)](/xarm6_visual_servoing)</big>
