@@ -65,19 +65,52 @@ Key tasks:
 <br>
 
 ## Robotics Projects
+
 ---
 
-<big>[2. Visual Servoing of xArm (2023)](/xarm6_visual_servoing)</big>
+
+<big>[2. Computer Vision-Powered Autonomous Driving Vehicle (2023)](/puzzlebot)</big>
+
+<div style="text-align: center"><small><b> ros - opencv - YOLOv5 - nvidia jetson<br><br></b></small></div>
+
+<div style="text-align: justify"> School project in collaboration with Manchester Robotics: Development of an self-driving vehicle prototype using ROS, YOLOv5, and Nvidia Jet Bot kit.
+
+<br>
+
+<img src="images/visualservoing.gif?raw=true"/>
+
+<small><a href="[https://youtu.be/yTxkO5lXrIg](https://youtu.be/lhTBHQspGjc)">Watch on Youtube</a></small><br>
+
+Key tasks:
+- Development of Computer Vision-based line follower.
+- Implementation of PI linear controller for navigation.
+- Application of trained YOLOv5 model in Nvidia Jetson Nano edge device for transit signals recognition.
+
+  <small>**Keywords**: control, yolo, deep learning, ros, edge ai, nvidia, computer vision, autonomous driving/small>
+
+<br>
+
+  
+---
+
+<big>[3. Visual Servoing of xArm (2023)](/xarm6_visual_servoing)</big>
 
 <div style="text-align: center"><small><b>python - ros - opencv - moveit - xarm6 - ubuntu<br><br></b></small></div>
 
-<div style="text-align: justify"> Python project for visual servoing of a 6-DOF robotic arm (xArm 6). An external camera and QR codes are used to identify the arm's end effector and target positions.</div>
+<div style="text-align: justify"> Python project for visual servoing of a 6-DOF robotic arm (xArm6). An external camera and QR codes are used to identify the arm's end effector and target positions.</div>
 
 <br>
 
 <img src="images/visualservoing.gif?raw=true"/>
 
 <small><a href="https://youtu.be/yTxkO5lXrIg">Watch on Youtube</a></small><br>
+
+Key tasks:
+- Estimation of target's position coordinates relative to the arm's end effector.
+- Trajectory planning by inverse kinematics utilizing MOVEit.
+- Implementation of CV Python scripts in ROS.
+
+<br>
 
   <small>**Keywords**: computer vision, opencv, ros, xarm, moveit</small>
 
