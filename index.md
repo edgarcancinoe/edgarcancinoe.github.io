@@ -82,7 +82,7 @@ Key tasks:
 Key tasks:
 - Development of Computer Vision-based line follower.
 - Implementation of PI linear controller for navigation.
-- Application of trained YOLOv5 model in Nvidia Jetson Nano edge device for transit signals recognition.
+- Training and implementation of YOLOv5 model in Nvidia Jetson Nano edge device for transit signals recognition.
 
   <small>**Keywords**: control, yolo, deep learning, ros, edge ai, nvidia, computer vision, autonomous driving</small>
 
