@@ -77,8 +77,8 @@ Key tasks:
 The challenge was to develop an autonomous navigation prototype using computer vision, deep learning, and intelligent control in a scaled environment that will simulate roads with obstacles, junctions and curves. </div>
 <br>
 
-<img src="images/puzzlebot/line.gif?raw=true"/>
-
+<img src="images/puzzlebot/linefollower.gif?raw=true"/>
+<br>
 <img src="images/puzzlebot/both.gif?raw=true"/>
 
 <br>
