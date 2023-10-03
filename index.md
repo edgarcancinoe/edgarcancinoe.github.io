@@ -15,8 +15,6 @@ Tecnologico de Monterrey (June, 2024)</small>
 [Diploma in Data Science (2021)  -  ITPE](/pdf/JOSE EDGAR HERNANDEZ.pdf)
 <br>
 
-<br>
-
 ## Data Science / Machine Learning
 
 ---
