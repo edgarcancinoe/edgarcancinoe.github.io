@@ -93,7 +93,7 @@ Key tasks:
 
 <big>[3. Visual Servoing of xArm (2023)](/xarm6_visual_servoing)</big>
 
-<div style="text-align: center"><small><b>python - ros - opencv - moveit - xarm6 - ubuntu<br><br></b></small></div>
+<div style="text-align: center"><small><b>python - ros - opencv - moveit - xarm6 <br><br></b></small></div>
 
 <div style="text-align: justify"> Python project for visual servoing of a 6-DOF robotic arm (xArm6). An external camera and QR codes are used to identify the arm's end effector and target positions.</div>
 
