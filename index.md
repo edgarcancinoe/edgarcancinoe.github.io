@@ -77,7 +77,7 @@ Key tasks:
 
 <img src="images/visualservoing.gif?raw=true"/>
 
-<small><a href="https://youtu.be/yTxkO5lXrIg">Click here to watch full video</a></small><br>
+<small><a href="https://youtu.be/yTxkO5lXrIg">Watch on Youtube</a></small><br>
 
   <small>**Keywords**: computer vision, opencv, ros, xarm, moveit</small>
 
