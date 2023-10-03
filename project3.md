@@ -7,7 +7,6 @@ product demand on lens frames for a distributor company. </div><br>
 ### Abstract
 <div style="text-align: justify"> 
 This document presents the application of statistical and machine learning methods for predicting the sales of lens frames of a distributor company in Mexico. The project’s goal was to generate product demand forecasts two years into the future by grouping products by brand and using the information as input for an future Supply Chain Management strategy (SCM). Time-series forecasting models, specifically SARIMA and LSTM neural networks, were employed and their performance capture the sales trends and patterns was evaluated and compared.
-This report provides a comprehensive documentation of the entire development and decision-making processes involved in the project.
 </div>
 <br>
 <b>Keywords:</b><br>
