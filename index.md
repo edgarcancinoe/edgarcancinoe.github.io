@@ -19,7 +19,7 @@ Tecnologico de Monterrey (June, 2024)</small>
 
 ---
 
-<big>[1. Regression models for estimating semi-trailer truck loading duration (2023)](/vamos)</big>
+<big>[1. Regression models for estimating semi-trailer truck loading duration (2023)](/regressors)</big>
 
 <div style="text-align: center"><small><b>python - pandas - keras - tensorflow - scikit-learn - numpy - matplotlib</b><br><br></small></div>
 
@@ -27,9 +27,9 @@ Tecnologico de Monterrey (June, 2024)</small>
 
 <br>
 
-<img src="images/vamos/target_vs_qty_target_volume_bulk.png?raw=true"/>
+<img src="images/regressors/target_vs_qty_target_volume_bulk.png?raw=true"/>
 
-<img src="images/vamos/Multi-layer%20Perceptron%20with%20quadratic%20features_predictions_VolumeCategory_bulk.png?raw=true"/>
+<img src="images/regressors/Multi-layer%20Perceptron%20with%20quadratic%20features_predictions_VolumeCategory_bulk.png?raw=true"/>
 
 
 Key tasks:
