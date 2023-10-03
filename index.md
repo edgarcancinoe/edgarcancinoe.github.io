@@ -69,7 +69,7 @@ Key tasks:
 ---
 
 
-<big>[2. Computer Vision-Powered Autonomous Driving Vehicle (2023)](/catkin_ws_puzzlebot)</big>
+<big>[2. Computer Vision-Powered Autonomous Driving Vehicle (2023)](https://www.youtube.com/watch?v=lhTBHQspGjc)</big>
 
 <div style="text-align: center"><small><b> ros - opencv - YOLOv5 - nvidia jetson<br><br></b></small></div>
 
