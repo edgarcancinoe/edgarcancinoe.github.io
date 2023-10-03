@@ -13,14 +13,12 @@ This report provides a comprehensive documentation of the entire development and
 <b>Keywords:</b><br>
 times-series, forecasting, SARIMA, LSTM, neural networks, machine learning, data science
 
-[View project report (PDF)](/pdf/pa_sarima_lstm.pdf)
-
 
 ### 1. User story
 <div style="text-align: justify"> 
 This project was completed as a freelancing job. The team in charge of acquiring stock for the distributor company, required an accurate demand forecast, necessary to determine the appropriate amount of product to purchase in order to meet customer demand and ensure that their stock would not run out at any time.
 </div>
-
+<br>
 ### 2. Background
 <div style="text-align: justify"> 
 Predictive analysis has huge potential on Supply Chain Management, as it allows companies to make informed decisions on inventory management and efficiently plan their re-stocking strategies.
