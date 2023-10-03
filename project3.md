@@ -25,7 +25,8 @@ Predictive analysis has huge potential on Supply Chain Management, as it allows 
 ### 3. Approach
 <div style="text-align: justify"> 
   As the goal is to produce an accurate and robust forecast, two powerful forecasting methods are applied and compared: SARIMA and LSTM.
-</div>
+</div><br>
+
 * SARIMA
 Seasonal Autorregresive Integrated Moving Average is a time-series statistical method, particularly effective in describin clear periodic patterns.
 * LSTM
