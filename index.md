@@ -60,7 +60,8 @@ Key tasks:
 - Application of SARIMA and LSTM models for predictions.
 - Development of intuitive python interface in Colab for the client's continous use.
 
-  <small>**Keywords**: time series, forecasting, lstm, sarima, recurrent neural network</small>
+
+<small>**Keywords**: time series, forecasting, lstm, sarima, recurrent neural network</small>
 
 <br>
 
@@ -90,7 +91,8 @@ Key tasks:
 - Implementation of PI linear controller for navigation.
 - Training and implementation of YOLOv5 model in Nvidia Jetson Nano edge device for transit signals recognition.
 
-  <small>**Keywords**: control, yolo, deep learning, ros, edge ai, nvidia, computer vision, autonomous driving</small>
+
+<small>**Keywords**: control, yolo, deep learning, ros, edge ai, nvidia, computer vision, autonomous driving</small>
 
 <br>
 
@@ -113,7 +115,5 @@ Key tasks:
 - Trajectory planning by inverse kinematics utilizing MOVEit.
 - Implementation of CV Python scripts in ROS.
 
-<br>
-
-  <small>**Keywords**: computer vision, opencv, ros, xarm, moveit</small>
+<small>**Keywords**: computer vision, opencv, ros, xarm, moveit</small>
 
