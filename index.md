@@ -79,6 +79,8 @@ The challenge was to develop an autonomous navigation prototype using computer v
 
 <br>
 
+<img src="images/puzzlebot/linefollower.gif?raw=true"/>
+
 <img src="images/puzzlebot/both.gif?raw=true"/>
 
 
