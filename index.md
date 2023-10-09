@@ -65,7 +65,7 @@ Key tasks:
 
 <br>
 
-## Robotics Projects
+## Robotics
 
 ---
 
