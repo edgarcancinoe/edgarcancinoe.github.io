@@ -20,7 +20,7 @@ Tecnologico de Monterrey (June, 2024)</small>
 
 <big>[1. DDPG + HER for xArm6 path planning (Mujoco & ROS) (2023)](/xArm6_DDPG_ROS)</big>
 
-<div style="text-align: center"><small><b>reinforcement learning - ros - gym - moveit - xarm6 <br><br></b></small></div>
+<div style="text-align: center"><small><b>reinforcement learning - mujoco - gym - ros - moveit - xarm6 <br><br></b></small></div>
 
 <div style="text-align: justify"> Implementation of Deep Deterministic Policy Gradient (DDPG) with Hindsight Experience Replay (HER) for trajectory planning of a 6-DOF robotic arm.</div>
 
