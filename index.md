@@ -50,8 +50,6 @@ Key tasks:
 <div style="text-align: justify"> School project in collaboration with Manchester Robotics: Development of an self-driving vehicle prototype using ROS, YOLOv5, and Nvidia Jet Bot kit.
 The challenge was to develop an autonomous navigation prototype using computer vision, deep learning, and intelligent control in a scaled environment that will simulate roads with obstacles, junctions and curves. </div>
 
-<br>
-
 <img src="images/puzzlebot/linefollower.gif?raw=true"/>
 
 <img src="images/puzzlebot/both.gif?raw=true"/>
@@ -65,8 +63,6 @@ Key tasks:
 
 
 <small>**Keywords**: control, yolo, deep learning, ros, edge ai, nvidia, computer vision, autonomous driving</small>
-
-<br>
 
 ---
 
