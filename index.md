@@ -6,8 +6,7 @@ B.S. in Robotics and Digital Systems Engineering
 <small><br>
 Tecnologico de Monterrey (June, 2024)</small>
 
-**Certifications**
-<br>
+**Certifications**<br>
 <small>
 [Specialized Program: Machine Learning (Ongoing)  -  Stanford/DeepLearning.AI](/pdf/JOSE EDGAR HERNANDEZ.pdf)<br><small>
 [CS50 Introduction to Artificial Intelligence (Ongoing)  -  HarvardX](/pdf/JOSE EDGAR HERNANDEZ.pdf)<br>
