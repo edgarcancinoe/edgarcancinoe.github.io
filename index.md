@@ -19,7 +19,7 @@ Tecnologico de Monterrey (June, 2024)</small>
 
 ---
 
-<big>[1. DDPG + HER for xArm6 path planning (Mujoco & ROS) (2023)](/xarm6_visual_servoing)</big>
+<big>[1. DDPG + HER for xArm6 path planning (Mujoco & ROS) (2023)](/xArm6_DDPG_ROS)</big>
 
 <div style="text-align: center"><small><b>python - ros - gym - moveit - xarm6 <br><br></b></small></div>
 
@@ -31,6 +31,8 @@ Cartesian path following position waypoints             |  Consecutively setting
 :-------------------------:|:-------------------------:
 <img src="images/ddpg_xarm6/positionReachROS.gif?raw=true"/> |  <img src="images/ddpg_xarm6/jointsReachROS.gif?raw=true"/>
 
+<a href="https://github.com/edgarcancinoe/xArm6_DDPG_ROS">xArm6_DDPG_ROS repo.<a>
+<a href="https://github.com/edgarcancinoe/xArm6_DDPG_HER">xArm6 DDPG + HER implementation repo.<a>
 
 Key tasks:
 - Development of training model based on OpenAI baselines implementation.
