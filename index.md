@@ -26,9 +26,10 @@ Tecnologico de Monterrey (June, 2024)</small>
 
 <br>
 
-<img src="images/visualservoing.gif?raw=true"/>
+Cartesian path following position waypoints             |  Consecutively setting joint pose
+:-------------------------:|:-------------------------:
+![](https://github.com/edgarcancinoe/xArm6_DDPG_ROS/blob/master/results.gif) |   ![](https://github.com/edgarcancinoe/xArm6_DDPG_ROS/blob/master/jointsReachROS.gif)
 
-<small><a href="https://youtu.be/yTxkO5lXrIg">Watch on Youtube</a></small><br>
 
 Key tasks:
 - Estimation of target's position coordinates relative to the arm's end effector.
