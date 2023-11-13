@@ -17,6 +17,7 @@ Tecnologico de Monterrey (June, 2024)</small>
 
 ## Robotics
 
+---
 
 <big>[1. DDPG + HER for xArm6 path planning (Mujoco & ROS) (2023)](/xarm6_visual_servoing)</big>
 
