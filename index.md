@@ -85,7 +85,7 @@ Key tasks:
 
 Key tasks:
 - Estimation of target's position coordinates relative to the arm's end effector.
-- Trajectory planning by inverse kinematics utilizing MOVEit.
+- Trajectory planning by inverse kinematics utilizing MoveIt.
 - Implementation of CV Python scripts in ROS.
 
 <small>**Keywords**: computer vision, opencv, ros, xarm, moveit</small>
