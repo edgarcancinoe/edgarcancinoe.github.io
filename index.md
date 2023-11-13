@@ -22,7 +22,7 @@ Tecnologico de Monterrey (June, 2024)</small>
 
 <div style="text-align: center"><small><b>python - ros - gym - moveit - xarm6 <br><br></b></small></div>
 
-<div style="text-align: justify"> Implementation of Deep Deterministic Policy Gradient model with Hindsight Experience Replay for trajectory planning.</div>
+<div style="text-align: justify"> Implementation of Deep Deterministic Policy Gradient (DDOG) with Hindsight Experience Replay (HER) for trajectory planning of a 6-DOF robotic arm.</div>
 
 <br>
 
