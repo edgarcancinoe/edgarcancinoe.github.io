@@ -1,4 +1,4 @@
-# Machine Learning & Robotics Portfolio
+# Robotics & Machine Learning Portfolio
 
 ---
 **Education**<br>
