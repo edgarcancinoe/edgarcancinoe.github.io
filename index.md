@@ -29,11 +29,11 @@ Tecnologico de Monterrey (June, 2024)</small>
 
 Cartesian path following position waypoints             |  Consecutively setting joint pose
 :-------------------------:|:-------------------------:
-![](https://github.com/edgarcancinoe/xArm6_DDPG_ROS/blob/master/results.gif) |   ![](https://github.com/edgarcancinoe/xArm6_DDPG_ROS/blob/master/jointsReachROS.gif)
+<img src="images/ddpg_xarm6/positionReachROS.gif?raw=true"/> |  <img src="images/ddpg_xarm6/jointsReachROS.gif?raw=true"/>
 
 
 Key tasks:
-- Implementation of the DDPG model based on OpenAI baselines.
+- Development of training model based on OpenAI baselines implementation.
 - Training using OpeinAI gym and xArm6 gym environment by [julio-design](https://github.com/julio-design/xArm6-Gym-Env).
 - Application of the developed model using ROS and MoveIt in RViz simulation and real xArm6 robot.
 
