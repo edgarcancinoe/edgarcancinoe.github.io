@@ -30,8 +30,9 @@ Cartesian path with position waypoints             |  Consecutively setting join
 :-------------------------:|:-------------------------:
 <img src="images/ddpg_xarm6/positionReachROS.gif?raw=true"/> |  <img src="images/ddpg_xarm6/jointsReachROS.gif?raw=true"/>
 
-<a href="https://github.com/edgarcancinoe/xArm6_DDPG_ROS">xArm6_DDPG_ROS repo.<a>
-<a href="https://github.com/edgarcancinoe/xArm6_DDPG_HER">xArm6 DDPG + HER implementation repo.<a>
+<small><a href="https://github.com/edgarcancinoe/xArm6_DDPG_ROS">xArm6_DDPG_ROS repo.<a></small>
+<br>
+<small><a href="https://github.com/edgarcancinoe/xArm6_DDPG_HER">xArm6 DDPG + HER implementation repo.<a></small>
 
 Key tasks:
 - Development of training model based on OpenAI baselines implementation.
