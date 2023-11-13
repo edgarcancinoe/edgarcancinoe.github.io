@@ -26,7 +26,7 @@ Tecnologico de Monterrey (June, 2024)</small>
 
 <br>
 
-Cartesian path (position waypoints)             |  Consecutively setting joint pose
+Cartesian path (position waypoints) | Consecutively setting joint pose
 :-------------------------:|:-------------------------:
 <img src="images/ddpg_xarm6/positionReachROS.gif?raw=true"/> |  <img src="images/ddpg_xarm6/jointsReachROS.gif?raw=true"/>
 
