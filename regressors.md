@@ -54,7 +54,6 @@ Product quantity, number of stevedores and dimensional features held a relations
 <br><br>
 
 ### 3. Approach
-
 Three regression models were applied and compared to estimate the maneuver durations:<br>
   
 * Ridge Regression<br>
