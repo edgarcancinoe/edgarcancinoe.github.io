@@ -35,9 +35,9 @@ Cartesian path following position waypoints             |  Consecutively setting
 Key tasks:
 - Implementation of the DDPG model based on OpenAI baselines.
 - Training using OpeinAI gym and xArm6 gym environment by [julio-design](https://github.com/julio-design/xArm6-Gym-Env).
-- Application of the developed model using ROS in RViz simulation and real xArm6 robot.
+- Application of the developed model using ROS and MoveIt in RViz simulation and real xArm6 robot.
 
-<small>**Keywords**: reinforcement learning, DDPG, HER, ros, xarm6, moveit</small>
+<small>**Keywords**: reinforcement learning, DDPG, HER, gym, mujoco, ros, xarm6, moveit</small>
 
 ---
 
