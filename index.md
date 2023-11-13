@@ -55,9 +55,6 @@ The challenge was to develop an autonomous navigation prototype using computer v
 
 <img src="images/puzzlebot/both.gif?raw=true"/>
 
-
-<br>
-
 <small><a href="https://www.youtube.com/watch?v=lhTBHQspGjc">Watch on Youtube</a></small><br>
 
 Key tasks:
