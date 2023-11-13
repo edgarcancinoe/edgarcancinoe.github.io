@@ -21,7 +21,7 @@ Tecnologico de Monterrey (June, 2024)</small>
 
 <big>[1. DDPG + HER for xArm6 path planning (Mujoco & ROS) (2023)](/xArm6_DDPG_ROS)</big>
 
-<div style="text-align: center"><small><b>python - ros - gym - moveit - xarm6 <br><br></b></small></div>
+<div style="text-align: center"><small><b>reinforcement learning - ros - gym - moveit - xarm6 <br><br></b></small></div>
 
 <div style="text-align: justify"> Implementation of Deep Deterministic Policy Gradient (DDPG) with Hindsight Experience Replay (HER) for trajectory planning of a 6-DOF robotic arm.</div>
 
@@ -75,7 +75,7 @@ Key tasks:
 
 <big>[3. Visual Servoing of xArm (2023)](/xarm6_visual_servoing)</big>
 
-<div style="text-align: center"><small><b>python - ros - opencv - moveit - xarm6 <br><br></b></small></div>
+<div style="text-align: center"><small><b>ros - opencv - moveit - xarm6 <br><br></b></small></div>
 
 <div style="text-align: justify"> Python project for visual servoing of a 6-DOF robotic arm (xArm6). An external camera and QR codes are used to identify the arm's end effector and target positions.</div>
 
