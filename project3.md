@@ -22,6 +22,7 @@ This project was completed as a freelancing job. The team in charge of acquiring
 ### 2. Background
 <div style="text-align: justify"> 
 Predictive analysis has huge potential on Supply Chain Management, as it allows companies to make informed decisions on inventory management and efficiently plan their re-stocking strategies.
+</div>
 <br>
   
 ### 3. Approach
