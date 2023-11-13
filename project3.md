@@ -18,6 +18,7 @@ times-series, forecasting, SARIMA, LSTM, neural networks, machine learning, data
 This project was completed as a freelancing job. The team in charge of acquiring stock for the distributor company, required an accurate demand forecast, necessary to determine the appropriate amount of product to purchase in order to meet customer demand and ensure appropiate supply.
 </div>
 <br>
+
 ### 2. Background
 <div style="text-align: justify"> 
 Predictive analysis has huge potential on Supply Chain Management, as it allows companies to make informed decisions on inventory management and efficiently plan their re-stocking strategies.
