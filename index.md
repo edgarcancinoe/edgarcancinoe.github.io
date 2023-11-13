@@ -33,9 +33,9 @@ Cartesian path following position waypoints             |  Consecutively setting
 
 
 Key tasks:
-- Estimation of target's position coordinates relative to the arm's end effector.
-- Trajectory planning by inverse kinematics utilizing MOVEit.
-- Implementation of CV Python scripts in ROS.
+- Implementation of the DDPG model based on OpenAI baselines.
+- Training using OpeinAI gym and xArm6 gym environment by [julio-design](https://github.com/julio-design/xArm6-Gym-Env).
+- Application of the developed model using ROS in RViz simulation and real xArm6 robot.
 
 <small>**Keywords**: reinforcement learning, DDPG, HER, ros, xarm6, moveit</small>
 
