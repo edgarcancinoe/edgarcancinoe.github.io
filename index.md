@@ -62,7 +62,7 @@ The challenge was to develop an autonomous navigation prototype using computer v
 Key tasks:
 - Development of Computer Vision-based line follower.
 - Implementation of PI linear controller for navigation.
-- Training and implementation of YOLOv5 model in Nvidia Jetson Nano edge device for transit signals recognition.
+- Training and implementation of YOLOv5 model in Nvidia Jetson Nano for transit signals recognition.
 
 
 <small>**Keywords**: control, yolo, deep learning, ros, edge ai, nvidia, computer vision, autonomous driving</small>
