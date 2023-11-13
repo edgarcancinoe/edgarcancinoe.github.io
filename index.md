@@ -88,7 +88,7 @@ Key tasks:
 <br>
 
 
-## Data Science / Machine Learning
+## Machine Learning
 
 ---
 
