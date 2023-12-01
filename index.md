@@ -9,7 +9,7 @@ Tecnologico de Monterrey (June, 2024)</small>
 **Certifications**<br>
 <small>
 [Specialized Program: Machine Learning (Ongoing)  -  Stanford/DeepLearning.AI](/pdf/JOSE EDGAR HERNANDEZ.pdf)<br><small>
-[CS50 Introduction to Artificial Intelligence (Ongoing)  -  HarvardX](/pdf/JOSE EDGAR HERNANDEZ.pdf)<br>
+[CS50 Introduction to Artificial Intelligence (Ongoing)  -  HarvardX](/pdf/xArm6_DDPG_HER.pdf)<br>
 <small>
 [Diploma in Data Science (2021)  -  ITPE](/pdf/JOSE EDGAR HERNANDEZ.pdf)
 <br>
