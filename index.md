@@ -16,7 +16,7 @@
 ---
 
   <div style="text-align: center;">
-    <big>[DDPG + HER for xArm6 path planning (Mujoco & ROS) (2023)](/xArm6_DDPG_ROS).</big>
+    <big><a href="/xArm6_DDPG_ROS">DDPG + HER for xArm6 path planning (Mujoco & ROS) (2023)</a></big>
   </div>
 
 
