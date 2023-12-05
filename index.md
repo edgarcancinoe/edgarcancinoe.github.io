@@ -38,6 +38,7 @@ Cartesian path (waypoints) | Consecutively setting joint pose
   <small style="margin-right: 10px;"><a href="/pdf/xArm6_DDPG_HER.pdf">See paper</a></small>  
 </div>
 <br>
+
 **Key tasks**:
 <small><br> - DDPG implementation based on OpenAI baselines.</small>
 <small><br>- Training of policy using OpeinAI gym.</small>
@@ -63,7 +64,7 @@ The challenge was to develop an autonomous navigation prototype using computer v
 **Resources** <small><br></small>
 <div style="text-align: center; display: flex; margin-bottom: 10px;">
   <small style="margin-right: 10px;><a href="https://www.youtube.com/watch?v=lhTBHQspGjc">Watch on Youtube</a></small>
-</div>
+</div><br>
 
 **Key tasks**:
 <small><br>- Development of Computer Vision-based line follower.</small>
