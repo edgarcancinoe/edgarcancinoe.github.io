@@ -53,7 +53,7 @@ Cartesian path (waypoints) | Consecutively setting joint pose
 
 <div style="text-align: center"><small><b> ros - opencv - YOLOv5 - nvidia jetson<br><br></b></small></div>
 
-<div style="text-align: justify"> <small>School project in collaboration with Manchester Robotics:<br> Development of an self-driving vehicle prototype using ROS, YOLOv5, and Nvidia Jet Bot kit.
+<div style="text-align: justify; margin-bottom: 10px;"> <small>School project in collaboration with Manchester Robotics:<br> Development of an self-driving vehicle prototype using ROS, YOLOv5, and Nvidia Jet Bot kit.
 The challenge was to develop an autonomous navigation prototype using computer vision, deep learning, and intelligent control in a scaled environment that will simulate roads with obstacles, junctions and curves.</small></div>
 
 <img src="images/puzzlebot/linefollower.gif?raw=true"/>
