@@ -33,14 +33,16 @@ Resources
   <small style="margin-right: 10px;"><a href="https://github.com/edgarcancinoe/xArm6_DDPG_HER">DDPG+HER implementation</a></small>
   <small style="margin-right: 10px;"><a href="https://github.com/edgarcancinoe/xArm6_DDPG_ROS">ROS implementation (xArm6)</a></small>
   <small style="margin-right: 10px;"><a href="https://github.com/edgarcancinoe/xArm6_DDPG_ROS">ROS implementation (home)</a></small>
+  <small style="margin-right: 10px;"><a href="/pdf/xArm6_DDPG_HER.pdf">See paper)</a></small>  
 </div>
 
 </body>
 
 Key tasks:
-- Development of training model based on OpenAI baselines implementation.
-- Training using OpeinAI gym and xArm6 gym environment by [julio-design](https://github.com/julio-design/xArm6-Gym-Env).
+- DDPG implementation based on OpenAI baselines.
+- Training of policy using OpeinAI gym.
 - Application of the developed model using ROS and MoveIt in RViz simulation and real xArm6 robot.
+
 
 <small>**Keywords**: reinforcement learning, DDPG, HER, gym, mujoco, ros, xarm6, moveit</small>
 
