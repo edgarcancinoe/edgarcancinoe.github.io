@@ -21,7 +21,7 @@
 
 <div style="text-align: center"><small><b>reinforcement learning - mujoco - gym - ros - moveit - xarm6 <br><br></b></small></div>
 
-<div style="text-align: justify; margin-bottom:25px"> Implementation of Deep Deterministic Policy Gradient (DDPG) with Hindsight Experience Replay (HER) for trajectory planning of a 6-DOF robotic arm to move from a starting pose to a target position.</div>
+<div style="text-align: justify; margin-bottom:25px"> <small>Implementation of Deep Deterministic Policy Gradient (DDPG) with Hindsight Experience Replay (HER) for trajectory planning of a 6-DOF robotic arm to move from a starting pose to a target position.</small></div>
 
 Cartesian path (waypoints) | Consecutively setting joint pose
 :-------------------------:|:-------------------------:
@@ -36,11 +36,12 @@ Resources
   <small style="margin-right: 15px;"><a href="/pdf/xArm6_DDPG_HER.pdf">See paper</a></small>  
 </div>
 
+<small>
 Key tasks:
 - DDPG implementation based on OpenAI baselines.
 - Training of policy using OpeinAI gym.
 - Application of the developed model using ROS and MoveIt in RViz simulation and real xArm6 robot.
-
+</small>
 
 <small>**Keywords**: reinforcement learning, DDPG, HER, gym, mujoco, ros, xarm6, moveit</small>
 
