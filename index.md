@@ -80,7 +80,11 @@ The challenge was to develop an autonomous navigation prototype using computer v
 <div style="text-align: justify; margin-bottom: 10px;"> <small>Python project for visual servoing of a 6-DOF robotic arm (xArm6). An external camera and QR codes are used to identify the arm's end effector and target positions.</small></div>
 <img src="images/visualservoing.gif?raw=true"/>
 
-<small><a href="https://youtu.be/yTxkO5lXrIg">Watch on Youtube</a></small><br>
+**Resources** <small><br></small>
+<div style="text-align: center; display: flex; margin-bottom: 10px;">
+  <small style="margin-right: 10px;"><a href="https://youtu.be/yTxkO5lXrIg">Watch on Youtube</a></small><br>
+  <small style="margin-right: 10px;"><a href="https://github.com/edgarcancinoe/xarm6_visual_servoing">Project repository</a></small><br>
+</div>
 
 **Key tasks**:
 <small><br> - Estimation of target's position coordinates relative to the arm's end effector.</small>
@@ -114,10 +118,6 @@ The challenge was to develop an autonomous navigation prototype using computer v
 <small><br>- Data cleaning (invalid data and outlier elimination, Gaussian noise addition).</small>
 <small><br>- Feature engineering and data augmentation (discovered useful relationships in the data and engineered an invalid data recovery strategy).</small>
 <small><br>- Model tuning and training (implementation of Ridge Regression, Support Vector Regression and a Multi-Layer Perceptron NN).</small>
-
-
-<small>There is intention to publish the process documentation and results, but the process is on hold, awaiting revision for privacy considerations.</small>
-
   
   <small>**Keywords**: regression, multi-layer perceptron, neural network, support vector regression, svr, ridge</small>
 
@@ -129,8 +129,7 @@ The challenge was to develop an autonomous navigation prototype using computer v
 <div style="text-align: center"><small><b>python - pandas - keras - tensorflow - scikit-learn - numpy - matplotlib</b><br><br></small></div>
 
 <small>Implemented SARIMA satistic model and a LSTM Recurrent Neural Network to make a 2 year forecast of product demand for a glasses frame distributor company.</small>
-  
-  
+    
 <img src="images/Screenshot 2023-04-17 at 0.45.31.png?raw=true"/>
 <img src="images/LSTM.png?raw=true"/>
 
