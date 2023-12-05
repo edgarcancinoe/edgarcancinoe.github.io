@@ -39,8 +39,8 @@ Resources <small><br>
 
 Key tasks:
 <small><br> - DDPG implementation based on OpenAI baselines.</small>
-<small>- Training of policy using OpeinAI gym.</small>
-<small>- Application of the developed model using ROS and MoveIt in RViz simulation and real xArm6 robot.</small>
+<small><br>- Training of policy using OpeinAI gym.</small>
+<small><br>- Application of the developed model using ROS and MoveIt in RViz simulation and real xArm6 robot.</small>
 
 <small>**Keywords**: reinforcement learning, DDPG, HER, gym, mujoco, ros, xarm6, moveit</small>
 
