@@ -77,10 +77,7 @@ The challenge was to develop an autonomous navigation prototype using computer v
 </div>
 <div style="text-align: center"><small><b>ros - opencv - moveit - xarm6 <br><br></b></small></div>
 
-<div style="text-align: justify"> <small>Python project for visual servoing of a 6-DOF robotic arm (xArm6). An external camera and QR codes are used to identify the arm's end effector and target positions.</small></div>
-
-<br>
-
+<div style="text-align: justify; margin-bottom: 10px;"> <small>Python project for visual servoing of a 6-DOF robotic arm (xArm6). An external camera and QR codes are used to identify the arm's end effector and target positions.</small></div>
 <img src="images/visualservoing.gif?raw=true"/>
 
 <small><a href="https://youtu.be/yTxkO5lXrIg">Watch on Youtube</a></small><br>
