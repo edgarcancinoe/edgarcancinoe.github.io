@@ -29,10 +29,13 @@ Cartesian path (waypoints) | Consecutively setting joint pose
 <img src="images/ddpg_xarm6/positionReachROS.gif?raw=true"/> |  <img src="images/ddpg_xarm6/jointsReachROS.gif?raw=true"/>
 
 <big>Resources</big><br>
-<small><a href="https://github.com/edgarcancinoe/xArm6_DDPG_ROS">See DDPG+ROS repo.</a></small>
-<br>
-<small><a href="https://github.com/edgarcancinoe/xArm6_DDPG_HER">See xArm6 DDPG+HER repo.</a></small>
 
+<div style="display: flex;">
+    <a href="https://github.com/edgarcancinoe/xArm6_DDPG_ROS" style="margin-right: 10px;">See DDPG+ROS repo.</a>
+    <a href="https://github.com/edgarcancinoe/xArm6_DDPG_HER" style="margin-right: 10px;">See xArm6 DDPG+HER repo</a>
+    <a href="https://example3.com">Link 3</a>
+</div>
+  
 Key tasks:
 - Development of training model based on OpenAI baselines implementation.
 - Training using OpeinAI gym and xArm6 gym environment by [julio-design](https://github.com/julio-design/xArm6-Gym-Env).
