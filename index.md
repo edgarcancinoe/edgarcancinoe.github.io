@@ -15,14 +15,10 @@
 
 ---
 
-
-<body style="margin: 0; display: flex; align-items: center; justify-content: center; height: 100vh;">
-
-  <div style="text-align: center; width: 100%;">
+  <div style="text-align: center;">
     <p>[DDPG + HER for xArm6 path planning (Mujoco & ROS) (2023)](/xArm6_DDPG_ROS).</p>
   </div>
 
-</body>
 
 <div style="text-align: center"><small><b>reinforcement learning - mujoco - gym - ros - moveit - xarm6 <br><br></b></small></div>
 
