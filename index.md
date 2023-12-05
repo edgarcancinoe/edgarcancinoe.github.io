@@ -87,8 +87,9 @@ The challenge was to develop an autonomous navigation prototype using computer v
 **Resources** <small><br></small>
 <div style="text-align: center; display: flex; margin-bottom: 10px;">
   <small style="margin-right: 10px;"><a href="https://youtu.be/yTxkO5lXrIg">Watch on Youtube</a></small><br>
-  <small style="margin-right: 10px;"><a href="https://github.com/edgarcancinoe/xarm6_visual_servoing">Project repository</a></small><br>
+  <small style="margin-right: 10px;"><a href="https://github.com/edgarcancinoe/xarm6_visual_servoing">Project repository</a></small>
 </div>
+<br>
 
 **Key tasks**:
 <small><br> - Estimation of target's position coordinates relative to the arm's end effector.</small>
