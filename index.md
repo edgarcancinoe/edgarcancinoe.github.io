@@ -32,9 +32,9 @@ Resources <br>
 <body style="display: flex; align-items: center; justify-content: center;">
 
   <div style="text-align: center; display: flex; margin-bottom: 10px;">
-    <small style="margin-right: 10px;"><a href="https://github.com/edgarcancinoe/xArm6_DDPG_ROS">See DDPG+ROS repo.</a></small>
-    <small style="margin-right: 10px;"><a href="https://github.com/edgarcancinoe/xArm6_DDPG_HER">See xArm6 DDPG+HER repo</a></small>
-    <small><a href="https://github.com/edgarcancinoe/xArm6_DDPG_HER">See xArm6 DDPG+HER repo</a></small>
+    <small style="margin-right: 10px;"><a href="https://github.com/edgarcancinoe/xArm6_DDPG_HER">DDPG+HER implementation</a></small>
+    <small style="margin-right: 10px;"><a href="https://github.com/edgarcancinoe/xArm6_DDPG_ROS">ROS implementation (xArm6)</a></small>
+    <small style="margin-right: 10px;"><a href="https://github.com/edgarcancinoe/xArm6_DDPG_ROS">ROS implementation (home)</a></small>
   </div>
 
 </body>
