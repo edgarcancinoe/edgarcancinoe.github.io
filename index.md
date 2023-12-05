@@ -30,13 +30,11 @@ Cartesian path (waypoints) | Consecutively setting joint pose
 Resources
 
 <div style="text-align: center; display: flex; margin-bottom: 10px;">
-  <small style="margin-right: 10px;"><a href="https://github.com/edgarcancinoe/xArm6_DDPG_HER">DDPG+HER implementation</a></small>
-  <small style="margin-right: 10px;"><a href="https://github.com/edgarcancinoe/xArm6_DDPG_ROS">ROS implementation (xArm6)</a></small>
-  <small style="margin-right: 10px;"><a href="https://github.com/edgarcancinoe/xArm6_DDPG_ROS">ROS implementation (home)</a></small>
-  <small style="margin-right: 10px;"><a href="/pdf/xArm6_DDPG_HER.pdf">See paper)</a></small>  
+  <small style="margin-right: 15px;"><a href="https://github.com/edgarcancinoe/xArm6_DDPG_HER">DDPG+HER implementation</a></small>
+  <small style="margin-right: 15px;"><a href="https://github.com/edgarcancinoe/xArm6_DDPG_ROS">ROS implementation (xArm6)</a></small>
+  <small style="margin-right: 15px;"><a href="https://github.com/edgarcancinoe/xArm6_DDPG_ROS">ROS implementation (home)</a></small>
+  <small style="margin-right: 15px;"><a href="/pdf/xArm6_DDPG_HER.pdf">See paper</a></small>  
 </div>
-
-</body>
 
 Key tasks:
 - DDPG implementation based on OpenAI baselines.
