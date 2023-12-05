@@ -29,7 +29,7 @@ Cartesian path (waypoints) | Consecutively setting joint pose
 :-------------------------:|:-------------------------:
 <img src="images/ddpg_xarm6/positionReachROS.gif?raw=true"/> |  <img src="images/ddpg_xarm6/jointsReachROS.gif?raw=true"/>
 
-Resources <small><br></small>
+**Resources** <small><br></small>
 <div style="text-align: center; display: flex; margin-bottom: 10px;">
   <small style="margin-right: 10px;"><a href="https://github.com/edgarcancinoe/xArm6_DDPG_HER">DDPG+HER repo</a></small>
   <small style="margin-right: 10px;"><a href="https://github.com/edgarcancinoe/xArm6_DDPG_ROS">ROS Impl. (xArm6)</a></small>
@@ -38,7 +38,7 @@ Resources <small><br></small>
   <small style="margin-right: 10px;"><a href="https://www.youtube.com/watch?v=VB5VkgwCG1A">Mujoco & ROS video</a></small>  
 </div>
 <br>
-Key tasks:
+**Key tasks**:
 <small><br> - DDPG implementation based on OpenAI baselines.</small>
 <small><br>- Training of policy using OpeinAI gym.</small>
 <small><br>- Application of the developed model using ROS and MoveIt in RViz simulation for real xArm.</small>
