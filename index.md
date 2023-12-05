@@ -16,7 +16,7 @@
 ---
 
 <div style="text-align: center;">
-  <big><a href="/xArm6_DDPG_ROS">DDPG + HER for xArm6 path planning (Mujoco & ROS) (2023)</a></big>
+  <big><a href="/pdf/xArm6_DDPG_HER.pdf">DDPG + HER for xArm6 path planning (Mujoco & ROS) (2023)</a></big>
 </div>
 
 <div style="text-align: center"><small><b>reinforcement learning - mujoco - gym - ros - moveit - xarm6 <br><br></b></small></div>
@@ -35,6 +35,7 @@ Resources <small><br>
   <small style="margin-right: 15px;"><a href="https://github.com/edgarcancinoe/xArm6_DDPG_ROS">ROS Impl. (xArm6)</a></small>
   <small style="margin-right: 15px;"><a href="https://github.com/edgarcancinoe/home_DDPG_ROS">ROS Impl. (Dashgo)</a></small>
   <small style="margin-right: 15px;"><a href="/pdf/xArm6_DDPG_HER.pdf">See paper</a></small>  
+  <small style="margin-right: 15px;"><a href="https://www.youtube.com/watch?v=VB5VkgwCG1A">Mujoco & ROS video</a></small>  
 </div>
 
 Key tasks:
