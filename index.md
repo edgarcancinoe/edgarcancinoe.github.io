@@ -15,9 +15,9 @@
 
 ---
 
-  <div style="text-align: center;">
-    <big><a href="/xArm6_DDPG_ROS">DDPG + HER for xArm6 path planning (Mujoco & ROS) (2023)</a></big>
-  </div>
+<div style="text-align: center;">
+  <big><a href="/xArm6_DDPG_ROS">DDPG + HER for xArm6 path planning (Mujoco & ROS) (2023)</a></big>
+</div>
 
 <div style="text-align: center"><small><b>reinforcement learning - mujoco - gym - ros - moveit - xarm6 <br><br></b></small></div>
 
@@ -41,7 +41,9 @@ Key tasks:
 
 ---
 
-<big>[2. Computer Vision-Powered Autonomous Driving Vehicle (2023)](https://www.youtube.com/watch?v=lhTBHQspGjc)</big>
+<div style="text-align: center;">
+  <big><a href="https://www.youtube.com/watch?v=lhTBHQspGjc">Computer Vision-Powered Autonomous Driving Vehicle (2023)</a></big>
+</div>
 
 <div style="text-align: center"><small><b> ros - opencv - YOLOv5 - nvidia jetson<br><br></b></small></div>
 
@@ -64,8 +66,9 @@ Key tasks:
 
 ---
 
-<big>[3. Visual Servoing of xArm (2023)](/xarm6_visual_servoing)</big>
-
+<div style="text-align: center;">
+  <big><a href="/xarm6_visual_servoing">Visual Servoing of xArm (2023)</a></big>
+</div>
 <div style="text-align: center"><small><b>ros - opencv - moveit - xarm6 <br><br></b></small></div>
 
 <div style="text-align: justify"> Python project for visual servoing of a 6-DOF robotic arm (xArm6). An external camera and QR codes are used to identify the arm's end effector and target positions.</div>
@@ -90,8 +93,9 @@ Key tasks:
 
 ---
 
-<big>[1. Regression models for estimating semi-trailer truck loading duration (2023)](/regressors)</big>
-
+<div style="text-align: center;">
+  <big><a href="/regressors">Regression models for estimating semi-trailer truck loading duration (2023)</a></big>
+</div>
 <div style="text-align: center"><small><b>python - pandas - keras - tensorflow - scikit-learn - numpy - matplotlib</b><br><br></small></div>
 
 <div style="text-align: justify"> Application of machine learning models to estimate the duration of semi-trailer truck loading maneuvers for a tissue paper distribution plant, for both bulk and pallet operations, given product quantity, physical dimensions, and number of active operators. </div>
@@ -116,8 +120,9 @@ The intention to publish the process documentation and results is currently pend
 
 ---
 
-  <big> [2. Predictive analysis for product demand (2023)](/project3) </big>
-
+<div style="text-align: center;">
+  <big><a href="/project3">Predictive analysis for product demand (2023)</a></big>
+</div>
 <div style="text-align: center"><small><b>python - pandas - keras - tensorflow - scikit-learn - numpy - matplotlib</b><br><br></small></div>
 
 Implemented SARIMA satistic model and a LSTM Recurrent Neural Network to make a 2 year forecast of product demand for a glasses frame distributor company.
