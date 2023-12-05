@@ -108,7 +108,7 @@ The challenge was to develop an autonomous navigation prototype using computer v
 <div style="text-align: center;">
   <big><a href="/regressors">Regression models for estimating semi-trailer truck loading duration (2023)</a></big>
 </div>
-<div style="text-align: center"><small><b>python - pandas - keras - tensorflow - scikit-learn - numpy - matplotlib</b><br><br></small></div>
+<div style="text-align: center"><small><b>python - pandas - keras - tensorflow - scikit-learn - matplotlib</b><br><br></small></div>
 
 <div style="text-align: justify"> <small>Application of machine learning models to estimate the duration of semi-trailer truck loading maneuvers for a tissue paper distribution plant, for both bulk and pallet operations, given product quantity, physical dimensions, and number of active operators.</small> </div>
 
@@ -131,7 +131,7 @@ The challenge was to develop an autonomous navigation prototype using computer v
 <div style="text-align: center;">
   <big><a href="/project3">Predictive analysis for product demand (2023)</a></big>
 </div>
-<div style="text-align: center"><small><b>python - pandas - keras - tensorflow - scikit-learn - numpy - matplotlib</b><br><br></small></div>
+<div style="text-align: center"><small><b>python - pandas - keras - tensorflow - scikit-learn - matplotlib</b><br><br></small></div>
 
 <small>Implemented SARIMA satistic model and a LSTM Recurrent Neural Network to make a 2 year forecast of product demand for a glasses frame distributor company.</small>
     
