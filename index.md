@@ -31,11 +31,11 @@ Cartesian path (waypoints) | Consecutively setting joint pose
 
 Resources <small><br>
 <div style="text-align: center; display: flex; margin-bottom: 10px;">
-  <small style="margin-right: 8px;"><a href="https://github.com/edgarcancinoe/xArm6_DDPG_HER">DDPG+HER repo</a></small>
-  <small style="margin-right: 8px;"><a href="https://github.com/edgarcancinoe/xArm6_DDPG_ROS">ROS Impl. (xArm6)</a></small>
-  <small style="margin-right: 8px;"><a href="https://github.com/edgarcancinoe/home_DDPG_ROS">ROS Impl. (Dashgo)</a></small>
-  <small style="margin-right: 8px;"><a href="/pdf/xArm6_DDPG_HER.pdf">See paper</a></small>  
-  <small style="margin-right: 8px;"><a href="https://www.youtube.com/watch?v=VB5VkgwCG1A">Mujoco & ROS video</a></small>  
+  <small style="margin-right: 10px;"><a href="https://github.com/edgarcancinoe/xArm6_DDPG_HER">DDPG+HER repo</a></small>
+  <small style="margin-right: 10px;"><a href="https://github.com/edgarcancinoe/xArm6_DDPG_ROS">ROS Impl. (xArm6)</a></small>
+  <small style="margin-right: 10px;"><a href="https://github.com/edgarcancinoe/home_DDPG_ROS">ROS Impl. (Dashgo)</a></small>
+  <small style="margin-right: 10px;"><a href="/pdf/xArm6_DDPG_HER.pdf">See paper</a></small>  
+  <small style="margin-right: 10px;"><a href="https://www.youtube.com/watch?v=VB5VkgwCG1A">Mujoco & ROS video</a></small>  
 </div>
 
 Key tasks:
