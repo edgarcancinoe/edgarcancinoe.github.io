@@ -53,8 +53,8 @@ Cartesian path (waypoints) | Consecutively setting joint pose
 
 <div style="text-align: center"><small><b> ros - opencv - YOLOv5 - nvidia jetson<br><br></b></small></div>
 
-<div style="text-align: justify"> School project in collaboration with Manchester Robotics: Development of an self-driving vehicle prototype using ROS, YOLOv5, and Nvidia Jet Bot kit.
-The challenge was to develop an autonomous navigation prototype using computer vision, deep learning, and intelligent control in a scaled environment that will simulate roads with obstacles, junctions and curves. </div>
+<div style="text-align: justify"> <small>School project in collaboration with Manchester Robotics:<br> Development of an self-driving vehicle prototype using ROS, YOLOv5, and Nvidia Jet Bot kit.
+The challenge was to develop an autonomous navigation prototype using computer vision, deep learning, and intelligent control in a scaled environment that will simulate roads with obstacles, junctions and curves.</small></div>
 
 <img src="images/puzzlebot/linefollower.gif?raw=true"/>
 
@@ -62,10 +62,10 @@ The challenge was to develop an autonomous navigation prototype using computer v
 
 <small><a href="https://www.youtube.com/watch?v=lhTBHQspGjc">Watch on Youtube</a></small><br>
 
-Key tasks:
-- Development of Computer Vision-based line follower.
-- Implementation of PI linear controller for navigation.
-- Training and implementation of YOLOv5 model in Nvidia Jetson Nano for transit signals recognition.
+**Key tasks**:
+<small><br>- Development of Computer Vision-based line follower.</small>
+<small><br>- Implementation of PI linear controller for navigation.</small>
+<small><br>- Training and implementation of YOLOv5 model in Nvidia Jetson Nano for transit signals recognition.</small>
 
 
 <small>**Keywords**: control, yolo, deep learning, ros, edge ai, nvidia, computer vision, autonomous driving</small>
@@ -77,7 +77,7 @@ Key tasks:
 </div>
 <div style="text-align: center"><small><b>ros - opencv - moveit - xarm6 <br><br></b></small></div>
 
-<div style="text-align: justify"> Python project for visual servoing of a 6-DOF robotic arm (xArm6). An external camera and QR codes are used to identify the arm's end effector and target positions.</div>
+<div style="text-align: justify"> <small>Python project for visual servoing of a 6-DOF robotic arm (xArm6). An external camera and QR codes are used to identify the arm's end effector and target positions.</small></div>
 
 <br>
 
@@ -85,10 +85,10 @@ Key tasks:
 
 <small><a href="https://youtu.be/yTxkO5lXrIg">Watch on Youtube</a></small><br>
 
-Key tasks:
-- Estimation of target's position coordinates relative to the arm's end effector.
-- Trajectory planning by inverse kinematics utilizing MoveIt.
-- Implementation of CV Python scripts in ROS.
+**Key tasks**:
+<small><br> - Estimation of target's position coordinates relative to the arm's end effector.</small>
+<small><br>- Trajectory planning by inverse kinematics utilizing MoveIt.</small>
+<small><br>- Implementation of CV Python scripts in ROS.</small>
 
 <small>**Keywords**: computer vision, opencv, ros, xarm, moveit</small>
 
@@ -104,7 +104,7 @@ Key tasks:
 </div>
 <div style="text-align: center"><small><b>python - pandas - keras - tensorflow - scikit-learn - numpy - matplotlib</b><br><br></small></div>
 
-<div style="text-align: justify"> Application of machine learning models to estimate the duration of semi-trailer truck loading maneuvers for a tissue paper distribution plant, for both bulk and pallet operations, given product quantity, physical dimensions, and number of active operators. </div>
+<div style="text-align: justify"> <small>Application of machine learning models to estimate the duration of semi-trailer truck loading maneuvers for a tissue paper distribution plant, for both bulk and pallet operations, given product quantity, physical dimensions, and number of active operators.</small> </div>
 
 <br>
 
@@ -113,13 +113,13 @@ Key tasks:
 <img src="images/regressors/Multi-layer%20Perceptron%20with%20quadratic%20features_predictions_VolumeCategory_bulk.png?raw=true"/>
 
 
-Key tasks:
-- Data cleaning (invalid data and outlier elimination, Gaussian noise addition).
-- Feature engineering and data augmentation (discovered useful relationships in the data and engineered an invalid data recovery strategy).
-- Model tuning and training (implementation of Ridge Regression, Support Vector Regression and a Multi-Layer Perceptron NN).
+**Key tasks:**
+<small><br>- Data cleaning (invalid data and outlier elimination, Gaussian noise addition).</small>
+<small><br>- Feature engineering and data augmentation (discovered useful relationships in the data and engineered an invalid data recovery strategy).</small>
+<small><br>- Model tuning and training (implementation of Ridge Regression, Support Vector Regression and a Multi-Layer Perceptron NN).</small>
 
 
-The intention to publish the process documentation and results is currently pending, awaiting revision for privacy considerations.
+<small>There is intention to publish the process documentation and results, but the process is on hold, awaiting revision for privacy considerations.</small>
 
   
   <small>**Keywords**: regression, multi-layer perceptron, neural network, support vector regression, svr, ridge</small>
@@ -131,16 +131,16 @@ The intention to publish the process documentation and results is currently pend
 </div>
 <div style="text-align: center"><small><b>python - pandas - keras - tensorflow - scikit-learn - numpy - matplotlib</b><br><br></small></div>
 
-Implemented SARIMA satistic model and a LSTM Recurrent Neural Network to make a 2 year forecast of product demand for a glasses frame distributor company.
+<small>Implemented SARIMA satistic model and a LSTM Recurrent Neural Network to make a 2 year forecast of product demand for a glasses frame distributor company.</small>
   
   
 <img src="images/Screenshot 2023-04-17 at 0.45.31.png?raw=true"/>
 <img src="images/LSTM.png?raw=true"/>
 
-Key tasks:
-- Data manipulation of raw sales record.
-- Application of SARIMA and LSTM models for predictions.
-- Development of intuitive python interface in Colab for the client's continous use.
+**Key tasks:**
+<small><br>- Data manipulation of raw sales record.</small>
+<small><br>- Application of SARIMA and LSTM models for predictions.</small>
+<small><br>- Development of intuitive python interface in Colab for the client's continous use.</small>
 
 
 <small>**Keywords**: time series, forecasting, lstm, sarima, recurrent neural network</small>
