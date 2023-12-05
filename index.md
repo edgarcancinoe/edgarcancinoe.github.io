@@ -30,11 +30,15 @@ Cartesian path (waypoints) | Consecutively setting joint pose
 
 <big>Resources</big><br>
 
-<div style="display: flex; flex-direction: column; align-items: center; margin-bottom: 10px;">
-    <small><a href="https://github.com/edgarcancinoe/xArm6_DDPG_ROS" style="margin-right: 10px;">See DDPG+ROS repo.</a></small>
-    <small><a href="https://github.com/edgarcancinoe/xArm6_DDPG_HER" style="margin-right: 10px;">See xArm6 DDPG+HER repo</a></small>
-    <small><a href="https://github.com/edgarcancinoe/xArm6_DDPG_HER" style="margin-right: 10px;">See xArm6 DDPG+HER repo</a></small>
-</div>
+<body style="display: flex; align-items: center; justify-content: center; height: 100vh;">
+
+  <div style="display: flex; margin-bottom: 10px;">
+    <small style="margin-right: 10px;"><a href="https://github.com/edgarcancinoe/xArm6_DDPG_ROS">See DDPG+ROS repo.</a></small>
+    <small style="margin-right: 10px;"><a href="https://github.com/edgarcancinoe/xArm6_DDPG_HER">See xArm6 DDPG+HER repo</a></small>
+    <small><a href="https://github.com/edgarcancinoe/xArm6_DDPG_HER">See xArm6 DDPG+HER repo</a></small>
+  </div>
+
+</body>
 
 Key tasks:
 - Development of training model based on OpenAI baselines implementation.
