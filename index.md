@@ -28,7 +28,6 @@ Cartesian path (waypoints) | Consecutively setting joint pose
 <img src="images/ddpg_xarm6/positionReachROS.gif?raw=true"/> |  <img src="images/ddpg_xarm6/jointsReachROS.gif?raw=true"/>
 
 Resources
-
 <div style="text-align: center; display: flex; margin-bottom: 10px;">
   <small style="margin-right: 15px;"><a href="https://github.com/edgarcancinoe/xArm6_DDPG_HER">DDPG+HER implementation</a></small>
   <small style="margin-right: 15px;"><a href="https://github.com/edgarcancinoe/xArm6_DDPG_ROS">ROS implementation (xArm6)</a></small>
@@ -36,8 +35,8 @@ Resources
   <small style="margin-right: 15px;"><a href="/pdf/xArm6_DDPG_HER.pdf">See paper</a></small>  
 </div>
 
-<small>
 Key tasks:
+<small>
 - DDPG implementation based on OpenAI baselines.
 - Training of policy using OpeinAI gym.
 - Application of the developed model using ROS and MoveIt in RViz simulation and real xArm6 robot.
