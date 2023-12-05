@@ -27,7 +27,7 @@ Cartesian path (waypoints) | Consecutively setting joint pose
 :-------------------------:|:-------------------------:
 <img src="images/ddpg_xarm6/positionReachROS.gif?raw=true"/> |  <img src="images/ddpg_xarm6/jointsReachROS.gif?raw=true"/>
 
-<big>Resources</big><br>
+Resources <br>
 
 <body style="text-align: center; display: flex; align-items: center; justify-content: center;">
 
