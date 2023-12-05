@@ -28,6 +28,7 @@ Cartesian path (waypoints) | Consecutively setting joint pose
 <img src="images/ddpg_xarm6/positionReachROS.gif?raw=true"/> |  <img src="images/ddpg_xarm6/jointsReachROS.gif?raw=true"/>
 
 Resources
+
 <div style="text-align: center; display: flex; margin-bottom: 10px;">
   <small style="margin-right: 10px;"><a href="https://github.com/edgarcancinoe/xArm6_DDPG_HER">DDPG+HER implementation</a></small>
   <small style="margin-right: 10px;"><a href="https://github.com/edgarcancinoe/xArm6_DDPG_ROS">ROS implementation (xArm6)</a></small>
