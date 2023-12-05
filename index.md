@@ -22,12 +22,12 @@
 <div style="text-align: center"><small><b>reinforcement learning - mujoco - gym - ros - moveit - xarm6 <br><br></b></small></div>
 
 <div style="text-align: justify"> Implementation of Deep Deterministic Policy Gradient (DDPG) with Hindsight Experience Replay (HER) for trajectory planning of a 6-DOF robotic arm to move from a starting pose to a target position.</div>
-
+<small> </small>
 Cartesian path (waypoints) | Consecutively setting joint pose
 :-------------------------:|:-------------------------:
 <img src="images/ddpg_xarm6/positionReachROS.gif?raw=true"/> |  <img src="images/ddpg_xarm6/jointsReachROS.gif?raw=true"/>
 
-<big>Resources<\big><br>
+<big>Resources</big><br>
 <small><a href="https://github.com/edgarcancinoe/xArm6_DDPG_ROS">See DDPG+ROS repo.</a></small>
 <br>
 <small><a href="https://github.com/edgarcancinoe/xArm6_DDPG_HER">See xArm6 DDPG+HER repo.</a></small>
