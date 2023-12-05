@@ -60,7 +60,10 @@ The challenge was to develop an autonomous navigation prototype using computer v
 
 <img src="images/puzzlebot/both.gif?raw=true"/>
 
-<small><a href="https://www.youtube.com/watch?v=lhTBHQspGjc">Watch on Youtube</a></small><br>
+**Resources** <small><br></small>
+<div style="text-align: center; display: flex; margin-bottom: 10px;">
+  <small style="margin-right: 10px;><a href="https://www.youtube.com/watch?v=lhTBHQspGjc">Watch on Youtube</a></small>
+</div>
 
 **Key tasks**:
 <small><br>- Development of Computer Vision-based line follower.</small>
@@ -119,7 +122,7 @@ The challenge was to develop an autonomous navigation prototype using computer v
 <small><br>- Feature engineering and data augmentation (discovered useful relationships in the data and engineered an invalid data recovery strategy).</small>
 <small><br>- Model tuning and training (implementation of Ridge Regression, Support Vector Regression and a Multi-Layer Perceptron NN).</small>
   
-  <small>**Keywords**: regression, multi-layer perceptron, neural network, support vector regression, svr, ridge</small>
+  <small>**Keywords**: regression, multi-layer perceptron, neural network, support vector regression, ridge</small>
 
 ---
 
