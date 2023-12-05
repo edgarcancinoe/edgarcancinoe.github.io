@@ -29,7 +29,7 @@ Cartesian path (waypoints) | Consecutively setting joint pose
 
 <big>Resources</big><br>
 
-<body style="display: flex; align-items: center; justify-content: center; height: 100vh;">
+<body style="display: flex; align-items: center; justify-content: center;">
 
   <div style="display: flex; margin-bottom: 10px;">
     <small style="margin-right: 10px;"><a href="https://github.com/edgarcancinoe/xArm6_DDPG_ROS">See DDPG+ROS repo.</a></small>
