@@ -63,7 +63,7 @@ The challenge was to develop an autonomous navigation prototype using computer v
 
 **Resources** <small><br></small>
 <div style="text-align: center; display: flex; margin-bottom: 10px;">
-  <small style="margin-right: 10px;><a href="https://www.youtube.com/watch?v=lhTBHQspGjc">Watch on Youtube</a></small>
+  <small style="margin-right: 10px;"><a href="https://www.youtube.com/watch?v=lhTBHQspGjc">Watch on Youtube</a></small>
 </div><br>
 
 **Key tasks**:
