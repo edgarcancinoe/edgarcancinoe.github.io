@@ -11,5 +11,6 @@ The theoretical objective of the system is to extend the useful life of tractor 
 - The prototype had internet connectivity thanks to the Node MCU and was able to both receive commands and send information to a visualization panel via Wi-Fi.
 
 #### Prototype diagram
+[]!(https://github.com/edgarcancinoe/edgarcancinoe.github.io/blob/master/images/air_pressure_control.png)
 
 #### [Watch on youtube](https://youtu.be/Yq0l9Ne1uh4)
