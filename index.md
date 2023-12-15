@@ -145,3 +145,7 @@ The challenge was to develop an autonomous navigation prototype using computer v
 
 
 <small>**Keywords**: time series, forecasting, lstm, sarima, recurrent neural network</small>
+
+### Other
+[Intelligent Air Pressure Control System](/air_pressure_control.md)
+[Music Recognition Algorithm in Matlab](/air_pressure_control.md)
