@@ -7,7 +7,7 @@ The theoretical objective of the system is to extend the useful life of tractor 
 
 #### Key tasks
 - Used the ARM cortex processor in a dual core STM32 board to carry out the main processing tasks
-- Utilized CAN, I2C and UART communication protocols for communication with sensors and a NodeMCU device.
+- Utilized CAN, and serial communication protocols for communication with sensors and a NodeMCU device.
 - The prototype had internet connectivity thanks to the Node MCU and was able to both receive commands and send information to a visualization panel via Wi-Fi.
 
 #### Prototype diagram
