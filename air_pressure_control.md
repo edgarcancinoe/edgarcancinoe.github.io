@@ -12,5 +12,7 @@ The theoretical objective of the system is to extend the useful life of tractor 
 
 #### Prototype diagram
 <img src="images/air_pressure_control.png" style="width: 400px; height: auto;"/>
+<img src="images/prototype.png" style="width: 400px; height: auto;"/>
+
 
 #### [Watch on youtube](https://youtu.be/Yq0l9Ne1uh4)
