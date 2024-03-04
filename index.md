@@ -13,6 +13,25 @@
 
 ## Robotics
 
+<div style="text-align: center;">
+  <big><a href="/pdf/xArm6_DDPG_HER.pdf">Object classification and grasp pose prediction (2024)</a></big>
+</div>
+
+<div style="text-align: center"><small><b>SceneGrasp - tf2 - ros - realsense - UR5 - roslibpy <br><br></b></small></div>
+
+<div style="text-align: justify; margin-bottom:25px"> <small>Implementation and testing of SamsungLabs' SceneGrasp model at the Kavraki Lab at Rice University.</small></div>
+
+<img src="https://github.com/edgarcancinoe/xarm_DDPG_HER/blob/master/results.gif?raw=true"/>
+
+
+**Key tasks**:
+<small><br>- Construction of a class that allows to customize demo runs: activate vision-based detection, feed streaming, simulation environment, ROS connectivity, etc.</small>
+<small><br>- Management of  for efficient use of resources.</small>
+<small><br>- Implementation using _Roslibppy_ for ease of use of the demo class in different devices.</small>
+<small><br>- Compute camera-to-world and word-to-robot frame transforms (SceneGrasp) and use of ROS Transform package (AprilTag objects and world origin).</small>
+
+<small>**Keywords**: computer vision, point cloud, pick and drop, coordinate frame transforms</small>
+
 ---
 
 <div style="text-align: center;">
