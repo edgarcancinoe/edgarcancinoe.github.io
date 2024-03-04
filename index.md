@@ -26,7 +26,7 @@
 
 **Key tasks**:
 <small><br>- Construction of a class that allows to customize demo runs: activate vision-based detection, feed streaming, simulation environment, ROS connectivity, etc.</small>
-<small><br>- Management of  for efficient use of resources.</small>
+<small><br>- Management of tasks and listeners for efficient use of resources.</small>
 <small><br>- Implementation using _Roslibppy_ for ease of use of the demo class in different devices.</small>
 <small><br>- Compute camera-to-world and word-to-robot frame transforms (SceneGrasp) and use of ROS Transform package (AprilTag objects and world origin).</small>
 
