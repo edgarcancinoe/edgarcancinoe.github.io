@@ -4,7 +4,7 @@
 
 **Certifications**<br>
 <small>
-[Specialized Program: Machine Learning (Ongoing)  -  Stanford/DeepLearning.AI](/pdf/JOSE EDGAR HERNANDEZ.pdf)<br>
+[Specialized Program: Machine Learning (2024)  -  Stanford/DeepLearning.AI](/pdf/ML_Specialization.pdf)<br>
 <small>
 [CS50 Introduction to Artificial Intelligence (2024)  -  HarvardX](/pdf/CS50AI.pdf)<br>
 <small>
