@@ -25,7 +25,7 @@
 
 <img src="https://github.com/edgarcancinoe/edgarcancinoe.github.io/blob/master/images/SceneGraspDemo.gif?raw=true"/>
 
-<img src="https://github.com/edgarcancinoe/edgarcancinoe.github.io/blob/master/images/grasps.png" width="500"/>
+<img src="https://github.com/edgarcancinoe/edgarcancinoe.github.io/blob/master/images/grasps.png?raw=true" width="500"/>
 
 
 **Key tasks**:
