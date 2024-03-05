@@ -21,6 +21,8 @@
 
 <div style="text-align: justify; margin-bottom:25px"> <small>Implementation and testing of SamsungLabs' SceneGrasp model at the Kavraki Lab at Rice University.</small></div>
 
+<img src="https://github.com/edgarcancinoe/edgarcancinoe.github.io/blob/master/images/SceneGraspDemo.gif?raw=true"/>
+
 <img src="https://github.com/edgarcancinoe/edgarcancinoe.github.io/blob/master/images/grasps.png"/>
 
 
