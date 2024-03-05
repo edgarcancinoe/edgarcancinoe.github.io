@@ -14,16 +14,16 @@
 ## Robotics
 
 <div style="text-align: center;">
-  <big><a href="/pdf/xArm6_DDPG_HER.pdf">Object classification and grasp pose prediction (2024)</a></big>
+  <big><a href="https://youtu.be/Msp6sliRH2Q">Object classification and grasp pose prediction (2024)</a></big>
 </div>
 
 <div style="text-align: center"><small><b>SceneGrasp - tf2 - ros - realsense - UR5 - roslibpy <br><br></b></small></div>
 
-<div style="text-align: justify; margin-bottom:25px"> <small>Implementation and testing of SamsungLabs' SceneGrasp model at the Kavraki Lab at Rice University.</small></div>
+<div style="text-align: justify; margin-bottom:25px"> <small>Implementation and testing of SamsungLabs' SceneGrasp model at the Kavraki Lab at Rice University. Used a UR5 robot and an Intel Realsense D455 camera. This project involved calibrating the workspace, transforming different frame of references, installing and using the SceneGrasp model developed by Samsung Lbs, and building quality code to run custom demos. </small></div>
 
 <img src="https://github.com/edgarcancinoe/edgarcancinoe.github.io/blob/master/images/SceneGraspDemo.gif?raw=true"/>
 
-<img src="https://github.com/edgarcancinoe/edgarcancinoe.github.io/blob/master/images/grasps.png"/>
+<img src="https://github.com/edgarcancinoe/edgarcancinoe.github.io/blob/master/images/grasps.png" width="200" height="150"/>
 
 
 **Key tasks**:
