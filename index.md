@@ -34,7 +34,7 @@
 <small><br>- Implementation using _Roslibpy_ ROS bridge library for ease of use in various devices.</small>
 <small><br>- Compute camera-to-world and word-to-robot frame transforms (SceneGrasp) and use of ROS Transform package (AprilTag objects and world origin).</small>
 
-**Extra:** <small style="margin-right: 10px;"><a href="https://youtu.be/9JlXTUWegX0">Vision-Based Pick and Drop using AprilTagso</a></small>
+**Extra:** <small style="margin-right: 10px;"><a href="https://youtu.be/9JlXTUWegX0">Vision-based Pick-and-Drop using AprilTags</a></small>
 
 <small>**Keywords**: computer vision, point cloud, pick and drop, coordinate frame transforms</small>
 
