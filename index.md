@@ -21,7 +21,7 @@
 
 <div style="text-align: center"><small><b>SceneGrasp - tf2 - apriltag - realsense - UR5 - roslibpy <br><br></b></small></div>
 
-<div style="text-align: justify; margin-bottom:25px"> <small>Implementation and testing of SamsungLabs' SceneGrasp model at the Kavraki Lab at Rice University. Used a UR5 robot and an Intel Realsense D455 camera. This project involved calibrating the workspace using an AprilTag bundle, transforming different frames of references (both from scratch and using ROS package TF, installing and using the SceneGrasp model developed by Samsung Lbs, and building quality code to run custom demos. </small></div><br>
+<div style="text-align: justify; margin-bottom:25px"> <small>Implementation and testing of SamsungLabs' SceneGrasp model at the Kavraki Lab at Rice University. Used a UR5 robot and an Intel Realsense D455 camera. This project involved calibrating the workspace using an AprilTag bundle, transforming different frames of references (both from scratch and using ROS package TF2, installing and using the SceneGrasp model developed by Samsung Lbs, and building quality code to run custom demos. </small></div><br>
 
 <img src="https://github.com/edgarcancinoe/edgarcancinoe.github.io/blob/master/images/SceneGraspDemo.gif?raw=true"/>
 
