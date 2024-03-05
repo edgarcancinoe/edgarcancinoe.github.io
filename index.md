@@ -8,8 +8,7 @@
 <small>
 [CS50 Introduction to Artificial Intelligence (2024)  -  HarvardX](/pdf/CS50AI.pdf)<br>
 <small>
-[Diploma in Data Science (2021)  -  ITPE](/pdf/JOSE EDGAR HERNANDEZ.pdf)
-<br>
+[Diploma in Data Science (2021)  -  ITPE](/pdf/JOSE EDGAR HERNANDEZ.pdf)<br>
 
 ## Robotics
 
