@@ -15,7 +15,7 @@
 --- 
 
 <div style="text-align: center;">
-  <big><a href="https://youtu.be/Msp6sliRH2Q">Object classification and grasp pose prediction (2024)</a></big>
+  <big><a href="https://youtu.be/yPg-IfcphkI?si=BT8P8bSM1sdrjh_7">Object classification and grasp pose prediction (2024)</a></big>
 </div>
 
 <div style="text-align: center"><small><b>SceneGrasp - tf2 - apriltag - realsense - UR5 - roslibpy <br><br></b></small></div>
