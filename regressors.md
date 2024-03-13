@@ -2,7 +2,7 @@
 
 **Project description:** 
 <div style="text-align: justify">
-Application of <b>machine learning models to estimate the duration of semi-trailer truck loading maneuvers</b> for a tissue paper distribution plant, for both bulk and pallet operations, given product quantity, physical dimensions,and number of active operators.
+Application of <b>machine learning models to estimate the duration of semi-trailer truck loading maneuvers</b> for a tissue paper distribution plant, for both bulk and pallet operations, given product quantity, physical dimensions, and number of active operators.
 </div>
 <br>
 
