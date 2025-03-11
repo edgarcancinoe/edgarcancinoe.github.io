@@ -1,10 +1,11 @@
-# Portfolio Website.
-Web Portfolio to showcase projects and skills in better manner. 
+# AI & Robotics Engineer
 
-Get this template from @vinaysomawat here : https://github.com/vinaysomawat/vinaysomawat.github.io
+J. Edgar Hernandez Cancino Estrada
 
+B.S. in Robotics And Digital Systems Engineering at Tecnológico de Monterrey (June, 2024)
+M.Sc in Artificial Intelligence Student (Ongoing) at EMAI
 ### About me
-* Programming Profile Page
+* Programming Profile Page!!
 * Robotics Page
 * Embedded Systems Page
 * Software Development Page
