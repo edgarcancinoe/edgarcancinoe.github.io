@@ -1121,14 +1121,22 @@ padding-top: 2px;}
         .project .desc .con .icon i {
           font-size: 16px;
           color: #333333; }
-      .custom-logo {
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        width: 50px; /* Adjust based on your layout */
-        height: 50px;
-        border-radius: 50%; /* Makes sure logos are circular */
-    }
+          .custom-logo {
+            width: 60px; /* Adjust size as needed */
+            height: 60px;
+            border-radius: 50%; /* Makes it circular */
+            
+            background-size: contain; /* Ensures full image is visible */
+            background-position: center;
+            background-repeat: no-repeat;
+        
+            display: flex; /* Ensures visibility in flexbox layouts */
+            align-items: center;
+            justify-content: center;
+        
+            border: none !important; /* Remove any unwanted borders */
+            overflow: hidden; /* Prevents image overflow issues */
+        }
     .project .desc h3 {
       font-family: "Quicksand", Arial, sans-serif;
       font-size: 16px;
