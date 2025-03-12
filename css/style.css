@@ -1122,21 +1122,24 @@ padding-top: 2px;}
           font-size: 16px;
           color: #333333; }
       
-          .custom-logo {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            
-            background-size: cover; /* Fills the entire div */
-            background-position: center;
-            background-repeat: no-repeat;
-        
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        
-            border: none !important;
-            overflow: hidden;
+          /* Override .timeline-icon styles */
+        .timeline-centered .timeline-entry .timeline-entry-inner .timeline-icon {
+          background: none !important; /* Remove default blue background */
+          box-shadow: none !important; /* Remove the outer white shadow */
+          width: 60px !important; /* Ensure the size matches */
+          height: 60px !important;
+        }
+
+        /* Ensure logo image is properly shown */
+        .custom-logo {
+          width: 60px !important;
+          height: 60px !important;
+          border-radius: 50%;
+          background-size: contain !important; /* Ensures the full image is visible */
+          background-position: center center !important; /* Centers the image */
+          background-repeat: no-repeat !important; /* Prevents tiling */
+          display: block !important;
+          overflow: hidden !important;
         }
     .project .desc h3 {
       font-family: "Quicksand", Arial, sans-serif;
