@@ -1136,9 +1136,9 @@ padding-top: 2px;}
             border-radius: 50%;
             background-image: url('images/tec.png') !important; /* Forces image */
             background-size: contain !important; /* Ensures full image is visible */
-            background-position: center !important;
+            background-position: center center !important;
             background-repeat: no-repeat !important;
-            display: flex !important;
+            display: block !important;
             align-items: center;
             justify-content: center;
             border: 1px solid red !important; /* TEMPORARY BORDER FOR DEBUGGING */
