@@ -1132,6 +1132,7 @@ padding-top: 2px;}
 
         /* Ensure logo image is properly shown */
         .custom-logo {
+            background-color: red !important; /* TEMPORARY TEST */
           width: 60px !important;
           height: 60px !important;
           border-radius: 50%;
