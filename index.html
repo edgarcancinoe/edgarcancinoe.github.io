@@ -310,10 +310,25 @@
                         GitHubCalendar(".calendar", "edgarcancinoe", { responsive: true });
                     </script>
                     <style>
-                        .calendar .contrib-number {
-                           display: none !important;
-                        }
-                     </style>
+                     /* Hide contribution count */
+                     .calendar .contrib-number {
+                         display: none !important;
+                     }
+         
+                     /* Hide headers and date range */
+                     .calendar .calendar-header {
+                         display: none !important;
+                     }
+         
+                     /* Hide streak info */
+                     .calendar .contrib-legend {
+                         display: none !important;
+                     }
+         
+                     .calendar .text-muted {
+                         display: none !important;
+                     }
+                 </style>
                   </div>
                </section>
                <!--------------Education----------->
@@ -331,7 +346,7 @@
                               <article class="timeline-entry animate-box" data-animate-effect="fadeInRight">
                                  <div class="timeline-entry-inner">
                                     <div class="timeline-icon color-5">
-                                       <i class="fa fa-android"></i>
+                                       <i class="fa fa-eercast"></i>
                                     </div>
                                     <div class="timeline-label">
                                        <h2><a href="https://www.upf.edu/web/emai">Erasmus Mundus Joint Master in Artificial Intelligence</a> <span>2024 - Present</span></h2>
