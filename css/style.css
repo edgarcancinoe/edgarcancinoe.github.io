@@ -1123,34 +1123,36 @@ padding-top: 2px;}
           color: #333333; }
       
          /* Override .timeline-icon styles */
-.timeline-centered .timeline-entry .timeline-entry-inner .timeline-icon {
-  background: none !important; /* Removes any background color */
-  box-shadow: none !important; /* Removes any outer shadow */
-  width: 60px !important;
-  height: 60px !important;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+      .timeline-centered .timeline-entry .timeline-entry-inner .timeline-icon {
+        background: transparent !important; /* Fully removes any background */
+        box-shadow: none !important; /* Removes any shadow */
+        width: 60px !important;
+        height: 60px !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
 
-/* Ensures circular logo with centered image */
-.custom-logo {
-  width: 60px; /* Matches the .timeline-icon width */
-  height: 60px; /* Matches the .timeline-icon height */
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden; /* Ensures anything outside the circle is cropped */
-  background-color: white; /* Optional: Ensures a visible background */
-}
+      /* Ensure the custom logo is circular and centered */
+      .custom-logo {
+        width: 60px; 
+        height: 60px; 
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden; /* Prevents any overflow */
+        background-color: transparent !important; /* Ensures no background color */
+      }
 
-.custom-logo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Ensures the image fully covers the circle */
-  border-radius: 50%; /* Ensures the image itself is also circular */
-}
+      /* Make sure the image fills the circle properly */
+      .custom-logo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Fills the circle */
+        border-radius: 50%; /* Ensures circular shape */
+        background-color: transparent !important; /* Ensures no background */
+      }
     .project .desc h3 {
       font-family: "Quicksand", Arial, sans-serif;
       font-size: 16px;
