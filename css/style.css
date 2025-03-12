@@ -1133,10 +1133,17 @@ padding-top: 2px;}
         .custom-logo {
           width: 50px;
           height: 50px;
-          background-size: contain;  /* Change from cover to contain */
-          background-repeat: no-repeat;
-          background-position: center;
-          display: inline-block;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          overflow: hidden;
+      }
+      
+      .custom-logo img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover; /* Ensures the image fills the circle */
       }
     .project .desc h3 {
       font-family: "Quicksand", Arial, sans-serif;
