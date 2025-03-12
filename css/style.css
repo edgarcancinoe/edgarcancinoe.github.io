@@ -1121,6 +1121,14 @@ padding-top: 2px;}
         .project .desc .con .icon i {
           font-size: 16px;
           color: #333333; }
+      .custom-logo {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 50px; /* Adjust based on your layout */
+        height: 50px;
+        border-radius: 50%; /* Makes sure logos are circular */
+    }
     .project .desc h3 {
       font-family: "Quicksand", Arial, sans-serif;
       font-size: 16px;
