@@ -745,7 +745,12 @@ margin-left: 10px;}
   .timeline-centered .timeline-entry .timeline-entry-inner .timeline-icon.color-2 {
     background: #ec5453; }
   .timeline-centered .timeline-entry .timeline-entry-inner .timeline-icon.color-3 {
-    background: #f9bf3f; }
+    background-color: #f9bf3f !important; /* Set the yellow background */
+    border-radius: 50%; /* Ensure it's circular */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
   .timeline-centered .timeline-entry .timeline-entry-inner .timeline-icon.color-4 {
     background: #a84cb8; }
   .timeline-centered .timeline-entry .timeline-entry-inner .timeline-icon.color-5 {
