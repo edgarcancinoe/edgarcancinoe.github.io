@@ -410,16 +410,16 @@
                            <p>ROS</p>
                         </div>
                         <!-- NVIDIA Jetson (Updated Image Source) -->
-                     <div class="tech-item">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Nvidia_logo.svg/512px-Nvidia_logo.svg.png" alt="NVIDIA Jetson">
-                        <p>NVIDIA Jetson</p>
-                     </div>
+                        <div class="tech-item">
+                           <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Nvidia_logo.svg/512px-Nvidia_logo.svg.png" alt="NVIDIA Jetson">
+                           <p>NVIDIA Jetson</p>
+                        </div>
 
-                     <!-- ESP32 (Updated Image Source) -->
-                     <div class="tech-item">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/8/8a/ESP32-WROOM-32_module_top_view.jpg" alt="ESP32">
-                        <p>ESP32</p>
-                     </div>
+                        <!-- ESP32 (Updated Image Source) -->
+                        <div class="tech-item">
+                           <img src="https://upload.wikimedia.org/wikipedia/commons/8/8a/ESP32-WROOM-32_module_top_view.jpg" alt="ESP32">
+                           <p>ESP32</p>
+                        </div>
                         <!-- Data Science & Processing -->
                         <div class="tech-item">
                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas">
@@ -462,23 +462,28 @@
               <section class="colorlib-skills" data-section="skills">
                <div class="colorlib-narrow-content">
                    <div class="row">
-                       <div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
+                     <div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
                         <h2>
-                           <a href="https://github.com/edgarcancinoe" id="github-link">Explore my Github profile</a>
+                            <a href="https://github.com/edgarcancinoe" id="github-link">Explore my Github profile</a>
                         </h2>
                         <hr>
-                       <script>
-                           const githubLink = document.getElementById("github-link");
-                       
-                           githubLink.addEventListener("mouseover", function () {
-                               document.body.style.backgroundColor = "#f5f5f5"; // Light gray background
-                           });
-                       
-                           githubLink.addEventListener("mouseout", function () {
-                               document.body.style.backgroundColor = "white"; // Reset background
-                           });
-                       </script>
-                       </div>
+                    </div>
+                    
+                    <!-- CSS for Smooth Animation on Hover -->
+                    <style>
+                        #github-link {
+                            text-decoration: none;
+                            color: #007bff;
+                            font-weight: bold;
+                            transition: color 0.3s ease, text-shadow 0.3s ease, transform 0.3s ease;
+                        }
+                    
+                        #github-link:hover {
+                            color: #ff6600; /* Change color */
+                            text-shadow: 2px 2px 10px rgba(255, 102, 0, 0.5); /* Add glow */
+                            transform: scale(1.1); /* Slightly enlarge text */
+                        }
+                    </style>
                    </div>
                       <!-- GitHub Profile Languages -->
                       <iframe width="600" height="600" 
