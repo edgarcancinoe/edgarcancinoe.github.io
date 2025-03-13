@@ -415,7 +415,30 @@ body.offcanvas {
     .colorlib-narrow-content {
         width: 100%;
       padding: 0 1em; } }
+/* Ensure contact items are in a row */
+.contact-container {
+  display: flex;
+  justify-content: space-evenly; /* Distributes them evenly */
+  align-items: center;
+  flex-wrap: wrap; /* Ensures responsiveness on smaller screens */
+  gap: 15px; /* Adds spacing between items */
+}
 
+/* Optional: Style links */
+.contact-container p {
+  margin: 0;
+}
+
+.contact-container a {
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.contact-container a:hover {
+  color: #007bff; /* Change color on hover */
+}
 .no-gutters {
   margin: 0;
   padding: 0; }
