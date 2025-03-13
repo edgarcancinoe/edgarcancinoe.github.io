@@ -562,7 +562,9 @@ margin-left: 10px;}
   letter-spacing: 5px;
   text-align: justify;
   font-weight: 500; }
-
+.about-desc p {
+    text-align: justify;
+}
 .hire {
   padding: 2em;
   background: #f9bf3f; }
