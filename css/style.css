@@ -750,6 +750,7 @@ margin-left: 10px;}
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 24px !important; /* Adjust size as needed */
 }
   .timeline-centered .timeline-entry .timeline-entry-inner .timeline-icon.color-4 {
     background: #a84cb8; }
