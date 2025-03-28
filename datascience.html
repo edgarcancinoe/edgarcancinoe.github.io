@@ -3,7 +3,7 @@
    <head>
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <title>Jose Edgar Hernandez - Signal Processing</title>
+      <title>Jose Edgar Hernandez - Data Science</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="description" content="Portfolio webpage of Jose Edgar Hernandez" />
       <meta name="keywords" content="portfolio,website,personal website,github,projects,computer science and engineering" />
@@ -74,61 +74,16 @@
                         <div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
                            <div class="col-md-12">
                               <div class="about-desc">
-                                 <h2>Signal Processing</h2>
+                                 <h2>Data Science</h2>
                                  <hr>
                                  <article class="timeline-entry animate-box" data-animate-effect="fadeInRight">
-                                    <br>
                                     <ul class="fa-ul mb-0">
-                                      <!-- <article class="timeline-entry animate-box" data-animate-effect="fadeInRight"> -->
                                       <li>
                                         <i class="fa-li fa fa-check"></i>
-                                        <div
-                                          onmouseover="document.querySelector('#colorlib-main > section.colorlib-skills > div > div > div:nth-child(3) > article > ul > li:nth-child(1) > div > a > div:nth-child(1)').style.backgroundColor='#78C2AD'"
-                                          onmouseout="document.querySelector('#colorlib-main > section.colorlib-skills > div > div > div:nth-child(3) > article > ul > li:nth-child(1) > div > a > div:nth-child(1)').style.backgroundColor=''">
-                                          <a href="https://github.com/edgarcancinoe/music_recognition" style="text-decoration:none;">
-                                            <div>
-                                              <h4 class="mb-3">Music Recognition Algorithm Using Discrete Fourier Transform (2020)</h4>
-                                            </div>
-                                            <div
-                                              class="resume-item d-flex flex-column flex-md-row justify-content-between mb-3">
-                                              <div id="divMain">
-                                                <div id='left-div' class="resume-content">
-                                                  <img style='float:left; margin:0 10px;' width='300px;' class='img-fluid'
-                                                    src='images/project_icons/sp.jpg'>
-                                                </div>
-                                                <div id='right-div' class='resume-content'>
-                                                  <div class="subheading mb-0">
-                                                    <p>MATLAB Implementation of an algorithm capable of using the Fast Fourier Transform to capture and store the time-frequency characteristics of songs, enabling the matching of real-time microphone input for music recognition. </p>
-                                                  </div>
-                                                  <div class="mb-0">
-                                                    <span class='badge badge-secondary'>MATLAB</span>
-                                                    <span class='badge badge-secondary'>FFT</span>
-                                                    <span class='badge badge-secondary'>Signals</span>
-                                                    <span class='badge badge-secondary'>Audio Processing</span>
-                                                  </div>
-                                                  <br>
-                                                  
-                                                <!-- GitHub Watch Button -->
-                                                <a href="https://github.com/edgarcancinoe/music_recognition" 
-                                                   target="_blank" 
-                                                   style="display:inline-block; text-decoration:none; background:#24292e; color:white; padding:5px 10px; border-radius:4px; font-family:sans-serif; font-size:14px;">
-                                                   View on GitHub
-                                                </a>
-
-                                                <!-- Watch on YouTube Button -->
-                                                <a href="https://youtu.be/cQO6ExhgZn0?si=7xJ4VaBGHTfNbZED" 
-                                                target="_blank" 
-                                                style="display:inline-block; text-decoration:none; background:#FF0000; color:white; padding:5px 10px; border-radius:4px; font-family:sans-serif; font-size:14px;">
-                                                ▶ Watch on YouTube
-                                                </a>  
-                                                </div>
-                                              </div>
-                                            </div>
-                                          </a>
-                                        </div>
+                                        <div id="truck-loading-durations-container"></div>
                                       </li>
-                                      <br>
-                                       </article>
+                                    </ul>
+                                 </article>
                               </div>
                            </div>
                         </div>
@@ -138,6 +93,14 @@
             </div>
          </div>
       </div>
+      <script>
+         fetch('project_containers/truck_loading_durations.html')
+           .then(response => response.text())
+           .then(data => {
+             document.getElementById('truck-loading-durations-container').innerHTML = data;
+           })
+           .catch(error => console.error('Error loading snippet:', error));
+       </script>
       <!-- End #projects -->
       <!-- jQuery -->
       <script src="js/jquery.min.js"></script>
@@ -155,5 +118,6 @@
       <script src="js/jquery.countTo.js"></script>
       <!-- MAIN JS -->
       <script src="js/main.js"></script>
+
    </body>
 </html>
