@@ -86,6 +86,14 @@
             </div>
          </div>
       </div>
+      <script>
+         fetch('project_containers/music_recognition.html')
+           .then(response => response.text())
+           .then(data => {
+             document.getElementById('music-recognition-container').innerHTML = data;
+           })
+           .catch(error => console.error('Error loading snippet:', error));
+       </script>
       <!-- End #projects -->
       <!-- jQuery -->
       <script src="js/jquery.min.js"></script>
@@ -103,15 +111,6 @@
       <script src="js/jquery.countTo.js"></script>
       <!-- MAIN JS -->
       <script src="js/main.js"></script>
-
-      <script>
-         fetch('project_containers/music_recognition.html')
-           .then(response => response.text())
-           .then(data => {
-             document.getElementById('music-recognition-container').innerHTML = data;
-           })
-           .catch(error => console.error('Error loading snippet:', error));
-       </script>
 
    </body>
 </html>
