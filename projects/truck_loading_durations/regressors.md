@@ -41,16 +41,16 @@ A manually collected dataset consisting in more than 27,000 operations was utili
 </div>
 <br><br>
   <div  style="text-align: center; width:400px">
-  <img src="images/regressors/bulkcorr.png?raw=true" style="display: inline-block; width: 400px; height: auto;"/>
-  <img src="images/regressors/palletcorr.png?raw=true" style="display: inline-block; width: 400px; height: auto;"/>
+  <img src="images/projects/truck_loading_durations/bulkcorr.png?raw=true" style="display: inline-block; width: 400px; height: auto;"/>
+  <img src="images/projects/truck_loading_durations/palletcorr.png?raw=true" style="display: inline-block; width: 400px; height: auto;"/>
   </div>
 <br><br>
 
 Product quantity, number of stevedores and dimensional features held a relationship to target variable, which can be visualized in the following plots:
 <br><br>
   <div  style="text-align: center; width:400px">
-  <img src="images/regressors/plot_Num%20Stevedores.png?raw=true" style="display: inline-block; width: 400px; height: auto;"/>
-  <img src="images/regressors/plot_Volume%20(scaled).png?raw=true" style="display: inline-block; width: 400px; height: auto;"/>
+  <img src="images/projects/truck_loading_durations/plot_Num%20Stevedores.png?raw=true" style="display: inline-block; width: 400px; height: auto;"/>
+  <img src="images/projects/truck_loading_durations/plot_Volume%20(scaled).png?raw=true" style="display: inline-block; width: 400px; height: auto;"/>
   </div>
 <br><br>
 
@@ -68,8 +68,8 @@ The models effectively mimic the target variable's behavior and response to chan
 
 <br>
 
-<img src="images/regressors/volumes_and_stevedores_target.png?raw=true" style="display: inline-block; width: 750px; height: auto;"/>
-      <img src="images/regressors/Neural Network (deg=2)_volumes_and_stevedores.png?raw=true" style="display: inline-block; width: 750px; height: auto;"/>
+<img src="images/projects/truck_loading_durations/volumes_and_stevedores_target.png?raw=true" style="display: inline-block; width: 750px; height: auto;"/>
+      <img src="images/projects/truck_loading_durations/Neural Network (deg=2)_volumes_and_stevedores.png?raw=true" style="display: inline-block; width: 750px; height: auto;"/>
       <br>
 <div style="text-align: center">
 <i><b>Response to changes in volume</b></i>
@@ -78,8 +78,8 @@ The models effectively mimic the target variable's behavior and response to chan
 <br>
 
   <div  style="text-align: center;">
-  <img src="images/regressors/target_vs_qty_target_volume_bulk.png?raw=true" style="display: inline-block; width: 750px; height: auto;"/>
-  <img src="images/regressors/Multi-layer%20Perceptron%20with%20quadratic%20features_predictions_VolumeCategory_bulk.png?raw=true" style="display: inline-block; width: 750px; height: auto;"/>
+  <img src="images/projects/truck_loading_durations/target_vs_qty_target_volume_bulk.png?raw=true" style="display: inline-block; width: 750px; height: auto;"/>
+  <img src="images/projects/truck_loading_durations/Multi-layer%20Perceptron%20with%20quadratic%20features_predictions_VolumeCategory_bulk.png?raw=true" style="display: inline-block; width: 750px; height: auto;"/>
   </div>
 <br>
 <br>
@@ -91,8 +91,8 @@ Similar plots are shown for pallet operation models.
 
 <br>
 
-<img src="images/regressors/volumes_and_stevedores_target_pallet.png?raw=true" style="display: inline-block; width: 750px; height: auto;"/>
-<img src="images/regressors/SVR (deg=2)_volumes_and_stevedores_pallet.png?raw=true" style="display: inline-block; width: 750px; height: auto;"/>
+<img src="images/projects/truck_loading_durations/volumes_and_stevedores_target_pallet.png?raw=true" style="display: inline-block; width: 750px; height: auto;"/>
+<img src="images/projects/truck_loading_durations/SVR (deg=2)_volumes_and_stevedores_pallet.png?raw=true" style="display: inline-block; width: 750px; height: auto;"/>
 
 <div style="text-align: center">
 
@@ -103,8 +103,8 @@ Similar plots are shown for pallet operation models.
 </div>
 <br>
   <div  style="text-align: center;">
-  <img src="images/regressors/target_vs_qty_target_dimension_pallet.png?raw=true" style="display: inline-block; width: 750px; height: auto;"/>
-  <img src="images/regressors/SVR (deg=2)_predictions_DimensionCategory_pallet.png?raw=true" style="display: inline-block; width: 750px; height: auto;"/>
+  <img src="images/projects/truck_loading_durations/target_vs_qty_target_dimension_pallet.png?raw=true" style="display: inline-block; width: 750px; height: auto;"/>
+  <img src="images/projects/truck_loading_durations/SVR (deg=2)_predictions_DimensionCategory_pallet.png?raw=true" style="display: inline-block; width: 750px; height: auto;"/>
   </div>
 <br>
 
@@ -118,12 +118,12 @@ Below, the test score results for each of the models, after 8-fold cross-validat
   
 <i><b>Bulk operations</b></i>
 <br>
-  <img src="images/regressors/bulkresults.png?raw=true" style="display: inline-block; width: 250px; height: auto;"/>
+  <img src="images/projects/truck_loading_durations/bulkresults.png?raw=true" style="display: inline-block; width: 250px; height: auto;"/>
 </div>
 <br>
 <div  style="text-align: center;">
   
 <i><b>Pallet operations</b></i>
 <br>
-  <img src="images/regressors/palletresults.png?raw=true" style="display: inline-block; width: 250px; height: auto;"/>
+  <img src="images/projects/truck_loading_durations/palletresults.png?raw=true" style="display: inline-block; width: 250px; height: auto;"/>
 </div>
