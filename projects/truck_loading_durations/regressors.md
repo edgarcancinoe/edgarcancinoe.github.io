@@ -4,7 +4,8 @@
 <div style="text-align: justify">
 Application of <b>machine learning models to estimate the duration of semi-trailer truck loading maneuvers</b> for a tissue paper distribution plant, for both bulk and pallet operations, given product quantity, physical dimensions, and number of active operators.
 </div>
-<a href="/projects/truck_loading_durations/regression_for_durations.pdf">See the paper</a>
+<br>
+<a href="https://edgarcancinoe.github.io/projects/truck_loading_durations/regression_for_durations.pdf">View paper</a>
 <br>
 
 ### Abstract
