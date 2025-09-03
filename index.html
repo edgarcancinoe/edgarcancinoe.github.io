@@ -97,7 +97,7 @@
 <body>
 <div class="relative flex size-full min-h-screen flex-col dark group/design-root overflow-x-hidden" style='font-family: "Spline Sans", "Noto Sans", sans-serif; background: var(--bg-root);'>
   <div class="layout-container flex h-full grow flex-col">
-<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#29382f] px-10 py-4 fixed top-0 left-0 right-0 bg-[#111714]/80 backdrop-blur-sm z-50 font-['Space_Grotesk',_'Noto_Sans',_sans-serif]">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#29382f] px-4 sm:px-10 py-4 fixed top-0 left-0 right-0 bg-[#111714]/80 backdrop-blur-sm z-50 font-['Space_Grotesk',_'Noto_Sans',_sans-serif]">
   <div class="flex items-center gap-3 text-white">
     <svg class="text-[#38e07b]" fill="none" height="28" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="28" xmlns="http://www.w3.org/2000/svg">
       <path d="M10 16.5 8 18l-6-6 6-6 2 1.5"></path>
@@ -105,18 +105,18 @@
       <path d="M12 8v8"></path>
     </svg>
     <div>
-      <h2 class="text-white text-xl font-bold leading-tight tracking-[-0.015em]"><a href="index.html" class="hover:text-[#38e07b] transition-colors">Jose Edgar Hernandez Cancino E.</a></h2>
-      <p class="text-gray-400 text-xs flex gap-3">
+      <h2 class="text-white text-lg sm:text-xl font-bold leading-tight tracking-[-0.015em]"><a href="index.html" class="hover:text-[#38e07b] transition-colors">Jose Edgar Hernandez Cancino E.</a></h2>
+      <p class="text-gray-400 text-xs flex gap-2 sm:gap-3 flex-wrap">
         <span>🇲🇽 Spanish</span>
-        <span>·</span>
+        <span class="hidden sm:inline">·</span>
         <span>🇬🇧 English (C1)</span>
-        <span>·</span>
-        <span>🇮🇹 Italian (A2)</span>
+        <span class="hidden sm:inline">·</span>
+        <span class="hidden sm:inline">🇮🇹 Italian (A2)</span>
       </p>
     </div>
   </div>
   <div class="flex flex-1 justify-end gap-6 items-center">
-    <div class="flex items-center gap-8">
+    <div class="hidden sm:flex items-center gap-8">
       <a class="text-[#38e07b] text-base font-bold leading-normal" href="index.html">About</a>
       <a class="text-gray-300 hover:text-white transition-colors text-base font-medium leading-normal" href="projects.html">Projects</a>
       <a class="text-gray-300 hover:text-white transition-colors text-base font-medium leading-normal" href="contact.html">Contact</a>
@@ -141,28 +141,24 @@
   </div>
 </header>
 <main class="flex-1 pb-24 mt-16">
-<section id="about" class="px-20 py-20">
+<section id="about" class="px-4 sm:px-8 lg:px-20 py-12 sm:py-20">
   <div class="max-w-7xl mx-auto">
     <!-- Hero layout: image left, text right -->
-    <div class="flex flex-col sm:flex-row items-center sm:items-start gap-24 sm:gap-12">
+    <div class="flex flex-col lg:flex-row items-center lg:items-start gap-8 sm:gap-12 lg:gap-24">
       <div class="shrink-0 flex justify-center sm:justify-start">
         <img src="images/fototec.jpeg" alt="Jose Edgar Hernandez" class="h-40 w-40 md:h-56 md:w-56 rounded-full object-cover border border-[var(--bd-strong)] shadow-lg" loading="lazy" decoding="async"/>
       </div>
-      <div class="sm:mt-4 md:mt-0 lg:mt-0 reveal">
-        <h1 class="text-white text-5xl font-extrabold leading-tight tracking-tight text-center sm:text-left">
-          Robotics Engineer&nbsp;| MSc Candidate in Artificial Intelligence
-        </h1>
-        <p class="text-[var(--fg-secondary)] text-lg leading-relaxed mt-3 text-center sm:text-left max-w-3xl sm:max-w-none mx-auto sm:mx-0">
-          I am currently pursuing a research-focused multi-institutional <strong>MSc in Artificial Intelligence</strong> (EMAI).
+      <div class="flex-1 text-center lg:text-left max-w-none">
+        <h1 class="text-white text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight tracking-tighter mb-6 reveal">Robotics Engineer&nbsp;| MSc Candidate in Artificial Intelligence</h1>
+        <p class="text-[var(--fg-secondary)] text-base sm:text-lg leading-relaxed mb-8 reveal max-w-2xl mx-auto lg:mx-0">I am currently pursuing a research-focused multi-institutional <strong>MSc in Artificial Intelligence</strong> (EMAI).
           <br><br>
-          Currently specializing in Data Science at the University of Ljubljana, Slovenia, where I am working on my research thesis.
-        </p>
+          Currently specializing in Data Science at the University of Ljubljana, Slovenia, where I am working on my research thesis.</p>
       </div>
       
     </div>
 
     <!-- About/Background/Experience cards -->
-    <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
       <!-- About Me -->
       <div class="grad-pine h-full flex flex-col p-6 rounded-2xl shadow-lg hover:scale-105 transition-transform border border-[var(--bd-strong)]">        <h2 class="text-white text-2xl font-bold mb-3">About Me</h2>
         <p class="text-[var(--fg-secondary)] leading-relaxed">
@@ -198,10 +194,10 @@
     </div>
   </div>
 </section>
-<section class="px-20 pb-24">
+<section class="px-4 sm:px-8 lg:px-20 pb-16 sm:pb-24">
 <div class="max-w-7xl mx-auto">
-<h2 class="text-4xl font-bold leading-tight tracking-tight text-white text-center mb-16 reveal">My Trajectory</h2>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+<h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight tracking-tight text-white text-center mb-8 sm:mb-16 reveal">My Trajectory</h2>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-16">
 <div>
 <h3 class="text-3xl font-bold text-white mb-8 text-center">Academic</h3>
 <div class="relative pl-10 border-l-2 border-[var(--bd-muted)]">
@@ -428,10 +424,10 @@
 </div>
 </div>
 </section>
-<section class="px-20 py-24">
+<section class="px-4 sm:px-8 lg:px-20 py-16 sm:py-24">
 <div class="max-w-6xl mx-auto">
-<h2 class="text-4xl font-bold leading-tight tracking-tight text-white text-center mb-12">Courses &amp; Certifications</h2>
-<div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-8 justify-items-center">
+<h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight tracking-tight text-white text-center mb-8 sm:mb-12">Courses &amp; Certifications</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8 justify-items-center">
 
 <!-- Data Science Diploma Program ITPE -->
   <div class="panel rounded-xl p-6 flex flex-col items-start gap-4 transition-colors duration-300 reveal hover-card">
@@ -485,7 +481,7 @@
 <!-- Additional Certifications -->
 <div class="mt-16">
   <!-- <h3 class="text-2xl font-semibold text-center text-white mb-8">Additional Certifications</h3> -->
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-5xl mx-auto">
     <!-- Certification 1 -->
     <div class="bg-[#1a231d] rounded-xl p-6 border border-[#29382f] hover:border-[#38e07b]/40 transition-all duration-200 hover:scale-[1.03]">
       <div class="flex flex-col items-center h-full">
@@ -553,10 +549,10 @@
 </div>
 </div>
 </section>
-<section class="px-20 py-24" style="background: var(--bg-surface);">
+<section class="px-4 sm:px-8 lg:px-20 py-16 sm:py-24" style="background: var(--bg-surface);">
 <div class="max-w-6xl mx-auto">
-<h2 class="text-4xl font-bold leading-tight tracking-tight text-white text-center mb-12 reveal">Featured Projects</h2>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight tracking-tight text-white text-center mb-8 sm:mb-12 reveal">Featured Projects</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8">
   <div data-category="Robotics" data-include="project_cards/robotics/final_implementation_manipulator.html"></div>
   <div data-category="AI / Machine Learning" data-include="project_cards/AI/gnn_noisy_labels.html"></div>
   <div data-category="AI / Machine Learning" data-include="project_cards/AI/xarm_ddpg_her.html"></div>
