@@ -8,41 +8,65 @@
 <link href="logo.png" rel="icon" type="image/png"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <style type="text/tailwindcss">
-      :root {
-        --primary-color: #38e07b;
-      }
-    </style>
+  @layer base {
+    :root {
+      /* Brand core (dark pine + emerald) */
+      --bg-root:        #111714; /* body bg */
+      --bg-surface:     #161d1a; /* section alt bg */
+      --bg-panel:       #1c2620; /* cards */
+      --bd-muted:       #29382f; /* lines / separators */
+      --bd-strong:      #3d5245; /* panels / avatars ring */
+
+      --fg-primary:     #ffffff; /* headings */
+      --fg-secondary:   #e5e7eb; /* body */
+      --fg-muted:       #9eb7a8; /* captions */
+      --fg-subtle:      #8aa096; /* extra-muted */
+
+      --brand:          #38e07b; /* primary emerald */
+      --brand-600:      #2dd06f;
+      --brand-700:      #23b85f;
+      --brand-800:      #1a9e52;
+      --brand-900:      #138446;
+      --brand-tint:     #b9f2cf; /* very light tint for subtle highlights */
+    }
+  }
+</style>
 </head>
 <body class="bg-[#111714] font-['Space_Grotesk',_'Noto_Sans',_sans-serif]">
 <div class="relative flex size-full min-h-screen flex-col overflow-x-hidden dark group/design-root">
 <div class="layout-container flex h-full grow flex-col">
-  <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#29382f] px-10 py-4 fixed top-0 left-0 right-0 bg-[#111714]/80 backdrop-blur-sm z-50">
+  <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#29382f] px-5 sm:px-10 py-3 sm:py-4 fixed top-0 left-0 right-0 bg-[#111714]/80 backdrop-blur-sm z-50">
   <div class="flex items-center gap-3 text-white">
-  <svg class="text-[#38e07b]" fill="none" height="28" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="28" xmlns="http://www.w3.org/2000/svg">
+  <svg class="text-[#38e07b]" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
   <path d="M10 16.5 8 18l-6-6 6-6 2 1.5"></path>
   <path d="m14 7.5 2-1.5 6 6-6 6-2-1.5"></path>
   <path d="M12 8v8"></path>
   </svg>
   <div>
-    <h2 class="text-white text-xl font-bold leading-tight tracking-[-0.015em]"><a href="index.html" class="hover:text-[#38e07b] transition-colors">Jose Edgar Hernandez Cancino E.</a></h2>
-    <p class="text-gray-400 text-xs flex gap-3">
+    <h2 class="text-white text-lg sm:text-xl font-bold leading-tight tracking-[-0.015em]">
+      <a href="index.html" class="hover:text-[#38e07b] transition-colors">
+        <span class="sm:hidden">J. Edgar Hernandez</span>
+        <span class="hidden sm:inline">Jose Edgar Hernandez Cancino E.</span>
+      </a>
+    </h2>
+    <p class="text-gray-400 text-xs flex gap-2 sm:gap-3 flex-wrap">
       <span>🇲🇽 Spanish</span>
-      <span>·</span>
+      <span class="hidden sm:inline">·</span>
       <span>🇬🇧 English (C1)</span>
-      <span>·</span>
-      <span>🇮🇹 Italian (A2)</span>
+      <span class="hidden sm:inline">·</span>
+      <span class="hidden sm:inline">🇮🇹 Italian (A2)</span>
     </p>
     
     
     </div>
   </div>
-  <div class="flex flex-1 justify-end gap-6 items-center">
-  <div class="flex items-center gap-8">
+  <div class="flex flex-1 justify-end gap-4 items-center">
+  <div class="hidden sm:flex items-center gap-8">
   <a class="text-gray-300 hover:text-white transition-colors text-base font-medium leading-normal" href="index.html">About</a>
   <a class="text-[#38e07b] text-base font-bold leading-normal" href="projects.html">Projects</a>
   <a class="text-gray-300 hover:text-white transition-colors text-base font-medium leading-normal" href="contact.html">Contact</a>
   </div>
-  <div class="flex items-center gap-4">
+  <div class="hidden sm:flex items-center gap-4">
   <a class="text-gray-300 hover:text-white transition-colors" href="https://www.linkedin.com/in/edgar-cancino/">
   <svg class="feather feather-linkedin" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
   <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
@@ -56,16 +80,52 @@
   </svg>
   </a>
   </div>
-  <a href="res/Jose_Hernandez_CV.pdf" target="_blank" class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-6 bg-[#38e07b] text-[#111714] text-base font-bold leading-normal tracking-[0.015em] hover:bg-green-400 transition-all duration-300">
+  <!-- Mobile menu toggle -->
+  <button id="mobileMenuBtn" class="sm:hidden inline-flex items-center justify-center h-9 w-9 rounded-md border border-[var(--bd-muted)] text-white hover:text-[#38e07b] hover:border-[#38e07b] transition-colors" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+    <!-- Hamburger icon -->
+    <svg id="iconHamburger" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+    </svg>
+    <!-- Close icon -->
+    <svg id="iconClose" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+    </svg>
+  </button>
+  <a href="res/Jose_Hernandez_CV.pdf" target="_blank" class="hidden sm:flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-9 sm:h-10 px-4 sm:px-6 bg-[#38e07b] text-[#111714] text-sm sm:text-base font-bold leading-normal tracking-[0.015em] hover:bg-green-400 transition-all duration-300">
   <span class="truncate">Resume</span>
   </a>
   </div>
   </header>
-<main class="flex flex-1 justify-center py-16 px-4 sm:px-6 lg:px-8 mt-16">
+  <!-- Mobile dropdown menu -->
+  <nav id="mobileMenu" class="sm:hidden fixed top-14 left-0 right-0 bg-[#111714]/95 backdrop-blur border-b border-[var(--bd-muted)] px-5 py-3 z-40 hidden">
+    <div class="max-w-7xl mx-auto flex flex-col gap-3 text-white">
+      <a href="index.html" class="py-2 border-b border-[var(--bd-muted)]/60">About</a>
+      <a href="projects.html" class="py-2 border-b border-[var(--bd-muted)]/60 text-[#38e07b] font-semibold">Projects</a>
+      <a href="contact.html" class="py-2">Contact</a>
+      <div class="flex items-center gap-4 pt-2">
+        <a class="text-gray-300 hover:text-white transition-colors" href="https://www.linkedin.com/in/edgar-cancino/" aria-label="LinkedIn">
+          <svg class="feather feather-linkedin" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+            <rect height="12" width="4" x="2" y="9"></rect>
+            <circle cx="4" cy="4" r="2"></circle>
+          </svg>
+        </a>
+        <a class="text-gray-300 hover:text-white transition-colors" href="https://github.com/edgarcancinoe" aria-label="GitHub">
+          <svg class="feather feather-github" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+          </svg>
+        </a>
+        <a href="res/Jose_Hernandez_CV.pdf" target="_blank" class="ml-auto inline-flex items-center justify-center rounded-full h-9 px-4 bg-[#38e07b] text-[#111714] text-sm font-bold hover:bg-green-400 transition-colors">
+          Resume
+        </a>
+      </div>
+    </div>
+  </nav>
+<main class="flex flex-1 justify-center py-10 sm:py-16 px-4 sm:px-6 lg:px-8 mt-16">
 <div class="layout-content-container flex w-full max-w-[88rem] flex-col">
-<div class="flex flex-col items-center text-center mb-12">
-<h1 class="text-white text-5xl font-bold leading-tight tracking-tighter">Projects</h1>
-<p class="text-[#9eb7a8] text-lg mt-4 max-w-2xl">Explore my portfolio showcasing expertise in Robotics, AI, Computer Vision, and Intelligent Systems.</p>
+<div class="flex flex-col items-center text-center mb-10 sm:mb-12">
+<h1 class="text-white text-3xl sm:text-5xl font-bold leading-tight tracking-tighter">Projects</h1>
+<p class="text-[#9eb7a8] text-base sm:text-lg mt-3 sm:mt-4 max-w-2xl">Explore my portfolio showcasing expertise in Robotics, AI, Computer Vision, and Intelligent Systems.</p>
 </div>
 <div class="mb-12 flex flex-col items-center justify-center gap-4 sm:gap-6">
   <div class="w-full sm:w-auto">
@@ -106,7 +166,7 @@
 <div class="space-y-16">
 <section id="computer-vision">
 <h2 class="text-white text-3xl font-bold leading-tight tracking-tight mb-8">AI / Machine Learning</h2>
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8">
   <div data-category="AI / Machine Learning" data-include="project_cards/data_science/truck_loading_durations.html"></div>
   <div data-category="AI / Machine Learning" data-include="project_cards/computer_vision/maybe_obstacle.html"></div>
   <div data-category="AI / Machine Learning" data-include="project_cards/AI/gnn_noisy_labels.html"></div>
@@ -116,7 +176,7 @@
   </section>
 <section id="robotics">
 <h2 class="text-white text-3xl font-bold leading-tight tracking-tight mb-8">Robotics</h2>
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8">
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 sm:gap-8">
   <div data-category="Robotics" data-include="project_cards/robotics/final_implementation_manipulator.html"></div>
   <div data-category="Robotics" data-include="project_cards/robotics/ekf_corner_detection.html"></div>
   <div data-category="Robotics" data-include="project_cards/robotics/IBVS.html"></div>
@@ -128,7 +188,7 @@
   </section>
   <section id="embedded-systems">
   <h2 class="text-white text-3xl font-bold leading-tight tracking-tight mb-8">Signal Processing / Embedded Systems</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8">
     <div data-category="Signal Processing / Embedded Systems" data-include="project_cards/embedded/smart_parking.html"></div>
     <div data-category="Signal Processing / Embedded Systems" data-include="project_cards/embedded/sapienza_iot.html"></div>
     <div data-category="Signal Processing / Embedded Systems" data-include="project_cards/signals/music_recognition.html"></div>
@@ -138,32 +198,56 @@
 </div>
 </div>
 </main>
-<footer class="fixed bottom-0 left-0 right-0 backdrop-blur-sm border-t border-solid border-t-[#29382f] px-10 py-4 z-50 bg-[#111714]/80">
+<footer id="contact" class="fixed bottom-0 left-0 right-0 backdrop-blur-sm border-t border-solid border-t-[var(--bd-muted)] px-5 sm:px-10 py-2 sm:py-4 z-50" style="background: color-mix(in srgb, var(--bg-surface) 80%, transparent);">
   <div class="max-w-7xl mx-auto flex justify-between items-center text-white">
-    <div class="flex items-center gap-3">
-      <p class="text-gray-300 text-sm">© 2025 Jose Edgar Hernandez Cancino Estrada</p>
-      <span class="text-gray-500">|</span>
-      <span class="text-gray-300 text-sm flex items-center gap-2">
-        <a href="mailto:edgarcancinoe@gmail.com" class="hover:text-white">edgarcancinoe@gmail.com</a>
-      </span>
-    </div>
-    <div class="flex items-center gap-4">
-      <a class="text-gray-300 hover:text-white transition-colors" href="https://linkedin.com/in/edgarcancinoe">
-        <svg class="feather feather-linkedin" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">
-          <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-          <rect height="12" width="4" x="2" y="9"></rect>
-          <circle cx="4" cy="4" r="2"></circle>
-        </svg>
-      </a>
-      <a class="text-gray-300 hover:text-white transition-colors" href="https://github.com/edgarcancinoe">
-        <svg class="feather feather-github" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">
-          <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-        </svg>
-      </a>
-    </div>
+  <div class="flex items-center gap-3">
+  <p class="text-[var(--fg-secondary)] text-sm"> 2025<span class="text-subtle mr-2 ml-2">|</span> 
+    <span class="sm:hidden"> J.E.H.C.E.</span>
+    <span class="hidden sm:inline"> Jose Edgar Hernandez Cancino Estrada</span>
+  </p>
+  <!-- <span class="text-subtle">|</span> -->
+  <!-- <p class="text-[var(--fg-secondary)] text-sm">edgarcancinoe@gmail.com</p> -->
   </div>
-</footer>
+  <div class="hidden sm:flex items-center gap-4">
+  <a class="text-gray-300 hover:text-[var(--brand)] transition-colors" href="https://www.linkedin.com/in/edgar-cancino/">
+  <svg class="feather feather-linkedin" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">
+  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+  <rect height="12" width="4" x="2" y="9"></rect>
+  <circle cx="4" cy="4" r="2"></circle>
+  </svg>
+  </a>
+  <a class="text-gray-300 hover:text-[var(--brand)] transition-colors" href="https://github.com/edgarcancinoe">
+  <svg class="feather feather-github" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+  </svg>
+  </a>
+  </div>
+  </div>
+  </footer>
 </div>
 </div>
 <script src="js/include-partials.js"></script>
+<script>
+  (function(){
+    const btn = document.getElementById('mobileMenuBtn');
+    const menu = document.getElementById('mobileMenu');
+    if (!btn || !menu) return;
+    const iconHam = document.getElementById('iconHamburger');
+    const iconClose = document.getElementById('iconClose');
+    btn.addEventListener('click', () => {
+      const isOpen = !menu.classList.contains('hidden');
+      if (isOpen) {
+        menu.classList.add('hidden');
+        iconHam.classList.remove('hidden');
+        iconClose.classList.add('hidden');
+        btn.setAttribute('aria-expanded', 'false');
+      } else {
+        menu.classList.remove('hidden');
+        iconHam.classList.add('hidden');
+        iconClose.classList.remove('hidden');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  })();
+  </script>
 </body></html>
