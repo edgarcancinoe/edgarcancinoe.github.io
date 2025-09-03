@@ -1,6 +1,6 @@
 <html><head>
     <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
-    <link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Spline+Sans%3Awght%40400%3B500%3B700" onload="this.rel='stylesheet'" rel="stylesheet"/>
+    <link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Space+Grotesk%3Awght%40400%3B500%3B700&amp;family=Spline+Sans%3Awght%40400%3B500%3B700" onload="this.rel='stylesheet'" rel="stylesheet"/>
     <meta charset="utf-8"/>
     <title>Contact - Jose Edgar Hernandez</title>
     <link href="logo.png" rel="icon" type="image/png"/>
@@ -9,7 +9,7 @@
     <body class="bg-[#111714] dark">
     <div class="relative flex size-full min-h-screen flex-col overflow-x-hidden" style='font-family: "Spline Sans", "Noto Sans", sans-serif;'>
     <div class="flex-col">
-    <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#29382f] px-10 py-4 sticky top-0 bg-[#111714]/80 backdrop-blur-sm z-50">
+    <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#29382f] px-10 py-4 fixed top-0 left-0 right-0 bg-[#111714]/80 backdrop-blur-sm z-50 font-['Space_Grotesk',_'Noto_Sans',_sans-serif]">
       <div class="flex items-center gap-3 text-white">
         <svg class="text-[#38e07b]" fill="none" height="28" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="28" xmlns="http://www.w3.org/2000/svg">
           <path d="M10 16.5 8 18l-6-6 6-6 2 1.5"></path>
@@ -52,26 +52,30 @@
         </a>
       </div>
     </header>
-    <main class="flex-1">
+    <main class="flex-1 mt-16">
     <section class="py-16 sm:py-24 px-6">
     <div class="mx-auto max-w-6xl">
-    <div class="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16">
+    <div class="grid grid-cols-1 gap-12">
     <div class="flex flex-col">
     <div class="mb-8">
     <h1 class="text-4xl font-black tracking-tight text-white sm:text-5xl">Get in Touch</h1>
     <p class="mt-4 text-lg text-[#9eb7a8]">I'm always open to discussing new projects, creative ideas, or opportunities to collaborate. Feel free to reach out!</p>
     </div>
     <div class="space-y-3">
-    <a class="flex items-center gap-4 rounded-lg p-4 transition-colors hover:bg-[#1c2620] border border-transparent hover:border-[#3d5245]" href="mailto:edgarcancinoe@outlook.com">
-    <div class="flex size-12 shrink-0 items-center justify-center rounded-md bg-[#1c2620] border border-[#3d5245] text-white">
-    <svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
-    <path d="M224,48H32a8,8,0,0,0-8,8V192a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A8,8,0,0,0,224,48Zm-96,85.15L52.57,64H203.43ZM98.71,128,40,181.81V74.19Zm11.84,10.85,12,11.05a8,8,0,0,0,10.82,0l12-11.05,58,53.15H52.57ZM157.29,128,216,74.18V181.82Z"></path>
-    </svg>
-    </div>
-    <div>
-    <p class="text-base font-semibold text-white">Email</p>
-    <p class="text-sm text-[#9eb7a8]">edgarcancinoe@outlook.com</p>
-    </div>
+    <a class="flex w-full items-center gap-4 rounded-lg p-4 transition-colors hover:bg-[#1c2620] border border-transparent hover:border-[#3d5245]" href="mailto:edgarcancinoe@gmail.com">
+      <div class="flex size-12 shrink-0 items-center justify-center rounded-md bg-[#1c2620] border border-[#3d5245] text-white">
+        <svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
+          <path d="M224,48H32a8,8,0,0,0-8,8V192a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A8,8,0,0,0,224,48Zm-96,85.15L52.57,64H203.43ZM98.71,128,40,181.81V74.19Zm11.84,10.85,12,11.05a8,8,0,0,0,10.82,0l12-11.05,58,53.15H52.57ZM157.29,128,216,74.18V181.82Z"></path>
+        </svg>
+      </div>
+      <div class="flex-1 min-w-0">
+        <p class="text-base font-semibold text-white">Email</p>
+        <p class="text-sm text-[#9eb7a8] truncate">edgarcancinoe@gmail.com</p>
+      </div>
+      <button type="button" class="ml-auto inline-flex items-center gap-2 justify-center rounded-full border border-[#3d5245] px-5 h-12 text-base text-gray-200 hover:text-white hover:border-[#38e07b] transition-colors shrink-0" aria-label="Copy email" title="Copy to clipboard" data-copy="edgarcancinoe@gmail.com">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+        <span class="hidden sm:inline">Copy</span>
+      </button>
     </a>
     <a class="flex items-center gap-4 rounded-lg p-4 transition-colors hover:bg-[#1c2620] border border-transparent hover:border-[#3d5245]" href="https://www.linkedin.com/in/edgar-cancino/" target="_blank">
     <div class="flex size-12 shrink-0 items-center justify-center rounded-md bg-[#1c2620] border border-[#3d5245] text-white">
@@ -97,37 +101,16 @@
     </a>
     </div>
     </div>
-    <div class="rounded-xl bg-[#1c2620] border border-[#3d5245] p-8">
-    <form class="space-y-6" onsubmit="event.preventDefault(); window.location.href='mailto:edgarcancinoe@outlook.com';">
-    <div>
-    <label class="text-sm font-medium leading-none text-white" for="name">Name</label>
-    <input class="form-input mt-2 flex h-12 w-full resize-none rounded-md border border-[#3d5245] bg-[#111714] px-4 py-2 text-base text-white placeholder:text-[#9eb7a8] focus:border-[#38e07b] focus:outline-none focus:ring-2 focus:ring-[#38e07b]/30" id="name" placeholder="Your Name" type="text"/>
-    </div>
-    <div>
-    <label class="text-sm font-medium leading-none text-white" for="email">Email</label>
-    <input class="form-input mt-2 flex h-12 w-full resize-none rounded-md border border-[#3d5245] bg-[#111714] px-4 py-2 text-base text-white placeholder:text-[#9eb7a8] focus:border-[#38e07b] focus:outline-none focus:ring-2 focus:ring-[#38e07b]/30" id="email" placeholder="Your Email" type="email"/>
-    </div>
-    <div>
-    <label class="text-sm font-medium leading-none text-white" for="subject">Subject</label>
-    <input class="form-input mt-2 flex h-12 w-full resize-none rounded-md border border-[#3d5245] bg-[#111714] px-4 py-2 text-base text-white placeholder:text-[#9eb7a8] focus:border-[#38e07b] focus:outline-none focus:ring-2 focus:ring-[#38e07b]/30" id="subject" placeholder="Subject" type="text"/>
-    </div>
-    <div>
-    <label class="text-sm font-medium leading-none text-white" for="message">Message</label>
-    <textarea class="form-input mt-2 flex w-full resize-none rounded-md border border-[#3d5245] bg-[#111714] px-4 py-3 text-base text-white placeholder:text-[#9eb7a8] focus:border-[#38e07b] focus:outline-none focus:ring-2 focus:ring-[#38e07b]/30" id="message" placeholder="Your Message" rows="5"></textarea>
-    </div>
-    <button class="flex h-12 w-full cursor-pointer items-center justify-center rounded-full bg-[#38e07b] px-6 text-base font-bold text-[#111714] transition-colors hover:bg-green-400" type="submit">Send Message</button>
-    </form>
-    </div>
-    </div>
-    </div>
     </section>
     </main>
-    <footer class="border-t border-solid border-t-[#29382f]">
-      <div class="max-w-7xl mx-auto px-10 py-4 text-white flex items-center justify-between">
+    <footer class="fixed bottom-0 left-0 right-0 backdrop-blur-sm border-t border-solid border-t-[#29382f] px-10 py-4 z-50 bg-[#111714]/80">
+      <div class="max-w-7xl mx-auto flex justify-between items-center text-white">
         <div class="flex items-center gap-3">
           <p class="text-gray-300 text-sm">© 2025 Jose Edgar Hernandez Cancino Estrada</p>
           <span class="text-gray-500">|</span>
-          <a href="mailto:edgarcancinoe@outlook.com" class="text-gray-300 hover:text-white text-sm">edgarcancinoe@outlook.com</a>
+          <span class="text-gray-300 text-sm flex items-center gap-2">
+            <a href="mailto:edgarcancinoe@gmail.com" class="hover:text-white">edgarcancinoe@gmail.com</a>
+          </span>
         </div>
         <div class="flex items-center gap-4">
           <a class="text-gray-300 hover:text-white transition-colors" href="https://www.linkedin.com/in/edgar-cancino/">
@@ -147,5 +130,66 @@
     </footer>
     </div>
     </div>
-    
+
+    <script>
+      // Copy-to-clipboard buttons
+      document.querySelectorAll('[data-copy]').forEach(function(btn) {
+        btn.addEventListener('click', async function(e) {
+          // prevent parent anchors (like mailto) from firing
+          e.preventDefault();
+          e.stopPropagation();
+          const text = this.getAttribute('data-copy');
+          try {
+            await navigator.clipboard.writeText(text);
+            const original = this.textContent;
+            this.textContent = 'Copied';
+            this.classList.add('border-[#38e07b]','text-white');
+            setTimeout(() => { this.textContent = original; this.classList.remove('border-[#38e07b]'); }, 1500);
+          } catch (e) {
+            console.error('Copy failed', e);
+          }
+        });
+      });
+
+      // Contact form submission via Formspree
+      const form = document.getElementById('contactForm');
+      if (form) {
+        form.addEventListener('submit', async function(e) {
+          e.preventDefault();
+          const status = document.getElementById('formStatus');
+          status.textContent = '';
+          status.className = 'text-sm';
+
+          // IMPORTANT: Replace with your Formspree endpoint ID
+          const endpoint = form.getAttribute('action'); // e.g., https://formspree.io/f/abcdwxyz
+          if (!endpoint || endpoint.includes('your_form_id')) {
+            status.textContent = 'Form backend not configured yet. Please replace your Formspree form ID in contact.html.';
+            status.classList.add('text-yellow-400');
+            return;
+          }
+
+          const data = new FormData(form);
+          try {
+            const resp = await fetch(endpoint, {
+              method: 'POST',
+              headers: { 'Accept': 'application/json' },
+              body: data
+            });
+            if (resp.ok) {
+              status.textContent = 'Thanks! Your message has been sent.';
+              status.classList.add('text-green-400');
+              form.reset();
+            } else {
+              const err = await resp.json().catch(() => ({}));
+              status.textContent = err?.errors?.[0]?.message || 'Oops, something went wrong sending your message.';
+              status.classList.add('text-red-400');
+            }
+          } catch (e) {
+            status.textContent = 'Network error. Please try again later.';
+            status.classList.add('text-red-400');
+          }
+        });
+      }
+    </script>
+
     </body></html>

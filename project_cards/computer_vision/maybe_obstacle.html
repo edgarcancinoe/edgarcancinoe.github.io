@@ -11,15 +11,16 @@
       <span class="ml-2 align-middle px-2 py-0.5 bg-[#38e07b]/20 text-[#38e07b] text-xs rounded-full border border-[#38e07b]/40">2025</span>
     </h3>
     <p class="text-[#9eb7a8] text-base mt-2">
-      DeepLabv3-ResNet50 with boundary-aware loss to produce Unknown Objectness Score (UOS) maps for anomaly-aware obstacle detection. Conformal Risk Control calibrates thresholds to bound false negatives. Evaluated on Lost & Found and Road Anomaly with AUROC/AP/FPR@95.
+      Developed a road obstacle segmentation pipeline using a customized <strong>DeepLabV3-ResNet50</strong> with a sigmoid activation head for multi-class object classification.
+      <br>
+      <br>
+      Implemented conformal prediction to provide statistical guarantees on expected ERM error.
     </p>
     <div class="flex flex-wrap gap-2 mt-3">
+      <span class="px-2 py-1 bg-[#38e07b]/20 text-[#38e07b] text-xs rounded-full">PyTorch</span>
       <span class="px-2 py-1 bg-[#38e07b]/20 text-[#38e07b] text-xs rounded-full">Computer Vision</span>
       <span class="px-2 py-1 bg-[#38e07b]/20 text-[#38e07b] text-xs rounded-full">Semantic Segmentation</span>
-      <span class="px-2 py-1 bg-[#38e07b]/20 text-[#38e07b] text-xs rounded-full">DeepLabv3</span>
-      <span class="px-2 py-1 bg-[#38e07b]/20 text-[#38e07b] text-xs rounded-full">Uncertainty</span>
       <span class="px-2 py-1 bg-[#38e07b]/20 text-[#38e07b] text-xs rounded-full">Conformal Prediction</span>
-      <span class="px-2 py-1 bg-[#38e07b]/20 text-[#38e07b] text-xs rounded-full">UOS</span>
     </div>
     <div class="flex gap-6 mt-4">
       <a href="https://github.com/edgarcancinoe/maybe-obstacle" target="_blank" class="inline-flex items-center text-[#38e07b] hover:text-green-400 transition-colors">

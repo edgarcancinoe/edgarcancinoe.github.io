@@ -3,11 +3,60 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
-<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Spline+Sans%3Awght%40400%3B500%3B700" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Space+Grotesk%3Awght%40400%3B500%3B700&amp;family=Spline+Sans%3Awght%40400%3B500%3B700" onload="this.rel='stylesheet'" rel="stylesheet"/>
 <title>Jose Edgar Hernandez - Roboticist & AI Engineer</title>
 <link href="logo.png" rel="icon" type="image/png"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <style type="text/tailwindcss">
+    @layer base {
+      :root {
+        /* Brand core (dark pine + emerald) */
+        --bg-root:        #111714; /* body bg */
+        --bg-surface:     #161d1a; /* section alt bg */
+        --bg-panel:       #1c2620; /* cards */
+        --bd-muted:       #29382f; /* lines / separators */
+        --bd-strong:      #3d5245; /* panels / avatars ring */
+
+        --fg-primary:     #ffffff; /* headings */
+        --fg-secondary:   #e5e7eb; /* body */
+        --fg-muted:       #9eb7a8; /* captions */
+        --fg-subtle:      #8aa096; /* extra-muted */
+
+        --brand:          #38e07b; /* primary emerald */
+        --brand-600:      #2dd06f;
+        --brand-700:      #23b85f;
+        --brand-800:      #1a9e52;
+        --brand-900:      #138446;
+        --brand-tint:     #b9f2cf; /* very light tint for subtle highlights */
+
+        /* On-brand supportive tints (keep it in family) */
+        --teal-600:       #27c1a7;
+        --teal-800:       #126d60;
+
+        /* Shadows */
+        --shadow-strong:  0 10px 24px rgba(0,0,0,.35), 0 4px 8px rgba(0,0,0,.25);
+      }
+    }
+
+    @layer utilities {
+      .text-muted  { color: var(--fg-muted); }
+      .text-subtle { color: var(--fg-subtle); }
+      .panel       { background: var(--bg-panel); border: 1px solid var(--bd-strong); }
+      .btn-brand   { background: var(--brand); color: var(--bg-root); }
+      .btn-brand:hover { background: var(--brand-600); box-shadow: 0 0 0 6px color-mix(in srgb, var(--brand) 25%, transparent); }
+      .ring-brand  { box-shadow: 0 0 0 2px var(--bg-root), 0 0 0 4px var(--brand); }
+
+      /* On-brand gradients */
+      .grad-emerald { background-image: linear-gradient(135deg, #0f211b 0%, #143026 40%, #143026 40%, var(--bg-panel) 100%); }
+      .grad-teal    { background-image: linear-gradient(135deg, #0f1f1d 0%, var(--teal-800) 35%, var(--bg-panel) 100%); }
+      .grad-pine    { background-image: linear-gradient(135deg, #0e1512 0%, #121b18 50%, var(--bg-panel) 100%); }
+
+      /* Borders in skills grid, consistent with brand */
+      .bd-skill-1 { border-color: var(--brand); }
+      .bd-skill-2 { border-color: #ffb4ab1a; }
+      .bd-skill-3 { border-color: #34d399; }
+      .bd-skill-4 { border-color: #f59e0b; }
+    }
     @keyframes float {
       0% {
         transform: translateY(0px);
@@ -33,137 +82,166 @@
       left: -21px;
       width: 12px;
       height: 12px;
-      background-color: #38e07b;
+      background-color: var(--brand);
       border-radius: 9999px;
-      border: 2px solid #111714;
+      border: 2px solid var(--bg-root);
+    }
+    html { scroll-behavior: smooth; }
+    .reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
+    .reveal.show { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { transition: none; opacity: 1; transform: none; }
     }
   </style>
 </head>
 <body>
-<div class="relative flex size-full min-h-screen flex-col bg-[#111714] dark group/design-root overflow-x-hidden" style='font-family: "Spline Sans", "Noto Sans", sans-serif;'>
-<div class="layout-container flex h-full grow flex-col">
-<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#29382f] px-10 py-4 sticky top-0 bg-[#111714]/80 backdrop-blur-sm z-50">
-<div class="flex items-center gap-3 text-white">
-<svg class="text-[#38e07b]" fill="none" height="28" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="28" xmlns="http://www.w3.org/2000/svg">
-<path d="M10 16.5 8 18l-6-6 6-6 2 1.5"></path>
-<path d="m14 7.5 2-1.5 6 6-6 6-2-1.5"></path>
-<path d="M12 8v8"></path>
-</svg>
-<div>
-  <h2 class="text-white text-xl font-bold leading-tight tracking-[-0.015em]"><a href="" class="hover:text-[#38e07b] transition-colors">Jose Edgar Hernandez Cancino E.</a></h2>
-  <p class="text-gray-400 text-xs flex gap-3">
-    <span>🇲🇽 Spanish</span>
-    <span>·</span>
-    <span>🇬🇧 English (C1)</span>
-    <span>·</span>
-    <span>🇮🇹 Italian (A2)</span>
-  </p>
-  
-  
+<div class="relative flex size-full min-h-screen flex-col dark group/design-root overflow-x-hidden" style='font-family: "Spline Sans", "Noto Sans", sans-serif; background: var(--bg-root);'>
+  <div class="layout-container flex h-full grow flex-col">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#29382f] px-10 py-4 fixed top-0 left-0 right-0 bg-[#111714]/80 backdrop-blur-sm z-50 font-['Space_Grotesk',_'Noto_Sans',_sans-serif]">
+  <div class="flex items-center gap-3 text-white">
+    <svg class="text-[#38e07b]" fill="none" height="28" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="28" xmlns="http://www.w3.org/2000/svg">
+      <path d="M10 16.5 8 18l-6-6 6-6 2 1.5"></path>
+      <path d="m14 7.5 2-1.5 6 6-6 6-2-1.5"></path>
+      <path d="M12 8v8"></path>
+    </svg>
+    <div>
+      <h2 class="text-white text-xl font-bold leading-tight tracking-[-0.015em]"><a href="index.html" class="hover:text-[#38e07b] transition-colors">Jose Edgar Hernandez Cancino E.</a></h2>
+      <p class="text-gray-400 text-xs flex gap-3">
+        <span>🇲🇽 Spanish</span>
+        <span>·</span>
+        <span>🇬🇧 English (C1)</span>
+        <span>·</span>
+        <span>🇮🇹 Italian (A2)</span>
+      </p>
+    </div>
   </div>
-</div>
-<div class="flex flex-1 justify-end gap-6 items-center">
-<div class="flex items-center gap-8">
-<a class="text-[#38e07b] text-base font-bold leading-normal" href="index.html">About</a>
-<a class="text-gray-300 hover:text-white transition-colors text-base font-medium leading-normal" href="projects.html">Projects</a>
-<a class="text-gray-300 hover:text-white transition-colors text-base font-medium leading-normal" href="contact.html">Contact</a>
-</div>
-<div class="flex items-center gap-4">
-<a class="text-gray-300 hover:text-white transition-colors" href="https://www.linkedin.com/in/edgar-cancino/">
-<svg class="feather feather-linkedin" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-<path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-<rect height="12" width="4" x="2" y="9"></rect>
-<circle cx="4" cy="4" r="2"></circle>
-</svg>
-</a>
-<a class="text-gray-300 hover:text-white transition-colors" href="https://github.com/edgarcancinoe">
-<svg class="feather feather-github" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-<path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-</svg>
-</a>
-</div>
-<a href="res/Jose_Hernandez_CV.pdf" target="_blank" class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-6 bg-[#38e07b] text-[#111714] text-base font-bold leading-normal tracking-[0.015em] hover:bg-green-400 transition-all duration-300">
-<span class="truncate">Resume</span>
-</a>
-</div>
+  <div class="flex flex-1 justify-end gap-6 items-center">
+    <div class="flex items-center gap-8">
+      <a class="text-[#38e07b] text-base font-bold leading-normal" href="index.html">About</a>
+      <a class="text-gray-300 hover:text-white transition-colors text-base font-medium leading-normal" href="projects.html">Projects</a>
+      <a class="text-gray-300 hover:text-white transition-colors text-base font-medium leading-normal" href="contact.html">Contact</a>
+    </div>
+    <div class="flex items-center gap-4">
+      <a class="text-gray-300 hover:text-white transition-colors" href="https://www.linkedin.com/in/edgar-cancino/">
+        <svg class="feather feather-linkedin" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+          <rect height="12" width="4" x="2" y="9"></rect>
+          <circle cx="4" cy="4" r="2"></circle>
+        </svg>
+      </a>
+      <a class="text-gray-300 hover:text-white transition-colors" href="https://github.com/edgarcancinoe">
+        <svg class="feather feather-github" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+        </svg>
+      </a>
+    </div>
+    <a href="res/Jose_Hernandez_CV.pdf" target="_blank" class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-6 bg-[#38e07b] text-[#111714] text-base font-bold leading-normal tracking-[0.015em] hover:bg-green-400 transition-all duration-300">
+      <span class="truncate">Resume</span>
+    </a>
+  </div>
 </header>
-<main class="flex-1 pb-24">
-<section id="about" class="px-20 py-24">
+<main class="flex-1 pb-24 mt-16">
+<section id="about" class="px-20 py-20">
   <div class="max-w-7xl mx-auto">
-    <!-- Hook phrase -->
-    <h1 class="text-white text-5xl font-black leading-tight tracking-tighter text-center">Building intelligent systems that see, decide, and act.</h1>
-    <p class="text-gray-300 text-lg leading-relaxed mt-4 text-center max-w-3xl mx-auto">Robotics & AI engineer focused on applied machine learning, computer vision, and autonomous systems. Currently in the Erasmus Mundus Master in AI (EMAI) with a Data Science concentration at the University of Ljubljana.</p>
+    <!-- Hero layout: image left, text right -->
+    <div class="flex flex-col sm:flex-row items-center sm:items-start gap-24 sm:gap-12">
+      <div class="shrink-0 flex justify-center sm:justify-start">
+        <img src="images/fototec.jpeg" alt="Jose Edgar Hernandez" class="h-40 w-40 md:h-56 md:w-56 rounded-full object-cover border border-[var(--bd-strong)] shadow-lg" loading="lazy" decoding="async"/>
+      </div>
+      <div class="sm:mt-4 md:mt-0 lg:mt-0 reveal">
+        <h1 class="text-white text-5xl font-extrabold leading-tight tracking-tight text-center sm:text-left">
+          Robotics Engineer&nbsp;| MSc Candidate in Artificial Intelligence
+        </h1>
+        <p class="text-[var(--fg-secondary)] text-lg leading-relaxed mt-3 text-center sm:text-left max-w-3xl sm:max-w-none mx-auto sm:mx-0">
+          I am currently pursuing a research-focused multi-institutional <strong>MSc in Artificial Intelligence</strong> (EMAI).
+          <br><br>
+          Currently specializing in Data Science at the University of Ljubljana, Slovenia, where I am working on my research thesis.
+        </p>
+      </div>
+      
+    </div>
 
     <!-- About/Background/Experience cards -->
     <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
       <!-- About Me -->
-      <div class="bg-[#1c2620] border border-[#3d5245] rounded-xl p-6">
-        <h3 class="text-white text-2xl font-bold">About Me</h3>
-        <p class="text-gray-300 mt-3">I design and build end-to-end intelligent systems—from perception to action. I enjoy translating research into reliable software and real-world robotics.</p>
+      <div class="grad-pine h-full flex flex-col p-6 rounded-2xl shadow-lg hover:scale-105 transition-transform border border-[var(--bd-strong)]">        <h2 class="text-white text-2xl font-bold mb-3">About Me</h2>
+        <p class="text-[var(--fg-secondary)] leading-relaxed">
+          I’m a robotics engineer, AI researcher, and entrepreneur with a passion for building 
+          data-driven solutions at the intersection of machine learning and automation. <br><br>
+          I thrive in bridging deep technical expertise with real-world business impact, 
+          designing scalable AI-driven pipelines, and leading projects from concept to 
+          production.
+        </p>
       </div>
-
+      
       <!-- Background -->
-      <div class="bg-[#1c2620] border border-[#3d5245] rounded-xl p-6">
-        <h3 class="text-white text-2xl font-bold">Background</h3>
-        <p class="text-gray-300 mt-3">M.S. in AI (EMAI). B.S. in Robotics & Digital Systems (Tecnológico de Monterrey) with strong foundations in AI, Robotics, CV/ML, embedded systems, and mathematics.</p>
+      <div class="grad-pine h-full flex flex-col p-6 rounded-2xl shadow-lg hover:scale-105 transition-transform border border-[var(--bd-strong)]">
+        <h2 class="text-white text-2xl font-bold mb-3">Background</h2>
+        <p class="text-[var(--fg-secondary)] leading-relaxed">
+          My technical foundation spans <strong>Robotics</strong>, <strong>Computer Vision</strong>, <strong>Deep Learning</strong>, and <strong>Probabilistic Modeling</strong>. 
+          <br><br>
+          I started my academic path in <strong>Physics Engineering</strong> before transitioning to <strong>Robotics and Digital Systems Engineering</strong>, where I completed my B.S. at Tecnológico de Monterrey.
+          <br><br>
+        </p>
       </div>
-
       <!-- Experience -->
-      <div class="bg-[#1c2620] border border-[#3d5245] rounded-xl p-6">
-        <h3 class="text-white text-2xl font-bold">Experience</h3>
-        <p class="text-gray-300 mt-3">Robotics Lab intern at Rice (ROS for UR5 with SceneGrasp). Co‑founder & ML engineer at SAVEWARE (operations analytics, regression models). Automation intern at Steelcase (RPA/Power Automate/Python).</p>
+      <div class="grad-pine h-full flex flex-col p-6 rounded-2xl shadow-lg hover:scale-105 transition-transform border border-[var(--bd-strong)]">
+        <h2 class="text-white text-2xl font-bold mb-3">Core Competencies</h2>
+        <ul class="text-[var(--fg-secondary)] space-y-2">
+          <li>• Strong foundations in <strong>engineering and mathematics</strong>, with experience applying advanced theory to real-world projects.</li>
+          <li>• Design and implementation of <strong>AI-driven systems</strong> for robotics and business automation.</li>
+          <li>• Building of <strong>end-to-end solutions</strong>: data engineering, model development, API integration, and scalable cloud deployment.</li>
+        </ul>
+        
       </div>
+      
     </div>
   </div>
 </section>
 <section class="px-20 pb-24">
 <div class="max-w-7xl mx-auto">
-<h2 class="text-4xl font-bold leading-tight tracking-tight text-white text-center mb-16">My Trajectory</h2>
+<h2 class="text-4xl font-bold leading-tight tracking-tight text-white text-center mb-16 reveal">My Trajectory</h2>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
 <div>
 <h3 class="text-3xl font-bold text-white mb-8 text-center">Academic</h3>
-<div class="relative pl-10 border-l-2 border-[#29382f]">
+<div class="relative pl-10 border-l-2 border-[var(--bd-muted)]">
   <!-- EMAI Master entry with three universities -->
-  <div class="timeline-item mb-12">
+  <div class="timeline-item mb-12 reveal">
     <div class="flex items-start gap-4">
       <img alt="EMAI Program" class="w-12 h-12 rounded-full object-contain bg-white p-1" src="images/logos/emai.jpeg"/>
       <div class="flex-1">
-        <p class="text-[#38e07b] text-sm font-semibold mb-1">2024 - Present</p>
+        <p class="text-[var(--brand)] text-sm font-semibold mb-1">2024 - Present</p>
         <h4 class="text-white text-2xl font-bold">Erasmus Mundus Joint Master in Artificial Intelligence (EMAI)</h4>
-        <br>
-        <!-- <p class="text-gray-400 mt-2">Multi-institution program spanning:</p> -->
+        <p class="text-gray-400">Specialisation in <strong>Data Science</strong> at the <strong>University of Ljubljana.</strong></p><br>
         <div class="mt-3 grid grid-cols-1 sm:grid-cols-3 gap-4 items-center">
           <div class="flex flex-col items-center text-center gap-2">
-            <img alt="UPF Logo" class="h-12 object-contain bg-white rounded p-1" src="images/logos/upf.png"/>
-            <p class="text-gray-300 text-sm">Universitat Pompeu Fabra<br/><span class="text-gray-400">2024</span></p>
+            <img alt="UPF Logo" class="h-12 object-contain bg-white rounded p-0" src="images/logos/upf.png"/>
+            <p class="text-[var(--fg-secondary)] text-sm">Universitat Pompeu Fabra - Barcelona<br/><span class="text-subtle">2024</span></p>
           </div>
           <div class="flex flex-col items-center text-center gap-2">
-            <img alt="Sapienza Logo" class="h-12 object-contain bg-white rounded p-1" src="images/logos/unirm.png"/>
-            <p class="text-gray-300 text-sm">Sapienza Università di Roma<br/><span class="text-gray-400">2025</span></p>
+            <img alt="Sapienza Logo" class="h-12 object-contain bg-white rounded p-0" src="images/logos/unirm.png"/>
+            <p class="text-[var(--fg-secondary)] text-sm">Sapienza Università di Roma<br/><span class="text-muted">2025</span></p>
           </div>
           <div class="flex flex-col items-center text-center gap-2">
-            <img alt="University of Ljubljana Logo" class="h-12 object-contain bg-white rounded p-1" src="images/logos/uol.png"/>
-            <p class="text-gray-300 text-sm">University of Ljubljana<br/><span class="text-gray-400">2025-2026</span></p>
+            <img alt="University of Ljubljana Logo" class="h-12 object-contain bg-white rounded p-0" src="images/logos/uol.png"/>
+            <p class="text-[var(--fg-secondary)] text-sm">University of Ljubljana<br/><span class="text-muted"> 2025-2026</span></p>
           </div>
         </div>
         <br>
-        <p class="text-gray-400 mt-2">Research‑focused Erasmus Mundus programme integrating machine learning and modern symbolic AI across leading European universities. Concentration in <strong>Data Science</strong> at the <strong>University of Ljubljana</strong>, where I am conducting my master's thesis.</p>
+        <p class="text-muted mt-2">Research‑focused Erasmus Mundus programme integrating machine learning and modern AI across leading European universities.</p>
         
       </div>
     </div>
   </div>
-<div class="timeline-item">
+<div class="timeline-item reveal">
 <div class="flex items-start gap-4">
 <img alt="Tecnologico de Monterrey Logo" class="w-12 h-12 rounded-full object-contain bg-white p-1" src="images/logos/tec.png"/>
 <div class="flex-1">
-<p class="text-[#38e07b] text-sm font-semibold mb-1">2020 - 2024</p>
+<p class="text-[var(--brand)] text-sm font-semibold mb-1">2020 - 2024</p>
 <h4 class="text-white text-2xl font-bold">B.S. in Robotics and Digital Systems</h4>
-<p class="text-gray-400 text-lg mt-1">Tecnologico de Monterrey</p>
-<ul class="list-disc pl-5 text-gray-400 mt-2 space-y-1">
-  <li><strong>Robotics:</strong> ROS/Gazebo for arms and mobile robots; control, localization, and sensor fusion.</li>
-  <li><strong>AI & Vision:</strong> ML fundamentals, applied computer vision, and edge deployment.</li>
-  <li><strong>Embedded & IoT:</strong> RTOS; UART, CAN, I2C, SPI; low‑level C/C++.</li>
-  <li><strong>Digital systems:</strong> FPGA and digital electronics.</li>
+<p class="text-muted text-lg mt-1">Tecnologico de Monterrey</p>
+<ul class="list-disc pl-5 text-muted mt-2 space-y-1">
+  Focused on digital and embedded systems, intelligent AI and robotics systems, automation, and control logic.
 </ul>
 </div>
 </div>
@@ -172,25 +250,24 @@
 </div>
 <div>
 <h3 class="text-3xl font-bold text-white mb-8 text-center">Experience</h3>
-<div class="relative pl-10 border-l-2 border-[#29382f]">
+<div class="relative pl-10 border-l-2 border-[var(--bd-muted)]">
 
 <!-- SAVEWARE (reverse order item 3) -->
 <div class="timeline-item mb-12">
   <div class="flex items-start gap-4">
-    <div class="w-12 h-12 rounded-full bg-[#1c2620] border border-[#3d5245] flex items-center justify-center">
-      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#38e07b]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5z" />
-        <path stroke-linecap="round" stroke-linejoin="round" d="M12 14l6.16-3.422A12.083 12.083 0 0112 21.5 12.083 12.083 0 015.84 10.578L12 14z" />
-      </svg>
+    <div class="panel w-12 h-12 rounded-full overflow-hidden flex items-center justify-center">
+      <img alt="SAVEWARE Logo" src="images/logos/sw.png" class="w-11 h-11 rounded-full object-cover bg-white p-0.5"/>
     </div>
     <div class="flex-1">
-      <p class="text-[#38e07b] text-sm font-semibold mb-1">March 2022 - Present</p>
+      <p class="text-[var(--brand)] text-sm font-semibold mb-1">March 2022 - Present</p>
       <h4 class="text-white text-2xl font-bold">SAVEWARE</h4>
-      <p class="text-gray-400 text-lg mt-1">Co-Founder, Data Analyst & Machine Learning Engineer</p>
-      <p class="text-gray-400 mt-2">• Launching a company to enhance operational performance in truck loading/unloading.<br/>
-      • Built regression models (SVR and Neural Networks) to estimate semi-trailer loading durations for a tissue paper distribution warehouse.<br/>
-      • Designed automated data processing to analyze weekly operations, generate efficiency metrics, and provide performance reports.<br/>
-      • Implemented catalog-generation scripts to estimate operation costs and workload.</p>
+      <p class="text-muted text-lg mt-1">Co-Founder, Data Engineer & Machine Learning Engineer</p>
+      <p class="text-muted mt-2">Building a data-driven platform to optimize <strong>manual labor operations</strong> in bulk and pallet cargo plants across LATAM.</p>
+      <ul class="text-muted mt-2 list-disc pl-5 space-y-1">
+        <li>Developing predictive models for operation duration estimation using <strong>attention-based regression techniques</strong> to model heteroskedastic probability distributions.</li>
+        <li>Designing <strong>end-to-end data pipelines</strong> for ingestion, cleaning, processing, and sanitization, integrating <strong>PostgreSQL</strong> back-ends with <strong>FastAPI microservices</strong>.</li>
+        <li>Created models to accurately <strong>estimate operational costs</strong> based on the quantity of material moved.</li>
+      </ul>
     </div>
   </div>
 </div>
@@ -200,10 +277,10 @@
   <div class="flex items-start gap-4">
     <img alt="Rice University Logo" class="w-12 h-12 rounded-full object-contain bg-white p-1" src="images/logos/rice.png"/>
     <div class="flex-1">
-      <p class="text-[#38e07b] text-sm font-semibold mb-1">January 2024 - February 2024</p>
+      <p class="text-[var(--brand)] text-sm font-semibold mb-1">January 2024 - February 2024</p>
       <h4 class="text-white text-2xl font-bold">Kavraki Lab, Rice University</h4>
-      <p class="text-gray-400 text-lg mt-1">Robotics Lab Internship</p>
-      <p class="text-gray-400 mt-2">• Designed and implemented a ROS system for an UR5 robot, integrating motion planning and Samsung Labs’ SceneGrasp for multi-object 3D reconstruction and grasp pose estimation using RGB-D data.<br/>
+      <p class="text-muted text-lg mt-1">Robotics Lab Assistant</p>
+      <p class="text-muted mt-2">• Designed and implemented a ROS system for integrating motion planning and Samsung Labs’ SceneGrasp for multi-object 3D reconstruction and grasp pose estimation of robotic manipulators using RGB-D data.<br/>
       • Developed a ROS package for pick-and-place using ArUco markers; validated in simulation and on hardware.</p>
     </div>
   </div>
@@ -215,10 +292,10 @@
   <div class="flex items-start gap-4">
     <img alt="Steelcase Logo" class="w-12 h-12 rounded-full object-contain bg-white p-1" src="images/logos/sc.png"/>
     <div class="flex-1">
-      <p class="text-[#38e07b] text-sm font-semibold mb-1">March 2022 - October 2023</p>
+      <p class="text-[var(--brand)] text-sm font-semibold mb-1">March 2022 - October 2023</p>
       <h4 class="text-white text-2xl font-bold">Steelcase</h4>
-      <p class="text-gray-400 text-lg mt-1">Business Automation Intern</p>
-      <p class="text-gray-400 mt-2">• Developed and implemented automation solutions for business processes for internal clients.<br/>
+      <p class="text-muted text-lg mt-1">Business Automation Internship</p>
+      <p class="text-muted mt-2">• Developed and implemented automation solutions for business processes for internal clients.<br/>
       • Utilized Agile methodology and technologies such as UiPath RPA, Excel VBA, Power Automate, and Python.</p>
     </div>
   </div>
@@ -229,29 +306,33 @@
 </div>
 </div>
 <div class="text-center mt-16">
-<a href="res/Jose_Hernandez_CV.pdf" target="_blank" class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-8 bg-[#38e07b] text-[#111714] text-lg font-bold leading-normal tracking-[0.015em] hover:bg-green-400 transition-all duration-300 transform hover:scale-105 mx-auto">
+<a href="res/Jose_Hernandez_CV.pdf" target="_blank" class="btn-brand flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-8 text-lg font-bold leading-normal tracking-[0.015em] transition-all duration-300 transform hover:scale-105 mx-auto">
 <span class="truncate">Download Full Resume</span>
 </a>
 </div>
 </div>
 </section>
-<section class="px-20 py-16 bg-[#161d1a]">
+<section class="px-20 py-16" style="background: var(--bg-surface);">
 <div class="max-w-6xl mx-auto">
-<h2 class="text-4xl font-bold leading-tight tracking-tight text-white text-center mb-12">Skills &amp; Technologies</h2>
+<h2 class="text-4xl font-bold leading-tight tracking-tight text-white text-center mb-12 reveal">Professional Skillset</h2>
 
 <!-- Four vertical columns -->
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 text-white">
   <!-- Col 1: Frameworks & Libraries -->
-  <div class="lg:border-l-0 lg:pl-0 border-t-4 lg:border-t-0 border-sky-400 lg:pr-6">
+  <div class="lg:border-l-0 lg:pl-0 border-t-4 lg:border-t-0 bd-skill-1 lg:pr-6">
     <h3 class="text-2xl font-bold text-white mb-6">Frameworks &amp; Libraries</h3>
     <div class="grid grid-cols-2 gap-6">
       <div class="flex flex-col items-center gap-2 skill-card">
-        <img alt="TensorFlow" class="w-16 h-16" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg"/>
-        <p class="font-medium">TensorFlow</p>
-      </div>
-      <div class="flex flex-col items-center gap-2 skill-card">
         <img alt="PyTorch" class="w-16 h-16" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg"/>
         <p class="font-medium">PyTorch</p>
+      </div>
+      <div class="flex flex-col items-center gap-2 skill-card">
+        <img alt="PyTorch Lightning" class="w-16 h-16 p-2 rounded-lg bg-white" src="https://cdn.simpleicons.org/lightning/792EE5"/>
+        <p class="font-medium">PyTorch Lightning</p>
+      </div>
+      <div class="flex flex-col items-center gap-2 skill-card">
+        <img alt="TensorFlow" class="w-16 h-16" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg"/>
+        <p class="font-medium">TensorFlow</p>
       </div>
       <div class="flex flex-col items-center gap-2 skill-card">
         <img alt="Scikit-Learn" class="w-16 h-16" src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg"/>
@@ -269,7 +350,7 @@
   </div>
 
   <!-- Col 2: Tools, Platforms & Cloud -->
-  <div class="lg:border-l-4 border-t-4 lg:border-t-0 border-rose-400 lg:pl-6 lg:pr-6">
+  <div class="lg:border-l-4 border-t-4 lg:border-t-0 bd-skill-2 lg:pl-6 lg:pr-6">
     <h3 class="text-2xl font-bold text-white mb-6">Tools, Platforms &amp; Cloud</h3>
     <div class="grid grid-cols-2 gap-6">
       <div class="flex flex-col items-center gap-2 skill-card">
@@ -285,18 +366,22 @@
         <p class="font-medium">Linux</p>
       </div>
       <div class="flex flex-col items-center gap-2 skill-card">
-        <img alt="MySQL" class="w-16 h-16" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"/>
-        <p class="font-medium">MySQL</p>
+        <img alt="PostgreSQL" class="w-16 h-16" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"/>
+        <p class="font-medium">PostgreSQL</p>
       </div>
       <div class="flex flex-col items-center gap-2 skill-card">
         <img alt="AWS" class="w-16 h-16" src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg"/>
         <p class="font-medium">AWS</p>
       </div>
+      <div class="flex flex-col items-center gap-2 skill-card">
+        <img alt="n8n" class="w-16 h-16" src="https://cdn.simpleicons.org/n8n/f05a4b"/>
+        <p class="font-medium">n8n</p>
+      </div>
     </div>
   </div>
 
   <!-- Col 3: Robotics & Embedded -->
-  <div class="lg:border-l-4 border-t-4 lg:border-t-0 border-emerald-400 lg:pl-6 lg:pr-6">
+  <div class="lg:border-l-4 border-t-4 lg:border-t-0 bd-skill-3 lg:pl-6 lg:pr-6">
     <h3 class="text-2xl font-bold text-white mb-6">Robotics &amp; Embedded</h3>
     <div class="grid grid-cols-2 gap-6">
       <div class="flex flex-col items-center gap-2 skill-card">
@@ -311,11 +396,15 @@
         <img alt="ESP32" class="w-16 h-16" src="https://upload.wikimedia.org/wikipedia/commons/2/22/Logo_von_Espressif.png"/>
         <p class="font-medium">ESP32</p>
       </div>
+      <div class="flex flex-col items-center gap-2 skill-card">
+        <img alt="Arduino" class="w-16 h-16" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg"/>
+        <p class="font-medium">Arduino</p>
+      </div>
     </div>
   </div>
 
   <!-- Col 4: Programming Languages -->
-  <div class="lg:border-l-4 border-t-4 lg:border-t-0 border-amber-400 lg:pl-6">
+  <div class="lg:border-l-4 border-t-4 lg:border-t-0 bd-skill-4 lg:pl-6">
     <h3 class="text-2xl font-bold text-white mb-6">Programming Languages</h3>
     <div class="grid grid-cols-2 gap-6">
       <div class="flex flex-col items-center gap-2 skill-card">
@@ -330,6 +419,10 @@
         <img alt="MATLAB" class="w-16 h-16" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matlab/matlab-original.svg"/>
         <p class="font-medium">MATLAB</p>
       </div>
+      <div class="flex flex-col items-center gap-2 skill-card">
+        <img alt="R" class="w-16 h-16" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/r/r-original.svg"/>
+        <p class="font-medium">R</p>
+      </div>
     </div>
   </div>
 </div>
@@ -338,62 +431,138 @@
 <section class="px-20 py-24">
 <div class="max-w-6xl mx-auto">
 <h2 class="text-4xl font-bold leading-tight tracking-tight text-white text-center mb-12">Courses &amp; Certifications</h2>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 justify-items-center">
-<div class="bg-[#1c2620] border border-[#3d5245] rounded-xl p-6 flex flex-col items-start gap-4 hover:border-[#38e07b] transition-colors duration-300">
+<div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-8 justify-items-center">
+
+<!-- Data Science Diploma Program ITPE -->
+  <div class="panel rounded-xl p-6 flex flex-col items-start gap-4 transition-colors duration-300 reveal hover-card">
+  <div class="flex items-center gap-4">
+  <img src="images/logos/itpe.png" alt="DeepLearning.AI Logo" class="h-8 w-auto rounded"/>
+  <h3 class="text-white text-xl font-semibold">Data Science Diploma</h3>
+  </div>
+  <p class="text-muted">
+    <span class="mr-2">2021</span>|<span class="ml-2"></span><span class="text-xs">Instituto Tecnológico del Petróleo y Energía</span>
+  </p>  
+  <p class="text-muted">60 hours diploma program covering Data cleaning, engineering and analysis, machine learning fundamentals, and data visualization.</p>
+  <div class="flex flex-wrap gap-2">
+    <a href="images/ipte_diploma.pdf" target="_blank" 
+       class="mt-2 inline-flex items-center justify-center px-4 py-2 rounded-full btn-brand font-semibold transition-colors hover:scale-105">
+      Download PDF
+    </a>
+    <a href="https://constancias.itpe.mx/validate/CDD18112.AA1342.1" target="_blank" 
+       class="mt-2 inline-flex items-center justify-center px-4 py-2 rounded-full btn-brand font-semibold transition-colors hover:scale-105">
+      E-Certificate
+    </a>
+  </div>
+</div>
+
+<!-- CS50's Introduction to AI -->
+<div class="panel rounded-xl p-6 flex flex-col items-start gap-4 transition-colors duration-300 reveal hover-card">
 <div class="flex items-center gap-4">
 <img src="images/logos/cs50.png" alt="CS50 Logo" class="h-8 w-auto rounded"/>
 <h3 class="text-white text-xl font-semibold">CS50's Introduction to AI</h3>
 </div>
-<p class="text-[#9eb7a8]">Harvard University - CS50</p>
-<p class="text-gray-400">Comprehensive course combining search algorithms, logic, machine learning, neural networks, and language processing through hands-on Python projects.</p>
-<a href="https://courses.edx.org/certificates/19bc0f7ea0e745a5923f29a596d4ad71" target="_blank" class="mt-2 inline-flex items-center justify-center px-4 py-2 rounded-full bg-[#38e07b] text-[#111714] font-semibold hover:bg-green-400 transition-colors">View Certificate</a>
+<p class="text-muted">
+  <span class="mr-2">2024</span>|<span class="ml-2">Harvard University - CS50</span>
+</p>
+<p class="text-muted">Comprehensive course combining search algorithms, logic, machine learning, neural networks, and language processing through hands-on Python projects.</p>
+<a href="https://courses.edx.org/certificates/19bc0f7ea0e745a5923f29a596d4ad71" target="_blank" class="mt-2 inline-flex items-center justify-center px-4 py-2 rounded-full btn-brand font-semibold transition-colors">View Certificate</a>
 </div>
-<div class="bg-[#1c2620] border border-[#3d5245] rounded-xl p-6 flex flex-col items-start gap-4 hover:border-[#38e07b] transition-colors duration-300">
+
+<!-- Machine Learning Specialization -->
+<div class="panel rounded-xl p-6 flex flex-col items-start gap-4 transition-colors duration-300 reveal hover-card">
 <div class="flex items-center gap-4">
 <img src="images/logos/dlai.png" alt="DeepLearning.AI Logo" class="h-8 w-auto rounded"/>
 <h3 class="text-white text-xl font-semibold">Machine Learning Specialization</h3>
 </div>
-<p class="text-[#9eb7a8]">DeepLearning.AI - Coursera</p>
-<p class="text-gray-400">Hands-on specialization covering supervised and unsupervised learning, deep learning with TensorFlow, and practical ML workflows.</p>
-<a href="https://coursera.org/verify/specialization/XH2FMWUHU5Y6" target="_blank" class="mt-2 inline-flex items-center justify-center px-4 py-2 rounded-full bg-[#38e07b] text-[#111714] font-semibold hover:bg-green-400 transition-colors">View Certificate</a>
+<p class="text-muted">
+  <span class="mr-2">2024</span>|<span class="ml-2">DeepLearning.AI - Coursera</span>
+</p>
+<p class="text-muted">Supervised learning (regression, classification), unsupervised learning (clustering, recommender systems, RL foundations), and deep learning, along with practical machine learning workflows.</p>
+<a href="https://coursera.org/verify/specialization/XH2FMWUHU5Y6" target="_blank" class="mt-2 inline-flex items-center justify-center px-4 py-2 rounded-full btn-brand font-semibold transition-colors">View Certificate</a>
 </div>
+
+</div>
+<!-- Additional Certifications -->
+<div class="mt-16">
+  <!-- <h3 class="text-2xl font-semibold text-center text-white mb-8">Additional Certifications</h3> -->
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+    <!-- Certification 1 -->
+    <div class="bg-[#1a231d] rounded-xl p-6 border border-[#29382f] hover:border-[#38e07b]/40 transition-all duration-200 hover:scale-[1.03]">
+      <div class="flex flex-col items-center h-full">
+        <h4 class="text-white font-medium text-base mb-2 text-center">Astrobiology and the Search for Extraterrestrial Life</h4>
+        <div class="flex items-center gap-2 text-[#9eb7a8] text-sm mb-4">
+          <span>2020</span>
+          <span class="text-[#38e07b]/50">•</span>
+          <span>Coursera | University of Edinburgh</span>
+        </div>
+        <div class="mt-auto w-full">
+          <a href="images/AstrobiologyUofEdinburgh.pdf" target="_blank" 
+             class="w-full flex items-center justify-center px-4 py-2 text-sm rounded-full bg-[#38e07b] text-[#111714] font-medium hover:bg-[#38e07b]/90 transition-colors">
+            <span>View Certificate</span>
+            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Certification 2 -->
+    <div class="bg-[#1a231d] rounded-xl p-6 border border-[#29382f] hover:border-[#38e07b]/40 transition-all duration-200 hover:scale-[1.03]">
+      <div class="flex flex-col items-center h-full">
+        <h4 class="text-white font-medium text-base mb-2 text-center">Master the Fourier Transform and its Applications</h4>
+        <div class="flex items-center gap-2 text-[#9eb7a8] text-sm mb-4">
+          <span>2021</span>
+          <span class="text-[#38e07b]/50">•</span>
+          <span>Udemy | Mike X Cohen</span>
+        </div>
+        <div class="mt-auto w-full">
+          <a href="images/Fourier.pdf" target="_blank" 
+             class="w-full flex items-center justify-center px-4 py-2 text-sm rounded-full bg-[#38e07b] text-[#111714] font-medium hover:bg-[#38e07b]/90 transition-colors">
+            <span>View Certificate</span>
+            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Certification 3 -->
+    <div class="bg-[#1a231d] rounded-xl p-6 border border-[#29382f] hover:border-[#38e07b]/40 transition-all duration-200 hover:scale-[1.03]">
+      <div class="flex flex-col items-center h-full">
+        <h4 class="text-white font-medium text-base mb-2 text-center">Building Database Applications in PHP</h4>
+        <div class="flex items-center gap-2 text-[#9eb7a8] text-sm mb-4">
+          <span>2021</span>
+          <span class="text-[#38e07b]/50">•</span>
+          <span>University of Michigan</span>
+        </div>
+        <div class="mt-auto w-full">
+          <a href="images/PHPUofMichigan.pdf" target="_blank" 
+             class="w-full flex items-center justify-center px-4 py-2 text-sm rounded-full bg-[#38e07b] text-[#111714] font-medium hover:bg-[#38e07b]/90 transition-colors">
+            <span>View Certificate</span>
+            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    
+  </div>
 </div>
 </div>
 </section>
-<section class="px-20 py-24 bg-[#161d1a]">
+<section class="px-20 py-24" style="background: var(--bg-surface);">
 <div class="max-w-6xl mx-auto">
-<h2 class="text-4xl font-bold leading-tight tracking-tight text-white text-center mb-12">Featured Projects</h2>
+<h2 class="text-4xl font-bold leading-tight tracking-tight text-white text-center mb-12 reveal">Featured Projects</h2>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-<div class="flex flex-col gap-4 rounded-xl overflow-hidden bg-[#1c2620] border border-[#3d5245] group">
-<div class="w-full bg-center bg-no-repeat aspect-video bg-cover flex flex-col overflow-hidden">
-<img alt="Differential Drive Robotic Manipulator" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="images/projects/puzzlebot_manipulator/out.gif"/>
-</div>
-<div class="p-6 pt-2">
-<p class="text-white text-xl font-semibold leading-normal">Differential Drive Robotic Manipulator</p>
-<p class="text-[#9eb7a8] text-base font-normal leading-normal mt-2">Robot with Nvidia Jetson Nano and ROS1. A 1D profile LiDAR is used for object detection. Encoder-based odometry is fused with corner landmark detections for localization using an Extended Kalman Filter (EKF). Navigation combines Image-Based Visual Servoing to reach ArUco blocks, a smooth differential-drive control law for A→B motion, and Bug0/Bug2 algorithms for reactive collision avoidance.</p>
-</div>
-</div>
-<div class="flex flex-col gap-4 rounded-xl overflow-hidden bg-[#1c2620] border border-[#3d5245] group">
-<div class="w-full bg-center bg-no-repeat aspect-video bg-cover flex flex-col overflow-hidden">
-<img alt="NoisyGNN: Robust GNNs Under Noisy Labels" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="images/projects/gnn_noisy/valD.png"/>
-</div>
-<div class="p-6 pt-2">
-<p class="text-white text-xl font-semibold leading-normal">NoisyGNN: Robust GNNs Under Noisy Labels</p>
-<p class="text-[#9eb7a8] text-base font-normal leading-normal mt-2">PyTorch Geometric framework for graph classification with label noise. Ensembles of GIN/GINE variants with mean/attention pooling, label-smoothing and ERL losses, and co-teaching strategies improve robustness on molecular graph datasets.</p>
-</div>
-</div>
-<div class="flex flex-col gap-4 rounded-xl overflow-hidden bg-[#1c2620] border border-[#3d5245] group">
-<div class="w-full bg-center bg-no-repeat aspect-video bg-cover flex flex-col overflow-hidden">
-<img alt="Deep Reinforcement Learning with Hindsight Experience Replay for Robotic Manipulation" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="images/projects/xarm6_ddpg_her/results.gif"/>
-</div>
-<div class="p-6 pt-2">
-<p class="text-white text-xl font-semibold leading-normal">Deep Reinforcement Learning with Hindsight Experience Replay for Robotic Manipulation (2023)</p>
-<p class="text-[#9eb7a8] text-base font-normal leading-normal mt-2">Implementation of Deep Deterministic Policy Gradient (DDPG) with Hindsight Experience Replay (HER) for robotic manipulation task using xArm6.</p>
-</div>
-</div>
+  <div data-category="Robotics" data-include="project_cards/robotics/final_implementation_manipulator.html"></div>
+  <div data-category="AI / Machine Learning" data-include="project_cards/AI/gnn_noisy_labels.html"></div>
+  <div data-category="AI / Machine Learning" data-include="project_cards/AI/xarm_ddpg_her.html"></div>
 </div>
 <div class="text-center mt-12">
-<a href="projects.html" class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-8 bg-[#38e07b] text-[#111714] text-lg font-bold leading-normal tracking-[0.015em] hover:bg-green-400 transition-all duration-300 transform hover:scale-105 mx-auto">
+<a href="projects.html" class="btn-brand flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-8 text-lg font-bold leading-normal tracking-[0.015em] transition-all duration-300 transform hover:scale-105 mx-auto">
 <span class="truncate">View All Projects</span>
 </a>
 </div>
@@ -401,22 +570,22 @@
 </section>
 </main>
 </div>
-<footer id="contact" class="fixed bottom-0 left-0 right-0 bg-[#161d1a]/80 backdrop-blur-sm border-t border-solid border-t-[#29382f] px-10 py-4 z-50">
+<footer id="contact" class="fixed bottom-0 left-0 right-0 backdrop-blur-sm border-t border-solid border-t-[var(--bd-muted)] px-10 py-4 z-50" style="background: color-mix(in srgb, var(--bg-surface) 80%, transparent);">
 <div class="max-w-7xl mx-auto flex justify-between items-center text-white">
 <div class="flex items-center gap-3">
-<p class="text-gray-300 text-sm">© 2025 Jose Edgar Hernandez Cancino Estrada</p>
-<span class="text-gray-500">|</span>
-<p class="text-gray-300 text-sm">edgarcanicinoe@outlook.com</p>
+<p class="text-[var(--fg-secondary)] text-sm"> 2025 Jose Edgar Hernandez Cancino Estrada</p>
+<span class="text-subtle">|</span>
+<p class="text-[var(--fg-secondary)] text-sm">edgarcancinoe@gmail.com</p>
 </div>
 <div class="flex items-center gap-4">
-<a class="text-gray-300 hover:text-white transition-colors" href="https://www.linkedin.com/in/edgar-cancino/">
+<a class="text-gray-300 hover:text-[var(--brand)] transition-colors" href="https://www.linkedin.com/in/edgar-cancino/">
 <svg class="feather feather-linkedin" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">
 <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
 <rect height="12" width="4" x="2" y="9"></rect>
 <circle cx="4" cy="4" r="2"></circle>
 </svg>
 </a>
-<a class="text-gray-300 hover:text-white transition-colors" href="https://github.com/edgarcancinoe">
+<a class="text-gray-300 hover:text-[var(--brand)] transition-colors" href="https://github.com/edgarcancinoe">
 <svg class="feather feather-github" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">
 <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
 </svg>
@@ -425,5 +594,38 @@
 </div>
 </footer>
 </div>
+
+<style>
+  /* Reveal animation */
+  .reveal { opacity: 0; transform: translateY(12px); transition: opacity .6s ease, transform .6s ease; }
+  .reveal.show { opacity: 1; transform: none; }
+
+  /* Card hover interaction */
+  .hover-card { transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; will-change: transform; }
+  .hover-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-strong); border-color: var(--brand); }
+
+  /* Image subtle zoom on hover */
+  .hover-zoom { transition: transform .35s ease; }
+  .hover-card:hover .hover-zoom, .group:hover .hover-zoom { transform: scale(1.04); }
+</style>
+
+<script>
+  (function() {
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReduced) return;
+    const els = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    els.forEach(el => io.observe(el));
+  })();
+</script>
+
+<script src="js/include-partials.js"></script>
 
 </body></html>
