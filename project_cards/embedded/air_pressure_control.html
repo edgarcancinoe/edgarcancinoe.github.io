@@ -1,19 +1,32 @@
-<div class="panel rounded-xl overflow-hidden flex flex-col h-full group reveal hover:scale-105 transition-transform duration-300">
-  <div class="relative overflow-hidden h-48">
-    <img src="images/projects/air_pressure_control/prototype.png" alt="Intelligent Air Pressure Control System" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"/>
-    <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-300"></div>
-    <div class="absolute top-3 right-3 flex gap-2">
-      <span class="inline-block rounded-full bg-black/50 text-white text-xs font-medium px-3 py-1 backdrop-blur-sm">Embedded Systems</span>
+<div class="flex flex-col gap-4 group">
+    <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg overflow-hidden relative">
+      <img alt="ML Homework 4: Model Training and Evaluation" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="images/projects/air_pressure_control/prototype.png"/>
+      <div class="absolute top-2 left-2 flex items-center gap-2 bg-[#1c2620]/80 backdrop-blur px-2 py-1 rounded-md border border-[#3d5245]">
+        <img alt="Tec de Monterrey Logo" class="h-5 w-5 rounded-full object-contain bg-white p-0.5" src="images/logos/tec.png"/>
+        <span class="text-xs text-white">Tec de Monterrey</span>
+      </div>
+    </div>
+    <div class="p-4">
+      <h3 class="text-white text-xl font-semibold leading-normal">Intelligent Air Pressure Control
+        <span class="ml-2 align-middle px-2 py-0.5 bg-[#38e07b]/20 text-[#38e07b] text-xs rounded-full border border-[#38e07b]/40">2023</span>
+      </h3>
+      <p class="text-[#9eb7a8] text-base mt-2">
+        A prototype for an intelligent air pressure control system for tires in agricultural equipment using linear (PID) control strategies.
+        <br><br>
+        Developed using an ARM cortex processor in a dual core STM32 board. Utilized CAN, and serial protocols for sensor communication and a NodeMCU device for internet connectivity and online data visualization.
+      </p>
+      <div class="flex flex-wrap gap-2 mt-3">
+        <span class="px-2 py-1 bg-[#38e07b]/20 text-[#38e07b] text-xs rounded-full">Embedded Systems</span>
+        <span class="px-2 py-1 bg-[#38e07b]/20 text-[#38e07b] text-xs rounded-full">IoT</span>
+        <span class="px-2 py-1 bg-[#38e07b]/20 text-[#38e07b] text-xs rounded-full">ESP32 / FreeRTOS</span>
+        <span class="px-2 py-1 bg-[#38e07b]/20 text-[#38e07b] text-xs rounded-full">Control</span>
+      </div>
+      <div class="flex gap-6 mt-4">
+        <a href="https://youtu.be/Yq0l9Ne1uh4" target="_blank" class="inline-flex items-center text-[#38e07b] hover:text-green-400 transition-colors">
+          <span class="text-sm font-medium">Video Demo</span>
+          <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+        </a>
+      </div>
     </div>
   </div>
-  <div class="p-4 sm:p-5 flex flex-col flex-1">
-    <h3 class="text-white text-xl font-bold mb-2">Intelligent Air Pressure Control</h3>
-    <p class="text-muted text-sm flex-1 mb-4">A prototype for an intelligent air pressure control system for tires in agricultural equipment using linear control strategies. Developed in collaboration with John Deere.</p>
-    <div class="mt-auto flex items-center gap-4">
-      <a href="https://youtu.be/Yq0l9Ne1uh4" target="_blank" class="inline-flex items-center text-sm font-semibold text-white hover:text-[#38e07b] transition-colors">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2A29 29 0 0 0 23 11.75a29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>
-        Watch Video
-      </a>
-    </div>
-  </div>
-</div>
+  
