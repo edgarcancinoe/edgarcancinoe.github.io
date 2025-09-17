@@ -5,7 +5,7 @@
 <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
 <link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Space+Grotesk%3Awght%40400%3B500%3B700&amp;family=Spline+Sans%3Awght%40400%3B500%3B700" onload="this.rel='stylesheet'" rel="stylesheet"/>
 <title>Jose Edgar Hernandez - Roboticist & AI Engineer</title>
-<link href="logo.png" rel="icon" type="image/png"/>
+<link href="logo.webp" rel="icon" type="image/webp"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <style type="text/tailwindcss">
     @layer base {
@@ -111,13 +111,7 @@
           <span class="hidden sm:inline">Jose Edgar Hernandez Cancino E.</span>
         </a>
       </h2>
-      <p class="text-gray-400 text-xs flex gap-2 sm:gap-3 flex-wrap">
-        <span>🇲🇽<span class="hidden sm:inline"> Spanish</span></span>
-        <span class="hidden sm:inline">·</span>
-        <span>🇬🇧<span class="hidden sm:inline"> English (C1)</span></span>
-        <span class="hidden sm:inline">·</span>
-        <span>🇮🇹<span class="hidden sm:inline"> Italian (A2)</span></span>
-      </p>
+      
     </div>
   </div>
   <div class="flex flex-1 justify-end gap-4 items-center">
@@ -182,55 +176,128 @@
   </div>
 </nav>
 <main class="flex-1 pb-24 mt-16">
-<section id="about" class="px-4 sm:px-8 lg:px-20 py-8 sm:py-20">
-  <div class="max-w-7xl mx-auto">
-    <!-- Hero layout: image left, text right -->
-    <div class="flex flex-col lg:flex-row items-center lg:items-start gap-8 sm:gap-12 lg:gap-24">
-      <div class="shrink-0 flex justify-center sm:justify-start">
-        <img src="images/fototec.jpeg" alt="Jose Edgar Hernandez" class="h-40 w-40 md:h-56 md:w-56 rounded-full object-cover border border-[var(--bd-strong)] shadow-lg" loading="lazy" decoding="async"/>
-      </div>
-      <div class="flex-1 text-center lg:text-left max-w-none">
-        <h1 class="text-white text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight tracking-tighter mb-6 reveal">Robotics Engineer&nbsp;| MSc Candidate in Artificial Intelligence</h1>
-        <p class="text-[var(--fg-secondary)] text-base sm:text-lg leading-relaxed mb-8 reveal">I am currently pursuing a research multi-institutional <strong>MSc in Artificial Intelligence</strong> (EMAI), specializing in Data Science at the University of Ljubljana, Slovenia, where I am working on my research thesis.</p>
-      </div>
-      
-    </div>
+<section id="about" class="px-4 sm:px-8 lg:px-20 py-8 sm:py-20 bg-[#0c1511]">
+  <div class="max-w-8xl mx-auto">
+    <!-- Hero layout: image left, content right -->
+    <div class="flex flex-col lg:flex-row items-start gap-8 sm:gap-12 lg:gap-16">
+      <!-- Photo + Languages -->
+      <div class="shrink-0 w-full lg:w-auto flex justify-center">
+        <div class="flex flex-col items-center">
+          <img src="images/fototec.webp" alt="Jose Edgar Hernandez" class="h-32 w-32 md:h-48 md:w-48 rounded-full object-cover border border-[var(--bd-strong)] shadow-lg" loading="lazy" decoding="async"/>
+          <!-- Location & Languages card -->
+          <div class="panel mt-12 rounded-xl p-4 w-full max-w-sm self-center">
+            <div class="space-y-3">
+              <div class="flex items-start gap-3">
+                <!-- Location icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[var(--brand)] mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1 1 18 0Z"/>
+                  <circle cx="12" cy="10" r="3"/>
+                </svg>
+                <div class="flex-1">
+                  <p class="text-white text-sm font-semibold">Location</p>
+                  <p class="text-[var(--fg-secondary)] text-sm">Ljubljana, Slovenia</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <!-- Program icon (graduation cap) -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[var(--brand)] mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="m22 10-10-5-10 5 10 5 10-5Z"/>
+                  <path d="M6 12v5c0 .9 4 2 6 2s6-1.1 6-2v-5"/>
+                </svg>
+                <div class="flex-1">
+                  <p class="text-white text-sm font-semibold">Current Position</p>
+                  <p class="text-[var(--fg-secondary)] text-sm">Erasmus Mundus Master in Artificial Intelligence</p>
+                </div>
+              </div>
 
-    <!-- About/Background/Experience cards -->
-        <div class="mt-6 sm:mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-center">
-      <!-- About Me -->
-      <div class="grad-pine h-full flex flex-col p-4 sm:p-6 rounded-2xl shadow-lg hover:scale-105 transition-transform border border-[var(--bd-strong)]">        <h2 class="text-white text-2xl font-bold mb-3">About Me</h2>
-        <p class="text-[var(--fg-secondary)] leading-relaxed">
-          Robotics engineer, AI researcher, and entrepreneur with a passion for building 
-          solutions at the intersection of intelligence and automation. <br><br>
-          I thrive in bridging deep technical expertise with real-world business impact, leading projects from concept to production.
-        </p>
+            </div>
+            <div class="h-px my-3 bg-[var(--bd-muted)]"></div>
+            <div>
+              <p class="text-white text-sm font-semibold mb-2">Languages</p>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-2 py-1 rounded-full text-xs bg-[var(--brand)]/15 text-[var(--brand)] border border-[var(--brand)]/30">Spanish</span>
+                <span class="px-2 py-1 rounded-full text-xs bg-[var(--brand)]/15 text-[var(--brand)] border border-[var(--brand)]/30">English (C1)</span>
+                <span class="px-2 py-1 rounded-full text-xs bg-[var(--brand)]/15 text-[var(--brand)] border border-[var(--brand)]/30">Italian (A2)</span>
+              </div>
+            </div>
+            <div class="h-px my-3 bg-[var(--bd-muted)]"></div>
+            <div class="flex items-center gap-3 mt-3 w-full">
+              <a href="res/Jose_Hernandez_CV.pdf" target="_blank" class="flex-1 min-w-0 inline-flex items-center justify-center rounded-full h-10 px-4 btn-brand font-semibold transition-all hover:scale-[1.02]">
+                <span class="truncate">Download my CV</span>
+              </a>
+              <a href="https://www.linkedin.com/in/edgar-cancino/" target="_blank" aria-label="LinkedIn"
+                 class="shrink-0 inline-flex items-center justify-center h-10 w-10 rounded-full border border-[var(--bd-strong)] text-white hover:text-[var(--brand)] hover:border-[var(--brand)] transition-colors">
+                <svg class="feather feather-linkedin" fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect height="12" width="4" x="2" y="9"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+              <a href="https://github.com/edgarcancinoe" target="_blank" aria-label="GitHub"
+                 class="shrink-0 inline-flex items-center justify-center h-10 w-10 rounded-full border border-[var(--bd-strong)] text-white hover:text-[var(--brand)] hover:border-[var(--brand)] transition-colors">
+                <svg class="feather feather-github" fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
       
-      <!-- Background -->
-      <div class="grad-pine h-full flex flex-col p-4 sm:p-6 rounded-2xl shadow-lg hover:scale-105 transition-transform border border-[var(--bd-strong)]">
-        <h2 class="text-white text-2xl font-bold mb-3">Background</h2>
-        <p class="text-[var(--fg-secondary)] leading-relaxed">
-          Technical foundations in <strong>Robotics</strong>, <strong>Computer Vision</strong>, <strong>AI</strong>, </strong><strong>Deep Learning</strong>, and <strong>Probabilistic Modeling</strong>. 
-          <br><br>
-          I started my academic path in <strong>Physics Engineering</strong> before transitioning to <strong>Robotics and Digital Systems Engineering</strong>.
-          <br><br>
-        </p>
-      </div>
-      <!-- Experience -->
-      <div class="grad-pine h-full flex flex-col p-4 sm:p-6 rounded-2xl shadow-lg hover:scale-105 transition-transform border border-[var(--bd-strong)]">
-        <h2 class="text-white text-2xl font-bold mb-3">Core Competencies</h2>
-        <ul class="text-[var(--fg-secondary)] space-y-2">
-          <li>• Strong <strong>engineering and mathematics</strong> foundations, experienced applying advanced theory to real-world projects.</li>
-          <li>• Development of <strong>end-to-end solutions</strong>: data pipelines, ML models, APIs, and cloud deployment.</li></li>
-        </ul>
+      <!-- Content -->
+      <div class="flex-1 w-full">
+        <!-- Title -->
+        <div class="text-center lg:text-left mb-16">
+          <h1 class="text-white text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight tracking-wide reveal">Robotics Engineer & MSc Candidate in Artificial Intelligence</span></h1>
+        </div>
         
+        <!-- About Me Box -->
+        <div class="grad-pine p-6 sm:p-6 rounded-2xl shadow-lg border border-[var(--bd-strong)]">
+          <p class="text-[var(--fg-secondary)] text-base sm:text-lg leading-relaxed">
+            <strong>Background</strong>
+            <br/>
+            With a strong foundation in <strong>Physics, Robotics, and AI</strong>, I combine solid engineering and mathematics expertise with practical experience in robotics, applied machine learning, and data solutions.
+            <br/><br/>
+            <strong>Interests</strong>
+            <br/>
+            Mathematical modeling, applied machine learning and computer vision, and design of intelligent and embodied systems that connect theoretical advances to real-world phenomena.
+            <br/><br/>
+            <strong>Current</strong>
+            <br/>
+            Pursuing an multi-institutional  
+            <a href="https://www.upf.edu/web/emai" target="_blank"><u>MSc in Artificial Intelligence</u></a>, 
+            <strong>specializing in Data Science at the University of Ljubljana</strong>, Slovenia.
+
+          </p>
+        </div>
       </div>
-      
     </div>
   </div>
 </section>
-<section class="px-4 sm:px-8 lg:px-20 pb-12 sm:pb-24">
+
+<!-- Featured Projects (lighter background for visual separation) -->
+<section id="featured" class="px-4 sm:px-8 lg:px-20 py-12 sm:py-20 bg-[#0f1a15]">
+  <div class="max-w-8xl mx-auto">
+    <h2 class="text-2xl sm:text-3xl lg:text-5xl font-bold leading-tight tracking-tight text-white text-center mb-6 sm:mb-8 reveal">Featured Projects</h2>
+    <p class="text-[var(--fg-secondary)] text-center italic text-xl mb-8">
+      "Each challenge overcome is a key, unlocking doors to tomorrow's unknowns."
+    </p>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div data-include="project_cards/data_science/truck_loading_durations.html"></div>
+      <div data-include="project_cards/AI/Score-BasedGenerativeModeling.html"></div>
+      <div data-include="project_cards/Robotics/final_implementation_manipulator.html"></div>
+      <div data-include="project_cards/AI/xarm_ddpg_her.html"></div>
+    </div>
+    <div class="text-center mt-8">
+      <a href="projects.html" class="btn-brand inline-flex items-center justify-center rounded-full h-12 px-10 sm:px-12 min-w-[220px] sm:min-w-[260px] text-lg font-bold leading-normal tracking-[0.015em] transition-all duration-300 transform hover:scale-105">
+        <span class="truncate">View All Projects</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Trajectory Section -->
+<section class="px-4 sm:px-8 lg:px-20 py-12 sm:py-20 bg-[#0c1511]">
 <div class="max-w-7xl mx-auto">
 <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight tracking-tight text-white text-center mb-6 sm:mb-16 reveal">My Trajectory</h2>
 <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-16">
@@ -240,44 +307,60 @@
   <!-- EMAI Master entry with three universities -->
   <div class="timeline-item mb-12 reveal">
     <div class="flex items-start gap-4">
-      <img alt="EMAI Program" class="w-12 h-12 rounded-full object-contain bg-white p-1" src="images/logos/emai.jpeg"/>
+      <img alt="EMAI Program" class="w-12 h-12 rounded-full object-contain bg-white p-1" src="images/logos/emai.webp"/>
       <div class="flex-1">
         <p class="text-[var(--brand)] text-sm font-semibold mb-1">2024 - Present</p>
-        <h4 class="text-white text-2xl font-bold">Erasmus Mundus Joint Master in Artificial Intelligence (EMAI)</h4>
-        <p class="text-gray-400">Specialisation in <strong>Data Science</strong> at the <strong>University of Ljubljana.</strong></p><br>
+        <h4 class="text-white text-2xl font-bold">MSc in Artificial Intelligence</h4>
+        <p class="text-gray-400 text-sm">Erasmus Mundus Joint Master in Artificial Intelligence</p>
+        <p class="text-gray-200">Specialisation in <strong>Data Science</strong> at the <strong>University of Ljubljana.</strong></p><br>
         <div class="mt-3 grid grid-cols-1 sm:grid-cols-3 gap-4 items-center">
           <div class="flex flex-col items-center text-center gap-2">
-            <img alt="UPF Logo" class="h-12 object-contain bg-white rounded p-0" src="images/logos/upf.png"/>
+            <img alt="UPF Logo" class="h-12 object-contain bg-white rounded p-0" src="images/logos/upf.webp"/>
             <p class="text-[var(--fg-secondary)] text-sm">Universitat Pompeu Fabra - Barcelona<br/><span class="text-subtle">2024</span></p>
           </div>
           <div class="flex flex-col items-center text-center gap-2">
-            <img alt="Sapienza Logo" class="h-12 object-contain bg-white rounded p-0" src="images/logos/unirm.png"/>
+            <img alt="Sapienza Logo" class="h-12 object-contain bg-white rounded p-0" src="images/logos/unirm.webp"/>
             <p class="text-[var(--fg-secondary)] text-sm">Sapienza Università di Roma<br/><span class="text-muted">2025</span></p>
           </div>
           <div class="flex flex-col items-center text-center gap-2">
-            <img alt="University of Ljubljana Logo" class="h-12 object-contain bg-white rounded p-0" src="images/logos/uol.png"/>
+            <img alt="University of Ljubljana Logo" class="h-12 object-contain bg-white rounded p-0" src="images/logos/uol.webp"/>
             <p class="text-[var(--fg-secondary)] text-sm">University of Ljubljana<br/><span class="text-muted"> 2025-2026</span></p>
           </div>
         </div>
-        <br>
         <p class="text-muted mt-2">Research‑focused Erasmus Mundus programme integrating machine learning and modern AI across leading European universities.</p>
-        
       </div>
     </div>
   </div>
-<div class="timeline-item reveal">
-<div class="flex items-start gap-4">
-<img alt="Tecnologico de Monterrey Logo" class="w-12 h-12 rounded-full object-contain bg-white p-1" src="images/logos/tec.png"/>
-<div class="flex-1">
-<p class="text-[var(--brand)] text-sm font-semibold mb-1">2020 - 2024</p>
-<h4 class="text-white text-2xl font-bold">B.S. in Robotics and Digital Systems</h4>
-<p class="text-muted text-lg mt-1">Tecnologico de Monterrey</p>
-<ul class="list-disc pl-5 text-muted mt-2 space-y-1">
-  Focused on digital and embedded systems, intelligent AI and robotics systems, automation, and control logic.
-</ul>
-</div>
-</div>
-</div>
+  <div class="timeline-item mb-12 reveal">
+    <div class="flex items-start gap-4">
+      <img alt="Tecnologico de Monterrey Logo" class="w-12 h-12 rounded-full object-contain bg-white p-1" src="images/logos/tec.webp"/>
+      <div class="flex-1">
+        <p class="text-[var(--brand)] text-sm font-semibold mb-1">2021 - 2024</p>
+        <h4 class="text-white text-2xl font-bold">BSc in Robotics and Digital Systems</h4>
+        <p class="text-muted text-lg mt-1">Tecnologico de Monterrey</p>
+        <ul class="list-disc pl-5 text-muted mt-2 space-y-1">
+          Focused on digital and embedded systems, intelligent AI and robotics systems, automation, and control logic.
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="timeline-item mb-12 reveal">
+    <div class="flex items-start gap-4">
+      <img alt="Tecnologico de Monterrey Logo" class="w-12 h-12 rounded-full object-contain bg-white p-1" src="images/logos/tec.webp"/>
+      <div class="flex-1">
+        <p class="text-[var(--brand)] text-sm font-semibold mb-1">2019 – 2021</p>
+        <h4 class="text-white text-2xl font-bold">BSc in Physics Engineering (incomplete)</h4>
+        <p class="text-muted text-lg mt-1">Tecnológico de Monterrey</p>
+        <p class="text-gray-300 text-sm">Studied 2 years in the program, focusing on:</p>
+        <ul class="list-disc pl-5 text-muted mt-2 space-y-1">
+          <li>Mathematical modeling and applied physics</li>
+          <li>Theoretical foundations in engineering and science</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+
 </div>
 </div>
 <div>
@@ -288,7 +371,7 @@
 <div class="timeline-item mb-12">
   <div class="flex items-start gap-4">
     <div class="panel w-12 h-12 rounded-full overflow-hidden flex items-center justify-center">
-      <img alt="SAVEWARE Logo" src="images/logos/sw.png" class="w-11 h-11 rounded-full object-cover bg-white p-0.5"/>
+      <img alt="SAVEWARE Logo" src="images/logos/sw.webp" class="w-11 h-11 rounded-full object-cover bg-white p-0.5"/>
     </div>
     <div class="flex-1">
       <p class="text-[var(--brand)] text-sm font-semibold mb-1">March 2022 - Present</p>
@@ -307,7 +390,7 @@
 <!-- Kavraki Lab, Rice University (reverse order item 2) -->
 <div class="timeline-item mb-12">
   <div class="flex items-start gap-4">
-    <img alt="Rice University Logo" class="w-12 h-12 rounded-full object-contain bg-white p-1" src="images/logos/rice.png"/>
+    <img alt="Rice University Logo" class="w-12 h-12 rounded-full object-contain bg-white p-1" src="images/logos/rice.webp"/>
     <div class="flex-1">
       <p class="text-[var(--brand)] text-sm font-semibold mb-1">January 2024 - February 2024</p>
       <h4 class="text-white text-2xl font-bold">Kavraki Lab, Rice University</h4>
@@ -322,7 +405,7 @@
 <!-- Steelcase (reverse order item 1) -->
 <div class="timeline-item mb-12">
   <div class="flex items-start gap-4">
-    <img alt="Steelcase Logo" class="w-12 h-12 rounded-full object-contain bg-white p-1" src="images/logos/sc.png"/>
+    <img alt="Steelcase Logo" class="w-12 h-12 rounded-full object-contain bg-white p-1" src="images/logos/sc.webp"/>
     <div class="flex-1">
       <p class="text-[var(--brand)] text-sm font-semibold mb-1">March 2022 - October 2023</p>
       <h4 class="text-white text-2xl font-bold">Steelcase</h4>
@@ -344,26 +427,10 @@
 </div>
 </div>
 </section>
-<section class="px-4 sm:px-8 lg:px-20 pt-6 sm:pt-8 pb-8" style="background: var(--bg-surface);">
-  <div class="max-w-6xl mx-auto">
-  <p class="text-lg italic text-muted text-center mb-6 reveal">"Each challenge overcome is a key, unlocking doors to tomorrow’s unknowns."</p>
-  <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight tracking-tight text-white text-center mb-6 sm:mb-12 reveal">Featured Projects</h2>
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8">
-    <div data-category="Robotics" data-include="project_cards/robotics/final_implementation_manipulator.html"></div>
-    <div data-category="AI / Machine Learning" data-include="project_cards/AI/gnn_noisy_labels.html"></div>
-    <div data-category="AI / Machine Learning" data-include="project_cards/AI/xarm_ddpg_her.html"></div>
-  </div>
-  <div class="text-center mt-6">
-  <a href="projects.html" class="btn-brand flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-8 text-lg font-bold leading-normal tracking-[0.015em] transition-all duration-300 transform hover:scale-105 mx-auto">
-  <span class="truncate">View All Projects</span>
-  </a>
-  </div>
-  </div>
-  </section>
-<section class="px-4 sm:px-8 lg:px-20 py-12 sm:py-20">
+
+<section class="px-4 sm:px-8 lg:px-20 py-12 sm:py-20 bg-[#0f1a15]">
 <div class="max-w-6xl mx-auto">
 <h2 class="text-4xl font-bold leading-tight tracking-tight text-white text-center mb-12 reveal">Professional Skillset</h2>
-
 <!-- Four vertical columns -->
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-10 text-white">
   <!-- Col 1: Frameworks & Libraries -->
@@ -421,10 +488,10 @@
         <img alt="AWS" class="w-16 h-16" src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg"/>
         <p class="font-medium">AWS</p>
       </div>
-      <div class="flex flex-col items-center gap-2 skill-card">
+      <!-- <div class="flex flex-col items-center gap-2 skill-card">
         <img alt="n8n" class="w-16 h-16" src="https://cdn.simpleicons.org/n8n/f05a4b"/>
         <p class="font-medium">n8n</p>
-      </div>
+      </div> -->
     </div>
   </div>
 
@@ -482,7 +549,7 @@
 <!-- Data Science Diploma Program ITPE -->
   <div class="panel rounded-xl p-4 sm:p-6 flex flex-col items-start gap-4 transition-colors duration-300 reveal hover-card">
   <div class="flex items-center gap-4">
-  <img src="images/logos/itpe.png" alt="DeepLearning.AI Logo" class="h-8 w-auto rounded"/>
+  <img src="images/logos/itpe.webp" alt="DeepLearning.AI Logo" class="h-8 w-auto rounded"/>
   <h3 class="text-white text-xl font-semibold">Data Science Diploma</h3>
   </div>
   <p class="text-muted">
@@ -504,7 +571,7 @@
 <!-- CS50's Introduction to AI -->
 <div class="panel rounded-xl p-6 flex flex-col items-start gap-4 transition-colors duration-300 reveal hover-card">
 <div class="flex items-center gap-4">
-<img src="images/logos/cs50.png" alt="CS50 Logo" class="h-8 w-auto rounded"/>
+<img src="images/logos/cs50.webp" alt="CS50 Logo" class="h-8 w-auto rounded"/>
 <h3 class="text-white text-xl font-semibold">CS50's Introduction to AI</h3>
 </div>
 <p class="text-muted">
@@ -517,7 +584,7 @@
 <!-- Machine Learning Specialization -->
 <div class="panel rounded-xl p-6 flex flex-col items-start gap-4 transition-colors duration-300 reveal hover-card">
 <div class="flex items-center gap-4">
-<img src="images/logos/dlai.png" alt="DeepLearning.AI Logo" class="h-8 w-auto rounded"/>
+<img src="images/logos/dlai.webp" alt="DeepLearning.AI Logo" class="h-8 w-auto rounded"/>
 <h3 class="text-white text-xl font-semibold">Machine Learning Specialization</h3>
 </div>
 <p class="text-muted">

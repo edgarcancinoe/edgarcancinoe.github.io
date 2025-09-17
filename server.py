@@ -25,12 +25,12 @@ def main():
     
     with socketserver.TCPServer(("", PORT), CustomHTTPRequestHandler) as httpd:
         print(f"Portfolio server running at http://localhost:{PORT}")
-        print(f"Open http://localhost:{PORT}/index_new.html to view the new layout")
-        print(f"Open http://localhost:{PORT}/projects_new.html to view the projects page")
+        print(f"Open http://localhost:{PORT}/index.html to view the new layout")
+        print(f"Open http://localhost:{PORT}/projects.html to view the projects page")
         print("Press Ctrl+C to stop the server")
         
         # Automatically open browser
-        webbrowser.open(f'http://localhost:{PORT}/index_new.html')
+        webbrowser.open(f'http://localhost:{PORT}/index.html')
         
         try:
             httpd.serve_forever()
