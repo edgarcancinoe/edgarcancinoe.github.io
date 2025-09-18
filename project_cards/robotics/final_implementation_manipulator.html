@@ -1,6 +1,14 @@
 <div class="flex flex-col gap-4 group">
   <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg overflow-hidden relative">
-    <img alt="Final Implementation - Robotic Manipulator" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="images/projects/puzzlebot_manipulator/out.gif"/>
+    <video autoplay loop muted playsinline 
+           class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+      <source src="images/projects/puzzlebot_manipulator/out.mp4" type="video/mp4">
+      <source src="images/projects/puzzlebot_manipulator/out.webm" type="video/webm">
+      <!-- fallback if video isn't supported -->
+      <img alt="Final Implementation - Robotic Manipulator" 
+           src="images/projects/puzzlebot_manipulator/out.gif" 
+           class="w-full h-full object-cover"/>
+    </video>
     <div class="absolute top-2 left-2 flex items-center gap-2 bg-[#1c2620]/80 backdrop-blur px-2 py-1 rounded-md border border-[#3d5245]">
       <img alt="Tec de Monterrey Logo" class="h-5 w-5 rounded-full object-contain bg-white p-0.5" src="images/logos/tec.webp"/>
       <span class="text-xs text-white">Tec de Monterrey</span>
