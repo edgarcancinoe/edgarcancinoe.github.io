@@ -210,6 +210,20 @@
                 </div>
               </div>
 
+              <div class="flex items-start gap-3">
+                <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" class="h-5 w-5 text-[var(--brand)] mt-0.5">
+                  <path d="M224,48H32a8,8,0,0,0-8,8V192a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A8,8,0,0,0,224,48Zm-96,85.15L52.57,64H203.43ZM98.71,128,40,181.81V74.19Zm11.84,10.85,12,11.05a8,8,0,0,0,10.82,0l12-11.05,58,53.15H52.57ZM157.29,128,216,74.18V181.82Z"></path>
+                </svg>
+                <div class="flex-1 min-w-0">
+                  <p class="text-white text-sm font-semibold">Academic Email</p>
+                  <p class="text-[var(--fg-secondary)] text-sm truncate">jh65312@student.uni-lj.si</p>
+                </div>
+                <button type="button" class="ml-auto inline-flex items-center gap-1 justify-center rounded-full border border-[var(--bd-strong)] px-3 h-8 text-xs text-gray-200 hover:text-white hover:border-[var(--brand)] transition-colors shrink-0" aria-label="Copy email" title="Copy to clipboard" data-copy="jh65312@student.uni-lj.si">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                  <span class="hidden sm:inline">Copy</span>
+                </button>
+              </div>
+
             </div>
             <div class="h-px my-3 bg-[var(--bd-muted)]"></div>
             <div>
@@ -747,5 +761,23 @@
       }
     });
   })();
+  </script>
+  <script>
+    document.querySelectorAll('[data-copy]').forEach(function(btn) {
+      btn.addEventListener('click', async function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        const text = this.getAttribute('data-copy');
+        try {
+          await navigator.clipboard.writeText(text);
+          const original = this.textContent;
+          this.textContent = 'Copied';
+          this.classList.add('border-[var(--brand)]','text-white');
+          setTimeout(() => { this.textContent = original; this.classList.remove('border-[var(--brand)]'); }, 1500);
+        } catch (e) {
+          console.error('Copy failed', e);
+        }
+      });
+    });
   </script>
 </body></html>
