@@ -183,19 +183,19 @@
       <!-- Photo + Languages -->
       <div class="shrink-0 w-full lg:w-auto flex justify-center">
         <div class="flex flex-col items-center">
-          <img src="images/fototec.webp" alt="Jose Edgar Hernandez" class="h-32 w-32 md:h-48 md:w-48 rounded-full object-cover border border-[var(--bd-strong)] shadow-lg" loading="lazy" decoding="async"/>
+          <img src="images/fototec.webp" alt="Jose Edgar Hernandez" class="h-32 w-32 md:h-52 md:w-52 rounded-full object-cover border border-[var(--bd-strong)] shadow-lg" loading="lazy" decoding="async"/>
           <!-- Location & Languages card -->
           <div class="panel mt-12 rounded-xl p-4 w-full max-w-sm self-center">
             <div class="space-y-3">
               <div class="flex items-start gap-3">
-                <!-- Location icon -->
+                <!-- Program icon (graduation cap) -->
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[var(--brand)] mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1 1 18 0Z"/>
-                  <circle cx="12" cy="10" r="3"/>
+                  <path d="m22 10-10-5-10 5 10 5 10-5Z"/>
+                  <path d="M6 12v5c0 .9 4 2 6 2s6-1.1 6-2v-5"/>
                 </svg>
                 <div class="flex-1">
-                  <p class="text-white text-sm font-semibold">Location</p>
-                  <p class="text-[var(--fg-secondary)] text-sm">Ljubljana, Slovenia</p>
+                  <p class="text-white text-sm"><span class="font-semibold">MSc Candidate in Artificial Intelligence</span></p>
+                  <p class="text-[var(--fg-muted)] text-xs">University of Ljubljana</p>
                 </div>
               </div>
               <div class="flex items-start gap-3">
@@ -205,20 +205,28 @@
                   <path d="M6 12v5c0 .9 4 2 6 2s6-1.1 6-2v-5"/>
                 </svg>
                 <div class="flex-1">
-                  <p class="text-white text-sm font-semibold">Current Position</p>
-                  <p class="text-[var(--fg-secondary)] text-sm">Erasmus Mundus Master in Artificial Intelligence</p>
+                  <p class="text-white text-sm"><span class="font-semibold">B.S. in Robotics and Digital Systems</span> (2024)</p>
+                  <p class="text-[var(--fg-muted)] text-xs">Tecnológico de Monterrey</p>
                 </div>
               </div>
-
               <div class="flex items-start gap-3">
-                <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" class="h-5 w-5 text-[var(--brand)] mt-0.5">
+                <!-- Location icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[var(--brand)] mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1 1 18 0Z"/>
+                  <circle cx="12" cy="10" r="3"/>
+                </svg>
+                <div class="flex-1">
+                  <p class="text-white text-sm font-semibold">Ljubljana, Slovenia</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-3">
+                <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" class="h-6 w-6 text-[var(--brand)] shrink-0">
                   <path d="M224,48H32a8,8,0,0,0-8,8V192a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A8,8,0,0,0,224,48Zm-96,85.15L52.57,64H203.43ZM98.71,128,40,181.81V74.19Zm11.84,10.85,12,11.05a8,8,0,0,0,10.82,0l12-11.05,58,53.15H52.57ZM157.29,128,216,74.18V181.82Z"></path>
                 </svg>
                 <div class="flex-1 min-w-0">
-                  <p class="text-white text-sm font-semibold">Academic Email</p>
-                  <p class="text-[var(--fg-secondary)] text-sm truncate">jh65312@student.uni-lj.si</p>
+                  <p class="text-white text-sm font-semibold">jh65312@student.uni-lj.si</p>
                 </div>
-                <button type="button" class="ml-auto inline-flex items-center gap-1 justify-center rounded-full border border-[var(--bd-strong)] px-3 h-8 text-xs text-gray-200 hover:text-white hover:border-[var(--brand)] transition-colors shrink-0" aria-label="Copy email" title="Copy to clipboard" data-copy="jh65312@student.uni-lj.si">
+                <button type="button" class="inline-flex items-center gap-1 justify-center rounded-full border border-[var(--bd-strong)] px-3 h-6 text-xs text-gray-200 hover:text-white hover:border-[var(--brand)] transition-colors shrink-0" aria-label="Copy email" title="Copy to clipboard" data-copy="jh65312@student.uni-lj.si">
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
                   <span class="hidden sm:inline">Copy</span>
                 </button>
@@ -261,29 +269,65 @@
       <!-- Content -->
       <div class="flex-1 w-full">
         <!-- Title -->
-        <div class="text-center lg:text-left mb-16">
-          <h1 class="text-white text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight tracking-wide reveal">Robotics Engineer & MSc Candidate in Artificial Intelligence</span></h1>
+        <div class="text-center lg:text-left mb-28">
+          <h1 class="text-white text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight tracking-wide reveal">Robotics Engineer & AI Research (MSc)</span></h1>
         </div>
         
-        <!-- About Me Box -->
-        <div class="grad-pine p-6 sm:p-6 rounded-2xl shadow-lg border border-[var(--bd-strong)]">
-          <p class="text-[var(--fg-secondary)] text-base sm:text-lg leading-relaxed">
-            <strong>Background</strong>
-            <br/>
-            With a strong foundation in <strong>Physics, Robotics, and AI</strong>, I combine solid engineering and mathematics expertise with practical experience in robotics, applied machine learning, and data solutions.
-            <br/><br/>
-            <strong>Interests</strong>
-            <br/>
-            Mathematical modeling, applied machine learning and computer vision, and design of intelligent and embodied systems that connect theoretical advances to real-world phenomena.
-            <br/><br/>
-            <strong>Current</strong>
-            <br/>
-            Pursuing an multi-institutional  
-            <a href="https://www.upf.edu/web/emai" target="_blank"><u>MSc in Artificial Intelligence</u></a>, 
-            <strong>specializing in Data Science at the University of Ljubljana</strong>, Slovenia.
+        <!-- Current Research Focus -->
+        <div class="mb-8">
+          <h2 class="text-white text-2xl sm:text-4xl font-bold mb-8">Current Research Focus</h2>
+          <div class="grid grid-cols-1 gap-4">
+            <!-- Research Topic 1: Machine Unlearning -->
+            <div class="panel rounded-2xl p-4 sm:p-6 hover-card reveal">
+              <div class="flex items-start gap-4 mb-3">
+                <div class="shrink-0 w-10 h-10 rounded-lg bg-gradient-to-br from-[var(--brand)] to-[var(--teal-600)] flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Z"/>
+                    <path d="M12 6v6l4 2"/>
+                    <path d="M16 14a4 4 0 0 1-8 0"/>
+                  </svg>
+                </div>
+                <div class="flex-1">
+                  <h3 class="text-white text-lg sm:text-xl font-bold mb-1">Ongoing — Unlearning Identity Information in Latent Diffusion Models</h3>
+                  <p class="text-[var(--brand)] text-xs font-semibold mb-2">MSc Research Project</p>
+                </div>
+              </div>
+              <p class="text-[var(--fg-secondary)] text-md leading-relaxed mb-3">
+                Researching unlearning techniques for the removal of facial identity information from latent diffusion model weights used in image generation.
+              </p>
+              <p class="text-[var(--fg-secondary)] text-xs mb-2">Updates and findings will be shared as the research progresses</p>
+            </div>
 
-          </p>
+            <!-- Research Topic 2: Imitation Learning -->
+            <div class="panel rounded-2xl p-4 sm:p-6 hover-card reveal">
+              <div class="flex items-start gap-4 mb-3">
+                <div class="shrink-0 w-10 h-10 rounded-lg bg-gradient-to-br from-[var(--teal-600)] to-[var(--brand-700)] flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+                    <path d="M16 3v4"/>
+                    <path d="M8 3v4"/>
+                    <path d="M9 12h6"/>
+                    <path d="M12 12v5"/>
+                  </svg>
+                </div>
+                <div class="flex-1">
+                  <h3 class="text-white text-lg sm:text-xl font-bold mb-1">Ongoing — Imitation Learning of VLA Models</h3>
+                  <p class="text-[var(--teal-600)] text-xs font-semibold mb-2">Master’s Thesis Research (Expected: July 2026)</p>
+                </div>
+              </div>
+              <p class="text-[var(--fg-secondary)] text-sm leading-relaxed mb-3">
+                Extending SmolVLA for real-world robotic manipulation using SO-ARM101 arms, planning on focusing on deformable object interaction.
+              </p>
+              <p class="text-[var(--fg-secondary)] text-xs mb-2">Updates and findings will be shared as the research progresses</p>
+              <!-- <div class="flex flex-wrap gap-2">
+                <span class="px-2 py-1 rounded-full text-xs bg-[var(--teal-600)]/10 text-[var(--teal-600)] border border-[var(--teal-600)]/30">Vision-Language-Action</span>
+                <span class="px-2 py-1 rounded-full text-xs bg-[var(--teal-600)]/10 text-[var(--teal-600)] border border-[var(--teal-600)]/30">Imitation Learning</span>
+                <span class="px-2 py-1 rounded-full text-xs bg-[var(--teal-600)]/10 text-[var(--teal-600)] border border-[var(--teal-600)]/30">Embodied AI</span>
+              </div> -->
+            </div>
+          </div>
         </div>
+
       </div>
     </div>
   </div>
@@ -292,7 +336,7 @@
 <!-- Featured Projects (lighter background for visual separation) -->
 <section id="featured" class="px-4 sm:px-8 lg:px-20 py-12 sm:py-20 bg-[#0f1a15]">
   <div class="max-w-8xl mx-auto">
-    <h2 class="text-2xl sm:text-3xl lg:text-5xl font-bold leading-tight tracking-tight text-white text-center mb-6 sm:mb-8 reveal">Featured Projects</h2>
+    <h2 class="text-2xl sm:text-3xl lg:text-5xl font-bold leading-tight tracking-tight text-white text-center mb-6 sm:mb-8 reveal">Featured Academic Projects</h2>
     <p class="text-[var(--fg-secondary)] text-center italic text-xl mb-8">
       "Each challenge overcome is a key, unlocking doors to tomorrow's unknowns."
     </p>

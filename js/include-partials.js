@@ -202,17 +202,17 @@ function initializeFiltering() {
 
   // Mapping organization -> logo filename in images/logos/
   const orgLogoMap = {
-    'Tec de Monterrey': 'tec.png',
-    'Sapienza University': 'unirm.png',
-    'Personal': 'images/fototec.jpeg',
-    'Rice University': 'rice.png',
-    'University of London': 'uol.png',
-    'UPF': 'upf.png',
-    'Pompeu Fabra University': 'upf.png',
-    'DeepLearning.AI': 'dlai.png',
-    'CS50': 'cs50.png',
-    'EMAI': 'emai.jpeg',
-    'SC': 'sc.png'
+    'Tec de Monterrey': 'tec.webp',
+    'Sapienza University': 'unirm.webp',
+    'Personal': 'images/fototec.webp',
+    'Rice University': 'rice.webp',
+    'University of London': 'uol.webp',
+    'UPF': 'upf.webp',
+    'Pompeu Fabra University': 'upf.webp',
+    'DeepLearning.AI': 'dlai.webp',
+    'CS50': 'cs50.webp',
+    'EMAI': 'emai.webp',
+    'SC': 'sc.webp'
   };
 
   // Specialized render for org chips with logos
