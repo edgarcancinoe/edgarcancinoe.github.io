@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect" />
+    <link as="style"
+        href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Space+Grotesk%3Awght%40400%3B500%3B700&amp;family=Spline+Sans%3Awght%40400%3B500%3B700"
+        onload="this.rel='stylesheet'" rel="stylesheet" />
+    <title>Unlearning Identity in Diffusion Models — Results | Jose Edgar Hernandez</title>
+    <link href="../logo.webp" rel="icon" type="image/webp" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <style type="text/tailwindcss">
+        @layer base {
+      :root {
+        /* Brand core (dark pine + emerald) */
+        --bg-root:        #111714;
+        --bg-surface:     #161d1a;
+        --bg-panel:       #1c2620;
+        --bd-muted:       #29382f;
+        --bd-strong:      #3d5245;
+
+        --fg-primary:     #ffffff;
+        --fg-secondary:   #e5e7eb;
+        --fg-muted:       #9eb7a8;
+        --fg-subtle:      #8aa096;
+
+        --brand:          #38e07b;
+        --brand-600:      #2dd06f;
+        --brand-700:      #23b85f;
+        --brand-800:      #1a9e52;
+        --brand-900:      #138446;
+        --brand-tint:     #b9f2cf;
+
+        --teal-600:       #27c1a7;
+        --teal-800:       #126d60;
+
+        --shadow-strong:  0 10px 24px rgba(0,0,0,.35), 0 4px 8px rgba(0,0,0,.25);
+      }
+    }
+
+    @layer utilities {
+      .text-muted  { color: var(--fg-muted); }
+      .text-subtle { color: var(--fg-subtle); }
+      .panel       { background: var(--bg-panel); border: 1px solid var(--bd-strong); }
+      .btn-brand   { background: var(--brand); color: var(--bg-root); }
+      .btn-brand:hover { background: var(--brand-600); box-shadow: 0 0 0 6px color-mix(in srgb, var(--brand) 25%, transparent); }
+    }
+
+    html { scroll-behavior: smooth; }
+    .reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
+    .reveal.show { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { transition: none; opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+
+<body>
+    <div class="relative flex size-full min-h-screen flex-col dark group/design-root overflow-x-hidden"
+        style='font-family: "Spline Sans", "Noto Sans", sans-serif; background: var(--bg-root);'>
+        <div class="layout-container flex h-full grow flex-col">
+
+            <!-- Header -->
+            <header
+                class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#29382f] px-5 sm:px-10 py-3 sm:py-4 fixed top-0 left-0 right-0 bg-[#111714]/80 backdrop-blur-sm z-50 font-['Space_Grotesk',_'Noto_Sans',_sans-serif]">
+                <div class="flex items-center gap-3 text-white">
+                    <svg class="text-[#38e07b]" fill="none" height="24" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 16.5 8 18l-6-6 6-6 2 1.5"></path>
+                        <path d="m14 7.5 2-1.5 6 6-6 6-2-1.5"></path>
+                        <path d="M12 8v8"></path>
+                    </svg>
+                    <div>
+                        <h2 class="text-white text-lg sm:text-xl font-bold leading-tight tracking-[-0.015em]">
+                            <a href="../index.html" class="hover:text-[#38e07b] transition-colors">
+                                <span class="sm:hidden">J. Edgar Hernandez</span>
+                                <span class="hidden sm:inline">Jose Edgar Hernandez Cancino E.</span>
+                            </a>
+                        </h2>
+                    </div>
+                </div>
+                <div class="flex flex-1 justify-end gap-4 items-center">
+                    <div class="hidden sm:flex items-center gap-8">
+                        <a class="text-gray-300 hover:text-white transition-colors text-base font-medium leading-normal"
+                            href="../index.html">About</a>
+                        <a class="text-gray-300 hover:text-white transition-colors text-base font-medium leading-normal"
+                            href="../projects.html">Projects</a>
+                        <a class="text-gray-300 hover:text-white transition-colors text-base font-medium leading-normal"
+                            href="../contact.html">Contact</a>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Main Content -->
+            <main class="flex-1 mt-20 pb-16">
+                <!-- Hero Section -->
+                <section class="px-4 sm:px-8 lg:px-20 py-12 sm:py-16 bg-[#0c1511]">
+                    <div class="max-w-4xl mx-auto">
+                        <!-- Back link -->
+                        <a href="../index.html#about"
+                            class="inline-flex items-center gap-2 text-[var(--fg-muted)] hover:text-[var(--brand)] transition-colors mb-8">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2">
+                                <path d="M19 12H5M12 19l-7-7 7-7" />
+                            </svg>
+                            Back to Home
+                        </a>
+
+                        <!-- Title -->
+                        <div class="mb-8 reveal">
+                            <p class="text-[var(--brand)] text-sm font-semibold mb-2 uppercase tracking-wider">MSc
+                                Research Project —
+                                2025</p>
+                            <h1 class="text-white text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-4">
+                                Unlearning Identity Information in Latent Diffusion Models
+                            </h1>
+                            <p class="text-[var(--fg-secondary)] text-lg leading-relaxed">
+                                Development of a concept editing method to prevent identity reproduction in the Arc2Face
+                                model by
+                                targeting key–value representations in cross-attention layers.
+                            </p>
+                        </div>
+
+                        <!-- Tags -->
+                        <div class="flex flex-wrap gap-2 mb-8 reveal">
+                            <span
+                                class="px-3 py-1 rounded-full text-sm bg-[var(--brand)]/15 text-[var(--brand)] border border-[var(--brand)]/30">Machine
+                                Unlearning</span>
+                            <span
+                                class="px-3 py-1 rounded-full text-sm bg-[var(--brand)]/15 text-[var(--brand)] border border-[var(--brand)]/30">Diffusion
+                                Models</span>
+                            <span
+                                class="px-3 py-1 rounded-full text-sm bg-[var(--brand)]/15 text-[var(--brand)] border border-[var(--brand)]/30">Cross-Attention</span>
+                            <span
+                                class="px-3 py-1 rounded-full text-sm bg-[var(--brand)]/15 text-[var(--brand)] border border-[var(--brand)]/30">Privacy</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Content Section -->
+                <section class="px-4 sm:px-8 lg:px-20 py-12 bg-[#0f1a15]">
+                    <div class="max-w-4xl mx-auto">
+
+                        <!-- Introduction -->
+                        <article class="prose prose-invert max-w-none reveal">
+                            <h2 class="text-white text-2xl sm:text-3xl font-bold mb-6">Overview</h2>
+                            <p class="text-[var(--fg-secondary)] text-lg leading-relaxed mb-6">
+                                <!-- Add your overview text here -->
+                                This research focuses on developing techniques to remove specific identity information
+                                from latent
+                                diffusion models while preserving their general image generation capabilities. The
+                                approach targets the
+                                Arc2Face model, which specializes in face generation from identity embeddings.
+                            </p>
+
+                            <h2 class="text-white text-2xl sm:text-3xl font-bold mb-6 mt-12">Methodology</h2>
+                            <p class="text-[var(--fg-secondary)] text-lg leading-relaxed mb-6">
+                                <!-- Add your methodology text here -->
+                                Our approach focuses on the cross-attention layers of the diffusion model, specifically
+                                targeting the
+                                key–value representations that encode identity information. By selectively modifying
+                                these
+                                representations, we aim to prevent the model from reproducing specific identities.
+                            </p>
+
+                            <!-- Image Placeholder 1 -->
+                            <div class="panel rounded-2xl p-4 my-8">
+                                <img src="../images/placeholder-methodology.png" alt="Methodology Diagram"
+                                    class="w-full rounded-lg mb-4"
+                                    onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                                <div
+                                    class="hidden w-full h-64 bg-[var(--bg-surface)] rounded-lg items-center justify-center border border-dashed border-[var(--bd-muted)]">
+                                    <p class="text-[var(--fg-muted)] text-sm">Add methodology diagram image here</p>
+                                </div>
+                                <p class="text-[var(--fg-muted)] text-sm text-center mt-2">Figure 1: Methodology
+                                    overview</p>
+                            </div>
+
+                            <h2 class="text-white text-2xl sm:text-3xl font-bold mb-6 mt-12">Results</h2>
+                            <p class="text-[var(--fg-secondary)] text-lg leading-relaxed mb-6">
+                                <!-- Add your results text here -->
+                                Preliminary results demonstrate the effectiveness of our approach in preventing identity
+                                reproduction
+                                while maintaining the model's ability to generate high-quality face images with other
+                                identities.
+                            </p>
+
+                            <!-- Image Placeholder 2 -->
+                            <div class="panel rounded-2xl p-4 my-8">
+                                <img src="../images/placeholder-results.png" alt="Results Comparison"
+                                    class="w-full rounded-lg mb-4"
+                                    onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                                <div
+                                    class="hidden w-full h-64 bg-[var(--bg-surface)] rounded-lg items-center justify-center border border-dashed border-[var(--bd-muted)]">
+                                    <p class="text-[var(--fg-muted)] text-sm">Add results comparison image here</p>
+                                </div>
+                                <p class="text-[var(--fg-muted)] text-sm text-center mt-2">Figure 2: Before and after
+                                    unlearning
+                                    comparison</p>
+                            </div>
+
+                            <h2 class="text-white text-2xl sm:text-3xl font-bold mb-6 mt-12">Conclusions</h2>
+                            <p class="text-[var(--fg-secondary)] text-lg leading-relaxed mb-6">
+                                <!-- Add your conclusions text here -->
+                                This work contributes to the growing field of machine unlearning, providing practical
+                                methods for
+                                removing sensitive identity information from generative models while preserving their
+                                utility.
+                            </p>
+
+                            <!-- Future Work -->
+                            <div class="panel rounded-2xl p-6 mt-12">
+                                <h3 class="text-white text-xl font-bold mb-4">🔬 Ongoing Work</h3>
+                                <p class="text-[var(--fg-secondary)] leading-relaxed">
+                                    This page will be updated as the research progresses. Check back for new results and
+                                    findings.
+                                </p>
+                            </div>
+                        </article>
+
+                    </div>
+                </section>
+
+            </main>
+
+            <!-- Footer -->
+            <footer class="border-t border-solid border-t-[var(--bd-muted)] px-5 sm:px-10 py-4 z-50"
+                style="background: var(--bg-surface);">
+                <div class="max-w-7xl mx-auto flex justify-between items-center text-white">
+                    <div class="flex items-center gap-3">
+                        <p class="text-[var(--fg-secondary)] text-sm"> 2025<span class="text-subtle mr-2 ml-2">|</span>
+                            <span class="sm:hidden"> J.E.H.C.E.</span>
+                            <span class="hidden sm:inline"> Jose Edgar Hernandez Cancino Estrada</span>
+                        </p>
+                    </div>
+                    <div class="hidden sm:flex items-center gap-4">
+                        <a class="text-gray-300 hover:text-[var(--brand)] transition-colors"
+                            href="https://www.linkedin.com/in/edgar-cancino/">
+                            <svg class="feather feather-linkedin" fill="none" height="20" stroke="currentColor"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
+                                width="20" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                                </path>
+                                <rect height="12" width="4" x="2" y="9"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                        </a>
+                        <a class="text-gray-300 hover:text-[var(--brand)] transition-colors"
+                            href="https://github.com/edgarcancinoe">
+                            <svg class="feather feather-github" fill="none" height="20" stroke="currentColor"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
+                                width="20" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                                </path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </footer>
+
+        </div>
+    </div>
+
+    <!-- Reveal animation script -->
+    <script>
+        (function () {
+            const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            if (prefersReduced) return;
+            const els = document.querySelectorAll('.reveal');
+            const io = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('show');
+                        io.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.12 });
+            els.forEach(el => io.observe(el));
+        })();
+    </script>
+</body>
+
+</html>
