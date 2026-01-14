@@ -149,11 +149,12 @@
                             <h2 class="text-white text-2xl sm:text-3xl font-bold mb-6">Overview</h2>
                             <p class="text-[var(--fg-secondary)] text-lg leading-relaxed mb-6">
                                 <!-- Add your overview text here -->
-                                This research focuses on developing techniques to remove specific identity information
-                                from latent
-                                diffusion models while preserving their general image generation capabilities. The
-                                approach targets the
-                                Arc2Face model, which specializes in face generation from identity embeddings.
+                                This research focuses on developing techniques to remove specific identity reproduction
+                                capability
+                                from latent diffusion models while preserving their general image generation
+                                capabilities. The
+                                approach targets the StableDiffusions-based Arc2Face model, which specializes in face
+                                generation from SoTA ArcFace identity embeddings.
                             </p>
 
                             <h2 class="text-white text-2xl sm:text-3xl font-bold mb-6 mt-12">Methodology</h2>
@@ -166,17 +167,12 @@
                                 representations, we aim to prevent the model from reproducing specific identities.
                             </p>
 
-                            <!-- Image Placeholder 1 -->
+                            <!-- Cross-Attention Diagram -->
                             <div class="panel rounded-2xl p-4 my-8">
-                                <img src="../images/placeholder-methodology.png" alt="Methodology Diagram"
-                                    class="w-full rounded-lg mb-4"
-                                    onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-                                <div
-                                    class="hidden w-full h-64 bg-[var(--bg-surface)] rounded-lg items-center justify-center border border-dashed border-[var(--bd-muted)]">
-                                    <p class="text-[var(--fg-muted)] text-sm">Add methodology diagram image here</p>
-                                </div>
-                                <p class="text-[var(--fg-muted)] text-sm text-center mt-2">Figure 1: Methodology
-                                    overview</p>
+                                <img src="../images/projects/unlearning/cross_attention.png"
+                                    alt="Cross-Attention Mechanism Diagram" class="w-full rounded-lg mb-4" />
+                                <p class="text-[var(--fg-muted)] text-sm text-center mt-2">Figure 1: Cross-attention
+                                    mechanism in diffusion models</p>
                             </div>
 
                             <h2 class="text-white text-2xl sm:text-3xl font-bold mb-6 mt-12">Results</h2>
@@ -185,31 +181,62 @@
                                 Preliminary results demonstrate the effectiveness of our approach in preventing identity
                                 reproduction
                                 while maintaining the model's ability to generate high-quality face images with other
-                                identities.
+                                identities. Current focus is on designing an optimal anchor-selection strategy and to
+                                test the model's resiliance to multiple sequential
+                                unlearning applications.
                             </p>
 
-                            <!-- Image Placeholder 2 -->
+                            <!-- Results Image -->
                             <div class="panel rounded-2xl p-4 my-8">
-                                <img src="../images/placeholder-results.png" alt="Results Comparison"
-                                    class="w-full rounded-lg mb-4"
-                                    onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-                                <div
-                                    class="hidden w-full h-64 bg-[var(--bg-surface)] rounded-lg items-center justify-center border border-dashed border-[var(--bd-muted)]">
-                                    <p class="text-[var(--fg-muted)] text-sm">Add results comparison image here</p>
-                                </div>
+                                <img src="../images/projects/unlearning/results.png" alt="Unlearning Results Comparison"
+                                    class="w-full rounded-lg mb-4" />
                                 <p class="text-[var(--fg-muted)] text-sm text-center mt-2">Figure 2: Before and after
-                                    unlearning
-                                    comparison</p>
+                                    unlearning comparison</p>
                             </div>
 
-                            <h2 class="text-white text-2xl sm:text-3xl font-bold mb-6 mt-12">Conclusions</h2>
-                            <p class="text-[var(--fg-secondary)] text-lg leading-relaxed mb-6">
-                                <!-- Add your conclusions text here -->
-                                This work contributes to the growing field of machine unlearning, providing practical
-                                methods for
-                                removing sensitive identity information from generative models while preserving their
-                                utility.
-                            </p>
+                            <!-- References Section -->
+                            <h2 class="text-white text-2xl sm:text-3xl font-bold mb-6 mt-12">References</h2>
+                            <div class="space-y-4 mb-8">
+                                <div class="panel rounded-xl p-4">
+                                    <p class="text-[var(--fg-secondary)] text-sm leading-relaxed">
+                                        <span class="text-white font-semibold">[1]</span> Papantoniou, F. P., Lattas,
+                                        A., Moschoglou, S., Deng, J., Kainz, B., & Zafeiriou, S. (2024).
+                                        <em>Arc2Face: A Foundation Model for ID-Consistent Human Faces.</em> European
+                                        Conference on Computer Vision (ECCV), pp. 241-261.
+                                        <a href="https://arxiv.org/abs/2403.11641" target="_blank"
+                                            class="text-[var(--brand)] hover:underline ml-1">arXiv:2403.11641</a>
+                                    </p>
+                                </div>
+                                <div class="panel rounded-xl p-4">
+                                    <p class="text-[var(--fg-secondary)] text-sm leading-relaxed">
+                                        <span class="text-white font-semibold">[2]</span> Deng, J., Guo, J., Yang, J.,
+                                        Xue, N., Kotsia, I., & Zafeiriou, S. (2022).
+                                        <em>ArcFace: Additive Angular Margin Loss for Deep Face Recognition.</em> IEEE
+                                        Transactions on Pattern Analysis and Machine Intelligence, 44(10), 5962-5979.
+                                        <a href="https://doi.org/10.1109/TPAMI.2021.3087709" target="_blank"
+                                            class="text-[var(--brand)] hover:underline ml-1">DOI:10.1109/TPAMI.2021.3087709</a>
+                                    </p>
+                                </div>
+                                <div class="panel rounded-xl p-4">
+                                    <p class="text-[var(--fg-secondary)] text-sm leading-relaxed">
+                                        <span class="text-white font-semibold">[3]</span> Gandikota, R., Materzynska,
+                                        J., Fiotto-Kaufman, J., & Bau, D. (2023).
+                                        <em>Erasing Concepts from Diffusion Models.</em>
+                                        <a href="https://arxiv.org/abs/2303.07345" target="_blank"
+                                            class="text-[var(--brand)] hover:underline ml-1">arXiv:2303.07345</a>
+                                    </p>
+                                </div>
+                                <div class="panel rounded-xl p-4">
+                                    <p class="text-[var(--fg-secondary)] text-sm leading-relaxed">
+                                        <span class="text-white font-semibold">[4]</span> Ruiz, N., Li, Y., Jampani, V.,
+                                        Pritch, Y., Rubinstein, M., & Aberman, K. (2023).
+                                        <em>DreamBooth: Fine Tuning Text-to-Image Diffusion Models for Subject-Driven
+                                            Generation.</em>
+                                        <a href="https://arxiv.org/abs/2208.12242" target="_blank"
+                                            class="text-[var(--brand)] hover:underline ml-1">arXiv:2208.12242</a>
+                                    </p>
+                                </div>
+                            </div>
 
                             <!-- Future Work -->
                             <div class="panel rounded-2xl p-6 mt-12">
