@@ -166,7 +166,10 @@
                                 these
                                 representations, we aim to prevent the model from reproducing specific identities.
                             </p>
-
+                            <p class="text-[var(--fg-secondary)] text-lg leading-relaxed mb-6">
+                                <!-- Add your methodology text here -->
+                                Full details of the methodology will be disclosed after publication.
+                            </p>
                             <!-- Cross-Attention Diagram -->
                             <div class="panel rounded-2xl p-4 my-8">
                                 <img src="../images/projects/unlearning/cross_attention.png"
@@ -175,23 +178,248 @@
                                     mechanism in diffusion models</p>
                             </div>
 
-                            <h2 class="text-white text-2xl sm:text-3xl font-bold mb-6 mt-12">Results</h2>
+                            <h2 class="text-white text-2xl sm:text-3xl font-bold mb-6 mt-12">Experimental Results</h2>
                             <p class="text-[var(--fg-secondary)] text-lg leading-relaxed mb-6">
-                                <!-- Add your results text here -->
-                                Preliminary results demonstrate the effectiveness of our approach in preventing identity
-                                reproduction
-                                while maintaining the model's ability to generate high-quality face images with other
-                                identities. Current focus is on designing an optimal anchor-selection strategy and to
-                                test the model's resiliance to multiple sequential
-                                unlearning applications.
+                                Below are detailed visualizations showing the unlearning progression across different
+                                experiments.
+                                Each experiment demonstrates how the model progressively "forgets" the target identity
+                                while maintaining
+                                its ability to generate other faces through anchor pull, and keeps retain identities
+                                consistent.
                             </p>
 
-                            <!-- Results Image -->
-                            <div class="panel rounded-2xl p-4 my-8">
-                                <img src="../images/projects/unlearning/results.png" alt="Unlearning Results Comparison"
-                                    class="w-full rounded-lg mb-4" />
-                                <p class="text-[var(--fg-muted)] text-sm text-center mt-2">Figure 2: Before and after
-                                    unlearning comparison</p>
+                            <!-- Experiment 1: ID 65 -->
+                            <div class="panel rounded-2xl p-6 my-8">
+                                <h3 class="text-white text-xl font-bold mb-4">Experiment: Identity 65</h3>
+                                <p class="text-[var(--fg-muted)] text-sm mb-6">
+                                    <strong>Parameters:</strong> lr=2e-05, preservation_weight=15.0, neg_guidance=1.0
+                                </p>
+
+                                <!-- Forget Progression -->
+                                <h4 class="text-[var(--brand)] text-lg font-semibold mb-3">Forget Progression</h4>
+                                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 mb-6">
+                                    <div class="text-center">
+                                        <img src="../images/projects/unlearning/experiments/id65_baseline_001.webp"
+                                            alt="ID 65 Baseline"
+                                            class="w-full rounded-lg border border-[var(--bd-strong)] mb-2" />
+                                        <p class="text-[var(--fg-subtle)] text-xs font-semibold">Baseline</p>
+                                    </div>
+                                    <div class="text-center">
+                                        <img src="../images/projects/unlearning/experiments/id65_step60_001.webp"
+                                            alt="ID 65 Step 60"
+                                            class="w-full rounded-lg border border-[var(--bd-strong)] mb-2" />
+                                        <p class="text-[var(--fg-subtle)] text-xs font-semibold">Step 60</p>
+                                    </div>
+                                    <div class="text-center">
+                                        <img src="../images/projects/unlearning/experiments/id65_step180_001.webp"
+                                            alt="ID 65 Step 180"
+                                            class="w-full rounded-lg border border-[var(--bd-strong)] mb-2" />
+                                        <p class="text-[var(--fg-subtle)] text-xs font-semibold">Step 180</p>
+                                    </div>
+                                    <div class="text-center">
+                                        <img src="../images/projects/unlearning/experiments/id65_step240_001.webp"
+                                            alt="ID 65 Step 240"
+                                            class="w-full rounded-lg border border-[var(--bd-strong)] mb-2" />
+                                        <p class="text-[var(--fg-subtle)] text-xs font-semibold">Step 240</p>
+                                    </div>
+                                    <div class="text-center">
+                                        <img src="../images/projects/unlearning/experiments/id65_step300_001.webp"
+                                            alt="ID 65 Step 300"
+                                            class="w-full rounded-lg border border-[var(--bd-strong)] mb-2" />
+                                        <p class="text-[var(--fg-subtle)] text-xs font-semibold">Step 300</p>
+                                    </div>
+                                </div>
+
+                                <!-- Anchor Image -->
+                                <h4 class="text-[var(--brand)] text-lg font-semibold mb-3">Anchor</h4>
+                                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 mb-6">
+                                    <div class="text-center">
+                                        <img src="../images/projects/unlearning/experiments/id65_anchor.webp"
+                                            alt="ID 65 Anchor"
+                                            class="w-full rounded-lg border border-[var(--bd-strong)] mb-2" />
+                                        <p class="text-[var(--fg-subtle)] text-xs font-semibold">Anchor</p>
+                                    </div>
+                                </div>
+
+                                <!-- Retain Progression -->
+                                <h4 class="text-[var(--brand)] text-lg font-semibold mb-3">Retain Progression (Identity
+                                    14692)</h4>
+                                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
+                                    <div class="text-center">
+                                        <img src="../images/projects/unlearning/experiments/id65_retain14692_step60.webp"
+                                            alt="Retain 14692 Step 60"
+                                            class="w-full rounded-lg border border-[var(--bd-strong)] mb-2" />
+                                        <p class="text-[var(--fg-subtle)] text-xs font-semibold">Step 60</p>
+                                    </div>
+                                    <div class="text-center">
+                                        <img src="../images/projects/unlearning/experiments/id65_retain14692_step180.webp"
+                                            alt="Retain 14692 Step 180"
+                                            class="w-full rounded-lg border border-[var(--bd-strong)] mb-2" />
+                                        <p class="text-[var(--fg-subtle)] text-xs font-semibold">Step 180</p>
+                                    </div>
+                                    <div class="text-center">
+                                        <img src="../images/projects/unlearning/experiments/id65_retain14692_step300.webp"
+                                            alt="Retain 14692 Step 300"
+                                            class="w-full rounded-lg border border-[var(--bd-strong)] mb-2" />
+                                        <p class="text-[var(--fg-subtle)] text-xs font-semibold">Step 300</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Experiment 2: ID 378 -->
+                            <div class="panel rounded-2xl p-6 my-8">
+                                <h3 class="text-white text-xl font-bold mb-4">Experiment: Identity 378</h3>
+                                <p class="text-[var(--fg-muted)] text-sm mb-6">
+                                    <strong>Parameters:</strong> lr=5e-05, preservation_weight=35.0, neg_guidance=1.0
+                                </p>
+
+                                <!-- Forget Progression -->
+                                <h4 class="text-[var(--brand)] text-lg font-semibold mb-3">Forget Progression</h4>
+                                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 mb-6">
+                                    <div class="text-center">
+                                        <img src="../images/projects/unlearning/experiments/id378_baseline_001.webp"
+                                            alt="ID 378 Baseline"
+                                            class="w-full rounded-lg border border-[var(--bd-strong)] mb-2" />
+                                        <p class="text-[var(--fg-subtle)] text-xs font-semibold">Baseline</p>
+                                    </div>
+                                    <div class="text-center">
+                                        <img src="../images/projects/unlearning/experiments/id378_step60_001.webp"
+                                            alt="ID 378 Step 60"
+                                            class="w-full rounded-lg border border-[var(--bd-strong)] mb-2" />
+                                        <p class="text-[var(--fg-subtle)] text-xs font-semibold">Step 60</p>
+                                    </div>
+                                    <div class="text-center">
+                                        <img src="../images/projects/unlearning/experiments/id378_step180_001.webp"
+                                            alt="ID 378 Step 180"
+                                            class="w-full rounded-lg border border-[var(--bd-strong)] mb-2" />
+                                        <p class="text-[var(--fg-subtle)] text-xs font-semibold">Step 180</p>
+                                    </div>
+                                    <div class="text-center">
+                                        <img src="../images/projects/unlearning/experiments/id378_step240_001.webp"
+                                            alt="ID 378 Step 240"
+                                            class="w-full rounded-lg border border-[var(--bd-strong)] mb-2" />
+                                        <p class="text-[var(--fg-subtle)] text-xs font-semibold">Step 240</p>
+                                    </div>
+                                    <div class="text-center">
+                                        <img src="../images/projects/unlearning/experiments/id378_step300_001.webp"
+                                            alt="ID 378 Step 300"
+                                            class="w-full rounded-lg border border-[var(--bd-strong)] mb-2" />
+                                        <p class="text-[var(--fg-subtle)] text-xs font-semibold">Step 300</p>
+                                    </div>
+                                </div>
+
+                                <!-- Anchor Image -->
+                                <h4 class="text-[var(--brand)] text-lg font-semibold mb-3">Anchor</h4>
+                                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 mb-6">
+                                    <div class="text-center">
+                                        <img src="../images/projects/unlearning/experiments/id378_anchor.webp"
+                                            alt="ID 378 Anchor"
+                                            class="w-full rounded-lg border border-[var(--bd-strong)] mb-2" />
+                                        <p class="text-[var(--fg-subtle)] text-xs font-semibold">Anchor</p>
+                                    </div>
+                                </div>
+
+                                <!-- Retain Progression -->
+                                <h4 class="text-[var(--brand)] text-lg font-semibold mb-3">Retain Progression (Identity
+                                    14692)</h4>
+                                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
+                                    <div class="text-center">
+                                        <img src="../images/projects/unlearning/experiments/id378_retain14692_step60.webp"
+                                            alt="Retain 14692 Step 60"
+                                            class="w-full rounded-lg border border-[var(--bd-strong)] mb-2" />
+                                        <p class="text-[var(--fg-subtle)] text-xs font-semibold">Step 60</p>
+                                    </div>
+                                    <div class="text-center">
+                                        <img src="../images/projects/unlearning/experiments/id378_retain14692_step180.webp"
+                                            alt="Retain 14692 Step 180"
+                                            class="w-full rounded-lg border border-[var(--bd-strong)] mb-2" />
+                                        <p class="text-[var(--fg-subtle)] text-xs font-semibold">Step 180</p>
+                                    </div>
+                                    <div class="text-center">
+                                        <img src="../images/projects/unlearning/experiments/id378_retain14692_step300.webp"
+                                            alt="Retain 14692 Step 300"
+                                            class="w-full rounded-lg border border-[var(--bd-strong)] mb-2" />
+                                        <p class="text-[var(--fg-subtle)] text-xs font-semibold">Step 300</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Experiment 3: ID 698 -->
+                            <div class="panel rounded-2xl p-6 my-8">
+                                <h3 class="text-white text-xl font-bold mb-4">Experiment: Identity 698</h3>
+                                <p class="text-[var(--fg-muted)] text-sm mb-6">
+                                    <strong>Parameters:</strong> lr=5e-05, preservation_weight=20.0, neg_guidance=1.0
+                                </p>
+
+                                <!-- Forget Progression -->
+                                <h4 class="text-[var(--brand)] text-lg font-semibold mb-3">Forget Progression</h4>
+                                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 mb-6">
+                                    <div class="text-center">
+                                        <img src="../images/projects/unlearning/experiments/id698_baseline_001.webp"
+                                            alt="ID 698 Baseline"
+                                            class="w-full rounded-lg border border-[var(--bd-strong)] mb-2" />
+                                        <p class="text-[var(--fg-subtle)] text-xs font-semibold">Baseline</p>
+                                    </div>
+                                    <div class="text-center">
+                                        <img src="../images/projects/unlearning/experiments/id698_step60_001.webp"
+                                            alt="ID 698 Step 60"
+                                            class="w-full rounded-lg border border-[var(--bd-strong)] mb-2" />
+                                        <p class="text-[var(--fg-subtle)] text-xs font-semibold">Step 60</p>
+                                    </div>
+                                    <div class="text-center">
+                                        <img src="../images/projects/unlearning/experiments/id698_step180_001.webp"
+                                            alt="ID 698 Step 180"
+                                            class="w-full rounded-lg border border-[var(--bd-strong)] mb-2" />
+                                        <p class="text-[var(--fg-subtle)] text-xs font-semibold">Step 180</p>
+                                    </div>
+                                    <div class="text-center">
+                                        <img src="../images/projects/unlearning/experiments/id698_step240_001.webp"
+                                            alt="ID 698 Step 240"
+                                            class="w-full rounded-lg border border-[var(--bd-strong)] mb-2" />
+                                        <p class="text-[var(--fg-subtle)] text-xs font-semibold">Step 240</p>
+                                    </div>
+                                    <div class="text-center">
+                                        <img src="../images/projects/unlearning/experiments/id698_step300_001.webp"
+                                            alt="ID 698 Step 300"
+                                            class="w-full rounded-lg border border-[var(--bd-strong)] mb-2" />
+                                        <p class="text-[var(--fg-subtle)] text-xs font-semibold">Step 300</p>
+                                    </div>
+                                </div>
+
+                                <!-- Anchor Image -->
+                                <h4 class="text-[var(--brand)] text-lg font-semibold mb-3">Anchor</h4>
+                                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 mb-6">
+                                    <div class="text-center">
+                                        <img src="../images/projects/unlearning/experiments/id698_anchor.webp"
+                                            alt="ID 698 Anchor"
+                                            class="w-full rounded-lg border border-[var(--bd-strong)] mb-2" />
+                                        <p class="text-[var(--fg-subtle)] text-xs font-semibold">Anchor</p>
+                                    </div>
+                                </div>
+
+                                <!-- Retain Progression -->
+                                <h4 class="text-[var(--brand)] text-lg font-semibold mb-3">Retain Progression (Identity
+                                    11102)</h4>
+                                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
+                                    <div class="text-center">
+                                        <img src="../images/projects/unlearning/experiments/id698_retain11102_step60.webp"
+                                            alt="Retain 11102 Step 60"
+                                            class="w-full rounded-lg border border-[var(--bd-strong)] mb-2" />
+                                        <p class="text-[var(--fg-subtle)] text-xs font-semibold">Step 60</p>
+                                    </div>
+                                    <div class="text-center">
+                                        <img src="../images/projects/unlearning/experiments/id698_retain11102_step180.webp"
+                                            alt="Retain 11102 Step 180"
+                                            class="w-full rounded-lg border border-[var(--bd-strong)] mb-2" />
+                                        <p class="text-[var(--fg-subtle)] text-xs font-semibold">Step 180</p>
+                                    </div>
+                                    <div class="text-center">
+                                        <img src="../images/projects/unlearning/experiments/id698_retain11102_step300.webp"
+                                            alt="Retain 11102 Step 300"
+                                            class="w-full rounded-lg border border-[var(--bd-strong)] mb-2" />
+                                        <p class="text-[var(--fg-subtle)] text-xs font-semibold">Step 300</p>
+                                    </div>
+                                </div>
                             </div>
 
                             <!-- References Section -->
@@ -240,7 +468,7 @@
 
                             <!-- Future Work -->
                             <div class="panel rounded-2xl p-6 mt-12">
-                                <h3 class="text-white text-xl font-bold mb-4">🔬 Ongoing Work</h3>
+                                <h3 class="text-white text-xl font-bold mb-4">Ongoing Work</h3>
                                 <p class="text-[var(--fg-secondary)] leading-relaxed">
                                     This page will be updated as the research progresses. Check back for new results and
                                     findings.
