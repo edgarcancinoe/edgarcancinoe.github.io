@@ -245,13 +245,28 @@ def extract_card_data(card_html):
     inst_match = re.search(r'<span class="text-xs text-white">(.*?)</span>', card_html)
     institution = inst_match.group(1) if inst_match else "Personal"
     
-    # Extract description
-    desc_match = re.search(r'<p class="text-\[#9eb7a8\][^>]*>(.*?)</p>', card_html, re.DOTALL)
-    description = desc_match.group(1).strip() if desc_match else ""
+    # Extract description - handle both paragraph and list formats
+    desc_html = ''
     
-    # Convert description to proper paragraphs
-    desc_parts = [p.strip() for p in description.split('<br>') if p.strip()]
-    desc_html = '\n'.join([f'                            <p class="text-[var(--fg-secondary)] text-lg leading-relaxed mb-6">\n                                {part}\n                            </p>' for part in desc_parts])
+    # Try to find list-based description first
+    list_match = re.search(r'<div class="text-\[#9eb7a8\][^>]*>(.*?)</div>', card_html, re.DOTALL)
+    if list_match and ('<ul' in list_match.group(1) or '<li' in list_match.group(1)):
+        # Found list content
+        list_content = list_match.group(1).strip()
+        # Update colors to use CSS variables
+        list_content = list_content.replace('text-[#9eb7a8]', 'text-[var(--fg-secondary)]')
+        desc_html = f'                            <div class="text-[var(--fg-secondary)] text-lg leading-relaxed mb-6">\n                                {list_content}\n                            </div>'
+    else:
+        # Try paragraph-based description
+        desc_match = re.search(r'<p class="text-\[#9eb7a8\][^>]*>(.*?)</p>', card_html, re.DOTALL)
+        if desc_match:
+            description_raw = desc_match.group(1).strip()
+            # Split by <br> tags
+            desc_parts = [p.strip() for p in re.split(r'<br\s*/?>', description_raw) if p.strip()]
+            desc_html = '\n'.join([f'                            <p class="text-[var(--fg-secondary)] text-lg leading-relaxed mb-6">\n                                {part}\n                            </p>' for part in desc_parts])
+    
+    if not desc_html:
+        desc_html = '                            <p class="text-[var(--fg-secondary)] text-lg leading-relaxed mb-6">\n                                Project details coming soon.\n                            </p>'
     
     # Extract tags
     tags = re.findall(r'<span class="px-2 py-1 bg-\[#38e07b\]/20[^>]*>(.*?)</span>', card_html)
