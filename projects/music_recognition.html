@@ -14,37 +14,38 @@
     <style type="text/tailwindcss">
         @layer base {
       :root {
-        --bg-root:        #111714;
-        --bg-surface:     #161d1a;
-        --bg-panel:       #1c2620;
-        --bd-muted:       #29382f;
-        --bd-strong:      #3d5245;
+        --bg-root:        #f5f7fb;
+        --bg-surface:     #eff1f4;
+        --bg-panel:       #ffffff;
+        --bd-muted:       #d8dde4;
+        --bd-strong:      #cfd6de;
 
-        --fg-primary:     #ffffff;
-        --fg-secondary:   #e5e7eb;
-        --fg-muted:       #9eb7a8;
-        --fg-subtle:      #8aa096;
+        --fg-primary:     #181c20;
+        --fg-secondary:   #48515c;
+        --fg-muted:       #66707c;
+        --fg-subtle:      #818995;
 
-        --brand:          #38e07b;
-        --brand-600:      #2dd06f;
-        --brand-700:      #23b85f;
-        --brand-800:      #1a9e52;
-        --brand-900:      #138446;
-        --brand-tint:     #b9f2cf;
+        --brand:          #6a727d;
+        --brand-600:      #5c646f;
+        --brand-700:      #4f5660;
+        --brand-800:      #434951;
+        --brand-900:      #373c44;
+        --brand-tint:     #626b75;
 
-        --teal-600:       #27c1a7;
-        --teal-800:       #126d60;
-
-        --shadow-strong:  0 10px 24px rgba(0,0,0,.35), 0 4px 8px rgba(0,0,0,.25);
+        --shadow-strong:  0 6px 18px rgba(2,10,22,.08);
       }
     }
 
     @layer utilities {
       .text-muted  { color: var(--fg-muted); }
       .text-subtle { color: var(--fg-subtle); }
-      .panel       { background: var(--bg-panel); border: 1px solid var(--bd-strong); }
-      .btn-brand   { background: var(--brand); color: var(--bg-root); }
-      .btn-brand:hover { background: var(--brand-600); box-shadow: 0 0 0 6px color-mix(in srgb, var(--brand) 25%, transparent); }
+      .panel       { background: var(--bg-panel); border: 1px solid color-mix(in srgb, var(--bd-strong) 82%, transparent); box-shadow: none; }
+      .btn-brand   { background: var(--brand); color: white; }
+      .btn-brand:hover { background: var(--brand-600); box-shadow: none; }
+      .text-white { color: var(--fg-primary) !important; }
+      .text-gray-400 { color: var(--fg-muted) !important; }
+      .text-gray-300 { color: var(--fg-secondary) !important; }
+      .text-gray-200 { color: var(--fg-secondary) !important; }
     }
 
     html { scroll-behavior: smooth; }
@@ -57,15 +58,15 @@
 </head>
 
 <body>
-    <div class="relative flex size-full min-h-screen flex-col dark group/design-root overflow-x-hidden"
-        style='font-family: "Spline Sans", "Noto Sans", sans-serif; background: var(--bg-root);'>
+    <div class="relative flex size-full min-h-screen flex-col group/design-root overflow-x-hidden"
+        style='font-family: "Spline Sans", "Noto Sans", sans-serif; background: #f5f7fb;'>
         <div class="layout-container flex h-full grow flex-col">
 
             <!-- Header -->
             <header
-                class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#29382f] px-5 sm:px-10 py-3 sm:py-4 fixed top-0 left-0 right-0 bg-[#111714]/80 backdrop-blur-sm z-50 font-['Space_Grotesk',_'Noto_Sans',_sans-serif]">
+                class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[var(--bd-muted)] px-5 sm:px-10 py-3 sm:py-4 fixed top-0 left-0 right-0 bg-white z-50 font-['Space_Grotesk',_'Noto_Sans',_sans-serif]">
                 <div class="flex items-center gap-3 text-white">
-                    <svg class="text-[#38e07b]" fill="none" height="24" stroke="currentColor" stroke-linecap="round"
+                    <svg class="text-[var(--brand)]" fill="none" height="24" stroke="currentColor" stroke-linecap="round"
                         stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"
                         xmlns="http://www.w3.org/2000/svg">
                         <path d="M10 16.5 8 18l-6-6 6-6 2 1.5"></path>
@@ -74,7 +75,7 @@
                     </svg>
                     <div>
                         <h2 class="text-white text-lg sm:text-xl font-bold leading-tight tracking-[-0.015em]">
-                            <a href="../index.html" class="hover:text-[#38e07b] transition-colors">
+                            <a href="../index.html" class="hover:text-[var(--brand)] transition-colors">
                                 <span class="sm:hidden">J. Edgar Hernandez</span>
                                 <span class="hidden sm:inline">Jose Edgar Hernandez Cancino E.</span>
                             </a>
@@ -96,11 +97,11 @@
             <!-- Main Content -->
             <main class="flex-1 mt-20 pb-16">
                 <!-- Hero Section -->
-                <section class="px-4 sm:px-8 lg:px-20 py-12 sm:py-16 bg-[#0c1511]">
+                <section class="px-4 sm:px-8 lg:px-20 py-10 sm:py-12" style="background: var(--bg-surface);">
                     <div class="max-w-4xl mx-auto">
                         <!-- Back link -->
                         <a href="../projects.html"
-                            class="inline-flex items-center gap-2 text-[var(--fg-muted)] hover:text-[var(--brand)] transition-colors mb-8">
+                            class="inline-flex items-center gap-2 text-[var(--fg-muted)] hover:text-[var(--brand)] transition-colors mb-6">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none"
                                 stroke="currentColor" stroke-width="2">
                                 <path d="M19 12H5M12 19l-7-7 7-7" />
@@ -109,41 +110,41 @@
                         </a>
 
                         <!-- Title -->
-                        <div class="mb-8 reveal">
-                            <p class="text-[var(--brand)] text-sm font-semibold mb-2 uppercase tracking-wider">Tec de Monterrey — 2020</p>
-                            <h1 class="text-white text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-4">
+                        <div class="mb-6 reveal">
+                            <p class="text-[var(--brand)] text-sm font-semibold mb-2 uppercase tracking-wider">Personal — 2020</p>
+                            <h1 class="text-white text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight mb-3">
                                 Music Recognition Algorithm Using Discrete Fourier Transform
                             </h1>
                         </div>
 
                         <!-- Tags -->
-                        <div class="flex flex-wrap gap-2 mb-8 reveal">
-                            <span class="px-3 py-1 rounded-full text-sm bg-[var(--brand)]/15 text-[var(--brand)] border border-[var(--brand)]/30">MATLAB</span>
-                            <span class="px-3 py-1 rounded-full text-sm bg-[var(--brand)]/15 text-[var(--brand)] border border-[var(--brand)]/30">Signal Analysis</span>
-                            <span class="px-3 py-1 rounded-full text-sm bg-[var(--brand)]/15 text-[var(--brand)] border border-[var(--brand)]/30">Audio Processing</span>
+                        <div class="flex flex-wrap gap-2 mb-6 reveal">
+                            <span class="px-3 py-1 rounded-full text-sm bg-[var(--brand)]/15 text-[var(--brand)]">MATLAB</span>
+                            <span class="px-3 py-1 rounded-full text-sm bg-[var(--brand)]/15 text-[var(--brand)]">Signal Analysis</span>
+                            <span class="px-3 py-1 rounded-full text-sm bg-[var(--brand)]/15 text-[var(--brand)]">Audio Processing</span>
                         </div>
                     </div>
                 </section>
 
                 <!-- Content Section -->
-                <section class="px-4 sm:px-8 lg:px-20 py-12 bg-[#0f1a15]">
+                <section class="px-4 sm:px-8 lg:px-20 py-10">
                     <div class="max-w-4xl mx-auto">
 
                         <!-- Project Media -->
-                        <div class="panel rounded-2xl p-4 mb-8 reveal">
+                        <div class="panel rounded-2xl p-3 mb-6 reveal">
 <img src="../images/projects/music_recognition/sp.webp" alt="Music Recognition Project Image" class="w-full rounded-lg" />
                         </div>
 
                         <!-- Project Description -->
                         <article class="prose prose-invert max-w-none reveal">
-                            <h2 class="text-white text-2xl sm:text-3xl font-bold mb-6">Overview</h2>
+                            <h2 class="text-white text-xl sm:text-2xl font-bold mb-5">Overview</h2>
                             <p class="text-[var(--fg-secondary)] text-lg leading-relaxed mb-6">
                                 Song identification using FFT to match microphone input to known song's frequency signature.
                             </p>
 
                             <!-- External Links -->
-                            <div class="mt-8">
-                                <h3 class="text-white text-xl font-bold mb-4">Resources</h3>
+                            <div class="mt-6">
+                                <h3 class="text-white text-lg font-bold mb-3">Resources</h3>
                                 <div class="flex flex-wrap gap-4">
                                     <a href="https://github.com/edgarcancinoe/music_recognition" target="_blank"
                                         class="inline-flex items-center px-6 py-3 rounded-full bg-[var(--brand)] text-[var(--bg-root)] font-semibold hover:bg-[var(--brand-600)] transition-all hover:scale-105">
@@ -173,7 +174,7 @@
                 style="background: var(--bg-surface);">
                 <div class="max-w-7xl mx-auto flex justify-between items-center text-white">
                     <div class="flex items-center gap-3">
-                        <p class="text-[var(--fg-secondary)] text-sm"> 2025<span class="text-subtle mr-2 ml-2">|</span>
+                        <p class="text-[var(--fg-secondary)] text-sm"> 2026<span class="text-subtle mr-2 ml-2">|</span>
                             <span class="sm:hidden"> J.E.H.C.E.</span>
                             <span class="hidden sm:inline"> Jose Edgar Hernandez Cancino Estrada</span>
                         </p>

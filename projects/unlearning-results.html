@@ -14,27 +14,26 @@
     <style type="text/tailwindcss">
         @layer base {
       :root {
-        /* Brand core (dark pine + emerald) */
-        --bg-root:        #111714;
-        --bg-surface:     #161d1a;
-        --bg-panel:       #1c2620;
-        --bd-muted:       #29382f;
-        --bd-strong:      #3d5245;
+        --bg-root:        #f5f7fb;
+        --bg-surface:     #eff1f4;
+        --bg-panel:       #ffffff;
+        --bd-muted:       #d8dde4;
+        --bd-strong:      #cfd6de;
 
-        --fg-primary:     #ffffff;
-        --fg-secondary:   #e5e7eb;
-        --fg-muted:       #9eb7a8;
-        --fg-subtle:      #8aa096;
+        --fg-primary:     #181c20;
+        --fg-secondary:   #48515c;
+        --fg-muted:       #66707c;
+        --fg-subtle:      #818995;
 
-        --brand:          #38e07b;
-        --brand-600:      #2dd06f;
-        --brand-700:      #23b85f;
-        --brand-800:      #1a9e52;
-        --brand-900:      #138446;
-        --brand-tint:     #b9f2cf;
+        --brand:          #6a727d;
+        --brand-600:      #5c646f;
+        --brand-700:      #4f5660;
+        --brand-800:      #434951;
+        --brand-900:      #373c44;
+        --brand-tint:     #626b75;
 
-        --teal-600:       #27c1a7;
-        --teal-800:       #126d60;
+        --teal-600:       #8a919b;
+        --teal-800:       #d2d7de;
 
         --shadow-strong:  0 10px 24px rgba(0,0,0,.35), 0 4px 8px rgba(0,0,0,.25);
       }
@@ -45,7 +44,11 @@
       .text-subtle { color: var(--fg-subtle); }
       .panel       { background: var(--bg-panel); border: 1px solid var(--bd-strong); }
       .btn-brand   { background: var(--brand); color: var(--bg-root); }
-      .btn-brand:hover { background: var(--brand-600); box-shadow: 0 0 0 6px color-mix(in srgb, var(--brand) 25%, transparent); }
+      .btn-brand:hover { background: var(--brand-600); box-shadow: none; }
+      .text-white { color: var(--fg-primary) !important; }
+      .text-gray-400 { color: var(--fg-muted) !important; }
+      .text-gray-300 { color: var(--fg-secondary) !important; }
+      .text-gray-200 { color: var(--fg-secondary) !important; }
     }
 
     html { scroll-behavior: smooth; }
@@ -58,15 +61,15 @@
 </head>
 
 <body>
-    <div class="relative flex size-full min-h-screen flex-col dark group/design-root overflow-x-hidden"
+    <div class="relative flex size-full min-h-screen flex-col group/design-root overflow-x-hidden"
         style='font-family: "Spline Sans", "Noto Sans", sans-serif; background: var(--bg-root);'>
         <div class="layout-container flex h-full grow flex-col">
 
             <!-- Header -->
             <header
-                class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#29382f] px-5 sm:px-10 py-3 sm:py-4 fixed top-0 left-0 right-0 bg-[#111714]/80 backdrop-blur-sm z-50 font-['Space_Grotesk',_'Noto_Sans',_sans-serif]">
+                class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[var(--bd-muted)] px-5 sm:px-10 py-3 sm:py-4 fixed top-0 left-0 right-0 bg-[rgba(245,247,251,.92)] backdrop-blur-sm z-50 font-['Space_Grotesk',_'Noto_Sans',_sans-serif]">
                 <div class="flex items-center gap-3 text-white">
-                    <svg class="text-[#38e07b]" fill="none" height="24" stroke="currentColor" stroke-linecap="round"
+                    <svg class="text-[var(--brand)]" fill="none" height="24" stroke="currentColor" stroke-linecap="round"
                         stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"
                         xmlns="http://www.w3.org/2000/svg">
                         <path d="M10 16.5 8 18l-6-6 6-6 2 1.5"></path>
@@ -74,8 +77,8 @@
                         <path d="M12 8v8"></path>
                     </svg>
                     <div>
-                        <h2 class="text-white text-lg sm:text-xl font-bold leading-tight tracking-[-0.015em]">
-                            <a href="../index.html" class="hover:text-[#38e07b] transition-colors">
+                        <h2 class="text-[#16202b] text-lg sm:text-xl font-bold leading-tight tracking-[-0.015em]">
+                            <a href="../index.html" class="hover:text-[var(--brand)] transition-colors">
                                 <span class="sm:hidden">J. Edgar Hernandez</span>
                                 <span class="hidden sm:inline">Jose Edgar Hernandez Cancino E.</span>
                             </a>
@@ -84,11 +87,11 @@
                 </div>
                 <div class="flex flex-1 justify-end gap-4 items-center">
                     <div class="hidden sm:flex items-center gap-8">
-                        <a class="text-gray-300 hover:text-white transition-colors text-base font-medium leading-normal"
+                        <a class="text-gray-300 hover:text-[#16202b] transition-colors text-base font-medium leading-normal"
                             href="../index.html">About</a>
-                        <a class="text-gray-300 hover:text-white transition-colors text-base font-medium leading-normal"
+                        <a class="text-gray-300 hover:text-[#16202b] transition-colors text-base font-medium leading-normal"
                             href="../projects.html">Projects</a>
-                        <a class="text-gray-300 hover:text-white transition-colors text-base font-medium leading-normal"
+                        <a class="text-gray-300 hover:text-[#16202b] transition-colors text-base font-medium leading-normal"
                             href="../contact.html">Contact</a>
                     </div>
                 </div>
@@ -97,7 +100,7 @@
             <!-- Main Content -->
             <main class="flex-1 mt-20 pb-16">
                 <!-- Hero Section -->
-                <section class="px-4 sm:px-8 lg:px-20 py-12 sm:py-16 bg-[#0c1511]">
+                <section class="px-4 sm:px-8 lg:px-20 py-12 sm:py-16 bg-white">
                     <div class="max-w-4xl mx-auto">
                         <!-- Back link -->
                         <a href="../index.html#about"
@@ -114,7 +117,7 @@
                             <p class="text-[var(--brand)] text-sm font-semibold mb-2 uppercase tracking-wider">MSc
                                 Research Project —
                                 2025</p>
-                            <h1 class="text-white text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-4">
+                            <h1 class="text-[#16202b] text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-4">
                                 Unlearning Identity Information in Latent Diffusion Models
                             </h1>
                             <p class="text-[var(--fg-secondary)] text-lg leading-relaxed">
@@ -127,26 +130,26 @@
                         <!-- Tags -->
                         <div class="flex flex-wrap gap-2 mb-8 reveal">
                             <span
-                                class="px-3 py-1 rounded-full text-sm bg-[var(--brand)]/15 text-[var(--brand)] border border-[var(--brand)]/30">Machine
+                                class="px-3 py-1 rounded-full text-sm bg-[var(--brand)]/15 text-[var(--brand)]">Machine
                                 Unlearning</span>
                             <span
-                                class="px-3 py-1 rounded-full text-sm bg-[var(--brand)]/15 text-[var(--brand)] border border-[var(--brand)]/30">Diffusion
+                                class="px-3 py-1 rounded-full text-sm bg-[var(--brand)]/15 text-[var(--brand)]">Diffusion
                                 Models</span>
                             <span
-                                class="px-3 py-1 rounded-full text-sm bg-[var(--brand)]/15 text-[var(--brand)] border border-[var(--brand)]/30">Cross-Attention</span>
+                                class="px-3 py-1 rounded-full text-sm bg-[var(--brand)]/15 text-[var(--brand)]">Cross-Attention</span>
                             <span
-                                class="px-3 py-1 rounded-full text-sm bg-[var(--brand)]/15 text-[var(--brand)] border border-[var(--brand)]/30">Privacy</span>
+                                class="px-3 py-1 rounded-full text-sm bg-[var(--brand)]/15 text-[var(--brand)]">Privacy</span>
                         </div>
                     </div>
                 </section>
 
                 <!-- Content Section -->
-                <section class="px-4 sm:px-8 lg:px-20 py-12 bg-[#0f1a15]">
+                <section class="px-4 sm:px-8 lg:px-20 py-12" style="background: var(--bg-surface);">
                     <div class="max-w-4xl mx-auto">
 
                         <!-- Introduction -->
                         <article class="prose prose-invert max-w-none reveal">
-                            <h2 class="text-white text-2xl sm:text-3xl font-bold mb-6">Overview</h2>
+                            <h2 class="text-[#16202b] text-2xl sm:text-3xl font-bold mb-6">Overview</h2>
                             <p class="text-[var(--fg-secondary)] text-lg leading-relaxed mb-6">
                                 <!-- Add your overview text here -->
                                 This research focuses on developing techniques to remove specific identity reproduction
@@ -157,7 +160,7 @@
                                 generation from SoTA ArcFace identity embeddings.
                             </p>
 
-                            <h2 class="text-white text-2xl sm:text-3xl font-bold mb-6 mt-12">Methodology</h2>
+                            <h2 class="text-[#16202b] text-2xl sm:text-3xl font-bold mb-6 mt-12">Methodology</h2>
                             <p class="text-[var(--fg-secondary)] text-lg leading-relaxed mb-6">
                                 <!-- Add your methodology text here -->
                                 Our approach focuses on the cross-attention layers of the diffusion model, specifically
@@ -178,7 +181,7 @@
                                     mechanism in diffusion models</p>
                             </div>
 
-                            <h2 class="text-white text-2xl sm:text-3xl font-bold mb-6 mt-12">Experimental Results</h2>
+                            <h2 class="text-[#16202b] text-2xl sm:text-3xl font-bold mb-6 mt-12">Experimental Results</h2>
                             <p class="text-[var(--fg-secondary)] text-lg leading-relaxed mb-6">
                                 Below are detailed visualizations showing the unlearning progression across different
                                 experiments.
@@ -190,7 +193,7 @@
 
                             <!-- Experiment 1: ID 65 -->
                             <div class="panel rounded-2xl p-6 my-8">
-                                <h3 class="text-white text-xl font-bold mb-4">Experiment: Identity 65</h3>
+                                <h3 class="text-[#16202b] text-xl font-bold mb-4">Experiment: Identity 65</h3>
                                 <p class="text-[var(--fg-muted)] text-sm mb-6">
                                     <strong>Parameters:</strong> lr=2e-05, preservation_weight=15.0, neg_guidance=1.0
                                 </p>
@@ -268,7 +271,7 @@
 
                             <!-- Experiment 2: ID 378 -->
                             <div class="panel rounded-2xl p-6 my-8">
-                                <h3 class="text-white text-xl font-bold mb-4">Experiment: Identity 378</h3>
+                                <h3 class="text-[#16202b] text-xl font-bold mb-4">Experiment: Identity 378</h3>
                                 <p class="text-[var(--fg-muted)] text-sm mb-6">
                                     <strong>Parameters:</strong> lr=5e-05, preservation_weight=35.0, neg_guidance=1.0
                                 </p>
@@ -346,7 +349,7 @@
 
                             <!-- Experiment 3: ID 698 -->
                             <div class="panel rounded-2xl p-6 my-8">
-                                <h3 class="text-white text-xl font-bold mb-4">Experiment: Identity 698</h3>
+                                <h3 class="text-[#16202b] text-xl font-bold mb-4">Experiment: Identity 698</h3>
                                 <p class="text-[var(--fg-muted)] text-sm mb-6">
                                     <strong>Parameters:</strong> lr=5e-05, preservation_weight=20.0, neg_guidance=1.0
                                 </p>
@@ -423,11 +426,11 @@
                             </div>
 
                             <!-- References Section -->
-                            <h2 class="text-white text-2xl sm:text-3xl font-bold mb-6 mt-12">References</h2>
+                            <h2 class="text-[#16202b] text-2xl sm:text-3xl font-bold mb-6 mt-12">References</h2>
                             <div class="space-y-4 mb-8">
                                 <div class="panel rounded-xl p-4">
                                     <p class="text-[var(--fg-secondary)] text-sm leading-relaxed">
-                                        <span class="text-white font-semibold">[1]</span> Papantoniou, F. P., Lattas,
+                                        <span class="text-[#16202b] font-semibold">[1]</span> Papantoniou, F. P., Lattas,
                                         A., Moschoglou, S., Deng, J., Kainz, B., & Zafeiriou, S. (2024).
                                         <em>Arc2Face: A Foundation Model for ID-Consistent Human Faces.</em> European
                                         Conference on Computer Vision (ECCV), pp. 241-261.
@@ -437,7 +440,7 @@
                                 </div>
                                 <div class="panel rounded-xl p-4">
                                     <p class="text-[var(--fg-secondary)] text-sm leading-relaxed">
-                                        <span class="text-white font-semibold">[2]</span> Deng, J., Guo, J., Yang, J.,
+                                        <span class="text-[#16202b] font-semibold">[2]</span> Deng, J., Guo, J., Yang, J.,
                                         Xue, N., Kotsia, I., & Zafeiriou, S. (2022).
                                         <em>ArcFace: Additive Angular Margin Loss for Deep Face Recognition.</em> IEEE
                                         Transactions on Pattern Analysis and Machine Intelligence, 44(10), 5962-5979.
@@ -447,7 +450,7 @@
                                 </div>
                                 <div class="panel rounded-xl p-4">
                                     <p class="text-[var(--fg-secondary)] text-sm leading-relaxed">
-                                        <span class="text-white font-semibold">[3]</span> Gandikota, R., Materzynska,
+                                        <span class="text-[#16202b] font-semibold">[3]</span> Gandikota, R., Materzynska,
                                         J., Fiotto-Kaufman, J., & Bau, D. (2023).
                                         <em>Erasing Concepts from Diffusion Models.</em>
                                         <a href="https://arxiv.org/abs/2303.07345" target="_blank"
@@ -456,7 +459,7 @@
                                 </div>
                                 <div class="panel rounded-xl p-4">
                                     <p class="text-[var(--fg-secondary)] text-sm leading-relaxed">
-                                        <span class="text-white font-semibold">[4]</span> Ruiz, N., Li, Y., Jampani, V.,
+                                        <span class="text-[#16202b] font-semibold">[4]</span> Ruiz, N., Li, Y., Jampani, V.,
                                         Pritch, Y., Rubinstein, M., & Aberman, K. (2023).
                                         <em>DreamBooth: Fine Tuning Text-to-Image Diffusion Models for Subject-Driven
                                             Generation.</em>
@@ -468,7 +471,7 @@
 
                             <!-- Future Work -->
                             <div class="panel rounded-2xl p-6 mt-12">
-                                <h3 class="text-white text-xl font-bold mb-4">Ongoing Work</h3>
+                                <h3 class="text-[#16202b] text-xl font-bold mb-4">Ongoing Work</h3>
                                 <p class="text-[var(--fg-secondary)] leading-relaxed">
                                     This page will be updated as the research progresses. Check back for new results and
                                     findings.
@@ -486,7 +489,7 @@
                 style="background: var(--bg-surface);">
                 <div class="max-w-7xl mx-auto flex justify-between items-center text-white">
                     <div class="flex items-center gap-3">
-                        <p class="text-[var(--fg-secondary)] text-sm"> 2025<span class="text-subtle mr-2 ml-2">|</span>
+                        <p class="text-[var(--fg-secondary)] text-sm"> 2026<span class="text-subtle mr-2 ml-2">|</span>
                             <span class="sm:hidden"> J.E.H.C.E.</span>
                             <span class="hidden sm:inline"> Jose Edgar Hernandez Cancino Estrada</span>
                         </p>

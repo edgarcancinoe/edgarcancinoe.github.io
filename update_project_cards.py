@@ -32,9 +32,7 @@ PROJECT_LINKS = {
 def wrap_with_link(card_html, link_url):
     """Wrap the card div with a clickable link."""
     
-    # Find the opening div tag
-    if '<div class="flex flex-col gap-4 group">' in card_html:
-        # Add the link wrapper
+    if card_html.lstrip().startswith('<div'):
         wrapped = f'<a href="{link_url}" class="block no-underline hover:no-underline transition-all duration-300">\n{card_html}</a>'
         return wrapped
     return card_html

@@ -4,12 +4,12 @@ document.addEventListener('DOMContentLoaded', async () => {
     const url = node.getAttribute('data-include');
     if (!url) return;
     try {
-      const res = await fetch(url, { cache: 'no-store' });
-      if (!res.ok) throw new Error(`Failed to load ${url}: ${res.status}`);
-      const html = await res.text();
+      const cachedHtml = sessionStorage.getItem(`project-card:${url}`);
+      const html = cachedHtml || await fetchPartial(url);
       node.innerHTML = html;
       node.classList.add('project-card');
       node.removeAttribute('data-include');
+      if (!cachedHtml) sessionStorage.setItem(`project-card:${url}`, html);
     } catch (err) {
       console.error(err);
       node.innerHTML = `<div class="text-red-400 text-sm">Failed to load: ${url}</div>`;
@@ -18,28 +18,65 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   // After all cards are loaded, collect badges and wire up filters
   initializeFiltering();
+  initializePreviewMedia();
 });
+
+async function fetchPartial(url) {
+  const res = await fetch(url, { cache: 'force-cache' });
+  if (!res.ok) throw new Error(`Failed to load ${url}: ${res.status}`);
+  return await res.text();
+}
+
+function initializePreviewMedia() {
+  const videos = Array.from(document.querySelectorAll('video[data-autoplay-visible]'));
+  if (!videos.length) return;
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  videos.forEach((video) => {
+    video.muted = true;
+    video.loop = true;
+    video.playsInline = true;
+    video.preload = 'metadata';
+    if (prefersReduced) {
+      video.removeAttribute('autoplay');
+      video.pause();
+      return;
+    }
+  });
+  if (prefersReduced) return;
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      const video = entry.target;
+      if (entry.isIntersecting && entry.intersectionRatio >= 0.35) {
+        video.play().catch(() => {});
+      } else {
+        video.pause();
+      }
+    });
+  }, { threshold: [0, 0.35, 0.75] });
+  videos.forEach((video) => io.observe(video));
+}
 
 function initializeFiltering() {
   const cards = Array.from(document.querySelectorAll('.project-card'));
+  const getOrgBadge = (card) => card.querySelector('div.absolute.top-2.left-2');
 
   // Enhance institution badge size inside each project card (padding, icon, text)
   cards.forEach((card) => {
-    const badge = card.querySelector('div[class*="border-[#3d5245]"]');
+    const badge = getOrgBadge(card);
     if (!badge) return;
     // Normalize container spacing and vertical size (fixed height, no wrapping)
     badge.classList.remove('py-1.5');
-    badge.classList.add('px-3', 'py-1', 'gap-3', 'items-center', 'h-8', 'whitespace-nowrap');
+    badge.classList.add('px-2.5', 'py-1', 'gap-2', 'items-center', 'h-7', 'whitespace-nowrap');
     // Enlarge logo icon
     const img = badge.querySelector('img');
     if (img) {
       // Normalize to consistent size and padding
       img.classList.remove('h-6', 'w-6');
-      img.classList.add('h-5', 'w-5', 'rounded-full', 'object-contain', 'bg-white', 'p-0.5', 'shrink-0');
+      img.classList.add('h-4', 'w-4', 'rounded-full', 'object-contain', 'bg-white', 'p-0.5', 'shrink-0');
     }
     // Enlarge org name text
     const label = badge.querySelector('span');
-    if (label) label.classList.add('text-sm', 'leading-none');
+    if (label) label.classList.add('text-xs', 'leading-none');
   });
 
   // Containers for chip groups
@@ -59,7 +96,7 @@ function initializeFiltering() {
   // Extract metadata from each card
   cards.forEach((card) => {
     // Grab org label inside the org badge (supports text-xs or text-sm)
-    const orgSpan = card.querySelector('div[class*="border-[#3d5245]"] span');
+    const orgSpan = getOrgBadge(card)?.querySelector('span');
     const org = orgSpan ? orgSpan.textContent.trim() : '';
     if (org) {
       card.dataset.org = org;
@@ -118,11 +155,11 @@ function initializeFiltering() {
   let selected = { category: 'All', org: 'All', year: 'All', keyword: 'All' };
 
   // Chip style functions (keep chips sized to content)
-  const orgStyle = (active) => `inline-flex self-start items-center gap-2 px-2.5 py-1.5 rounded-md border whitespace-nowrap ${active ? 'bg-[#1c2620] text-white border-[#38e07b] ring-1 ring-[#38e07b] font-semibold' : 'bg-[#1c2620]/60 text-gray-200 border-[#3d5245]'} backdrop-blur`;
-  const categoryStyle = (active) => `px-3 py-1.5 text-sm rounded-full border ${active ? 'bg-[#38e07b]/30 text-white border-[#38e07b]' : 'bg-[#38e07b]/10 text-[#9fe4b8] border-[#38e07b]/30'} hover:border-[#38e07b] transition-colors`;
-  // Make Years visually consistent with card year badges (green scheme) and badge font size (text-xs)
-  const yearStyle = (active) => `px-3 py-1 text-xs rounded-full border ${active ? 'bg-[#38e07b]/30 text-white border-[#38e07b] ring-1 ring-[#38e07b] font-semibold' : 'bg-[#38e07b]/10 text-[#9fe4b8] border-[#38e07b]/30'} hover:border-[#38e07b] transition-colors`;
-  const keywordStyle = (active) => `px-2 py-1 text-xs rounded-full border ${active ? 'bg-[#38e07b]/30 text-white border-[#38e07b] ring-1 ring-[#38e07b] font-semibold' : 'bg-[#38e07b]/10 text-[#9fe4b8] border-[#38e07b]/30'} hover:border-[#38e07b] transition-colors`;
+  const orgStyle = (active) => `inline-flex self-start items-center gap-2 px-2.5 py-1 rounded-full border whitespace-nowrap text-xs ${active ? 'bg-[#eceff3] text-[#181c20] border-[#4f5660] font-semibold' : 'bg-[#ffffff] text-[#48515c] border-[#cfd6de]'}`;
+  const categoryStyle = (active) => `px-3 py-1 text-xs sm:text-sm rounded-full border ${active ? 'bg-[#eceff3] text-[#181c20] border-[#4f5660]' : 'bg-[#ffffff] text-[#626b75] border-[#cfd6de]'} hover:border-[#4f5660] transition-colors`;
+  // Make years visually consistent with the neutral card badge styling.
+  const yearStyle = (active) => `px-2.5 py-1 text-xs rounded-full border ${active ? 'bg-[#eceff3] text-[#181c20] border-[#4f5660] font-semibold' : 'bg-[#ffffff] text-[#626b75] border-[#cfd6de]'} hover:border-[#4f5660] transition-colors`;
+  const keywordStyle = (active) => `px-2 py-1 text-xs rounded-full border ${active ? 'bg-[#eceff3] text-[#181c20] border-[#4f5660] font-semibold' : 'bg-[#ffffff] text-[#626b75] border-[#cfd6de]'} hover:border-[#4f5660] transition-colors`;
 
   const applyFilter = () => {
     const category = selected.category || 'All';
@@ -136,16 +173,19 @@ function initializeFiltering() {
       card.style.display = visible ? '' : 'none';
 
       // Highlight in-card org badge when selected
-      const orgBadge = card.querySelector('div[class*="border-[#3d5245]"]');
+      const orgBadge = getOrgBadge(card);
       if (orgBadge) {
         if (selected.org !== 'All' && (card.dataset.org || '') === selected.org) {
-          orgBadge.classList.add('border-[#38e07b]', 'ring-1', 'ring-[#38e07b]');
+          orgBadge.classList.add('border-[#4f5660]');
         } else {
-          orgBadge.classList.remove('border-[#38e07b]', 'ring-1', 'ring-[#38e07b]');
+          orgBadge.classList.remove('border-[#4f5660]');
         }
         // Ensure org label keeps intended text style
         const orgLabel = orgBadge.querySelector('span');
-        if (orgLabel) orgLabel.classList.add('text-white');
+        if (orgLabel) {
+          orgLabel.classList.remove('text-white');
+          orgLabel.classList.add('text-[#16202b]');
+        }
       }
 
       // Highlight in-card year/keyword badges when selected
@@ -161,12 +201,12 @@ function initializeFiltering() {
         const isYearSel = selected.year !== 'All' && txt === selected.year;
         const isKeywordSel = selected.keyword !== 'All' && txt === selected.keyword;
         if (isYearSel || isKeywordSel) {
-          el.classList.add('bg-[#38e07b]/30', 'border-[#38e07b]', 'ring-1', 'ring-[#38e07b]', 'font-semibold');
+          el.classList.add('bg-[#eceff3]', 'border-[#4f5660]', 'font-semibold');
           el.classList.remove('border-transparent');
         } else {
           // Keep dimensions identical by keeping a transparent border when inactive
           el.classList.add('border-transparent');
-          el.classList.remove('bg-[#38e07b]/30', 'border-[#38e07b]', 'ring-1', 'ring-[#38e07b]', 'font-semibold');
+          el.classList.remove('bg-[#eceff3]', 'border-[#4f5660]', 'font-semibold');
         }
       });
     });
@@ -251,23 +291,14 @@ function initializeFiltering() {
   // Make badges inside cards clickable for filtering by the right group
   cards.forEach((card) => {
     // 1) Organization badge (may use text-sm). Target the whole badge container.
-    const orgBadge = card.querySelector('div[class*="border-[#3d5245]"]');
+    const orgBadge = getOrgBadge(card);
     if (orgBadge) {
       const orgLabel = orgBadge.querySelector('span');
       const orgText = orgLabel ? orgLabel.textContent.trim() : '';
       if (orgText) {
         orgBadge.setAttribute('role', 'button');
         orgBadge.classList.add('cursor-pointer');
-        orgBadge.addEventListener('click', () => {
-          // Ensure filters panel is visible when clicking org badge
-          const filtersPanel = document.getElementById('filtersPanel');
-          const toggleBtn = document.getElementById('toggleFilters');
-          if (filtersPanel && filtersPanel.classList.contains('hidden')) {
-            filtersPanel.classList.remove('hidden');
-            if (toggleBtn) toggleBtn.textContent = 'Hide filters';
-          }
-          onOrgClick(orgText);
-        });
+        orgBadge.addEventListener('click', () => { onOrgClick(orgText); });
       }
     }
 
@@ -279,13 +310,6 @@ function initializeFiltering() {
       el.setAttribute('role', 'button');
       el.classList.add('cursor-pointer');
       el.addEventListener('click', () => {
-        // Ensure filters panel is visible when clicking year/keyword
-        const filtersPanel = document.getElementById('filtersPanel');
-        const toggleBtn = document.getElementById('toggleFilters');
-        if (filtersPanel && filtersPanel.classList.contains('hidden')) {
-          filtersPanel.classList.remove('hidden');
-          if (toggleBtn) toggleBtn.textContent = 'Hide filters';
-        }
         if (isYear(txt)) {
           onYearClick(txt);
         } else if (txt !== (card.dataset.org || '')) {
@@ -294,30 +318,6 @@ function initializeFiltering() {
       });
     });
   });
-
-  // Wire reset
-  const resetBtn = document.getElementById('resetFilters');
-  if (resetBtn) {
-    resetBtn.addEventListener('click', () => {
-      selected = { category: 'All', org: 'All', year: 'All', keyword: 'All' };
-      applyFilter();
-    });
-  }
-
-  // Show/Hide filters panel
-  const toggleBtn = document.getElementById('toggleFilters');
-  const filtersPanel = document.getElementById('filtersPanel');
-  if (toggleBtn && filtersPanel) {
-    const setToggleText = () => {
-      const hidden = filtersPanel.classList.contains('hidden');
-      toggleBtn.textContent = hidden ? 'Show filters' : 'Hide filters';
-    };
-    setToggleText();
-    toggleBtn.addEventListener('click', () => {
-      filtersPanel.classList.toggle('hidden');
-      setToggleText();
-    });
-  }
 
   // Initial filter state
   applyFilter();

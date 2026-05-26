@@ -10,41 +10,52 @@
 <style type="text/tailwindcss">
   @layer base {
     :root {
-      /* Brand core (dark pine + emerald) */
-      --bg-root:        #111714; /* body bg */
-      --bg-surface:     #161d1a; /* section alt bg */
-      --bg-panel:       #1c2620; /* cards */
-      --bd-muted:       #29382f; /* lines / separators */
-      --bd-strong:      #3d5245; /* panels / avatars ring */
+      --bg-root:        #f5f7fb;
+      --bg-surface:     #eff1f4;
+      --bg-panel:       #ffffff;
+      --bg-panel-strong:#fafbfc;
+      --bd-muted:       #d8dde4;
+      --bd-strong:      #cfd6de;
 
-      --fg-primary:     #ffffff; /* headings */
-      --fg-secondary:   #e5e7eb; /* body */
-      --fg-muted:       #9eb7a8; /* captions */
-      --fg-subtle:      #8aa096; /* extra-muted */
+      --fg-primary:     #181c20;
+      --fg-secondary:   #48515c;
+      --fg-muted:       #66707c;
+      --fg-subtle:      #818995;
 
-      --brand:          #38e07b; /* primary emerald */
-      --brand-600:      #2dd06f;
-      --brand-700:      #23b85f;
-      --brand-800:      #1a9e52;
-      --brand-900:      #138446;
-      --brand-tint:     #b9f2cf; /* very light tint for subtle highlights */
+      --brand:          #6a727d;
+      --brand-600:      #5c646f;
+      --brand-700:      #4f5660;
+      --brand-800:      #434951;
+      --brand-900:      #373c44;
+      --brand-tint:     #626b75;
     }
+  }
+  @layer utilities {
+    .panel { background: var(--bg-panel); border: 1px solid color-mix(in srgb, var(--bd-strong) 82%, transparent); box-shadow: none; }
+    .btn-brand { background: var(--brand); color: white; }
+    .btn-brand:hover { background: var(--brand-600); box-shadow: none; }
+    .eyebrow { color: var(--brand); font-size: .72rem; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; }
+    .soft-pill { background: rgba(79,86,96,.06); color: var(--brand-tint); border: 1px solid rgba(79,86,96,.14); }
+    .text-white { color: var(--fg-primary) !important; }
+    .text-gray-400 { color: var(--fg-muted) !important; }
+    .text-gray-300 { color: var(--fg-secondary) !important; }
+    .text-gray-200 { color: var(--fg-secondary) !important; }
   }
 </style>
 </head>
-<body class="bg-[#111714] font-['Space_Grotesk',_'Noto_Sans',_sans-serif]">
-<div class="relative flex size-full min-h-screen flex-col overflow-x-hidden dark group/design-root">
+<body class="font-['Space_Grotesk',_'Noto_Sans',_sans-serif]" style="background: #f5f7fb;">
+<div class="relative flex size-full min-h-screen flex-col overflow-x-hidden group/design-root">
 <div class="layout-container flex h-full grow flex-col">
-  <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#29382f] px-5 sm:px-10 py-3 sm:py-4 fixed top-0 left-0 right-0 bg-[#111714]/80 backdrop-blur-sm z-50">
+  <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[var(--bd-muted)] px-5 sm:px-10 py-3 sm:py-4 fixed top-0 left-0 right-0 bg-white z-50">
   <div class="flex items-center gap-3 text-white">
-  <svg class="text-[#38e07b]" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+  <svg class="text-[var(--brand)]" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
   <path d="M10 16.5 8 18l-6-6 6-6 2 1.5"></path>
   <path d="m14 7.5 2-1.5 6 6-6 6-2-1.5"></path>
   <path d="M12 8v8"></path>
   </svg>
   <div>
-    <h2 class="text-white text-lg sm:text-xl font-bold leading-tight tracking-[-0.015em]">
-      <a href="index.html" class="hover:text-[#38e07b] transition-colors">
+    <h2 class="text-[#16202b] text-lg sm:text-xl font-bold leading-tight tracking-[-0.015em]">
+      <a href="index.html" class="hover:text-[var(--brand)] transition-colors">
         <span class="sm:hidden">J. Edgar Hernandez</span>
         <span class="hidden sm:inline">Jose Edgar Hernandez Cancino E.</span>
       </a>
@@ -56,26 +67,26 @@
   </div>
   <div class="flex flex-1 justify-end gap-4 items-center">
   <div class="hidden sm:flex items-center gap-8">
-  <a class="text-gray-300 hover:text-white transition-colors text-base font-medium leading-normal" href="index.html">About</a>
-  <a class="text-[#38e07b] text-base font-bold leading-normal" href="projects.html">Projects</a>
-  <a class="text-gray-300 hover:text-white transition-colors text-base font-medium leading-normal" href="contact.html">Contact</a>
+  <a class="text-gray-300 hover:text-[#16202b] transition-colors text-base font-medium leading-normal" href="index.html">About</a>
+  <a class="text-[var(--brand)] text-base font-bold leading-normal" href="projects.html">Projects</a>
+  <a class="text-gray-300 hover:text-[#16202b] transition-colors text-base font-medium leading-normal" href="contact.html">Contact</a>
   </div>
   <div class="hidden sm:flex items-center gap-4">
-  <a class="text-gray-300 hover:text-white transition-colors" href="https://www.linkedin.com/in/edgar-cancino/">
+  <a class="text-gray-300 hover:text-[#16202b] transition-colors" href="https://www.linkedin.com/in/edgar-cancino/">
   <svg class="feather feather-linkedin" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
   <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
   <rect height="12" width="4" x="2" y="9"></rect>
   <circle cx="4" cy="4" r="2"></circle>
   </svg>
   </a>
-  <a class="text-gray-300 hover:text-white transition-colors" href="https://github.com/edgarcancinoe">
+  <a class="text-gray-300 hover:text-[#16202b] transition-colors" href="https://github.com/edgarcancinoe">
   <svg class="feather feather-github" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
   <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
   </svg>
   </a>
   </div>
   <!-- Mobile menu toggle -->
-  <button id="mobileMenuBtn" class="sm:hidden inline-flex items-center justify-center h-9 w-9 rounded-md border border-[var(--bd-muted)] text-white hover:text-[#38e07b] hover:border-[#38e07b] transition-colors" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+  <button id="mobileMenuBtn" class="sm:hidden inline-flex items-center justify-center h-9 w-9 rounded-md border border-[var(--bd-muted)] text-white hover:text-[var(--brand)] hover:border-[var(--brand)] transition-colors" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
     <!-- Hamburger icon -->
     <svg id="iconHamburger" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
       <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
@@ -85,117 +96,1309 @@
       <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
     </svg>
   </button>
-  <a href="res/Jose_Hernandez_CV.pdf" target="_blank" class="hidden sm:flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-9 sm:h-10 px-4 sm:px-6 bg-[#38e07b] text-[#111714] text-sm sm:text-base font-bold leading-normal tracking-[0.015em] hover:bg-green-400 transition-all duration-300">
-  <span class="truncate">Curriculum Vitae</span>
+  <a href="res/Jose_Hernandez_CV.pdf" target="_blank" class="hidden sm:flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-9 sm:h-10 px-4 sm:px-6 btn-brand text-sm sm:text-base font-bold leading-normal tracking-[0.015em] transition-all duration-300">
+  <span class="truncate">Download CV</span>
   </a>
   </div>
   </header>
   <!-- Mobile dropdown menu -->
-  <nav id="mobileMenu" class="sm:hidden fixed top-14 left-0 right-0 bg-[#111714]/95 backdrop-blur border-b border-[var(--bd-muted)] px-5 py-3 z-40 hidden">
+  <nav id="mobileMenu" class="sm:hidden fixed top-14 left-0 right-0 bg-white border-b border-[var(--bd-muted)] px-5 py-3 z-40 hidden">
     <div class="max-w-7xl mx-auto flex flex-col gap-3 text-white">
       <a href="index.html" class="py-2 border-b border-[var(--bd-muted)]/60">About</a>
-      <a href="projects.html" class="py-2 border-b border-[var(--bd-muted)]/60 text-[#38e07b] font-semibold">Projects</a>
+      <a href="projects.html" class="py-2 border-b border-[var(--bd-muted)]/60 text-[var(--brand)] font-semibold">Projects</a>
       <a href="contact.html" class="py-2">Contact</a>
       <div class="flex items-center gap-4 pt-2">
-        <a class="text-gray-300 hover:text-white transition-colors" href="https://www.linkedin.com/in/edgar-cancino/" aria-label="LinkedIn">
+        <a class="text-gray-300 hover:text-[#16202b] transition-colors" href="https://www.linkedin.com/in/edgar-cancino/" aria-label="LinkedIn">
           <svg class="feather feather-linkedin" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
             <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
             <rect height="12" width="4" x="2" y="9"></rect>
             <circle cx="4" cy="4" r="2"></circle>
           </svg>
         </a>
-        <a class="text-gray-300 hover:text-white transition-colors" href="https://github.com/edgarcancinoe" aria-label="GitHub">
+        <a class="text-gray-300 hover:text-[#16202b] transition-colors" href="https://github.com/edgarcancinoe" aria-label="GitHub">
           <svg class="feather feather-github" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
             <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
           </svg>
         </a>
-        <a href="res/Jose_Hernandez_CV.pdf" target="_blank" class="ml-auto inline-flex items-center justify-center rounded-full h-9 px-4 bg-[#38e07b] text-[#111714] text-sm font-bold hover:bg-green-400 transition-colors">
-          Curriculum Vitae
+        <a href="res/Jose_Hernandez_CV.pdf" target="_blank" class="ml-auto inline-flex items-center justify-center rounded-full h-9 px-4 btn-brand text-sm font-bold transition-colors">
+          Download CV
         </a>
       </div>
     </div>
   </nav>
-<main class="flex flex-1 justify-center py-10 sm:py-16 px-4 sm:px-6 lg:px-8 mt-16">
+<main class="flex flex-1 justify-center py-8 sm:py-12 px-4 sm:px-6 lg:px-8 mt-16">
 <div class="layout-content-container flex w-full max-w-[88rem] flex-col">
-<div class="flex flex-col items-center text-center mb-10 sm:mb-12">
-<h1 class="text-white text-3xl sm:text-5xl font-bold leading-tight tracking-tighter">Projects</h1>
-<p class="text-[#9eb7a8] text-base sm:text-lg mt-3 sm:mt-4 max-w-2xl">Explore my portfolio: Robotics, AI, Computer Vision, and Intelligent Systems.</p>
+<div class="panel rounded-[26px] px-5 py-6 sm:px-8 sm:py-7 mb-8 sm:mb-10">
+<p class="eyebrow text-center mb-3">Project portfolio</p>
+<h1 class="text-[#16202b] text-2xl sm:text-4xl font-bold leading-tight tracking-[-0.03em] text-center">Engineering and Research Work</h1>
 </div>
-<div class="mb-12 flex flex-col items-center justify-center gap-4 sm:gap-6">
+<div class="mb-10 flex flex-col items-center justify-center gap-4 sm:gap-5">
   <div class="w-full sm:w-auto">
     <div class="flex flex-wrap items-center gap-2" id="categoryChips"></div>
-  </div>
-
-  <div class="w-full max-w-[88rem]">
-    <div class="flex items-center justify-between">
-      <p class="text-sm text-[#9eb7a8]">Filter by</p>
-      <button id="toggleFilters" class="inline-flex items-center gap-2 rounded-md border border-[#29382f] bg-[#1a231d] px-3 py-1.5 text-sm text-white hover:border-[var(--primary-color)] hover:text-[var(--primary-color)] transition-colors">Show filters</button>
-    </div>
-
-    <div id="filtersPanel" class="mt-3 hidden">
-      <div class="mt-0 flex flex-wrap gap-4">
-        <div class="flex-none min-w-[180px] md:basis-[20%]">
-          <p class="text-xs uppercase tracking-wide text-gray-400 mb-1">Years</p>
-          <div id="yearChips" class="flex flex-wrap gap-2 items-start"></div>
-        </div>
-        <div class="flex-1 min-w-[240px] md:basis-[35%] md:ml-4">
-          <p class="text-xs uppercase tracking-wide text-gray-400 mb-1">Institution</p>
-          <div id="orgChips" class="flex flex-wrap gap-2 items-start"></div>
-        </div>
-        <div class="flex-1 min-w-[280px] md:basis-[45%]">
-          <p class="text-xs uppercase tracking-wide text-gray-400 mb-1">Keywords</p>
-          <div id="keywordChips" class="flex flex-wrap items-center gap-2"></div>
-        </div>
-      </div>
-
-      <div class="mt-6">
-        <button id="resetFilters" class="w-full inline-flex items-center justify-center gap-2 rounded-md border border-[#29382f] bg-[#1a231d] px-4 py-2 text-sm text-white hover:border-[var(--primary-color)] hover:text-[var(--primary-color)] transition-colors">
-          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"></polyline><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path></svg>
-          Reset filters
-        </button>
-      </div>
-    </div>
   </div>
 </div>
 <div class="space-y-16">
 <section id="computer-vision">
-<h2 class="text-white text-3xl font-bold leading-tight tracking-tight mb-8">AI / Machine Learning</h2>
+<h2 class="text-[#16202b] text-3xl font-bold leading-tight tracking-tight mb-8">AI &amp; Machine Learning</h2>
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8">
-  <div data-category="AI / Machine Learning" data-include="project_cards/data_science/truck_loading_durations.html"></div>
-  <div data-category="AI / Machine Learning" data-include="project_cards/computer_vision/maybe_obstacle.html"></div>
-  <div data-category="AI / Machine Learning" data-include="project_cards/AI/gnn_noisy_labels.html"></div>
-  <div data-category="AI / Machine Learning" data-include="project_cards/AI/Score-BasedGenerativeModeling.html"></div>
-  <div data-category="AI / Machine Learning" data-include="project_cards/AI/xarm_ddpg_her.html"></div>
+  <div data-category="AI / Machine Learning" class="project-card">
+
+    <a href="projects/truck_loading_durations.html" class="block no-underline hover:no-underline transition-all duration-300">
+
+    <div class="flex h-full flex-col gap-3 overflow-hidden rounded-[22px] border border-[#cfd6de] bg-[#ffffff] transition-colors duration-200 group hover:border-[#4f5660]">
+
+      <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-[18px] overflow-hidden relative border border-[#d7e0ea]">
+
+        <img alt="Attention-Driven Gaussian Modeling — Poster" class="w-full h-full object-cover" src="images/projects/truck_loading_durations/sw.webp"/>
+
+        <div class="absolute top-2 left-2 flex items-center gap-3 bg-white/90 px-3 py-1.5 rounded-md border border-[#cfd6de]">
+
+          <img alt="Personal Photo" class="h-6 w-6 rounded-full object-contain bg-white p-0.5" src="images/fototec.webp"/>
+
+          <span class="text-sm text-[#16202b]">Personal</span>
+
+        </div>
+
+      </div>
+
+      <div class="p-4">
+
+        <h3 class="text-[#16202b] text-xl font-semibold leading-normal">
+
+          Attention-Driven Gaussian Modeling for Total Duration of Heterogeneous Operations
+
+          <span class="ml-2 align-middle px-2 py-0.5 bg-[#eceff3] text-[#626b75] text-xs rounded-full">2025</span>
+
+        </h3>
+
+        <p class="text-[#66758a] text-base mt-2">
+
+          Case study: trailer loading with multi-SKU shipments.
+
+        </p>
+
+        <p class="text-[#66758a] text-base mt-2">
+
+          Two-stream <em>encode–attend–fuse</em> architecture that ingests global operation features and per-item (sub-operation) features, and predicts both a baseline duration and its uncertainty σ with a heteroskedastic Gaussian head.
+
+        </p>
+
+        <p class="text-[#66758a] text-base mt-2">
+
+           Trained using Gaussian NLL plus median-quantile (τ=0.5) and slope-penalty terms to handle rounding spikes, outliers, and distribution skew.
+
+        </p>
+
+        <div class="flex flex-wrap gap-2 mt-3">
+
+          <span class="px-2 py-1 bg-[#eceff3] text-[#626b75] text-xs rounded-full">Attention Mechanisms</span>
+
+          <span class="px-2 py-1 bg-[#eceff3] text-[#626b75] text-xs rounded-full">Regression</span>
+
+          <span class="px-2 py-1 bg-[#eceff3] text-[#626b75] text-xs rounded-full">Deep Learning</span>
+
+          <span class="px-2 py-1 bg-[#eceff3] text-[#626b75] text-xs rounded-full">PyTorch</span>
+
+        </div>
+
+        <div class="flex gap-4 mt-4">
+
+          <a href="/projects/truck_loading_durations/SWPoster.pdf" target="_blank" class="inline-flex items-center text-[#626b75] hover:text-[#16202b] transition-colors">
+
+            <span class="text-sm font-medium">View Poster</span>
+
+            <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 3H6a2 2 0 00-2 2v14a2 2 0 002 2h12a2 2 0 002-2V9m-6-6l6 6"></path>
+
+            </svg>
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </div></a>
+
+  </div>
+  <div data-category="AI / Machine Learning" class="project-card">
+
+    <a href="projects/maybe_obstacle.html" class="block no-underline hover:no-underline transition-all duration-300">
+
+    <div class="flex h-full flex-col gap-3 overflow-hidden rounded-[22px] border border-[#cfd6de] bg-[#ffffff] transition-colors duration-200 group hover:border-[#4f5660]">
+
+      <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-[18px] overflow-hidden relative border border-[#d7e0ea]">
+
+        <img alt="Uncertainty-Aware Road Obstacle Identification" class="w-full h-full object-cover" src="images/projects/uaroi/intro_img_v2.webp"/>
+
+        <div class="absolute top-2 left-2 flex items-center gap-2 bg-[#eef2f7] px-2 py-1 rounded-md border border-[#cfd6de]">
+
+          <img alt="Sapienza University Logo" class="h-5 w-5 rounded-full object-contain bg-white p-0.5" src="images/logos/unirm.webp"/>
+
+          <span class="text-xs text-[#16202b]">Sapienza University</span>
+
+        </div>
+
+      </div>
+
+      <div class="p-4">
+
+        <h3 class="text-[#16202b] text-xl font-semibold leading-normal">Uncertainty-Aware Road Obstacle Identification
+
+          <span class="ml-2 align-middle px-2 py-0.5 bg-[#eceff3] text-[#626b75] text-xs rounded-full">2025</span>
+
+        </h3>
+
+        <p class="text-[#66758a] text-base mt-2">
+
+          Developed a road obstacle segmentation pipeline following Noguchi et al. (2024) “Road Obstacle Detection based on Unknown Objectness Scores”.
+
+          <br>
+
+          <br>
+
+          Used a customized <strong>DeepLabV3-ResNet50</strong> with a sigmoid activation head for multi-class object classification, and conformal prediction to provide statistical guarantees on expected ERM error.
+
+        </p>
+
+        <div class="flex flex-wrap gap-2 mt-3">
+
+          <span class="px-2 py-1 bg-[#eceff3] text-[#626b75] text-xs rounded-full">PyTorch</span>
+
+          <span class="px-2 py-1 bg-[#eceff3] text-[#626b75] text-xs rounded-full">Computer Vision</span>
+
+          <span class="px-2 py-1 bg-[#eceff3] text-[#626b75] text-xs rounded-full">Semantic Segmentation</span>
+
+          <span class="px-2 py-1 bg-[#eceff3] text-[#626b75] text-xs rounded-full">Conformal Prediction</span>
+
+        </div>
+
+        <div class="flex gap-6 mt-4">
+
+          <a href="https://github.com/edgarcancinoe/maybe-obstacle" target="_blank" class="inline-flex items-center text-[#626b75] hover:text-[#16202b] transition-colors">
+
+            <span class="text-sm font-medium">View Repo</span>
+
+            <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    </a>
+
+  </div>
+  <div data-category="AI / Machine Learning" class="project-card">
+
+    <a href="projects/gnn_noisy_labels.html" class="block no-underline hover:no-underline transition-all duration-300">
+
+    <div class="flex h-full flex-col gap-3 overflow-hidden rounded-[22px] border border-[#cfd6de] bg-[#ffffff] transition-colors duration-200 group hover:border-[#4f5660]">
+
+      <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-[18px] overflow-hidden relative border border-[#d7e0ea]">
+
+        <img alt="NoisyGNN: Robust GNNs Under Noisy Labels" class="w-full h-full object-cover" src="images/projects/gnn_noisy/valD.webp"/>
+
+        <div class="absolute top-2 left-2 flex items-center gap-2 bg-[#eef2f7] px-2 py-1 rounded-md border border-[#cfd6de]">
+
+          <img alt="Sapienza University Logo" class="h-5 w-5 rounded-full object-contain bg-white p-0.5" src="images/logos/unirm.webp"/>
+
+          <span class="text-xs text-[#16202b]">Sapienza University</span>
+
+        </div>
+
+      </div>
+
+      <div class="p-4">
+
+        <h3 class="text-[#16202b] text-xl font-semibold leading-normal">NoisyGNN: Robust GNNs Under Noisy Labels
+
+          <span class="ml-2 align-middle px-2 py-0.5 bg-[#eceff3] text-[#626b75] text-xs rounded-full">2025</span>
+
+        </h3>
+
+        <p class="text-[#66758a] text-base mt-2">
+
+          Noise-resistant classification of molecular graphs using Pytorch:
+
+          <br>
+
+          - Ensembles of GIN/GINE variants with mean/attention pooling.<br>
+
+          - Combined noise-resistant strategies: label-smoothing, Early-Learning Regularization, and Network Co-teaching.
+
+        </p>
+
+        <div class="flex flex-wrap gap-2 mt-3">
+
+          <span class="px-2 py-1 bg-[#eceff3] text-[#626b75] text-xs rounded-full">PyTorch</span>
+
+          <span class="px-2 py-1 bg-[#eceff3] text-[#626b75] text-xs rounded-full">Deep Learning</span>
+
+          <span class="px-2 py-1 bg-[#eceff3] text-[#626b75] text-xs rounded-full">GNNs</span>
+
+        </div>
+
+        <div class="flex gap-6 mt-4">
+
+          <a href="https://github.com/edgarcancinoe/gnn-noisy-labels" target="_blank" class="inline-flex items-center text-[#626b75] hover:text-[#16202b] transition-colors">
+
+            <span class="text-sm font-medium">View Repo</span>
+
+            <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    </a>
+
+  </div>
+  <div data-category="AI / Machine Learning" class="project-card">
+
+    <a href="projects/score_based_generative_modeling.html" class="block no-underline hover:no-underline transition-all duration-300">
+
+    <div class="flex h-full flex-col gap-3 overflow-hidden rounded-[22px] border border-[#cfd6de] bg-[#ffffff] transition-colors duration-200 group hover:border-[#4f5660]">
+
+      <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-[18px] overflow-hidden relative border border-[#d7e0ea]">
+
+        <img alt="ML Homework 4: Model Training and Evaluation" class="w-full h-full object-cover" src="images/projects/Score-BasedGenerativeModeling/mnist_generated.webp"/>
+
+        <div class="absolute top-2 left-2 flex items-center gap-2 bg-[#eef2f7] px-2 py-1 rounded-md border border-[#cfd6de]">
+
+          <img alt="Pompeu Fabra University Logo" class="h-5 w-5 rounded-full object-contain bg-white p-0.5" src="images/logos/upf.webp"/>
+
+          <span class="text-xs text-[#16202b]">Pompeu Fabra University</span>
+
+        </div>
+
+      </div>
+
+      <div class="p-4">
+
+        <h3 class="text-[#16202b] text-xl font-semibold leading-normal">Gradient-Based Image Synthesis via Score Matching
+
+          <span class="ml-2 align-middle px-2 py-0.5 bg-[#eceff3] text-[#626b75] text-xs rounded-full">2024</span>
+
+        </h3>
+
+        <p class="text-[#66758a] text-base mt-2">
+
+          Implemented a Noise-Conditional Score Network (NCSN) for generative modeling, following Song & Ermon (2019).
+
+          <br><br>
+
+          Trained a U-Net to approximate the score function of MNIST data with denoising score matching, and generated images via annealed Langevin dynamics.
+
+        </p>
+
+        <div class="flex flex-wrap gap-2 mt-3">
+
+          <span class="px-2 py-1 bg-[#eceff3] text-[#626b75] text-xs rounded-full">Jupyter</span>
+
+          <span class="px-2 py-1 bg-[#eceff3] text-[#626b75] text-xs rounded-full">PyTorch</span>
+
+          <span class="px-2 py-1 bg-[#eceff3] text-[#626b75] text-xs rounded-full">Deep Learning</span>
+
+        </div>
+
+        <div class="flex gap-6 mt-4">
+
+          <a href="https://github.com/edgarcancinoe/edgarcancinoe.github.io/blob/main/projects/Score-BasedGenerativeModeling/score-based-generative-mnist-nb.ipynb" target="_blank" class="inline-flex items-center text-[#626b75] hover:text-[#16202b] transition-colors">
+
+            <span class="text-sm font-medium">Open Notebook</span>
+
+            <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    </a>
+
+  </div>
+  <div data-category="AI / Machine Learning" class="project-card">
+
+    <a href="projects/xarm_ddpg_her.html" class="block no-underline hover:no-underline transition-all duration-300">
+
+    <div class="flex h-full flex-col gap-3 overflow-hidden rounded-[22px] border border-[#cfd6de] bg-[#ffffff] transition-colors duration-200 group hover:border-[#4f5660]">
+
+      <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-[18px] overflow-hidden relative border border-[#d7e0ea]">
+
+        <video loop muted playsinline preload="metadata" data-autoplay-visible
+
+          class="w-full h-full object-cover">
+
+          <source src="images/projects/xarm6_ddpg_her/results.mp4" type="video/mp4">
+
+          <source src="images/projects/xarm6_ddpg_her/results.webm" type="video/webm">
+
+          <!-- fallback if video isn't supported -->
+
+          <img alt="xArm DDPG with HER" 
+
+               src="images/projects/xarm6_ddpg_her/results.gif" 
+
+               class="w-full h-full object-cover"/>
+
+        </video>
+
+        <div class="absolute top-2 left-2 flex items-center gap-2 bg-[#eef2f7] px-2 py-1 rounded-md border border-[#cfd6de]">
+
+          <img alt="Tec de Monterrey Logo" class="h-5 w-5 rounded-full object-contain bg-white p-0.5" src="images/logos/tec.webp"/>
+
+          <span class="text-xs text-[#16202b]">Tec de Monterrey</span>
+
+        </div>
+
+      </div>
+
+      <div class="p-4">
+
+        <h3 class="text-[#16202b] text-xl font-semibold leading-normal">Deep Reinforcement Learning for Robotic Manipulation
+
+          <span class="ml-2 align-middle px-2 py-0.5 bg-[#eceff3] text-[#626b75] text-xs rounded-full">2023</span>
+
+        </h3>
+
+        <p class="text-[#66758a] text-base mt-2">Implementation of Deep Deterministic Policy Gradient (DDPG) with Hindsight Experience Replay (HER) for robotic manipulation task using xArm6.</p>
+
+        <div class="flex flex-wrap gap-2 mt-3">
+
+          <span class="px-2 py-1 bg-[#eceff3] text-[#626b75] text-xs rounded-full">PyTorch</span>
+
+          <span class="px-2 py-1 bg-[#eceff3] text-[#626b75] text-xs rounded-full">Deep Learning</span>
+
+          <span class="px-1 py-1 bg-[#eceff3] text-[#626b75] text-xs rounded-full">Robotics</span>
+
+          <span class="px-2 py-1 bg-[#eceff3] text-[#626b75] text-xs rounded-full">Reinforcement Learning</span>
+
+        </div>
+
+        <div class="flex gap-4 mt-4">
+
+          <a href="https://github.com/edgarcancinoe/xarm_DDPG_HER" target="_blank" class="inline-flex items-center text-[#626b75] hover:text-[#16202b] transition-colors">
+
+            <span class="text-sm font-medium">View on GitHub</span>
+
+            <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+
+          </a>
+
+            <a href="projects/xarm_ddpg_her/paperDDPG.pdf" target="_blank" class="inline-flex items-center text-[#626b75] hover:text-[#16202b] transition-colors">
+
+            <span class="text-sm font-medium">View Paper</span>
+
+            <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 3H6a2 2 0 00-2 2v14a2 2 0 002 2h12a2 2 0 002-2V9m-6-6l6 6"></path></svg>
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    </a>
+
+  </div>
   </div>
   </section>
 <section id="robotics">
-<h2 class="text-white text-3xl font-bold leading-tight tracking-tight mb-8">Robotics</h2>
+<h2 class="text-[#16202b] text-3xl font-bold leading-tight tracking-tight mb-8">Robotics</h2>
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 sm:gap-8">
-  <div data-category="Robotics" data-include="project_cards/robotics/final_implementation_manipulator.html"></div>
-  <div data-category="Robotics" data-include="project_cards/robotics/ekf_corner_detection.html"></div>
-  <div data-category="Robotics" data-include="project_cards/robotics/IBVS.html"></div>
-  <div data-category="Robotics" data-include="project_cards/robotics/scene_grasp.html"></div>
-  <div data-category="Robotics" data-include="project_cards/robotics/home_ddpg_ros.html"></div>
-  <div data-category="Robotics" data-include="project_cards/robotics/xarm6_visual_servoing.html"></div>
-  <div data-category="Robotics" data-include="project_cards/robotics/self_driving_autonomous_vehicle.html"></div>
+  <div data-category="Robotics" class="project-card">
+
+    <a href="projects/puzzlebot_manipulator.html" class="block no-underline hover:no-underline transition-all duration-300">
+
+    <div class="flex h-full flex-col gap-3 overflow-hidden rounded-[22px] border border-[#cfd6de] bg-[#ffffff] transition-colors duration-200 group hover:border-[#4f5660]">
+
+      <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-[18px] overflow-hidden relative border border-[#d7e0ea]">
+
+        <video loop muted playsinline preload="metadata" data-autoplay-visible
+
+          class="w-full h-full object-cover">
+
+          <source src="images/projects/puzzlebot_manipulator/out.mp4" type="video/mp4">
+
+          <source src="images/projects/puzzlebot_manipulator/out.webm" type="video/webm">
+
+          <!-- fallback if video isn't supported -->
+
+          <img alt="Final Implementation - Robotic Manipulator" 
+
+               src="images/projects/puzzlebot_manipulator/out.gif" 
+
+               class="w-full h-full object-cover"/>
+
+        </video>
+
+        <div class="absolute top-2 left-2 flex items-center gap-2 bg-[#eef2f7] px-2 py-1 rounded-md border border-[#cfd6de]">
+
+          <img alt="Tec de Monterrey Logo" class="h-5 w-5 rounded-full object-contain bg-white p-0.5" src="images/logos/tec.webp"/>
+
+          <span class="text-xs text-[#16202b]">Tec de Monterrey</span>
+
+        </div>
+
+      </div>
+
+      <div class="p-4">
+
+        <h3 class="text-[#16202b] text-xl font-semibold leading-normal">Differential Drive Robotic Manipulator
+
+          <span class="ml-2 align-middle px-2 py-0.5 bg-[#eceff3] text-[#626b75] text-xs rounded-full">2024</span>
+
+        </h3>
+
+        <div class="text-[#66758a] text-base mt-2">
+
+          <ul class="space-y-2">
+
+            <li>-1D LiDAR for object detection.</li>
+
+            <li>-Real-time encoder odometry fused with landmark detections for localization using an <strong>Extended Kalman Filter (EKF)</strong>.</li>
+
+            <li>-Image-Based Visual Servoing to reach ArUco blocks.</li>
+
+            <li>-Smooth differential-drive control law for motion and reactive collision avoidance using Bug0 and Bug2 algorithms.</li>
+
+          </ul>
+
+        </div>
+
+        
+
+        <div class="flex flex-wrap gap-2 mt-3">
+
+          <span class="px-2 py-1 bg-[#eceff3] text-[#626b75] text-xs rounded-full">ROS</span>
+
+          <span class="px-2 py-1 bg-[#eceff3] text-[#626b75] text-xs rounded-full">Computer Vision</span>
+
+          <span class="px-2 py-1 bg-[#eceff3] text-[#626b75] text-xs rounded-full">Embedded Systems</span>
+
+          <span class="px-2 py-1 bg-[#eceff3] text-[#626b75] text-xs rounded-full">Control</span>
+
+        </div>
+
+        <div class="flex gap-6 mt-4">
+
+          <a href="https://github.com/edgarcancinoe/T3003B_IntelligentRobotics/" target="_blank" class="inline-flex items-center text-[#626b75] hover:text-[#16202b] transition-colors">
+
+            <span class="text-sm font-medium">View Repo</span>
+
+            <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+
+          </a>
+
+          <a href="https://www.youtube.com/watch?v=1AvmbjeHvxk" target="_blank" class="inline-flex items-center text-[#626b75] hover:text-[#16202b] transition-colors">
+
+            <span class="text-sm font-medium">Watch on YouTube</span>
+
+            <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    </a>
+
+  </div>
+  <div data-category="Robotics" class="project-card">
+
+    <a href="projects/ekf_corner_detection.html" class="block no-underline hover:no-underline transition-all duration-300">
+
+    <div class="flex h-full flex-col gap-3 overflow-hidden rounded-[22px] border border-[#cfd6de] bg-[#ffffff] transition-colors duration-200 group hover:border-[#4f5660]">
+
+      <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-[18px] overflow-hidden relative border border-[#d7e0ea]">
+
+        <video loop muted playsinline preload="metadata" data-autoplay-visible
+
+          class="w-full h-full object-cover">
+
+          <source src="images/projects/extended_kalman_filter_puzzlebot/out.mp4" type="video/mp4">
+
+          <source src="images/projects/extended_kalman_filter_puzzlebot/out.webm" type="video/webm">
+
+          <!-- fallback if video isn't supported -->
+
+          <img alt="EKF with Corner Detection on Differential Drive Robot" 
+
+               src="images/projects/extended_kalman_filter_puzzlebot/out.gif" 
+
+               class="w-full h-full object-cover"/>
+
+        </video>
+
+        
+
+        <div class="absolute top-2 left-2 flex items-center gap-2 bg-[#eef2f7] px-2 py-1 rounded-md border border-[#cfd6de]">
+
+          <img alt="Tec de Monterrey Logo" class="h-5 w-5 rounded-full object-contain bg-white p-0.5" src="images/logos/tec.webp"/>
+
+          <span class="text-xs text-[#16202b]">Tec de Monterrey</span>
+
+        </div>
+
+      </div>
+
+
+      <div class="p-4">
+
+        <h3 class="text-[#16202b] text-xl font-semibold leading-normal">Extended Kalman Filter with Corner-Based Landmark Localisation
+
+          <span class="ml-2 align-middle px-2 py-0.5 bg-[#eceff3] text-[#626b75] text-xs rounded-full">2024</span>
+
+        </h3>
+
+        <p class="text-[#66758a] text-base mt-2">
+
+          Gazebo simulation of a differential drive robot, fusing wheel-encoder odometry with LIDAR landmark (corner) detections using an Extended Kalman Filter (EKF).
+
+          <br><br>
+
+          The EKF corrects pose estimation with measurement updates from detected corners for continuous, drift-reduced localisation.
+
+        </p>
+
+        <div class="flex flex-wrap gap-2 mt-3">
+
+          <span class="px-2 py-1 bg-[#eceff3] text-[#626b75] text-xs rounded-full">ROS</span>
+
+          <span class="px-2 py-1 bg-[#eceff3] text-[#626b75] text-xs rounded-full">Embedded Systems</span>
+
+          <span class="px-2 py-1 bg-[#eceff3] text-[#626b75] text-xs rounded-full">Localisation</span>
+
+          <span class="px-2 py-1 bg-[#eceff3] text-[#626b75] text-xs rounded-full">Gazebo</span>
+
+        </div>
+
+        <a href="https://www.youtube.com/watch?v=r2-SB52dr-w" target="_blank" class="inline-flex items-center mt-4 text-[#626b75] hover:text-[#16202b] transition-colors">
+
+          <span class="text-sm font-medium">Demo on YouTube</span>
+
+          <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+
+                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+
+          </svg>
+
+        </a>
+
+      </div>
+
+    </div>
+
+    </a>
+
+  </div>
+  <div data-category="Robotics" class="project-card">
+
+    <a href="projects/ibvs.html" class="block no-underline hover:no-underline transition-all duration-300">
+
+    <div class="flex h-full flex-col gap-3 overflow-hidden rounded-[22px] border border-[#cfd6de] bg-[#ffffff] transition-colors duration-200 group hover:border-[#4f5660]">
+
+        <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-[18px] overflow-hidden relative border border-[#d7e0ea]">
+
+          <video loop muted playsinline preload="metadata" data-autoplay-visible
+
+          class="w-full h-full object-cover">
+
+            <source src="images/projects/ibvs/out.mp4" type="video/mp4">
+
+            <source src="images/projects/ibvs/out.webm" type="video/webm">
+
+            <!-- fallback if video isn't supported -->
+
+            <img alt="Image-Based Visual Servoing (IBVS)" 
+
+                 src="images/projects/ibvs/out.gif" 
+
+                 class="w-full h-full object-cover"/>
+
+          </video>
+
+          <div class="absolute top-2 left-2 flex items-center gap-2 bg-[#eef2f7] px-2 py-1 rounded-md border border-[#cfd6de]">
+
+            <img alt="Tec de Monterrey Logo" class="h-5 w-5 rounded-full object-contain bg-white p-0.5" src="images/logos/tec.webp"/>
+
+            <span class="text-xs text-[#16202b]">Tec de Monterrey</span>
+
+          </div>
+
+        </div>
+
+        <div class="p-4">
+
+          <h3 class="text-[#16202b] text-xl font-semibold leading-normal">
+
+            Image-Based Visual Control Implementation for a Differential Mobile Robot
+
+            <span class="ml-2 align-middle px-2 py-0.5 bg-[#eceff3] text-[#626b75] text-xs rounded-full">2024</span>
+
+          </h3>
+
+          <p class="text-[#66758a] text-base mt-2">
+
+            Implementation of a control strategy mapping image-point errors to differential-drive commands, following Siradjuddin et al.
+
+          </p>
+
+          <div class="flex flex-wrap gap-2 mt-3">
+
+            <span class="px-2 py-1 bg-[#eceff3] text-[#626b75] text-xs rounded-full">Computer Vision</span>
+
+            <span class="px-2 py-1 bg-[#eceff3] text-[#626b75] text-xs rounded-full">Control</span>
+
+            <span class="px-2 py-1 bg-[#eceff3] text-[#626b75] text-xs rounded-full">Gazebo</span>
+
+            <span class="px-2 py-1 bg-[#eceff3] text-[#626b75] text-xs rounded-full">ROS</span>
+
+          </div>
+
+
+          <div class="flex gap-4 mt-4">
+
+            <a href="https://github.com/edgarcancinoe/T3003B_IntelligentRobotics/" target="_blank" class="inline-flex items-center text-[#626b75] hover:text-[#16202b] transition-colors">
+
+              <span class="text-sm font-medium">View on GitHub</span>
+
+              <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+
+              </svg>
+
+            </a>
+
+          </div>
+
+         
+
+        </div>
+
+      </div></a>
+
+  </div>
+  <div data-category="Robotics" class="project-card">
+
+    <a href="projects/scene_grasp.html" class="block no-underline hover:no-underline transition-all duration-300">
+
+    <div class="flex h-full flex-col gap-3 overflow-hidden rounded-[22px] border border-[#cfd6de] bg-[#ffffff] transition-colors duration-200 group hover:border-[#4f5660]">
+
+        <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-[18px] overflow-hidden relative border border-[#d7e0ea]">
+
+          <video loop muted playsinline preload="metadata" data-autoplay-visible
+
+          class="w-full h-full object-cover">
+
+            <source src="images/projects/scene_grasp/out.mp4" type="video/mp4">
+
+            <source src="images/projects/scene_grasp/out.webm" type="video/webm">
+
+            <!-- fallback if video isn't supported -->
+
+            <img alt="SceneGrasp Demo" 
+
+                 src="images/projects/scene_grasp/out.gif" 
+
+                 class="w-full h-full object-cover"/>
+
+          </video>
+
+          <div class="absolute top-2 left-2 flex items-center gap-2 bg-[#eef2f7] px-2 py-1 rounded-md border border-[#cfd6de]">
+
+            <img alt="Rice University Logo" class="h-5 w-5 rounded-full object-contain bg-white p-0.5" src="images/logos/rice.webp"/>
+
+            <span class="text-xs text-[#16202b]">Rice University</span>
+
+          </div>
+
+        </div>
+
+        <div class="p-4">
+
+          <h3 class="text-[#16202b] text-xl font-semibold leading-normal">
+
+            SceneGrasp: Multi-Object 3D Reconstruction, Pose & Grasp Prediction
+
+            <span class="ml-2 align-middle px-2 py-0.5 bg-[#eceff3] text-[#626b75] text-xs rounded-full">2024</span>
+
+          </h3>
+
+      
+
+          <p class="text-[#66758a] text-base mt-2">
+
+            Implementation of Samsung’s SceneGrasp model for multi‑object 3D reconstruction, 6DoF pose, and grasp prediction in an UR5 robot and external RGB‑D camera setup .
+
+            <br><br>
+
+            Design of the ROS1 system considering robot kinematics and multi-frame of reference translations.
+
+          </p>
+
+      
+
+          <div class="flex flex-wrap gap-2 mt-4">
+
+            <span class="px-2 py-1 bg-[#eceff3] text-[#626b75] text-xs rounded-full">ROS</span>
+
+            <span class="px-2 py-1 bg-[#eceff3] text-[#626b75] text-xs rounded-full">Robotic Manipulator</span>
+
+            <span class="px-2 py-1 bg-[#eceff3] text-[#626b75] text-xs rounded-full">Computer Vision</span>
+
+            <span class="px-2 py-1 bg-[#eceff3] text-[#626b75] text-xs rounded-full">AI in Robotics</span>
+
+          </div>
+
+      
+
+          <div class="flex gap-4 mt-4">
+
+            <a href="https://www.linkedin.com/posts/edgar-cancino_scenegrasp-implementation-demo-activity-7173473209332166657-k5up" target="_blank" class="inline-flex items-center text-[#626b75] hover:text-[#16202b] transition-colors">
+
+              <span class="text-sm font-medium">Original model post</span>
+
+              <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+
+                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+
+              </svg>
+
+            </a>
+
+          </div>
+
+        </div>
+
+      </div></a>
+
+  </div>
+  <div data-category="Robotics" class="project-card">
+
+    <a href="projects/home_ddpg_ros.html" class="block no-underline hover:no-underline transition-all duration-300">
+
+    <div class="flex h-full flex-col gap-3 overflow-hidden rounded-[22px] border border-[#cfd6de] bg-[#ffffff] transition-colors duration-200 group hover:border-[#4f5660]">
+
+      <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-[18px] overflow-hidden relative border border-[#d7e0ea]">
+
+        <video loop muted playsinline preload="metadata" data-autoplay-visible
+
+          class="w-full h-full object-cover">
+
+          <source src="images/projects/xarm6_ddpg_ros/xarm6_ddpg_ros.mp4" type="video/mp4">
+
+          <source src="images/projects/xarm6_ddpg_ros/xarm6_ddpg_ros.webm" type="video/webm">
+
+          <!-- fallback if video isn't supported -->
+
+          <img alt="xARM6 DDPG ROS" 
+
+               src="images/projects/xarm6_ddpg_ros/xarm6_ddpg_ros.gif" 
+
+               class="w-full h-full object-cover"/>
+
+        </video>
+
+        <div class="absolute top-2 left-2 flex items-center gap-2 bg-[#eef2f7] px-2 py-1 rounded-md border border-[#cfd6de]">
+
+          <img alt="Tec de Monterrey Logo" class="h-5 w-5 rounded-full object-contain bg-white p-0.5" src="images/logos/tec.webp"/>
+
+          <span class="text-xs text-[#16202b]">Tec de Monterrey</span>
+
+        </div>
+
+      </div>
+
+      <div class="p-4">
+
+        <h3 class="text-[#16202b] text-xl font-semibold leading-normal">Reinforcement Learning on xARM6 with ROS
+
+          <span class="ml-2 align-middle px-2 py-0.5 bg-[#eceff3] text-[#626b75] text-xs rounded-full">2023</span>
+
+        </h3>
+
+        <p class="text-[#66758a] text-base mt-2">Implementation of a self-trained Deep Deterministic Policy Gradient (DDPG) model for xARM6 tilt-stable navigation and manipulation tasks using ROS.</p>
+
+        <div class="flex flex-wrap gap-2 mt-3">
+
+          <span class="px-2 py-1 bg-[#eceff3] text-[#626b75] text-xs rounded-full">ROS</span>
+
+          <span class="px-2 py-1 bg-[#eceff3] text-[#626b75] text-xs rounded-full">Robotic Manipulator</span>
+
+          <span class="px-2 py-1 bg-[#eceff3] text-[#626b75] text-xs rounded-full">AI in Robotics</span>
+
+
+        </div>
+
+        <a href="https://github.com/edgarcancinoe/xArm6_DDPG_ROS" target="_blank" class="inline-flex items-center mt-4 text-[#626b75] hover:text-[#16202b] transition-colors">
+
+          <span class="text-sm font-medium">View on GitHub</span>
+
+          <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+
+        </a>
+
+      </div>
+
+    </div>
+
+    </a>
+
+  </div>
+  <div data-category="Robotics" class="project-card">
+
+    <a href="projects/xarm6_visual_servoing.html" class="block no-underline hover:no-underline transition-all duration-300">
+
+    <div class="flex h-full flex-col gap-3 overflow-hidden rounded-[22px] border border-[#cfd6de] bg-[#ffffff] transition-colors duration-200 group hover:border-[#4f5660]">
+
+      <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-[18px] overflow-hidden relative border border-[#d7e0ea]">
+
+        <video loop muted playsinline preload="metadata" data-autoplay-visible
+
+          class="w-full h-full object-cover">
+
+          <source src="images/projects/xarm6_visual_servoing/visualservoing.mp4" type="video/mp4">
+
+          <source src="images/projects/xarm6_visual_servoing/visualservoing.webm" type="video/webm">
+
+          <!-- fallback if video isn't supported -->
+
+          <img alt="Visual Servoing" 
+
+               src="images/projects/xarm6_visual_servoing/visualservoing.gif" 
+
+               class="w-full h-full object-cover"/>
+
+        </video>
+
+        <div class="absolute top-2 left-2 flex items-center gap-2 bg-[#eef2f7] px-2 py-1 rounded-md border border-[#cfd6de]">
+
+          <img alt="Tec de Monterrey Logo" class="h-5 w-5 rounded-full object-contain bg-white p-0.5" src="images/logos/tec.webp"/>
+
+          <span class="text-xs text-[#16202b]">Tec de Monterrey</span>
+
+        </div>
+
+      </div>
+
+      <div class="p-4">
+
+        <h3 class="text-[#16202b] text-xl font-semibold leading-normal">xArm6 Visual Servoing
+
+          <span class="ml-2 align-middle px-2 py-0.5 bg-[#eceff3] text-[#626b75] text-xs rounded-full">2023</span>
+
+        </h3>
+
+        <p class="text-[#66758a] text-base mt-2">Implementation of visual servoing techniques for the xArm6 robotic arm, enabling precise control based on external camera's visual feedback.</p>
+
+        <div class="flex flex-wrap gap-2 mt-3">
+
+          <span class="px-2 py-1 bg-[#eceff3] text-[#626b75] text-xs rounded-full">ROS</span>
+
+          <span class="px-2 py-1 bg-[#eceff3] text-[#626b75] text-xs rounded-full">Computer Vision</span>
+
+          <span class="px-2 py-1 bg-[#eceff3] text-[#626b75] text-xs rounded-full">Robotic Manipulator</span>
+
+        </div>
+
+        <a href="https://github.com/edgarcancinoe/xarm6_visual_servoing" target="_blank" class="inline-flex items-center mt-4 text-[#626b75] hover:text-[#16202b] transition-colors">
+
+          <span class="text-sm font-medium">View on GitHub</span>
+
+          <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+
+        </a>
+
+      </div>
+
+    </div>
+
+    </a>
+
+  </div>
+  <div data-category="Robotics" class="project-card">
+
+    <a href="projects/self_driving_autonomous_vehicle.html" class="block no-underline hover:no-underline transition-all duration-300">
+
+    <div class="flex h-full flex-col gap-3 overflow-hidden rounded-[22px] border border-[#cfd6de] bg-[#ffffff] transition-colors duration-200 group hover:border-[#4f5660]">
+
+        <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-[18px] overflow-hidden relative border border-[#d7e0ea]">
+
+          <video loop muted playsinline preload="metadata" data-autoplay-visible
+
+          class="w-full h-full object-cover">
+
+            <source src="images/projects/puzzlebot_driving/both.mp4" type="video/mp4">
+
+            <source src="images/projects/puzzlebot_driving/both.webm" type="video/webm">
+
+            <!-- fallback if video isn't supported -->
+
+            <img alt="Self Driving Differential Vehicle" 
+
+                 src="images/projects/puzzlebot_driving/both.gif" 
+
+                 class="w-full h-full object-cover"/>
+
+          </video>
+
+          <div class="absolute top-2 left-2 flex items-center gap-2 bg-[#eef2f7] px-2 py-1 rounded-md border border-[#cfd6de]">
+
+            <img alt="Tec de Monterrey Logo" class="h-5 w-5 rounded-full object-contain bg-white p-0.5" src="images/logos/tec.webp"/>
+
+            <span class="text-xs text-[#16202b]">Tec de Monterrey</span>
+
+          </div>
+
+        </div>
+
+        <div class="p-4">
+
+          <h3 class="text-[#16202b] text-xl font-semibold leading-normal">Autonomous Driving of Differential Mobile Robot
+
+            <span class="ml-2 align-middle px-2 py-0.5 bg-[#eceff3] text-[#626b75] text-xs rounded-full">2023</span>
+
+          </h3>
+
+          <p class="text-[#66758a] text-base mt-2">Development of an self-driving vehicle prototype using ROS1, YOLOv5, and Nvidia Jetson Nano. 
+
+            Autonomous navigation system prototype using CV-based traffic signals detection and line following with adaptive linear control.</p>
+
+          <div class="flex flex-wrap gap-2 mt-3">
+
+            <span class="px-2 py-1 bg-[#eceff3] text-[#626b75] text-xs rounded-full">Computer Vision</span>
+
+            <span class="px-2 py-1 bg-[#eceff3] text-[#626b75] text-xs rounded-full">ROS</span>
+
+            <span class="px-2 py-1 bg-[#eceff3] text-[#626b75] text-xs rounded-full">Embedded Systems</span>
+
+            <span class="px-2 py-1 bg-[#eceff3] text-[#626b75] text-xs rounded-full">AI in Robotics</span>
+
+
+          </div>
+
+          <a href="https://www.youtube.com/watch?v=lhTBHQspGjc" target="_blank" class="inline-flex items-center mt-4 text-[#626b75] hover:text-[#16202b] transition-colors">
+
+            <span class="text-sm font-medium">View on Youtube</span>
+
+            <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+
+          </a>
+
+        </div>
+
+      </div>
+
+      </a>
+
+  </div>
   </div>
   </section>
   <section id="embedded-systems">
-  <h2 class="text-white text-3xl font-bold leading-tight tracking-tight mb-8">Signal Processing / Embedded Systems</h2>
+  <h2 class="text-[#16202b] text-3xl font-bold leading-tight tracking-tight mb-8">Embedded Systems &amp; Signal Processing</h2>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8">
-    <div data-category="Signal Processing / Embedded Systems" data-include="project_cards/embedded/smart_parking.html"></div>
-    <div data-category="Signal Processing / Embedded Systems" data-include="project_cards/embedded/sapienza_iot.html"></div>
-    <div data-category="Signal Processing / Embedded Systems" data-include="project_cards/embedded/air_pressure_control.html"></div>
-    <div data-category="Signal Processing / Embedded Systems" data-include="project_cards/signals/music_recognition.html"></div>
+    <div data-category="Signal Processing / Embedded Systems" class="project-card">
+
+      <a href="projects/smart_parking.html" class="block no-underline hover:no-underline transition-all duration-300">
+
+      <div class="flex h-full flex-col gap-3 overflow-hidden rounded-[22px] border border-[#cfd6de] bg-[#ffffff] transition-colors duration-200 group hover:border-[#4f5660]">
+
+        <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-[18px] overflow-hidden relative border border-[#d7e0ea]">
+
+          <img alt="IoT Smart Parking System" class="w-full h-full object-cover" src="images/projects/iot_sapienza/HardwareDiagram.webp"/>
+
+          <div class="absolute top-2 left-2 flex items-center gap-2 bg-[#eef2f7] px-2 py-1 rounded-md border border-[#cfd6de]">
+
+            <img alt="Sapienza University Logo" class="h-5 w-5 rounded-full object-contain bg-white p-0.5" src="images/logos/unirm.webp"/>
+
+            <span class="text-xs text-[#16202b]">Sapienza University</span>
+
+          </div>
+
+        </div>
+
+        <div class="p-4">
+
+          <h3 class="text-[#16202b] text-xl font-semibold leading-normal">IoT Smart Parking System
+
+            <span class="ml-2 align-middle px-2 py-0.5 bg-[#eceff3] text-[#626b75] text-xs rounded-full">2025</span>
+
+          </h3>
+
+          <p class="text-[#66758a] text-base mt-2">
+
+            Parking detection system using HC-SR04 ultrasonic and VL53L0X ToF sensors with an ESP32 microcontroller, running <strong>FreeRTOS for concurrent sensing and data processing</strong>. Integrated MQTT-based communication for real-time occupancy reporting
+
+          </p>
+
+          <div class="flex flex-wrap gap-2 mt-3">
+
+            <span class="px-2 py-1 bg-[#eceff3] text-[#626b75] text-xs rounded-full">ESP32 / FreeRTOS</span>
+
+            <span class="px-2 py-1 bg-[#eceff3] text-[#626b75] text-xs rounded-full">IoT</span>
+
+            <span class="px-2 py-1 bg-[#eceff3] text-[#626b75] text-xs rounded-full">Embedded Systems</span>
+
+          </div>
+
+          <div class="flex gap-6 mt-4">
+
+            <a href="https://github.com/najeh-halawani/IoT-Smart-Parking-System" target="_blank" class="inline-flex items-center text-[#626b75] hover:text-[#16202b] transition-colors">
+
+              <span class="text-sm font-medium">View Repo</span>
+
+              <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      </a>
+
+    </div>
+    <div data-category="Signal Processing / Embedded Systems" class="project-card">
+
+      <a href="projects/sapienza_iot.html" class="block no-underline hover:no-underline transition-all duration-300">
+
+      <div class="flex h-full flex-col gap-3 overflow-hidden rounded-[22px] border border-[#cfd6de] bg-[#ffffff] transition-colors duration-200 group hover:border-[#4f5660]">
+
+        <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-[18px] overflow-hidden relative border border-[#d7e0ea]">
+
+          <img alt="Sapienza IoT - Embedded Sensor Monitoring and Visualization" class="w-full h-full object-cover" src="images/projects/heltec_signal_monitor/signals.webp"/>
+
+          <div class="absolute top-2 left-2 flex items-center gap-2 bg-[#eef2f7] px-2 py-1 rounded-md border border-[#cfd6de]">
+
+            <img alt="Sapienza University Logo" class="h-5 w-5 rounded-full object-contain bg-white p-0.5" src="images/logos/unirm.webp"/>
+
+            <span class="text-xs text-[#16202b]">Sapienza University</span>
+
+          </div>
+
+        </div>
+
+        <div class="p-4">
+
+          <h3 class="text-[#16202b] text-xl font-semibold leading-normal">Embedded Sensor Monitoring and Visualization System
+
+            <span class="ml-2 align-middle px-2 py-0.5 bg-[#eceff3] text-[#626b75] text-xs rounded-full">2025</span>
+
+          </h3>
+
+          <p class="text-[#66758a] text-base mt-2">
+
+            Low-power ESP32 Heltec system for real-time sensor monitoring with firmware-level signal acquisition, FFT-driven sampling optimization, and MQTT data streaming. Integrated a TI INA219 power sensor for energy profiling and calling of low-power modes for efficient operation.
+
+          </p>
+
+          <div class="flex flex-wrap gap-2 mt-3">
+
+            <span class="px-2 py-1 bg-[#eceff3] text-[#626b75] text-xs rounded-full">ESP32 / FreeRTOS</span>
+
+            <span class="px-2 py-1 bg-[#eceff3] text-[#626b75] text-xs rounded-full">IoT</span>
+
+            <span class="px-2 py-1 bg-[#eceff3] text-[#626b75] text-xs rounded-full">Embedded Systems</span>
+
+          </div>
+
+          <div class="flex gap-6 mt-4">
+
+            <a href="https://github.com/edgarcancinoe/sapienza_iot" target="_blank" class="inline-flex items-center text-[#626b75] hover:text-[#16202b] transition-colors">
+
+              <span class="text-sm font-medium">View Repo</span>
+
+              <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+
+            </a>
+
+            <a href="https://www.youtube.com/watch?v=D7BbXF6Wk3c" target="_blank" class="inline-flex items-center text-[#626b75] hover:text-[#16202b] transition-colors">
+
+              <span class="text-sm font-medium">YouTube Demo</span>
+
+              <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      </a>
+
+    </div>
+    <div data-category="Signal Processing / Embedded Systems" class="project-card">
+
+      <a href="projects/air_pressure_control.html" class="block no-underline hover:no-underline transition-all duration-300">
+
+      <div class="flex h-full flex-col gap-3 overflow-hidden rounded-[22px] border border-[#cfd6de] bg-[#ffffff] transition-colors duration-200 group hover:border-[#4f5660]">
+
+          <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-[18px] overflow-hidden relative border border-[#d7e0ea]">
+
+            <img alt="ML Homework 4: Model Training and Evaluation" class="w-full h-full object-cover" src="images/projects/air_pressure_control/prototype.webp"/>
+
+            <div class="absolute top-2 left-2 flex items-center gap-2 bg-[#eef2f7] px-2 py-1 rounded-md border border-[#cfd6de]">
+
+              <img alt="Tec de Monterrey Logo" class="h-5 w-5 rounded-full object-contain bg-white p-0.5" src="images/logos/tec.webp"/>
+
+              <span class="text-xs text-[#16202b]">Tec de Monterrey</span>
+
+            </div>
+
+          </div>
+
+          <div class="p-4">
+
+            <h3 class="text-[#16202b] text-xl font-semibold leading-normal">Intelligent Air Pressure Control
+
+              <span class="ml-2 align-middle px-2 py-0.5 bg-[#eceff3] text-[#626b75] text-xs rounded-full">2023</span>
+
+            </h3>
+
+            <p class="text-[#66758a] text-base mt-2">
+
+              A prototype for an intelligent air pressure control system for tires in agricultural equipment using linear (PID) control strategies.
+
+              <br><br>
+
+              Developed using an ARM cortex processor in a dual core STM32 board. Utilized CAN, and serial protocols for sensor communication and a NodeMCU device for internet connectivity and online data visualization.
+
+            </p>
+
+            <div class="flex flex-wrap gap-2 mt-3">
+
+              <span class="px-2 py-1 bg-[#eceff3] text-[#626b75] text-xs rounded-full">Embedded Systems</span>
+
+              <span class="px-2 py-1 bg-[#eceff3] text-[#626b75] text-xs rounded-full">IoT</span>
+
+              <span class="px-2 py-1 bg-[#eceff3] text-[#626b75] text-xs rounded-full">ESP32 / FreeRTOS</span>
+
+              <span class="px-2 py-1 bg-[#eceff3] text-[#626b75] text-xs rounded-full">Control</span>
+
+            </div>
+
+            <div class="flex gap-6 mt-4">
+
+              <a href="https://youtu.be/Yq0l9Ne1uh4" target="_blank" class="inline-flex items-center text-[#626b75] hover:text-[#16202b] transition-colors">
+
+                <span class="text-sm font-medium">Video Demo</span>
+
+                <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        </a>
+
+    </div>
+    <div data-category="Signal Processing / Embedded Systems" class="project-card">
+
+      <a href="projects/music_recognition.html" class="block no-underline hover:no-underline transition-all duration-300">
+
+      <div class="flex h-full flex-col gap-3 overflow-hidden rounded-[22px] border border-[#cfd6de] bg-[#ffffff] transition-colors duration-200 group hover:border-[#4f5660]">
+
+        <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-[18px] overflow-hidden relative border border-[#d7e0ea]">
+
+          <img alt="Music Recognition Project Image" class="w-full h-full object-cover" src="images/projects/music_recognition/sp.webp"/>
+
+          <div class="absolute top-2 left-2 flex items-center gap-2 bg-[#eef2f7] px-2 py-1 rounded-md border border-[#cfd6de]">
+
+            <img alt="Tec de Monterrey Logo" class="h-5 w-5 rounded-full object-contain bg-white p-0.5" src="images/logos/tec.webp"/>
+
+            <span class="text-xs text-[#16202b]">Tec de Monterrey</span>
+
+          </div>
+
+        </div>
+
+        <div class="p-4">
+
+          <h3 class="text-[#16202b] text-xl font-semibold leading-normal">Music Recognition Algorithm Using Discrete Fourier Transform
+
+            <span class="ml-2 align-middle px-2 py-0.5 bg-[#eceff3] text-[#626b75] text-xs rounded-full">2020</span>
+
+          </h3>
+
+          <p class="text-[#66758a] text-base mt-2">Song identification using FFT to match microphone input to known song's frequency signature.</p>
+
+          <div class="flex flex-wrap gap-2 mt-3">
+
+            <span class="px-2 py-1 bg-[#eceff3] text-[#626b75] text-xs rounded-full">MATLAB</span>
+
+            <span class="px-2 py-1 bg-[#eceff3] text-[#626b75] text-xs rounded-full">Signal Analysis</span>
+
+            <span class="px-2 py-1 bg-[#eceff3] text-[#626b75] text-xs rounded-full">Audio Processing</span>
+
+          </div>
+
+          <div class="flex gap-4 mt-4">
+
+            <a href="https://github.com/edgarcancinoe/music_recognition" target="_blank" class="inline-flex items-center text-[#626b75] hover:text-[#16202b] transition-colors">
+
+              <span class="text-sm font-medium">View on GitHub</span>
+
+              <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+
+            </a>
+
+            <a href="https://youtu.be/cQO6ExhgZn0?si=7xJ4VaBGHTfNbZED" target="_blank" class="inline-flex items-center text-[#626b75] hover:text-[#16202b] transition-colors">
+
+              <span class="text-sm font-medium">Watch on YouTube</span>
+
+              <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-5.197-2.6A1 1 0 008 9.46v5.08a1 1 0 001.555.894l5.197-2.6a1 1 0 000-1.766z"></path></svg>
+
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      </a>
+
+    </div>
     </div>
     </section>
 </div>
 </div>
 </main>
-<footer id="contact" class="fixed bottom-0 left-0 right-0 backdrop-blur-sm border-t border-solid border-t-[var(--bd-muted)] px-5 sm:px-10 py-2 sm:py-4 z-50" style="background: color-mix(in srgb, var(--bg-surface) 80%, transparent);">
+<footer id="contact" class="border-t border-solid border-t-[var(--bd-muted)] px-5 sm:px-10 py-4 z-50" style="background: color-mix(in srgb, var(--bg-surface) 88%, transparent);">
   <div class="max-w-7xl mx-auto flex justify-between items-center text-white">
   <div class="flex items-center gap-3">
-  <p class="text-[var(--fg-secondary)] text-sm"> 2025<span class="text-subtle mr-2 ml-2">|</span> 
+  <p class="text-[var(--fg-secondary)] text-sm"> 2026<span class="text-subtle mr-2 ml-2">|</span> 
     <span class="sm:hidden"> J.E.H.C.E.</span>
     <span class="hidden sm:inline"> Jose Edgar Hernandez Cancino Estrada</span>
   </p>
