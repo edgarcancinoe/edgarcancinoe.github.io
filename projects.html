@@ -3,7 +3,7 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
-<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Space+Grotesk%3Awght%40400%3B500%3B700" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Space+Grotesk%3Awght%40400%3B500%3B700&amp;family=Spline+Sans%3Awght%40400%3B500%3B700" onload="this.rel='stylesheet'" rel="stylesheet"/>
 <title>Jose Edgar Hernandez - Projects</title>
 <link href="logo.webp" rel="icon" type="image/webp"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
@@ -43,117 +43,38 @@
   }
 </style>
 </head>
-<body class="font-['Space_Grotesk',_'Noto_Sans',_sans-serif]" style="background: #f5f7fb;">
+<body style='font-family: "Spline Sans", "Noto Sans", sans-serif; background: #f5f7fb;'>
 <div class="relative flex size-full min-h-screen flex-col overflow-x-hidden group/design-root">
 <div class="layout-container flex h-full grow flex-col">
-  <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[var(--bd-muted)] px-5 sm:px-10 py-3 sm:py-4 fixed top-0 left-0 right-0 bg-white z-50">
-  <div class="flex items-center gap-3 text-white">
-  <svg class="text-[var(--brand)]" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-  <path d="M10 16.5 8 18l-6-6 6-6 2 1.5"></path>
-  <path d="m14 7.5 2-1.5 6 6-6 6-2-1.5"></path>
-  <path d="M12 8v8"></path>
-  </svg>
-  <div>
-    <h2 class="text-[#16202b] text-lg sm:text-xl font-bold leading-tight tracking-[-0.015em]">
-      <a href="index.html" class="hover:text-[var(--brand)] transition-colors">
-        <span class="sm:hidden">J. Edgar Hernandez</span>
-        <span class="hidden sm:inline">Jose Edgar Hernandez Cancino E.</span>
-      </a>
-    </h2>
-    
-    
-    
-    </div>
-  </div>
-  <div class="flex flex-1 justify-end gap-4 items-center">
-  <div class="hidden sm:flex items-center gap-8">
-  <a class="text-gray-300 hover:text-[#16202b] transition-colors text-base font-medium leading-normal" href="index.html">About</a>
-  <a class="text-[var(--brand)] text-base font-bold leading-normal" href="projects.html">Projects</a>
-  <a class="text-gray-300 hover:text-[#16202b] transition-colors text-base font-medium leading-normal" href="contact.html">Contact</a>
-  </div>
-  <div class="hidden sm:flex items-center gap-4">
-  <a class="text-gray-300 hover:text-[#16202b] transition-colors" href="https://www.linkedin.com/in/edgar-cancino/">
-  <svg class="feather feather-linkedin" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-  <rect height="12" width="4" x="2" y="9"></rect>
-  <circle cx="4" cy="4" r="2"></circle>
-  </svg>
-  </a>
-  <a class="text-gray-300 hover:text-[#16202b] transition-colors" href="https://github.com/edgarcancinoe">
-  <svg class="feather feather-github" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-  </svg>
-  </a>
-  </div>
-  <!-- Mobile menu toggle -->
-  <button id="mobileMenuBtn" class="sm:hidden inline-flex items-center justify-center h-9 w-9 rounded-md border border-[var(--bd-muted)] text-white hover:text-[var(--brand)] hover:border-[var(--brand)] transition-colors" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
-    <!-- Hamburger icon -->
-    <svg id="iconHamburger" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-    </svg>
-    <!-- Close icon -->
-    <svg id="iconClose" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-    </svg>
-  </button>
-  <a href="res/Jose_Hernandez_CV.pdf" target="_blank" class="hidden sm:flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-9 sm:h-10 px-4 sm:px-6 btn-brand text-sm sm:text-base font-bold leading-normal tracking-[0.015em] transition-all duration-300">
-  <span class="truncate">Download CV</span>
-  </a>
-  </div>
-  </header>
-  <!-- Mobile dropdown menu -->
-  <nav id="mobileMenu" class="sm:hidden fixed top-14 left-0 right-0 bg-white border-b border-[var(--bd-muted)] px-5 py-3 z-40 hidden">
-    <div class="max-w-7xl mx-auto flex flex-col gap-3 text-white">
-      <a href="index.html" class="py-2 border-b border-[var(--bd-muted)]/60">About</a>
-      <a href="projects.html" class="py-2 border-b border-[var(--bd-muted)]/60 text-[var(--brand)] font-semibold">Projects</a>
-      <a href="contact.html" class="py-2">Contact</a>
-      <div class="flex items-center gap-4 pt-2">
-        <a class="text-gray-300 hover:text-[#16202b] transition-colors" href="https://www.linkedin.com/in/edgar-cancino/" aria-label="LinkedIn">
-          <svg class="feather feather-linkedin" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-            <rect height="12" width="4" x="2" y="9"></rect>
-            <circle cx="4" cy="4" r="2"></circle>
-          </svg>
-        </a>
-        <a class="text-gray-300 hover:text-[#16202b] transition-colors" href="https://github.com/edgarcancinoe" aria-label="GitHub">
-          <svg class="feather feather-github" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-          </svg>
-        </a>
-        <a href="res/Jose_Hernandez_CV.pdf" target="_blank" class="ml-auto inline-flex items-center justify-center rounded-full h-9 px-4 btn-brand text-sm font-bold transition-colors">
-          Download CV
-        </a>
-      </div>
-    </div>
-  </nav>
-<main class="flex flex-1 justify-center py-8 sm:py-12 px-4 sm:px-6 lg:px-8 mt-16">
+  <div id="site-header"></div>
+  <script src="js/shared-header.js"></script>
+<main class="flex flex-1 justify-center py-8 sm:py-12 px-4 sm:px-6 lg:px-8">
 <div class="layout-content-container flex w-full max-w-[88rem] flex-col">
-<div class="panel rounded-[26px] px-5 py-6 sm:px-8 sm:py-7 mb-8 sm:mb-10">
-<p class="eyebrow text-center mb-3">Project portfolio</p>
-<h1 class="text-[#16202b] text-2xl sm:text-4xl font-bold leading-tight tracking-[-0.03em] text-center">Engineering and Research Work</h1>
+<div class="panel rounded-[14px] px-4 py-4 sm:px-6 sm:py-5 mb-5 sm:mb-7">
+<h1 class="text-[#16202b] text-xl sm:text-2xl font-bold leading-tight tracking-[-0.03em] text-center">Work Portfolio</h1>
 </div>
 <div class="mb-10 flex flex-col items-center justify-center gap-4 sm:gap-5">
   <div class="w-full sm:w-auto">
     <div class="flex flex-wrap items-center gap-2" id="categoryChips"></div>
   </div>
 </div>
-<div class="space-y-16">
+<div class="space-y-10">
 <section id="computer-vision">
-<h2 class="text-[#16202b] text-3xl font-bold leading-tight tracking-tight mb-8">AI &amp; Machine Learning</h2>
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8">
-  <div data-category="AI / Machine Learning" class="project-card">
+<h2 class="text-[#16202b] text-lg font-bold leading-tight tracking-tight mb-4">Artificial Intelligence</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+  <div data-category="Artificial Intelligence" class="project-card">
 
     <a href="projects/truck_loading_durations.html" class="block no-underline hover:no-underline transition-all duration-300">
 
-    <div class="flex h-full flex-col gap-3 overflow-hidden rounded-[22px] border border-[#cfd6de] bg-[#ffffff] transition-colors duration-200 group hover:border-[#4f5660]">
+    <div class="flex h-full flex-col gap-2 overflow-hidden rounded-[12px] border border-[#cfd6de] bg-[#ffffff] transition-colors duration-200 group hover:border-[#4f5660]">
 
-      <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-[18px] overflow-hidden relative border border-[#d7e0ea]">
+      <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-[8px] overflow-hidden relative border border-[#d7e0ea]">
 
         <img alt="Attention-Driven Gaussian Modeling — Poster" class="w-full h-full object-cover" src="images/projects/truck_loading_durations/sw.webp"/>
 
-        <div class="absolute top-2 left-2 flex items-center gap-3 bg-white/90 px-3 py-1.5 rounded-md border border-[#cfd6de]">
+        <div class="absolute top-1.5 left-1.5 flex items-center gap-1.5 bg-white/90 px-2 py-1 rounded border border-[#cfd6de]">
 
-          <img alt="Personal Photo" class="h-6 w-6 rounded-full object-contain bg-white p-0.5" src="images/fototec.webp"/>
+          <img alt="Personal Photo" class="h-4 w-4 rounded-full object-contain bg-white p-0.5" src="images/fototec.webp"/>
 
           <span class="text-sm text-[#16202b]">Personal</span>
 
@@ -161,9 +82,9 @@
 
       </div>
 
-      <div class="p-4">
+      <div class="p-3">
 
-        <h3 class="text-[#16202b] text-xl font-semibold leading-normal">
+        <h3 class="text-[#16202b] text-sm font-semibold leading-snug">
 
           Attention-Driven Gaussian Modeling for Total Duration of Heterogeneous Operations
 
@@ -171,19 +92,19 @@
 
         </h3>
 
-        <p class="text-[#66758a] text-base mt-2">
+        <p class="text-[#66758a] text-xs mt-1">
 
           Case study: trailer loading with multi-SKU shipments.
 
         </p>
 
-        <p class="text-[#66758a] text-base mt-2">
+        <p class="text-[#66758a] text-xs mt-1">
 
           Two-stream <em>encode–attend–fuse</em> architecture that ingests global operation features and per-item (sub-operation) features, and predicts both a baseline duration and its uncertainty σ with a heteroskedastic Gaussian head.
 
         </p>
 
-        <p class="text-[#66758a] text-base mt-2">
+        <p class="text-[#66758a] text-xs mt-1">
 
            Trained using Gaussian NLL plus median-quantile (τ=0.5) and slope-penalty terms to handle rounding spikes, outliers, and distribution skew.
 
@@ -222,13 +143,13 @@
     </div></a>
 
   </div>
-  <div data-category="AI / Machine Learning" class="project-card">
+  <div data-category="Artificial Intelligence" class="project-card">
 
     <a href="projects/maybe_obstacle.html" class="block no-underline hover:no-underline transition-all duration-300">
 
-    <div class="flex h-full flex-col gap-3 overflow-hidden rounded-[22px] border border-[#cfd6de] bg-[#ffffff] transition-colors duration-200 group hover:border-[#4f5660]">
+    <div class="flex h-full flex-col gap-2 overflow-hidden rounded-[12px] border border-[#cfd6de] bg-[#ffffff] transition-colors duration-200 group hover:border-[#4f5660]">
 
-      <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-[18px] overflow-hidden relative border border-[#d7e0ea]">
+      <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-[8px] overflow-hidden relative border border-[#d7e0ea]">
 
         <img alt="Uncertainty-Aware Road Obstacle Identification" class="w-full h-full object-cover" src="images/projects/uaroi/intro_img_v2.webp"/>
 
@@ -242,15 +163,15 @@
 
       </div>
 
-      <div class="p-4">
+      <div class="p-3">
 
-        <h3 class="text-[#16202b] text-xl font-semibold leading-normal">Uncertainty-Aware Road Obstacle Identification
+        <h3 class="text-[#16202b] text-sm font-semibold leading-snug">Uncertainty-Aware Road Obstacle Identification
 
           <span class="ml-2 align-middle px-2 py-0.5 bg-[#eceff3] text-[#626b75] text-xs rounded-full">2025</span>
 
         </h3>
 
-        <p class="text-[#66758a] text-base mt-2">
+        <p class="text-[#66758a] text-xs mt-1">
 
           Developed a road obstacle segmentation pipeline following Noguchi et al. (2024) “Road Obstacle Detection based on Unknown Objectness Scores”.
 
@@ -293,13 +214,13 @@
     </a>
 
   </div>
-  <div data-category="AI / Machine Learning" class="project-card">
+  <div data-category="Artificial Intelligence" class="project-card">
 
     <a href="projects/gnn_noisy_labels.html" class="block no-underline hover:no-underline transition-all duration-300">
 
-    <div class="flex h-full flex-col gap-3 overflow-hidden rounded-[22px] border border-[#cfd6de] bg-[#ffffff] transition-colors duration-200 group hover:border-[#4f5660]">
+    <div class="flex h-full flex-col gap-2 overflow-hidden rounded-[12px] border border-[#cfd6de] bg-[#ffffff] transition-colors duration-200 group hover:border-[#4f5660]">
 
-      <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-[18px] overflow-hidden relative border border-[#d7e0ea]">
+      <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-[8px] overflow-hidden relative border border-[#d7e0ea]">
 
         <img alt="NoisyGNN: Robust GNNs Under Noisy Labels" class="w-full h-full object-cover" src="images/projects/gnn_noisy/valD.webp"/>
 
@@ -313,15 +234,15 @@
 
       </div>
 
-      <div class="p-4">
+      <div class="p-3">
 
-        <h3 class="text-[#16202b] text-xl font-semibold leading-normal">NoisyGNN: Robust GNNs Under Noisy Labels
+        <h3 class="text-[#16202b] text-sm font-semibold leading-snug">NoisyGNN: Robust GNNs Under Noisy Labels
 
           <span class="ml-2 align-middle px-2 py-0.5 bg-[#eceff3] text-[#626b75] text-xs rounded-full">2025</span>
 
         </h3>
 
-        <p class="text-[#66758a] text-base mt-2">
+        <p class="text-[#66758a] text-xs mt-1">
 
           Noise-resistant classification of molecular graphs using Pytorch:
 
@@ -362,13 +283,13 @@
     </a>
 
   </div>
-  <div data-category="AI / Machine Learning" class="project-card">
+  <div data-category="Artificial Intelligence" class="project-card">
 
     <a href="projects/score_based_generative_modeling.html" class="block no-underline hover:no-underline transition-all duration-300">
 
-    <div class="flex h-full flex-col gap-3 overflow-hidden rounded-[22px] border border-[#cfd6de] bg-[#ffffff] transition-colors duration-200 group hover:border-[#4f5660]">
+    <div class="flex h-full flex-col gap-2 overflow-hidden rounded-[12px] border border-[#cfd6de] bg-[#ffffff] transition-colors duration-200 group hover:border-[#4f5660]">
 
-      <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-[18px] overflow-hidden relative border border-[#d7e0ea]">
+      <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-[8px] overflow-hidden relative border border-[#d7e0ea]">
 
         <img alt="ML Homework 4: Model Training and Evaluation" class="w-full h-full object-cover" src="images/projects/Score-BasedGenerativeModeling/mnist_generated.webp"/>
 
@@ -382,15 +303,15 @@
 
       </div>
 
-      <div class="p-4">
+      <div class="p-3">
 
-        <h3 class="text-[#16202b] text-xl font-semibold leading-normal">Gradient-Based Image Synthesis via Score Matching
+        <h3 class="text-[#16202b] text-sm font-semibold leading-snug">Gradient-Based Image Synthesis via Score Matching
 
           <span class="ml-2 align-middle px-2 py-0.5 bg-[#eceff3] text-[#626b75] text-xs rounded-full">2024</span>
 
         </h3>
 
-        <p class="text-[#66758a] text-base mt-2">
+        <p class="text-[#66758a] text-xs mt-1">
 
           Implemented a Noise-Conditional Score Network (NCSN) for generative modeling, following Song & Ermon (2019).
 
@@ -429,13 +350,13 @@
     </a>
 
   </div>
-  <div data-category="AI / Machine Learning" class="project-card">
+  <div data-category="Artificial Intelligence" class="project-card">
 
     <a href="projects/xarm_ddpg_her.html" class="block no-underline hover:no-underline transition-all duration-300">
 
-    <div class="flex h-full flex-col gap-3 overflow-hidden rounded-[22px] border border-[#cfd6de] bg-[#ffffff] transition-colors duration-200 group hover:border-[#4f5660]">
+    <div class="flex h-full flex-col gap-2 overflow-hidden rounded-[12px] border border-[#cfd6de] bg-[#ffffff] transition-colors duration-200 group hover:border-[#4f5660]">
 
-      <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-[18px] overflow-hidden relative border border-[#d7e0ea]">
+      <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-[8px] overflow-hidden relative border border-[#d7e0ea]">
 
         <video loop muted playsinline preload="metadata" data-autoplay-visible
 
@@ -465,15 +386,15 @@
 
       </div>
 
-      <div class="p-4">
+      <div class="p-3">
 
-        <h3 class="text-[#16202b] text-xl font-semibold leading-normal">Deep Reinforcement Learning for Robotic Manipulation
+        <h3 class="text-[#16202b] text-sm font-semibold leading-snug">Deep Reinforcement Learning for Robotic Manipulation
 
           <span class="ml-2 align-middle px-2 py-0.5 bg-[#eceff3] text-[#626b75] text-xs rounded-full">2023</span>
 
         </h3>
 
-        <p class="text-[#66758a] text-base mt-2">Implementation of Deep Deterministic Policy Gradient (DDPG) with Hindsight Experience Replay (HER) for robotic manipulation task using xArm6.</p>
+        <p class="text-[#66758a] text-xs mt-1">Implementation of Deep Deterministic Policy Gradient (DDPG) with Hindsight Experience Replay (HER) for robotic manipulation task using xArm6.</p>
 
         <div class="flex flex-wrap gap-2 mt-3">
 
@@ -518,15 +439,15 @@
   </div>
   </section>
 <section id="robotics">
-<h2 class="text-[#16202b] text-3xl font-bold leading-tight tracking-tight mb-8">Robotics</h2>
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 sm:gap-8">
+<h2 class="text-[#16202b] text-lg font-bold leading-tight tracking-tight mb-4">Robotics</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
   <div data-category="Robotics" class="project-card">
 
     <a href="projects/puzzlebot_manipulator.html" class="block no-underline hover:no-underline transition-all duration-300">
 
-    <div class="flex h-full flex-col gap-3 overflow-hidden rounded-[22px] border border-[#cfd6de] bg-[#ffffff] transition-colors duration-200 group hover:border-[#4f5660]">
+    <div class="flex h-full flex-col gap-2 overflow-hidden rounded-[12px] border border-[#cfd6de] bg-[#ffffff] transition-colors duration-200 group hover:border-[#4f5660]">
 
-      <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-[18px] overflow-hidden relative border border-[#d7e0ea]">
+      <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-[8px] overflow-hidden relative border border-[#d7e0ea]">
 
         <video loop muted playsinline preload="metadata" data-autoplay-visible
 
@@ -556,15 +477,15 @@
 
       </div>
 
-      <div class="p-4">
+      <div class="p-3">
 
-        <h3 class="text-[#16202b] text-xl font-semibold leading-normal">Differential Drive Robotic Manipulator
+        <h3 class="text-[#16202b] text-sm font-semibold leading-snug">Differential Drive Robotic Manipulator
 
           <span class="ml-2 align-middle px-2 py-0.5 bg-[#eceff3] text-[#626b75] text-xs rounded-full">2024</span>
 
         </h3>
 
-        <div class="text-[#66758a] text-base mt-2">
+        <div class="text-[#66758a] text-xs mt-1">
 
           <ul class="space-y-2">
 
@@ -625,9 +546,9 @@
 
     <a href="projects/ekf_corner_detection.html" class="block no-underline hover:no-underline transition-all duration-300">
 
-    <div class="flex h-full flex-col gap-3 overflow-hidden rounded-[22px] border border-[#cfd6de] bg-[#ffffff] transition-colors duration-200 group hover:border-[#4f5660]">
+    <div class="flex h-full flex-col gap-2 overflow-hidden rounded-[12px] border border-[#cfd6de] bg-[#ffffff] transition-colors duration-200 group hover:border-[#4f5660]">
 
-      <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-[18px] overflow-hidden relative border border-[#d7e0ea]">
+      <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-[8px] overflow-hidden relative border border-[#d7e0ea]">
 
         <video loop muted playsinline preload="metadata" data-autoplay-visible
 
@@ -660,15 +581,15 @@
       </div>
 
 
-      <div class="p-4">
+      <div class="p-3">
 
-        <h3 class="text-[#16202b] text-xl font-semibold leading-normal">Extended Kalman Filter with Corner-Based Landmark Localisation
+        <h3 class="text-[#16202b] text-sm font-semibold leading-snug">Extended Kalman Filter with Corner-Based Landmark Localisation
 
           <span class="ml-2 align-middle px-2 py-0.5 bg-[#eceff3] text-[#626b75] text-xs rounded-full">2024</span>
 
         </h3>
 
-        <p class="text-[#66758a] text-base mt-2">
+        <p class="text-[#66758a] text-xs mt-1">
 
           Gazebo simulation of a differential drive robot, fusing wheel-encoder odometry with LIDAR landmark (corner) detections using an Extended Kalman Filter (EKF).
 
@@ -715,9 +636,9 @@
 
     <a href="projects/ibvs.html" class="block no-underline hover:no-underline transition-all duration-300">
 
-    <div class="flex h-full flex-col gap-3 overflow-hidden rounded-[22px] border border-[#cfd6de] bg-[#ffffff] transition-colors duration-200 group hover:border-[#4f5660]">
+    <div class="flex h-full flex-col gap-2 overflow-hidden rounded-[12px] border border-[#cfd6de] bg-[#ffffff] transition-colors duration-200 group hover:border-[#4f5660]">
 
-        <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-[18px] overflow-hidden relative border border-[#d7e0ea]">
+        <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-[8px] overflow-hidden relative border border-[#d7e0ea]">
 
           <video loop muted playsinline preload="metadata" data-autoplay-visible
 
@@ -747,9 +668,9 @@
 
         </div>
 
-        <div class="p-4">
+        <div class="p-3">
 
-          <h3 class="text-[#16202b] text-xl font-semibold leading-normal">
+          <h3 class="text-[#16202b] text-sm font-semibold leading-snug">
 
             Image-Based Visual Control Implementation for a Differential Mobile Robot
 
@@ -757,7 +678,7 @@
 
           </h3>
 
-          <p class="text-[#66758a] text-base mt-2">
+          <p class="text-[#66758a] text-xs mt-1">
 
             Implementation of a control strategy mapping image-point errors to differential-drive commands, following Siradjuddin et al.
 
@@ -803,9 +724,9 @@
 
     <a href="projects/scene_grasp.html" class="block no-underline hover:no-underline transition-all duration-300">
 
-    <div class="flex h-full flex-col gap-3 overflow-hidden rounded-[22px] border border-[#cfd6de] bg-[#ffffff] transition-colors duration-200 group hover:border-[#4f5660]">
+    <div class="flex h-full flex-col gap-2 overflow-hidden rounded-[12px] border border-[#cfd6de] bg-[#ffffff] transition-colors duration-200 group hover:border-[#4f5660]">
 
-        <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-[18px] overflow-hidden relative border border-[#d7e0ea]">
+        <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-[8px] overflow-hidden relative border border-[#d7e0ea]">
 
           <video loop muted playsinline preload="metadata" data-autoplay-visible
 
@@ -835,9 +756,9 @@
 
         </div>
 
-        <div class="p-4">
+        <div class="p-3">
 
-          <h3 class="text-[#16202b] text-xl font-semibold leading-normal">
+          <h3 class="text-[#16202b] text-sm font-semibold leading-snug">
 
             SceneGrasp: Multi-Object 3D Reconstruction, Pose & Grasp Prediction
 
@@ -847,7 +768,7 @@
 
       
 
-          <p class="text-[#66758a] text-base mt-2">
+          <p class="text-[#66758a] text-xs mt-1">
 
             Implementation of Samsung’s SceneGrasp model for multi‑object 3D reconstruction, 6DoF pose, and grasp prediction in an UR5 robot and external RGB‑D camera setup .
 
@@ -900,9 +821,9 @@
 
     <a href="projects/home_ddpg_ros.html" class="block no-underline hover:no-underline transition-all duration-300">
 
-    <div class="flex h-full flex-col gap-3 overflow-hidden rounded-[22px] border border-[#cfd6de] bg-[#ffffff] transition-colors duration-200 group hover:border-[#4f5660]">
+    <div class="flex h-full flex-col gap-2 overflow-hidden rounded-[12px] border border-[#cfd6de] bg-[#ffffff] transition-colors duration-200 group hover:border-[#4f5660]">
 
-      <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-[18px] overflow-hidden relative border border-[#d7e0ea]">
+      <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-[8px] overflow-hidden relative border border-[#d7e0ea]">
 
         <video loop muted playsinline preload="metadata" data-autoplay-visible
 
@@ -932,15 +853,15 @@
 
       </div>
 
-      <div class="p-4">
+      <div class="p-3">
 
-        <h3 class="text-[#16202b] text-xl font-semibold leading-normal">Reinforcement Learning on xARM6 with ROS
+        <h3 class="text-[#16202b] text-sm font-semibold leading-snug">Reinforcement Learning on xARM6 with ROS
 
           <span class="ml-2 align-middle px-2 py-0.5 bg-[#eceff3] text-[#626b75] text-xs rounded-full">2023</span>
 
         </h3>
 
-        <p class="text-[#66758a] text-base mt-2">Implementation of a self-trained Deep Deterministic Policy Gradient (DDPG) model for xARM6 tilt-stable navigation and manipulation tasks using ROS.</p>
+        <p class="text-[#66758a] text-xs mt-1">Implementation of a self-trained Deep Deterministic Policy Gradient (DDPG) model for xARM6 tilt-stable navigation and manipulation tasks using ROS.</p>
 
         <div class="flex flex-wrap gap-2 mt-3">
 
@@ -972,9 +893,9 @@
 
     <a href="projects/xarm6_visual_servoing.html" class="block no-underline hover:no-underline transition-all duration-300">
 
-    <div class="flex h-full flex-col gap-3 overflow-hidden rounded-[22px] border border-[#cfd6de] bg-[#ffffff] transition-colors duration-200 group hover:border-[#4f5660]">
+    <div class="flex h-full flex-col gap-2 overflow-hidden rounded-[12px] border border-[#cfd6de] bg-[#ffffff] transition-colors duration-200 group hover:border-[#4f5660]">
 
-      <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-[18px] overflow-hidden relative border border-[#d7e0ea]">
+      <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-[8px] overflow-hidden relative border border-[#d7e0ea]">
 
         <video loop muted playsinline preload="metadata" data-autoplay-visible
 
@@ -1004,15 +925,15 @@
 
       </div>
 
-      <div class="p-4">
+      <div class="p-3">
 
-        <h3 class="text-[#16202b] text-xl font-semibold leading-normal">xArm6 Visual Servoing
+        <h3 class="text-[#16202b] text-sm font-semibold leading-snug">xArm6 Visual Servoing
 
           <span class="ml-2 align-middle px-2 py-0.5 bg-[#eceff3] text-[#626b75] text-xs rounded-full">2023</span>
 
         </h3>
 
-        <p class="text-[#66758a] text-base mt-2">Implementation of visual servoing techniques for the xArm6 robotic arm, enabling precise control based on external camera's visual feedback.</p>
+        <p class="text-[#66758a] text-xs mt-1">Implementation of visual servoing techniques for the xArm6 robotic arm, enabling precise control based on external camera's visual feedback.</p>
 
         <div class="flex flex-wrap gap-2 mt-3">
 
@@ -1043,9 +964,9 @@
 
     <a href="projects/self_driving_autonomous_vehicle.html" class="block no-underline hover:no-underline transition-all duration-300">
 
-    <div class="flex h-full flex-col gap-3 overflow-hidden rounded-[22px] border border-[#cfd6de] bg-[#ffffff] transition-colors duration-200 group hover:border-[#4f5660]">
+    <div class="flex h-full flex-col gap-2 overflow-hidden rounded-[12px] border border-[#cfd6de] bg-[#ffffff] transition-colors duration-200 group hover:border-[#4f5660]">
 
-        <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-[18px] overflow-hidden relative border border-[#d7e0ea]">
+        <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-[8px] overflow-hidden relative border border-[#d7e0ea]">
 
           <video loop muted playsinline preload="metadata" data-autoplay-visible
 
@@ -1075,15 +996,15 @@
 
         </div>
 
-        <div class="p-4">
+        <div class="p-3">
 
-          <h3 class="text-[#16202b] text-xl font-semibold leading-normal">Autonomous Driving of Differential Mobile Robot
+          <h3 class="text-[#16202b] text-sm font-semibold leading-snug">Autonomous Driving of Differential Mobile Robot
 
             <span class="ml-2 align-middle px-2 py-0.5 bg-[#eceff3] text-[#626b75] text-xs rounded-full">2023</span>
 
           </h3>
 
-          <p class="text-[#66758a] text-base mt-2">Development of an self-driving vehicle prototype using ROS1, YOLOv5, and Nvidia Jetson Nano. 
+          <p class="text-[#66758a] text-xs mt-1">Development of an self-driving vehicle prototype using ROS1, YOLOv5, and Nvidia Jetson Nano. 
 
             Autonomous navigation system prototype using CV-based traffic signals detection and line following with adaptive linear control.</p>
 
@@ -1118,15 +1039,15 @@
   </div>
   </section>
   <section id="embedded-systems">
-  <h2 class="text-[#16202b] text-3xl font-bold leading-tight tracking-tight mb-8">Embedded Systems &amp; Signal Processing</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8">
+  <h2 class="text-[#16202b] text-lg font-bold leading-tight tracking-tight mb-4">Embedded Systems &amp; Signal Processing</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
     <div data-category="Signal Processing / Embedded Systems" class="project-card">
 
       <a href="projects/smart_parking.html" class="block no-underline hover:no-underline transition-all duration-300">
 
-      <div class="flex h-full flex-col gap-3 overflow-hidden rounded-[22px] border border-[#cfd6de] bg-[#ffffff] transition-colors duration-200 group hover:border-[#4f5660]">
+      <div class="flex h-full flex-col gap-2 overflow-hidden rounded-[12px] border border-[#cfd6de] bg-[#ffffff] transition-colors duration-200 group hover:border-[#4f5660]">
 
-        <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-[18px] overflow-hidden relative border border-[#d7e0ea]">
+        <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-[8px] overflow-hidden relative border border-[#d7e0ea]">
 
           <img alt="IoT Smart Parking System" class="w-full h-full object-cover" src="images/projects/iot_sapienza/HardwareDiagram.webp"/>
 
@@ -1140,15 +1061,15 @@
 
         </div>
 
-        <div class="p-4">
+        <div class="p-3">
 
-          <h3 class="text-[#16202b] text-xl font-semibold leading-normal">IoT Smart Parking System
+          <h3 class="text-[#16202b] text-sm font-semibold leading-snug">IoT Smart Parking System
 
             <span class="ml-2 align-middle px-2 py-0.5 bg-[#eceff3] text-[#626b75] text-xs rounded-full">2025</span>
 
           </h3>
 
-          <p class="text-[#66758a] text-base mt-2">
+          <p class="text-[#66758a] text-xs mt-1">
 
             Parking detection system using HC-SR04 ultrasonic and VL53L0X ToF sensors with an ESP32 microcontroller, running <strong>FreeRTOS for concurrent sensing and data processing</strong>. Integrated MQTT-based communication for real-time occupancy reporting
 
@@ -1187,9 +1108,9 @@
 
       <a href="projects/sapienza_iot.html" class="block no-underline hover:no-underline transition-all duration-300">
 
-      <div class="flex h-full flex-col gap-3 overflow-hidden rounded-[22px] border border-[#cfd6de] bg-[#ffffff] transition-colors duration-200 group hover:border-[#4f5660]">
+      <div class="flex h-full flex-col gap-2 overflow-hidden rounded-[12px] border border-[#cfd6de] bg-[#ffffff] transition-colors duration-200 group hover:border-[#4f5660]">
 
-        <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-[18px] overflow-hidden relative border border-[#d7e0ea]">
+        <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-[8px] overflow-hidden relative border border-[#d7e0ea]">
 
           <img alt="Sapienza IoT - Embedded Sensor Monitoring and Visualization" class="w-full h-full object-cover" src="images/projects/heltec_signal_monitor/signals.webp"/>
 
@@ -1203,15 +1124,15 @@
 
         </div>
 
-        <div class="p-4">
+        <div class="p-3">
 
-          <h3 class="text-[#16202b] text-xl font-semibold leading-normal">Embedded Sensor Monitoring and Visualization System
+          <h3 class="text-[#16202b] text-sm font-semibold leading-snug">Embedded Sensor Monitoring and Visualization System
 
             <span class="ml-2 align-middle px-2 py-0.5 bg-[#eceff3] text-[#626b75] text-xs rounded-full">2025</span>
 
           </h3>
 
-          <p class="text-[#66758a] text-base mt-2">
+          <p class="text-[#66758a] text-xs mt-1">
 
             Low-power ESP32 Heltec system for real-time sensor monitoring with firmware-level signal acquisition, FFT-driven sampling optimization, and MQTT data streaming. Integrated a TI INA219 power sensor for energy profiling and calling of low-power modes for efficient operation.
 
@@ -1258,9 +1179,9 @@
 
       <a href="projects/air_pressure_control.html" class="block no-underline hover:no-underline transition-all duration-300">
 
-      <div class="flex h-full flex-col gap-3 overflow-hidden rounded-[22px] border border-[#cfd6de] bg-[#ffffff] transition-colors duration-200 group hover:border-[#4f5660]">
+      <div class="flex h-full flex-col gap-2 overflow-hidden rounded-[12px] border border-[#cfd6de] bg-[#ffffff] transition-colors duration-200 group hover:border-[#4f5660]">
 
-          <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-[18px] overflow-hidden relative border border-[#d7e0ea]">
+          <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-[8px] overflow-hidden relative border border-[#d7e0ea]">
 
             <img alt="ML Homework 4: Model Training and Evaluation" class="w-full h-full object-cover" src="images/projects/air_pressure_control/prototype.webp"/>
 
@@ -1274,15 +1195,15 @@
 
           </div>
 
-          <div class="p-4">
+          <div class="p-3">
 
-            <h3 class="text-[#16202b] text-xl font-semibold leading-normal">Intelligent Air Pressure Control
+            <h3 class="text-[#16202b] text-sm font-semibold leading-snug">Intelligent Air Pressure Control
 
               <span class="ml-2 align-middle px-2 py-0.5 bg-[#eceff3] text-[#626b75] text-xs rounded-full">2023</span>
 
             </h3>
 
-            <p class="text-[#66758a] text-base mt-2">
+            <p class="text-[#66758a] text-xs mt-1">
 
               A prototype for an intelligent air pressure control system for tires in agricultural equipment using linear (PID) control strategies.
 
@@ -1327,9 +1248,9 @@
 
       <a href="projects/music_recognition.html" class="block no-underline hover:no-underline transition-all duration-300">
 
-      <div class="flex h-full flex-col gap-3 overflow-hidden rounded-[22px] border border-[#cfd6de] bg-[#ffffff] transition-colors duration-200 group hover:border-[#4f5660]">
+      <div class="flex h-full flex-col gap-2 overflow-hidden rounded-[12px] border border-[#cfd6de] bg-[#ffffff] transition-colors duration-200 group hover:border-[#4f5660]">
 
-        <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-[18px] overflow-hidden relative border border-[#d7e0ea]">
+        <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-[8px] overflow-hidden relative border border-[#d7e0ea]">
 
           <img alt="Music Recognition Project Image" class="w-full h-full object-cover" src="images/projects/music_recognition/sp.webp"/>
 
@@ -1343,15 +1264,15 @@
 
         </div>
 
-        <div class="p-4">
+        <div class="p-3">
 
-          <h3 class="text-[#16202b] text-xl font-semibold leading-normal">Music Recognition Algorithm Using Discrete Fourier Transform
+          <h3 class="text-[#16202b] text-sm font-semibold leading-snug">Music Recognition Algorithm Using Discrete Fourier Transform
 
             <span class="ml-2 align-middle px-2 py-0.5 bg-[#eceff3] text-[#626b75] text-xs rounded-full">2020</span>
 
           </h3>
 
-          <p class="text-[#66758a] text-base mt-2">Song identification using FFT to match microphone input to known song's frequency signature.</p>
+          <p class="text-[#66758a] text-xs mt-1">Song identification using FFT to match microphone input to known song's frequency signature.</p>
 
           <div class="flex flex-wrap gap-2 mt-3">
 

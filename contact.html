@@ -48,113 +48,12 @@
     </style>
 </head>
 
-<body style='background: #f5f7fb;'>
-  <div class="relative flex size-full min-h-screen flex-col overflow-x-hidden"
-    style='font-family: "Spline Sans", "Noto Sans", sans-serif;'>
+<body style='font-family: "Spline Sans", "Noto Sans", sans-serif; background: #f5f7fb;'>
+  <div class="relative flex size-full min-h-screen flex-col overflow-x-hidden">
     <div class="flex-col">
-      <header
-        class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[var(--bd-muted)] px-5 sm:px-10 py-3 sm:py-4 fixed top-0 left-0 right-0 bg-white z-50 font-['Space_Grotesk',_'Noto_Sans',_sans-serif]">
-        <div class="flex items-center gap-3 text-white">
-          <svg class="text-[var(--brand)]" fill="none" height="24" stroke="currentColor" stroke-linecap="round"
-            stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M10 16.5 8 18l-6-6 6-6 2 1.5"></path>
-            <path d="m14 7.5 2-1.5 6 6-6 6-2-1.5"></path>
-            <path d="M12 8v8"></path>
-          </svg>
-          <div>
-            <h2 class="text-[#16202b] text-lg sm:text-xl font-bold leading-tight tracking-[-0.015em]"><a href="index.html"
-                class="hover:text-[var(--brand)] transition-colors">
-                <span class="sm:hidden">J. Edgar Hernandez</span>
-                <span class="hidden sm:inline">Jose Edgar Hernandez Cancino E.</span>
-              </a></h2>
-          </div>
-        </div>
-        <div class="flex flex-1 justify-end gap-4 items-center">
-          <div class="hidden sm:flex items-center gap-8">
-            <a class="text-gray-300 hover:text-[#16202b] transition-colors text-base font-medium leading-normal"
-              href="index.html">About</a>
-            <a class="text-gray-300 hover:text-[#16202b] transition-colors text-base font-medium leading-normal"
-              href="projects.html">Projects</a>
-            <a class="text-[var(--brand)] text-base font-bold leading-normal" href="contact.html">Contact</a>
-          </div>
-          <div class="hidden sm:flex items-center gap-4">
-            <a class="text-gray-300 hover:text-[#16202b] transition-colors"
-              href="https://www.linkedin.com/in/edgar-cancino/">
-              <svg class="feather feather-linkedin" fill="none" height="24" stroke="currentColor" stroke-linecap="round"
-                stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"
-                xmlns="http://www.w3.org/2000/svg">
-                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                <rect height="12" width="4" x="2" y="9"></rect>
-                <circle cx="4" cy="4" r="2"></circle>
-              </svg>
-            </a>
-            <a class="text-gray-300 hover:text-[#16202b] transition-colors" href="https://github.com/edgarcancinoe">
-              <svg class="feather feather-github" fill="none" height="24" stroke="currentColor" stroke-linecap="round"
-                stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"
-                xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-                </path>
-              </svg>
-            </a>
-          </div>
-          <!-- Mobile menu toggle -->
-          <button id="mobileMenuBtn"
-            class="sm:hidden inline-flex items-center justify-center h-9 w-9 rounded-md border border-[var(--bd-muted)] text-white hover:text-[var(--brand)] hover:border-[var(--brand)] transition-colors"
-            aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
-            <!-- Hamburger icon -->
-            <svg id="iconHamburger" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
-              stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-            <!-- Close icon -->
-            <svg id="iconClose" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 hidden" fill="none"
-              viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
-          <a href="res/Jose_Hernandez_CV.pdf" target="_blank"
-            class="hidden sm:flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-9 sm:h-10 px-4 sm:px-6 btn-brand text-sm sm:text-base font-bold leading-normal tracking-[0.015em] transition-all duration-300">
-            <span class="truncate">Download CV</span>
-          </a>
-        </div>
-      </header>
-      <!-- Mobile dropdown menu -->
-      <nav id="mobileMenu"
-        class="sm:hidden fixed top-14 left-0 right-0 bg-white border-b border-[var(--bd-muted)] px-5 py-3 z-40 hidden">
-        <div class="max-w-7xl mx-auto flex flex-col gap-3 text-white">
-          <a href="index.html" class="py-2 border-b border-[var(--bd-muted)]/60">About</a>
-          <a href="projects.html" class="py-2 border-b border-[var(--bd-muted)]/60">Projects</a>
-          <a href="#contact" class="py-2 text-[var(--brand)] font-semibold">Contact</a>
-          <div class="flex items-center gap-4 pt-2">
-            <a class="text-gray-300 hover:text-[#16202b] transition-colors"
-              href="https://www.linkedin.com/in/edgar-cancino/" aria-label="LinkedIn">
-              <svg class="feather feather-linkedin" fill="none" height="24" stroke="currentColor" stroke-linecap="round"
-                stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"
-                xmlns="http://www.w3.org/2000/svg">
-                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                <rect height="12" width="4" x="2" y="9"></rect>
-                <circle cx="4" cy="4" r="2"></circle>
-              </svg>
-            </a>
-            <a class="text-gray-300 hover:text-[#16202b] transition-colors" href="https://github.com/edgarcancinoe"
-              aria-label="GitHub">
-              <svg class="feather feather-github" fill="none" height="24" stroke="currentColor" stroke-linecap="round"
-                stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"
-                xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-                </path>
-              </svg>
-            </a>
-            <a href="res/Jose_Hernandez_CV.pdf" target="_blank"
-              class="ml-auto inline-flex items-center justify-center rounded-full h-9 px-4 btn-brand text-sm font-bold transition-colors">
-              Download CV
-            </a>
-          </div>
-        </div>
-      </nav>
-      <main class="flex-1 mt-16">
+      <div id="site-header"></div>
+      <script src="js/shared-header.js"></script>
+      <main class="flex-1">
         <section class="py-10 sm:py-16 px-5 sm:px-6">
           <div class="mx-auto max-w-6xl">
             <div class="grid grid-cols-1 gap-6 lg:grid-cols-[minmax(0,320px)_minmax(0,1fr)]">

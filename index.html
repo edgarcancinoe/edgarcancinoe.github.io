@@ -76,14 +76,18 @@
       content: '';
       position: absolute;
       top: 24px;
-      left: -13px;
-      width: 12px;
-      height: 12px;
-      background-color: var(--brand);
+      left: calc(-1.5rem - 5px);
+      width: 10px;
+      height: 10px;
+      background-color: var(--bd-strong);
       border-radius: 9999px;
-      border: 2px solid var(--bg-root);
     }
-    html { scroll-behavior: smooth; }
+    @media (min-width: 640px) {
+      .timeline-item:before {
+        left: calc(-2.5rem - 5px);
+      }
+    }
+    html { scroll-behavior: smooth; font-size: 90%; }
     .reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
     .reveal.show { opacity: 1; transform: none; }
     @media (prefers-reduced-motion: reduce) {
@@ -96,225 +100,54 @@
   <div class="relative flex size-full min-h-screen flex-col group/design-root overflow-x-hidden"
     style='font-family: "Spline Sans", "Noto Sans", sans-serif; background: #f5f7fb;'>
     <div class="layout-container flex h-full grow flex-col">
-      <header
-        class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[var(--bd-muted)] px-5 sm:px-10 py-3 sm:py-4 fixed top-0 left-0 right-0 bg-white z-50 font-['Space_Grotesk',_'Noto_Sans',_sans-serif]">
-        <div class="flex items-center gap-3 text-[var(--fg-primary)]">
-          <svg class="text-[var(--brand)]" fill="none" height="24" stroke="currentColor" stroke-linecap="round"
-            stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M10 16.5 8 18l-6-6 6-6 2 1.5"></path>
-            <path d="m14 7.5 2-1.5 6 6-6 6-2-1.5"></path>
-            <path d="M12 8v8"></path>
-          </svg>
-          <div>
-            <h2 class="text-[var(--fg-primary)] text-lg sm:text-xl font-bold leading-tight tracking-[-0.015em]">
-              <a href="index.html" class="hover:text-[var(--brand)] transition-colors">
-                <span class="sm:hidden">J. Edgar Hernandez</span>
-                <span class="hidden sm:inline">Jose Edgar Hernandez Cancino E.</span>
-              </a>
-            </h2>
+      <div id="site-header"></div>
+      <script src="js/shared-header.js"></script>
+      <main class="flex-1 pb-24">
 
-          </div>
-        </div>
-        <div class="flex flex-1 justify-end gap-4 items-center">
-          <div class="hidden sm:flex items-center gap-8">
-            <a class="text-[var(--brand)] text-base font-bold leading-normal" href="index.html">About</a>
-            <a class="text-[var(--fg-muted)] hover:text-[var(--fg-primary)] transition-colors text-base font-medium leading-normal"
-              href="projects.html">Projects</a>
-            <a class="text-[var(--fg-muted)] hover:text-[var(--fg-primary)] transition-colors text-base font-medium leading-normal"
-              href="contact.html">Contact</a>
-          </div>
-          <div class="hidden sm:flex items-center gap-4">
-            <a class="text-[var(--fg-muted)] hover:text-[var(--fg-primary)] transition-colors"
-              href="https://www.linkedin.com/in/edgar-cancino/">
-              <svg class="feather feather-linkedin" fill="none" height="24" stroke="currentColor" stroke-linecap="round"
-                stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"
-                xmlns="http://www.w3.org/2000/svg">
-                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                <rect height="12" width="4" x="2" y="9"></rect>
-                <circle cx="4" cy="4" r="2"></circle>
-              </svg>
-            </a>
-            <a class="text-[var(--fg-muted)] hover:text-[var(--fg-primary)] transition-colors" href="https://github.com/edgarcancinoe">
-              <svg class="feather feather-github" fill="none" height="24" stroke="currentColor" stroke-linecap="round"
-                stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"
-                xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-                </path>
-              </svg>
-            </a>
-          </div>
-          <!-- Mobile menu toggle -->
-          <button id="mobileMenuBtn"
-            class="sm:hidden inline-flex items-center justify-center h-9 w-9 rounded-md border border-[var(--bd-muted)] text-[var(--fg-primary)] hover:text-[var(--brand)] hover:border-[var(--brand)] transition-colors"
-            aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
-            <!-- Hamburger icon -->
-            <svg id="iconHamburger" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
-              stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-            <!-- Close icon -->
-            <svg id="iconClose" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 hidden" fill="none"
-              viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
-          <a href="res/Jose_Hernandez_CV.pdf" target="_blank"
-            class="hidden sm:flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-9 sm:h-10 px-4 sm:px-6 btn-brand text-sm sm:text-base font-bold leading-normal tracking-[0.015em] transition-all duration-300">
-            <span class="truncate">Download CV</span>
-          </a>
-        </div>
-      </header>
-      <!-- Mobile dropdown menu -->
-      <nav id="mobileMenu"
-        class="sm:hidden fixed top-14 left-0 right-0 bg-white border-b border-[var(--bd-muted)] px-5 py-3 z-40 hidden">
-        <div class="max-w-7xl mx-auto flex flex-col gap-3 text-white">
-          <a href="#about" class="py-2 border-b border-[var(--bd-muted)]/60 text-[var(--brand)] font-semibold">About</a>
-          <a href="projects.html" class="py-2 border-b border-[var(--bd-muted)]/60">Projects</a>
-          <a href="#contact" class="py-2">Contact</a>
-          <div class="flex items-center gap-4 pt-2">
-            <a class="text-gray-300 hover:text-[#16202b] transition-colors"
-              href="https://www.linkedin.com/in/edgar-cancino/" aria-label="LinkedIn">
-              <svg class="feather feather-linkedin" fill="none" height="24" stroke="currentColor" stroke-linecap="round"
-                stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"
-                xmlns="http://www.w3.org/2000/svg">
-                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                <rect height="12" width="4" x="2" y="9"></rect>
-                <circle cx="4" cy="4" r="2"></circle>
-              </svg>
-            </a>
-            <a class="text-gray-300 hover:text-[#16202b] transition-colors" href="https://github.com/edgarcancinoe"
-              aria-label="GitHub">
-              <svg class="feather feather-github" fill="none" height="24" stroke="currentColor" stroke-linecap="round"
-                stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"
-                xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-                </path>
-              </svg>
-            </a>
-            <a href="res/Jose_Hernandez_CV.pdf" target="_blank"
-              class="ml-auto inline-flex items-center justify-center rounded-full h-9 px-4 btn-brand text-sm font-bold transition-colors">
-              Download CV
-            </a>
-          </div>
-        </div>
-      </nav>
-      <main class="flex-1 pb-24 mt-16">
-        <section id="about" class="px-4 sm:px-8 lg:px-20 py-4 sm:py-5">
-        <div class="max-w-8xl mx-auto">
-            <div class="surface-elevated rounded-[18px] px-2.5 py-3 sm:px-3 sm:py-3.5 reveal">
-              <div class="grid grid-cols-1 gap-3 lg:grid-cols-[320px_minmax(0,1fr)] lg:gap-5">
-                <div class="min-w-0 lg:max-w-[320px]">
-                  <div class="flex items-center gap-3 min-w-0">
-                    <img src="images/fototec.webp" alt="Jose Edgar Hernandez" class="h-12 w-12 rounded-[14px] object-cover border border-[var(--bd-strong)]" loading="lazy" decoding="async" />
-                    <div class="min-w-0">
-                      <p class="eyebrow mb-1">Profile</p>
-                      <h1 class="text-[var(--fg-primary)] text-lg sm:text-xl font-semibold leading-tight">Jose Edgar Hernandez</h1>
-                      <p class="text-[var(--fg-muted)] text-sm mt-1">Robotic Engineer and AI Researcher</p>
-                      <p class="text-[var(--fg-muted)] text-sm mt-1">MSc AI candidate @ <a href="https://www.upf.edu/web/emai">EMAI</a>
-                    </div>
-                  </div>
-                  <div class="mt-3 px-1 py-1.5">
-                    <div class="space-y-2.5">
-                      <div class="flex items-center gap-2 min-w-0">
-                        <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" class="h-5 w-5 text-[var(--brand)] shrink-0">
-                          <path d="M224,48H32a8,8,0,0,0-8,8V192a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A8,8,0,0,0,224,48Zm-96,85.15L52.57,64H203.43ZM98.71,128,40,181.81V74.19Zm11.84,10.85,12,11.05a8,8,0,0,0,10.82,0l12-11.05,58,53.15H52.57ZM157.29,128,216,74.18V181.82Z"></path>
-                        </svg>
-                        <p class="text-[var(--fg-primary)] text-sm font-semibold truncate">jh65312@student.uni-lj.si</p>
-                        <button type="button" class="inline-flex items-center justify-center rounded-full h-7 w-7 text-[var(--fg-secondary)] hover:text-[var(--fg-primary)] transition-colors shrink-0" aria-label="Copy jh65312@student.uni-lj.si" title="Copy to clipboard" data-copy="jh65312@student.uni-lj.si">
-                          <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
-                          </svg>
-                        </button>
-                      </div>
-                      <div class="flex items-center gap-2 min-w-0">
-                        <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" class="h-5 w-5 text-[var(--brand)] shrink-0">
-                          <path d="M224,48H32a8,8,0,0,0-8,8V192a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A8,8,0,0,0,224,48Zm-96,85.15L52.57,64H203.43ZM98.71,128,40,181.81V74.19Zm11.84,10.85,12,11.05a8,8,0,0,0,10.82,0l12-11.05,58,53.15H52.57ZM157.29,128,216,74.18V181.82Z"></path>
-                        </svg>
-                        <p class="text-[var(--fg-primary)] text-sm font-semibold truncate">edgarcancinoe@exatec.tec.mx</p>
-                        <button type="button" class="inline-flex items-center justify-center rounded-full h-7 w-7 text-[var(--fg-secondary)] hover:text-[var(--fg-primary)] transition-colors shrink-0" aria-label="Copy edgarcancinoe@exatec.tec.mx" title="Copy to clipboard" data-copy="edgarcancinoe@exatec.tec.mx">
-                          <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
-                          </svg>
-                        </button>
-                      </div>
-                    </div>
-                    <div class="mt-3 flex items-center gap-2 text-[var(--fg-muted)] text-sm">
-                      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-[var(--brand)] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M21 10c0 6-9 12-9 12S3 16 3 10a9 9 0 1 1 18 0z"></path>
-                        <circle cx="12" cy="10" r="3"></circle>
-                      </svg>
-                      <span>Ljubljana, Slovenia</span>
-                    </div>
-                    <div class="mt-3 grid grid-cols-3 gap-2">
-                      <span class="inline-flex items-center justify-center px-3 py-1 rounded-[8px] text-[11px] font-semibold tracking-[0.02em] text-center bg-[#e7ebf0] text-[var(--fg-primary)]">Spanish</span>
-                      <span class="inline-flex items-center justify-center px-3 py-1 rounded-[8px] text-[11px] font-semibold tracking-[0.02em] text-center bg-[#e7ebf0] text-[var(--fg-primary)]">English (C1)</span>
-                      <span class="inline-flex items-center justify-center px-3 py-1 rounded-[8px] text-[11px] font-semibold tracking-[0.02em] text-center bg-[#e7ebf0] text-[var(--fg-primary)]">Italian (A2)</span>
-                    </div>
-                    
-                    <div class="mt-3 flex items-center gap-2.5">
-                      <a href="https://www.linkedin.com/in/edgar-cancino/" target="_blank" aria-label="LinkedIn" class="inline-flex items-center justify-center h-9 w-9 rounded-full text-[var(--fg-secondary)] hover:text-[var(--brand)] transition-colors">
-                      <svg class="feather feather-linkedin" fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                        <rect height="12" width="4" x="2" y="9"></rect>
-                        <circle cx="4" cy="4" r="2"></circle>
-                      </svg>
-                    </a>
-                      <a href="https://github.com/edgarcancinoe" target="_blank" aria-label="GitHub" class="inline-flex items-center justify-center h-9 w-9 rounded-full text-[var(--fg-secondary)] hover:text-[var(--brand)] transition-colors">
-                      <svg class="feather feather-github" fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-                      </svg>
-                    </a>
-                      <a href="res/Jose_Hernandez_CV.pdf" target="_blank" class="inline-flex flex-1 items-center justify-center rounded-[10px] h-8 px-3 bg-[#eceff3] text-[var(--fg-secondary)] hover:bg-[#e0e5eb] hover:text-[var(--fg-primary)] transition-colors text-[12px] font-medium tracking-[0.02em]">Download CV</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="grid grid-cols-1 gap-2.5">
-                  <div class="rounded-[16px] border border-[var(--bd-strong)] bg-[rgba(255,255,255,.72)] px-3 py-2.5">
-                    <p class="eyebrow mb-2">Thesis</p>
-                    <h2 class="text-[var(--fg-primary)] text-base sm:text-[1.02rem] font-semibold leading-snug">Imitation learning for real-world robotic manipulation</h2>
-                    <p class="text-[var(--fg-muted)] text-sm mt-1.5">Expected completion · July 2026</p>
-                    <p class="text-[var(--fg-secondary)] text-sm mt-1.5">Current thesis direction on manipulation with SO-ARM101 platforms, with emphasis on real-world data collection and deformable object interaction.</p>
-                    <a href="images/Jose_Hernandez_Thesis_Proposal.pdf" target="_blank" class="mt-2.5 inline-flex items-center text-sm text-[var(--fg-primary)] hover:text-[#16202b] transition-colors">
-                      <span>Thesis proposal</span>
-                      <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9m-6-6l6 6"></path></svg>
-                    </a>
-                  </div>
-                  <div class="rounded-[16px] border border-[var(--bd-strong)] bg-[rgba(255,255,255,.72)] px-3 py-2.5">
-                    <p class="eyebrow mb-2">Research</p>
-                    <h2 class="text-[var(--fg-primary)] text-base sm:text-[1.02rem] font-semibold leading-snug">PIU: Proximity-guided Identity Unlearning in ID-Conditioned Diffusion Models</h2>
-                    <p class="text-[var(--fg-muted)] text-sm mt-1.5">arXiv preprint · submitted to ICJB26</p>
-                    <p class="text-[var(--fg-secondary)] text-sm mt-1.5">Identity unlearning in ID-conditioned diffusion models: targeted unlearning while preserving generation utility.</p>
-                    <a href="https://arxiv.org/abs/2605.22311" target="_blank" class="mt-2.5 inline-flex items-center text-sm text-[var(--fg-primary)] hover:text-[#16202b] transition-colors">
-                      <span>arXiv: 2605.22311</span>
-                      <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-                    </a>
-                  </div>
-                  <div class="rounded-[16px] border border-[var(--bd-strong)] bg-[rgba(255,255,255,.72)] px-3 py-2.5">
-                    <p class="eyebrow mb-2">Research</p>
-                    <h2 class="text-[var(--fg-primary)] text-base sm:text-[1.02rem] font-semibold leading-snug">Visual-Thought Decoder for task-specific feature representations</h2>
-                    <p class="text-[var(--fg-muted)] text-sm mt-1.5">Work in progress</p>
-                    <p class="text-[var(--fg-secondary)] text-sm mt-1.5">Framework work on a visual-thought decoder pipeline for learning task-specific feature representations and structured intermediate reasoning for downstream embodied tasks.</p>
-                  </div>
-                </div>
+        <section id="research" class="px-4 sm:px-8 lg:px-20 py-10 sm:py-14">
+          <div class="max-w-7xl mx-auto">
+            <h2 class="text-xl sm:text-2xl font-bold leading-tight tracking-tight text-white mb-8 reveal">Research</h2>
+            <div class="divide-y divide-[var(--bd-muted)]">
+
+              <div class="py-5 reveal">
+                <h3 class="text-[var(--fg-primary)] text-[15px] font-semibold leading-snug font-['Space_Grotesk',_sans-serif]">Imitation learning for real-world robotic manipulation</h3>
+                <p class="text-[var(--fg-muted)] text-xs mt-1.5">Thesis &nbsp;·&nbsp; Expected completion, July 2026</p>
+                <p class="text-[var(--fg-secondary)] text-sm mt-2">Current thesis direction on manipulation with SO-ARM101 platforms, with emphasis on real-world data collection and deformable object interaction.</p>
+                <a href="images/Jose_Hernandez_Thesis_Proposal.pdf" target="_blank" class="mt-2.5 inline-flex items-center gap-1 text-xs text-[#5b8dd9] hover:text-[#3d6db5] transition-colors">
+                  Thesis proposal
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9m-6-6l6 6"></path></svg>
+                </a>
               </div>
-            </div>
 
+              <div class="py-5 reveal">
+                <h3 class="text-[var(--fg-primary)] text-[15px] font-semibold leading-snug font-['Space_Grotesk',_sans-serif]">PIU: Proximity-guided Identity Unlearning in ID-Conditioned Diffusion Models</h3>
+                <p class="text-[var(--fg-muted)] text-xs mt-1.5">Preprint &nbsp;·&nbsp; arXiv preprint, submitted to ICJB26</p>
+                <p class="text-[var(--fg-secondary)] text-sm mt-2">Identity unlearning in ID-conditioned diffusion models: targeted unlearning while preserving generation utility.</p>
+                <a href="https://arxiv.org/abs/2605.22311" target="_blank" class="mt-2.5 inline-flex items-center gap-1 text-xs text-[#5b8dd9] hover:text-[#3d6db5] transition-colors">
+                  arXiv: 2605.22311
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                </a>
+              </div>
+
+              <div class="py-5 reveal">
+                <h3 class="text-[var(--fg-primary)] text-[15px] font-semibold leading-snug font-['Space_Grotesk',_sans-serif]">Visual-Thought Decoder for task-specific feature representations</h3>
+                <p class="text-[var(--fg-muted)] text-xs mt-1.5">In progress</p>
+                <p class="text-[var(--fg-secondary)] text-sm mt-2">Framework work on a visual-thought decoder pipeline for learning task-specific feature representations and structured intermediate reasoning for downstream embodied tasks.</p>
+              </div>
+
+            </div>
           </div>
         </section>
 
-        <section id="featured" class="px-4 sm:px-8 lg:px-20 py-10 sm:py-16" style="background: var(--bg-surface);">
-          <div class="max-w-8xl mx-auto">
-            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight tracking-tight text-white mb-4 reveal">
+        <section id="featured" class="px-4 sm:px-8 lg:px-20 py-16 sm:py-24" style="background: var(--bg-surface);">
+          <div class="max-w-7xl mx-auto">
+            <h2 class="text-xl sm:text-2xl font-bold leading-tight tracking-tight text-white mb-4 reveal">
               Recent work
             </h2>
             <p class="text-[var(--fg-secondary)] text-sm sm:text-base max-w-3xl mb-8 reveal">
               Robotics, machine learning, and embedded systems work.
             </p>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               <div class="project-card">
 
                 <a href="projects/truck_loading_durations.html" class="block no-underline hover:no-underline transition-all duration-300">
@@ -396,73 +229,7 @@
                 </div></a>
 
               </div>
-              <div class="project-card">
-
-                <a href="projects/score_based_generative_modeling.html" class="block no-underline hover:no-underline transition-all duration-300">
-
-                <div class="flex h-full flex-col gap-3 overflow-hidden rounded-[22px] border border-[#cfd6de] bg-[#ffffff] transition-colors duration-200 group hover:border-[#4f5660]">
-
-                  <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-[18px] overflow-hidden relative border border-[#d7e0ea]">
-
-                    <img alt="ML Homework 4: Model Training and Evaluation" class="w-full h-full object-cover" src="images/projects/Score-BasedGenerativeModeling/mnist_generated.webp"/>
-
-                    <div class="absolute top-2 left-2 flex items-center gap-2 bg-[#eef2f7] px-2 py-1 rounded-md border border-[#cfd6de]">
-
-                      <img alt="Pompeu Fabra University Logo" class="h-5 w-5 rounded-full object-contain bg-white p-0.5" src="images/logos/upf.webp"/>
-
-                      <span class="text-xs text-[#16202b]">Pompeu Fabra University</span>
-
-                    </div>
-
-                  </div>
-
-                  <div class="p-4">
-
-                    <h3 class="text-[#16202b] text-xl font-semibold leading-normal">Gradient-Based Image Synthesis via Score Matching
-
-                      <span class="ml-2 align-middle px-2 py-0.5 bg-[#eceff3] text-[#626b75] text-xs rounded-full">2024</span>
-
-                    </h3>
-
-                    <p class="text-[#66758a] text-base mt-2">
-
-                      Implemented a Noise-Conditional Score Network (NCSN) for generative modeling, following Song & Ermon (2019).
-
-                      <br><br>
-
-                      Trained a U-Net to approximate the score function of MNIST data with denoising score matching, and generated images via annealed Langevin dynamics.
-
-                    </p>
-
-                    <div class="flex flex-wrap gap-2 mt-3">
-
-                      <span class="px-2 py-1 bg-[#eceff3] text-[#626b75] text-xs rounded-full">Jupyter</span>
-
-                      <span class="px-2 py-1 bg-[#eceff3] text-[#626b75] text-xs rounded-full">PyTorch</span>
-
-                      <span class="px-2 py-1 bg-[#eceff3] text-[#626b75] text-xs rounded-full">Deep Learning</span>
-
-                    </div>
-
-                    <div class="flex gap-6 mt-4">
-
-                      <a href="https://github.com/edgarcancinoe/edgarcancinoe.github.io/blob/main/projects/Score-BasedGenerativeModeling/score-based-generative-mnist-nb.ipynb" target="_blank" class="inline-flex items-center text-[#626b75] hover:text-[#16202b] transition-colors">
-
-                        <span class="text-sm font-medium">Open Notebook</span>
-
-                        <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-
-                      </a>
-
-                    </div>
-
-                  </div>
-
-                </div>
-
-                </a>
-
-              </div>
+              
               <div class="project-card">
 
                 <a href="projects/puzzlebot_manipulator.html" class="block no-underline hover:no-underline transition-all duration-300">
@@ -660,15 +427,14 @@
           </div>
         </section>
 
-        <section class="px-4 sm:px-8 lg:px-20 py-12 sm:py-20">
+        <section class="px-4 sm:px-8 lg:px-20 py-16 sm:py-28">
           <div class="max-w-7xl mx-auto">
-            <p class="eyebrow text-center mb-4 reveal">Experience</p>
-            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight tracking-tight text-white text-center mb-6 sm:mb-16 reveal">
-              Education and Experience
+            <h2 class="text-xl sm:text-2xl font-bold leading-tight tracking-tight text-white mb-6 sm:mb-16 reveal">
+              Trajectory
             </h2>
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-16">
               <div>
-                <h3 class="text-3xl font-bold text-white mb-8 text-center">Education</h3>
+                <h3 class="text-base font-semibold text-[var(--fg-muted)] uppercase tracking-widest mb-8">Education</h3>
                 <div class="relative pl-6 sm:pl-10 border-l-2 border-[var(--bd-muted)]">
                   <!-- EMAI Master entry with three universities -->
                   <div class="timeline-item mb-12 reveal">
@@ -743,7 +509,7 @@
                 </div>
               </div>
               <div>
-                <h3 class="text-3xl font-bold text-white mb-8 text-center">Professional Experience</h3>
+                <h3 class="text-base font-semibold text-[var(--fg-muted)] uppercase tracking-widest mb-8">Experience</h3>
                 <div class="relative pl-6 sm:pl-10 border-l-2 border-[var(--bd-muted)]">
 
                   <!-- SAVEWARE (reverse order item 3) -->
@@ -818,7 +584,7 @@
             <div class="text-center mt-16">
               <a href="res/Jose_Hernandez_CV.pdf" target="_blank"
                 class="btn-brand flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-8 text-lg font-bold leading-normal tracking-[0.015em] transition-all duration-300 transform hover:scale-105 mx-auto">
-                <span class="truncate">Download full CV</span>
+                <span class="truncate">Curriculum Vitae</span>
               </a>
             </div>
           </div>
@@ -826,28 +592,17 @@
 
         <section class="px-4 sm:px-8 lg:px-20 py-12 sm:py-20" style="background: var(--bg-surface);">
           <div class="max-w-6xl mx-auto">
-            <p class="eyebrow text-center mb-4 reveal">Skills</p>
-            <h2 class="text-4xl font-bold leading-tight tracking-tight text-white text-center mb-12 reveal">Technical skills</h2>
+            <h2 class="text-xl sm:text-2xl font-bold leading-tight tracking-tight text-white mb-10 reveal">Work Stack</h2>
             <!-- Four vertical columns -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-10 text-white">
               <!-- Col 1: Frameworks & Libraries -->
               <div class="lg:border-l-0 lg:pl-0 border-t-4 lg:border-t-0 bd-skill-1 lg:pr-6">
-                <h3 class="text-2xl font-bold text-white mb-6">Frameworks &amp; Libraries</h3>
+                <h3 class="text-sm font-semibold text-[var(--fg-muted)] uppercase tracking-widest mb-6">Frameworks &amp; Libraries</h3>
                 <div class="grid grid-cols-2 gap-6">
                   <div class="flex flex-col items-center gap-2 skill-card">
                     <img alt="PyTorch" class="w-16 h-16"
                       src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" />
                     <p class="font-medium">PyTorch</p>
-                  </div>
-                  <div class="flex flex-col items-center gap-2 skill-card">
-                    <img alt="PyTorch Lightning" class="w-16 h-16 p-2 rounded-lg bg-white"
-                      src="https://cdn.simpleicons.org/lightning/792EE5" />
-                    <p class="font-medium">PyTorch Lightning</p>
-                  </div>
-                  <div class="flex flex-col items-center gap-2 skill-card">
-                    <img alt="TensorFlow" class="w-16 h-16"
-                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" />
-                    <p class="font-medium">TensorFlow</p>
                   </div>
                   <div class="flex flex-col items-center gap-2 skill-card">
                     <img alt="Scikit-Learn" class="w-16 h-16"
@@ -864,12 +619,17 @@
                       src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg" />
                     <p class="font-medium">OpenCV</p>
                   </div>
+                  <div class="flex flex-col items-center gap-2 skill-card">
+                    <img alt="Hugging Face" class="w-16 h-16"
+                      src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" />
+                    <p class="font-medium">Hugging Face</p>
+                  </div>
                 </div>
               </div>
 
               <!-- Col 2: Tools, Platforms & Cloud -->
               <div class="lg:border-l-4 border-t-4 lg:border-t-0 bd-skill-2 lg:pl-6 lg:pr-6">
-                <h3 class="text-2xl font-bold text-white mb-6">Tools, Platforms &amp; Cloud</h3>
+                <h3 class="text-sm font-semibold text-[var(--fg-muted)] uppercase tracking-widest mb-6">Tools, Platforms &amp; Cloud</h3>
                 <div class="grid grid-cols-2 gap-6">
                   <div class="flex flex-col items-center gap-2 skill-card">
                     <img alt="Docker" class="w-16 h-16"
@@ -882,11 +642,6 @@
                     <p class="font-medium">Git</p>
                   </div>
                   <div class="flex flex-col items-center gap-2 skill-card">
-                    <img alt="Linux" class="w-16 h-16"
-                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" />
-                    <p class="font-medium">Linux</p>
-                  </div>
-                  <div class="flex flex-col items-center gap-2 skill-card">
                     <img alt="PostgreSQL" class="w-16 h-16"
                       src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" />
                     <p class="font-medium">PostgreSQL</p>
@@ -896,16 +651,17 @@
                       src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" />
                     <p class="font-medium">AWS</p>
                   </div>
-                  <!-- <div class="flex flex-col items-center gap-2 skill-card">
-        <img alt="n8n" class="w-16 h-16" src="https://cdn.simpleicons.org/n8n/f05a4b"/>
-        <p class="font-medium">n8n</p>
-      </div> -->
+                  <div class="flex flex-col items-center gap-2 skill-card">
+                    <img alt="Weights & Biases" class="w-16 h-16 rounded-lg"
+                      src="https://avatars.githubusercontent.com/u/26401354" />
+                    <p class="font-medium">W&amp;B</p>
+                  </div>
                 </div>
               </div>
 
               <!-- Col 3: Robotics & Embedded -->
               <div class="lg:border-l-4 border-t-4 lg:border-t-0 bd-skill-3 lg:pl-6 lg:pr-6">
-                <h3 class="text-2xl font-bold text-white mb-6">Robotics &amp; Embedded</h3>
+                <h3 class="text-sm font-semibold text-[var(--fg-muted)] uppercase tracking-widest mb-6">Robotics &amp; Embedded</h3>
                 <div class="grid grid-cols-2 gap-6">
                   <div class="flex flex-col items-center gap-2 skill-card">
                     <img alt="ROS" class="w-24 h-16 p-2 rounded-lg bg-white"
@@ -932,7 +688,7 @@
 
               <!-- Col 4: Programming Languages -->
               <div class="lg:border-l-4 border-t-4 lg:border-t-0 bd-skill-4 lg:pl-6">
-                <h3 class="text-2xl font-bold text-white mb-6">Programming Languages</h3>
+                <h3 class="text-sm font-semibold text-[var(--fg-muted)] uppercase tracking-widest mb-6">Programming Languages</h3>
                 <div class="grid grid-cols-2 gap-6">
                   <div class="flex flex-col items-center gap-2 skill-card">
                     <img alt="Python" class="w-16 h-16"
@@ -956,12 +712,13 @@
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
         </section>
         <section class="px-4 sm:px-8 lg:px-20 py-12 sm:py-20">
           <div class="max-w-6xl mx-auto">
-            <p class="eyebrow text-center mb-4">Credentials</p>
-            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight tracking-tight text-white text-center mb-6 sm:mb-12">
-              Selected certifications
+            <h2 class="text-xl sm:text-2xl font-bold leading-tight tracking-tight text-white mb-6 sm:mb-12 reveal">
+              Selected Certifications
             </h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8 justify-items-center">
 

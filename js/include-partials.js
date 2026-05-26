@@ -231,7 +231,7 @@ function initializeFiltering() {
   };
 
   // Category chips
-  const categories = ['All', 'AI / Machine Learning', 'Robotics', 'Signal Processing / Embedded Systems'];
+  const categories = ['All', 'Artificial Intelligence', 'Robotics', 'Signal Processing / Embedded Systems'];
   const onCategoryClick = (val) => { selected.category = (selected.category === val ? 'All' : val); applyFilter(); };
   renderChips(categoryChips, categories, categoryStyle, onCategoryClick, (v) => selected.category === v);
 
