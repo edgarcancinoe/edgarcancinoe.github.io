@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const isActive = link.dataset.nav === page;
     link.classList.remove(...link.classList);
     if (link.closest('[data-nav-links]')) {
-      link.className = `text-xs font-medium ${isActive ? active : inactive}`;
+      link.className = `text-sm font-medium ${isActive ? active : inactive}`;
     } else {
       link.className = `py-2 ${isActive ? active + ' font-semibold' : ''}`;
       if (!link.nextElementSibling?.classList?.contains('flex')) {

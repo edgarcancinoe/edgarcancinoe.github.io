@@ -43,8 +43,8 @@
       .panel       { background: var(--bg-panel); border: 1px solid color-mix(in srgb, var(--bd-strong) 90%, transparent); box-shadow: none; }
       .btn-brand   { background: var(--brand); color: white; }
       .btn-brand:hover { background: var(--brand-600); box-shadow: none; }
-      .btn-ui      { display: inline-flex; align-items: center; justify-content: center; min-width: 8.75rem; padding: .72rem 1.35rem; border-radius: 9999px; border: 1px solid var(--brand-800); background: var(--brand-800); color: white; font-size: .95rem; font-weight: 600; line-height: 1; letter-spacing: .01em; transition: transform .18s ease, background-color .18s ease, border-color .18s ease, box-shadow .18s ease; box-shadow: 0 1px 0 rgba(255,255,255,.08) inset; }
-      .btn-ui:hover { background: var(--brand-900); border-color: var(--brand-900); transform: translateY(-1px); box-shadow: 0 8px 20px rgba(55,60,68,.12); }
+      .btn-ui      { display: inline-flex; align-items: center; justify-content: center; min-width: 8.75rem; padding: .72rem 1.35rem; border-radius: 9999px; border: 1px solid var(--brand-700); background: var(--brand-700); color: white; font-size: .95rem; font-weight: 600; line-height: 1; letter-spacing: .01em; transition: transform .18s ease, background-color .18s ease, border-color .18s ease, box-shadow .18s ease; box-shadow: 0 1px 0 rgba(255,255,255,.08) inset; }
+      .btn-ui:hover { background: var(--brand-800); border-color: var(--brand-800); transform: translateY(-1px); box-shadow: 0 8px 20px rgba(55,60,68,.12); }
       .btn-ui:focus-visible { outline: none; box-shadow: 0 0 0 3px rgba(245,247,251,.9), 0 0 0 5px rgba(67,73,81,.45); }
       .btn-ui-sm   { min-width: 7.5rem; padding: .68rem 1.2rem; font-size: .88rem; }
       .btn-ui-lg   { min-width: 12rem; padding: .88rem 1.7rem; font-size: 1rem; }
@@ -74,21 +74,6 @@
       transform: none;
       box-shadow: none;
     }
-    .timeline-item:before {
-      content: '';
-      position: absolute;
-      top: 24px;
-      left: calc(-1.5rem - 5px);
-      width: 10px;
-      height: 10px;
-      background-color: var(--bd-strong);
-      border-radius: 9999px;
-    }
-    @media (min-width: 640px) {
-      .timeline-item:before {
-        left: calc(-2.5rem - 5px);
-      }
-    }
     html { scroll-behavior: smooth; font-size: 90%; }
     .reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
     .reveal.show { opacity: 1; transform: none; }
@@ -109,26 +94,28 @@
         <section id="research" class="px-4 sm:px-8 lg:px-20 py-10 sm:py-14" style="background: var(--bg-surface);">
           <div class="max-w-7xl mx-auto">
             <div class="flex flex-col xl:flex-row xl:items-end xl:justify-between gap-5 mb-8">
-              <div class="max-w-3xl reveal">
-                <h2 class="text-xl sm:text-2xl font-bold leading-tight tracking-tight text-white mb-3">Research</h2>
-                <p class="text-[var(--fg-secondary)] text-sm sm:text-base">Current research in vision-language-action modeling and generative learning, with emphasis on explicit guidance, representation alignment, and controllable behavior.</p>
+              <div class="w-full reveal">
+                <h2 class="text-xl sm:text-2xl font-bold leading-tight tracking-tight text-white mb-3">Research Directions</h2>
+                <!-- <p class="text-[var(--fg-secondary)] text-sm sm:text-base">Vision-Language-Action (VLA), generative learning. </p> -->
+                <p class="text-[var(--fg-secondary)] text-sm sm:text-base mt-2">Interested in robotic control (VLA, world models), multimodal reasoning, and representation alignment.</p>
               </div>
             </div>
 
             <div class="reveal">
-              <article class="grid grid-cols-1 lg:grid-cols-[240px_1fr] gap-0 border-b border-[var(--bd-muted)]">
+              <article class="grid grid-cols-1 lg:grid-cols-[312px_1fr] gap-0 border-b border-[var(--bd-muted)]">
                 <div class="relative py-3">
                   <div class="aspect-[5/3] overflow-hidden">
                     <video loop muted playsinline preload="metadata" data-autoplay-visible class="h-full w-full object-contain" style="background: var(--bg-surface);">
-                      <source src="images/projects/language_conditioned_token_grounding/demo.mp4" type="video/mp4">
+                      <source src="images/projects/language_conditioned_token_grounding/query00.mp4" type="video/mp4">
                       <source src="images/projects/language_conditioned_token_grounding/demo.webm" type="video/webm">
                     </video>
                   </div>
                 </div>
                 <div class="py-4 lg:py-5 lg:pl-8">
-                  <p class="text-[var(--fg-muted)] text-[11px] uppercase tracking-[0.18em]">Grounding line · 2026</p>
-                  <h3 class="text-[#16202b] text-lg sm:text-xl font-semibold leading-snug mt-2">Explicit Guidance in Vision-Language-Action Models via Token Grounding</h3>
-                  <p class="text-[#66758a] text-sm sm:text-base mt-3 max-w-4xl">Language-conditioned queries score the native X-VLA image-token grid to expose which regions matter for the current manipulation step. This line is about asking the frozen representation where task relevance lives.</p>
+                  <p class="text-[var(--fg-muted)] text-[11px] uppercase tracking-[0.18em]">Thesis Work · 2026</p>
+                  <h3 class="text-[#16202b] text-lg sm:text-xl font-semibold leading-snug mt-2">Token Grounding in Vision-Language-Action Models</h3>
+                  <p class="text-[#66758a] text-sm sm:text-base mt-3 max-w-4xl">Language-conditioned queries score the native X-VLA image-token grid to expose which regions matter for the current manipulation step.</p>
+                  <p class="text-[var(--fg-muted)] text-xs mt-2"><a href="https://www.vicos.si" target="_blank" class="hover:text-[var(--fg-primary)] transition-colors">Visual Cognitive Systems Laboratory (ViCoS)</a></p>
                   <div class="flex flex-wrap gap-4 mt-4 text-sm">
                     <a href="projects/xvla_visual_thought/visual-thought-tokens.pdf" target="_blank" class="inline-flex items-center gap-1 text-[#5b8dd9] hover:text-[#3d6db5] transition-colors">
                       Report
@@ -142,7 +129,7 @@
                 </div>
               </article>
 
-              <article class="grid grid-cols-1 lg:grid-cols-[240px_1fr] gap-0 border-b border-[var(--bd-muted)]">
+              <article class="grid grid-cols-1 lg:grid-cols-[312px_1fr] gap-0 border-b border-[var(--bd-muted)]">
                 <div class="relative py-3">
                   <div class="aspect-[5/3] overflow-hidden">
                     <video loop muted playsinline preload="metadata" data-autoplay-visible class="h-full w-full object-contain" style="background: var(--bg-surface);">
@@ -152,9 +139,10 @@
                   </div>
                 </div>
                 <div class="py-4 lg:py-5 lg:pl-8">
-                  <p class="text-[var(--fg-muted)] text-[11px] uppercase tracking-[0.18em]">Distillation line · 2026</p>
+                  <p class="text-[var(--fg-muted)] text-[11px] uppercase tracking-[0.18em]">Thesis Work · 2026</p>
                   <h3 class="text-[#16202b] text-lg sm:text-xl font-semibold leading-snug mt-2">Expert Distillation from Frozen VLA Representations for Perceptual Guidance</h3>
-                  <p class="text-[#66758a] text-sm sm:text-base mt-3 max-w-4xl">The same frozen substrate is used differently here: recover expert perceptual structure such as DINOv2-like tokens or CeDiRNet-aligned maps that can support downstream guidance. This line is about extracting richer structure from the representation.</p>
+                  <p class="text-[#66758a] text-sm sm:text-base mt-3 max-w-4xl">Recover expert perceptual structure from X-VLA representations such as DINOv2-like tokens or CeDiRNet-aligned maps to can support action-generation via explicit guidance or representation alignment.</p>
+                  <p class="text-[var(--fg-muted)] text-xs mt-2"><a href="https://www.vicos.si" target="_blank" class="hover:text-[var(--fg-primary)] transition-colors">Visual Cognitive Systems Laboratory (ViCoS)</a></p>
                   <div class="flex flex-wrap gap-4 mt-4 text-sm">
                     <a href="projects/xvla_visual_thought/visual-thought-tokens.pdf" target="_blank" class="inline-flex items-center gap-1 text-[#5b8dd9] hover:text-[#3d6db5] transition-colors">
                       Report
@@ -168,7 +156,7 @@
                 </div>
               </article>
 
-              <article class="grid grid-cols-1 lg:grid-cols-[240px_1fr] gap-0">
+              <article class="grid grid-cols-1 lg:grid-cols-[312px_1fr] gap-0">
                 <div class="relative py-3">
                   <div class="aspect-[5/3] overflow-hidden">
                     <img alt="PIU identity unlearning examples" class="h-full w-full object-contain object-top" src="images/projects/piu/piu-card.png" style="background: var(--bg-surface);"/>
@@ -178,6 +166,7 @@
                   <p class="text-[var(--fg-muted)] text-[11px] uppercase tracking-[0.18em]">Preprint · 2026</p>
                   <h3 class="text-[#16202b] text-lg sm:text-xl font-semibold leading-snug mt-2">PIU: Proximity-guided Identity Unlearning in ID-Conditioned Diffusion Models</h3>
                   <p class="text-[#66758a] text-sm sm:text-base mt-3 max-w-4xl">Targeted identity unlearning for ID-conditioned diffusion models, aiming to forget requested identity information while preserving generation quality.</p>
+                  <p class="text-[var(--fg-muted)] text-xs mt-2"><a href="https://www.fri.uni-lj.si/en/laboratory/lrv-26" target="_blank" class="hover:text-[var(--fg-primary)] transition-colors">Computer Vision Laboratory</a>, University of Ljubljana</p>
                   <a href="https://arxiv.org/abs/2605.22311" target="_blank" class="mt-4 inline-flex items-center text-[#5b8dd9] hover:text-[#3d6db5] transition-colors">
                     <span class="text-sm font-medium">View arXiv</span>
                     <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
@@ -187,7 +176,7 @@
             </div>
 
             <div class="flex justify-center pt-8 reveal">
-              <a href="projects.html" class="btn-ui btn-ui-sm">
+              <a href="projects.html" class="btn-ui btn-ui-lg">
                 Projects
               </a>
             </div>
