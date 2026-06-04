@@ -5,9 +5,6 @@
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
   <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect" />
-  <link as="style"
-    href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Space+Grotesk%3Awght%40400%3B500%3B700&amp;family=Spline+Sans%3Awght%40400%3B500%3B700"
-    onload="this.rel='stylesheet'" rel="stylesheet" />
   <title>Jose Edgar Hernandez - Portfolio</title>
   <link href="logo.webp" rel="icon" type="image/webp" />
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
@@ -46,6 +43,11 @@
       .panel       { background: var(--bg-panel); border: 1px solid color-mix(in srgb, var(--bd-strong) 90%, transparent); box-shadow: none; }
       .btn-brand   { background: var(--brand); color: white; }
       .btn-brand:hover { background: var(--brand-600); box-shadow: none; }
+      .btn-ui      { display: inline-flex; align-items: center; justify-content: center; min-width: 8.75rem; padding: .72rem 1.35rem; border-radius: 9999px; border: 1px solid var(--brand-800); background: var(--brand-800); color: white; font-size: .95rem; font-weight: 600; line-height: 1; letter-spacing: .01em; transition: transform .18s ease, background-color .18s ease, border-color .18s ease, box-shadow .18s ease; box-shadow: 0 1px 0 rgba(255,255,255,.08) inset; }
+      .btn-ui:hover { background: var(--brand-900); border-color: var(--brand-900); transform: translateY(-1px); box-shadow: 0 8px 20px rgba(55,60,68,.12); }
+      .btn-ui:focus-visible { outline: none; box-shadow: 0 0 0 3px rgba(245,247,251,.9), 0 0 0 5px rgba(67,73,81,.45); }
+      .btn-ui-sm   { min-width: 7.5rem; padding: .68rem 1.2rem; font-size: .88rem; }
+      .btn-ui-lg   { min-width: 12rem; padding: .88rem 1.7rem; font-size: 1rem; }
       .ring-brand  { box-shadow: 0 0 0 2px var(--bg-root), 0 0 0 4px var(--brand); }
       .surface-elevated { background: var(--bg-panel-strong); border: 1px solid color-mix(in srgb, var(--bd-strong) 92%, transparent); box-shadow: none; }
       .eyebrow { color: var(--brand); font-size: .72rem; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; }
@@ -98,123 +100,95 @@
 
 <body>
   <div class="relative flex size-full min-h-screen flex-col group/design-root overflow-x-hidden"
-    style='font-family: "Spline Sans", "Noto Sans", sans-serif; background: #f5f7fb;'>
+    style='font-family: "Mozilla Text", "Noto Sans", sans-serif; background: #f5f7fb;'>
     <div class="layout-container flex h-full grow flex-col">
       <div id="site-header"></div>
       <script src="js/shared-header.js"></script>
       <main class="flex-1 pb-24">
 
-        <section id="research" class="px-4 sm:px-8 lg:px-20 py-10 sm:py-14">
+        <section id="research" class="px-4 sm:px-8 lg:px-20 py-10 sm:py-14" style="background: var(--bg-surface);">
           <div class="max-w-7xl mx-auto">
-            <h2 class="text-3xl sm:text-3xl font-bold leading-tight tracking-tight text-white mb-8 reveal">Research</h2>
-            <div class="divide-y divide-[var(--bd-muted)]">
-
-              <div class="py-5 reveal">
-                <h3 class="text-[var(--fg-primary)] text-[15px] font-semibold leading-snug font-['Space_Grotesk',_sans-serif]">Explicit Guidance in Vision-Language-Action Models</h3>
-                <p class="text-[var(--fg-muted)] text-xs mt-1.5">Thesis work &nbsp;·&nbsp; 2026</p>
-                <p class="text-[var(--fg-secondary)] text-sm mt-2">A study of expert distillation and lightweight visual-thought token grounding for explicit perceptual guidance.</p>
+            <div class="flex flex-col xl:flex-row xl:items-end xl:justify-between gap-5 mb-8">
+              <div class="max-w-3xl reveal">
+                <h2 class="text-xl sm:text-2xl font-bold leading-tight tracking-tight text-white mb-3">Research</h2>
+                <p class="text-[var(--fg-secondary)] text-sm sm:text-base">Current research in vision-language-action modeling and generative learning, with emphasis on explicit guidance, representation alignment, and controllable behavior.</p>
               </div>
-
-              <div class="py-5 reveal">
-                <h3 class="text-[var(--fg-primary)] text-[15px] font-semibold leading-snug font-['Space_Grotesk',_sans-serif]">Language-Conditioned Token Grounding for Manipulation</h3>
-                <p class="text-[var(--fg-muted)] text-xs mt-1.5">Work in progress &nbsp;·&nbsp; 2026</p>
-                <p class="text-[var(--fg-secondary)] text-sm mt-2">Ongoing work on lightweight token grounding mechanisms for explicit perceptual guidance in language-conditioned manipulation.</p>
-              </div>
-
-              <div class="py-5 reveal">
-                <h3 class="text-[var(--fg-primary)] text-[15px] font-semibold leading-snug font-['Space_Grotesk',_sans-serif]">Visual Expert Distillation for Robot Perception</h3>
-                <p class="text-[var(--fg-muted)] text-xs mt-1.5">Work in progress &nbsp;·&nbsp; 2026</p>
-                <p class="text-[var(--fg-secondary)] text-sm mt-2">Ongoing work on distilling expert visual representations into lightweight perception modules for robotic downstream tasks.</p>
-              </div>
-
-              <div class="py-5 reveal">
-                <h3 class="text-[var(--fg-primary)] text-[15px] font-semibold leading-snug font-['Space_Grotesk',_sans-serif]">PIU: Proximity-guided Identity Unlearning in ID-Conditioned Diffusion Models</h3>
-                <p class="text-[var(--fg-muted)] text-xs mt-1.5">Preprint &nbsp;·&nbsp; arXiv preprint, submitted to ICJB26 &nbsp;·&nbsp; 2026</p>
-                <p class="text-[var(--fg-secondary)] text-sm mt-2">Identity unlearning in ID-conditioned diffusion models: targeted unlearning while preserving generation utility.</p>
-                <a href="https://arxiv.org/abs/2605.22311" target="_blank" class="mt-2.5 inline-flex items-center gap-1 text-xs text-[#5b8dd9] hover:text-[#3d6db5] transition-colors">
-                  arXiv: 2605.22311
-                  <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-                </a>
-              </div>
-
             </div>
-          </div>
-        </section>
 
-        <section id="featured" class="px-4 sm:px-8 lg:px-20 py-16 sm:py-24" style="background: var(--bg-surface);">
-          <div class="max-w-7xl mx-auto">
-            <h2 class="text-xl sm:text-2xl font-bold leading-tight tracking-tight text-white mb-4 reveal">
-              Recent work
-            </h2>
-            <p class="text-[var(--fg-secondary)] text-sm sm:text-base max-w-3xl mb-8 reveal">
-              Robotics, machine learning, and embedded systems work.
-            </p>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              <div class="project-card">
-                <div class="flex h-full flex-col overflow-hidden rounded-[22px] border border-[#cfd6de] bg-[#ffffff]">
-                  <div class="aspect-[4/3] overflow-hidden border-b border-[#d7e0ea] bg-white p-3">
-                    <video loop muted playsinline preload="metadata" data-autoplay-visible class="h-full w-full object-contain">
-                      <source src="images/projects/visual_expert_distillation/demo.mp4" type="video/mp4">
-                      <source src="images/projects/visual_expert_distillation/demo.webm" type="video/webm">
-                    </video>
-                  </div>
-                  <div class="p-5 sm:p-6">
-                  <div class="flex items-center justify-between gap-3">
-                    <span class="text-[#626b75] text-xs font-medium">Work in progress</span>
-                    <span class="text-xs text-[#818995]">2026</span>
-                  </div>
-                  <h3 class="text-[#16202b] text-lg font-semibold leading-snug mt-5">Visual Expert Distillation for Robot Perception</h3>
-                  <p class="text-[#66758a] text-sm mt-3">Distilling expert visual representations into lightweight perception modules that preserve useful structure for robotic downstream tasks.</p>
-                </div>
-                </div>
-
-              </div>
-              
-              <div class="project-card">
-                <div class="flex h-full flex-col overflow-hidden rounded-[22px] border border-[#cfd6de] bg-[#ffffff]">
-                  <div class="aspect-[4/3] overflow-hidden border-b border-[#d7e0ea] bg-white p-3">
-                    <video loop muted playsinline preload="metadata" data-autoplay-visible class="h-full w-full object-contain">
+            <div class="reveal">
+              <article class="grid grid-cols-1 lg:grid-cols-[240px_1fr] gap-0 border-b border-[var(--bd-muted)]">
+                <div class="relative py-3">
+                  <div class="aspect-[5/3] overflow-hidden">
+                    <video loop muted playsinline preload="metadata" data-autoplay-visible class="h-full w-full object-contain" style="background: var(--bg-surface);">
                       <source src="images/projects/language_conditioned_token_grounding/demo.mp4" type="video/mp4">
                       <source src="images/projects/language_conditioned_token_grounding/demo.webm" type="video/webm">
                     </video>
                   </div>
-                  <div class="p-5 sm:p-6">
-                  <div class="flex items-center justify-between gap-3">
-                    <span class="text-[#626b75] text-xs font-medium">Work in progress</span>
-                    <span class="text-xs text-[#818995]">2026</span>
-                  </div>
-                  <h3 class="text-[#16202b] text-lg font-semibold leading-snug mt-5">Language-Conditioned Token Grounding for Manipulation</h3>
-                  <p class="text-[#66758a] text-sm mt-3">Lightweight token grounding for explicit perceptual guidance, connecting language-conditioned representations to task-relevant visual evidence.</p>
                 </div>
-                </div>
-              </div>
-
-              <div class="project-card">
-                <div class="flex h-full flex-col overflow-hidden rounded-[22px] border border-[#cfd6de] bg-[#ffffff]">
-                  <div class="aspect-[4/3] overflow-hidden border-b border-[#d7e0ea] bg-white p-3">
-                    <img alt="PIU identity unlearning examples" class="h-full w-full object-contain object-top" src="images/projects/piu/piu-card.png"/>
-                  </div>
-                  <div class="p-5 sm:p-6">
-                  <div class="flex items-center justify-between gap-3">
-                    <span class="text-[#626b75] text-xs font-medium">Preprint</span>
-                    <span class="text-xs text-[#818995]">2026</span>
-                  </div>
-                  <h3 class="text-[#16202b] text-lg font-semibold leading-snug mt-5">PIU: Proximity-guided Identity Unlearning in ID-Conditioned Diffusion Models</h3>
-                  <p class="text-[#66758a] text-sm mt-3">Targeted identity unlearning for ID-conditioned diffusion models, with emphasis on forgetting requested identity information while preserving generation quality.</p>
-                  <div class="flex gap-4 mt-5">
-                    <a href="https://arxiv.org/abs/2605.22311" target="_blank" class="inline-flex items-center text-[#5b8dd9] hover:text-[#3d6db5] transition-colors">
-                      <span class="text-sm font-medium">View arXiv</span>
-                      <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                <div class="py-4 lg:py-5 lg:pl-8">
+                  <p class="text-[var(--fg-muted)] text-[11px] uppercase tracking-[0.18em]">Grounding line · 2026</p>
+                  <h3 class="text-[#16202b] text-lg sm:text-xl font-semibold leading-snug mt-2">Explicit Guidance in Vision-Language-Action Models via Token Grounding</h3>
+                  <p class="text-[#66758a] text-sm sm:text-base mt-3 max-w-4xl">Language-conditioned queries score the native X-VLA image-token grid to expose which regions matter for the current manipulation step. This line is about asking the frozen representation where task relevance lives.</p>
+                  <div class="flex flex-wrap gap-4 mt-4 text-sm">
+                    <a href="projects/xvla_visual_thought/visual-thought-tokens.pdf" target="_blank" class="inline-flex items-center gap-1 text-[#5b8dd9] hover:text-[#3d6db5] transition-colors">
+                      Report
+                      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9m-6-6 6 6"></path></svg>
+                    </a>
+                    <a href="https://github.com/edgarcancinoe/XVLA-VisualThought" target="_blank" class="inline-flex items-center gap-1 text-[#5b8dd9] hover:text-[#3d6db5] transition-colors">
+                      Repository
+                      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
                     </a>
                   </div>
                 </div>
+              </article>
+
+              <article class="grid grid-cols-1 lg:grid-cols-[240px_1fr] gap-0 border-b border-[var(--bd-muted)]">
+                <div class="relative py-3">
+                  <div class="aspect-[5/3] overflow-hidden">
+                    <video loop muted playsinline preload="metadata" data-autoplay-visible class="h-full w-full object-contain" style="background: var(--bg-surface);">
+                      <source src="images/projects/visual_expert_distillation/demo.mp4" type="video/mp4">
+                      <source src="images/projects/visual_expert_distillation/demo.webm" type="video/webm">
+                    </video>
+                  </div>
                 </div>
-              </div>
+                <div class="py-4 lg:py-5 lg:pl-8">
+                  <p class="text-[var(--fg-muted)] text-[11px] uppercase tracking-[0.18em]">Distillation line · 2026</p>
+                  <h3 class="text-[#16202b] text-lg sm:text-xl font-semibold leading-snug mt-2">Expert Distillation from Frozen VLA Representations for Perceptual Guidance</h3>
+                  <p class="text-[#66758a] text-sm sm:text-base mt-3 max-w-4xl">The same frozen substrate is used differently here: recover expert perceptual structure such as DINOv2-like tokens or CeDiRNet-aligned maps that can support downstream guidance. This line is about extracting richer structure from the representation.</p>
+                  <div class="flex flex-wrap gap-4 mt-4 text-sm">
+                    <a href="projects/xvla_visual_thought/visual-thought-tokens.pdf" target="_blank" class="inline-flex items-center gap-1 text-[#5b8dd9] hover:text-[#3d6db5] transition-colors">
+                      Report
+                      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9m-6-6 6 6"></path></svg>
+                    </a>
+                    <a href="https://github.com/edgarcancinoe/XVLA-VisualThought" target="_blank" class="inline-flex items-center gap-1 text-[#5b8dd9] hover:text-[#3d6db5] transition-colors">
+                      Repository
+                      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="grid grid-cols-1 lg:grid-cols-[240px_1fr] gap-0">
+                <div class="relative py-3">
+                  <div class="aspect-[5/3] overflow-hidden">
+                    <img alt="PIU identity unlearning examples" class="h-full w-full object-contain object-top" src="images/projects/piu/piu-card.png" style="background: var(--bg-surface);"/>
+                  </div>
+                </div>
+                <div class="py-4 lg:py-5 lg:pl-8">
+                  <p class="text-[var(--fg-muted)] text-[11px] uppercase tracking-[0.18em]">Preprint · 2026</p>
+                  <h3 class="text-[#16202b] text-lg sm:text-xl font-semibold leading-snug mt-2">PIU: Proximity-guided Identity Unlearning in ID-Conditioned Diffusion Models</h3>
+                  <p class="text-[#66758a] text-sm sm:text-base mt-3 max-w-4xl">Targeted identity unlearning for ID-conditioned diffusion models, aiming to forget requested identity information while preserving generation quality.</p>
+                  <a href="https://arxiv.org/abs/2605.22311" target="_blank" class="mt-4 inline-flex items-center text-[#5b8dd9] hover:text-[#3d6db5] transition-colors">
+                    <span class="text-sm font-medium">View arXiv</span>
+                    <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                  </a>
+                </div>
+              </article>
             </div>
-            <div class="text-center mt-8">
-              <a href="projects.html"
-                class="btn-brand inline-flex items-center justify-center rounded-full h-10 px-7 sm:px-8 min-w-[180px] sm:min-w-[200px] text-sm font-semibold leading-normal tracking-[0.015em] transition-colors">
-                <span class="truncate">All Projects</span>
+
+            <div class="flex justify-center pt-8 reveal">
+              <a href="projects.html" class="btn-ui btn-ui-sm">
+                Projects
               </a>
             </div>
           </div>
@@ -376,7 +350,7 @@
             </div>
             <div class="text-center mt-16">
               <a href="res/Jose_Hernandez_CV.pdf" target="_blank"
-                class="btn-brand flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-8 text-lg font-bold leading-normal tracking-[0.015em] transition-all duration-300 transform hover:scale-105 mx-auto">
+                class="btn-ui btn-ui-lg mx-auto">
                 <span class="truncate">Curriculum Vitae</span>
               </a>
             </div>
@@ -386,273 +360,45 @@
         <section class="px-4 sm:px-8 lg:px-20 py-12 sm:py-20" style="background: var(--bg-surface);">
           <div class="max-w-6xl mx-auto">
             <h2 class="text-xl sm:text-2xl font-bold leading-tight tracking-tight text-white mb-10 reveal">Work Stack</h2>
-            <!-- Four vertical columns -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-10 text-white">
-              <!-- Col 1: Frameworks & Libraries -->
-              <div class="lg:border-l-0 lg:pl-0 border-t-4 lg:border-t-0 bd-skill-1 lg:pr-6">
-                <h3 class="text-sm font-semibold text-[var(--fg-muted)] uppercase tracking-widest mb-6">Frameworks &amp; Libraries</h3>
-                <div class="grid grid-cols-2 gap-6">
-                  <div class="flex flex-col items-center gap-2 skill-card">
-                    <img alt="PyTorch" class="w-16 h-16"
-                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" />
-                    <p class="font-medium">PyTorch</p>
-                  </div>
-                  <div class="flex flex-col items-center gap-2 skill-card">
-                    <img alt="Scikit-Learn" class="w-16 h-16"
-                      src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" />
-                    <p class="font-medium">Scikit-Learn</p>
-                  </div>
-                  <div class="flex flex-col items-center gap-2 skill-card">
-                    <img alt="Pandas" class="w-16 h-16"
-                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" />
-                    <p class="font-medium">Pandas</p>
-                  </div>
-                  <div class="flex flex-col items-center gap-2 skill-card">
-                    <img alt="OpenCV" class="w-16 h-16"
-                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg" />
-                    <p class="font-medium">OpenCV</p>
-                  </div>
-                  <div class="flex flex-col items-center gap-2 skill-card">
-                    <img alt="Hugging Face" class="w-16 h-16"
-                      src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" />
-                    <p class="font-medium">Hugging Face</p>
-                  </div>
-                </div>
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-6 sm:gap-8 text-white">
+              <div class="flex flex-col items-center gap-2 skill-card reveal">
+                <img alt="PyTorch" class="w-16 h-16"
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" />
+                <p class="font-medium text-center">PyTorch</p>
               </div>
-
-              <!-- Col 2: Tools, Platforms & Cloud -->
-              <div class="lg:border-l-4 border-t-4 lg:border-t-0 bd-skill-2 lg:pl-6 lg:pr-6">
-                <h3 class="text-sm font-semibold text-[var(--fg-muted)] uppercase tracking-widest mb-6">Tools, Platforms &amp; Cloud</h3>
-                <div class="grid grid-cols-2 gap-6">
-                  <div class="flex flex-col items-center gap-2 skill-card">
-                    <img alt="Docker" class="w-16 h-16"
-                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" />
-                    <p class="font-medium">Docker</p>
-                  </div>
-                  <div class="flex flex-col items-center gap-2 skill-card">
-                    <img alt="Git" class="w-16 h-16"
-                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" />
-                    <p class="font-medium">Git</p>
-                  </div>
-                  <div class="flex flex-col items-center gap-2 skill-card">
-                    <img alt="PostgreSQL" class="w-16 h-16"
-                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" />
-                    <p class="font-medium">PostgreSQL</p>
-                  </div>
-                  <div class="flex flex-col items-center gap-2 skill-card">
-                    <img alt="AWS" class="w-16 h-16"
-                      src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" />
-                    <p class="font-medium">AWS</p>
-                  </div>
-                  <div class="flex flex-col items-center gap-2 skill-card">
-                    <img alt="Weights & Biases" class="w-16 h-16 rounded-lg"
-                      src="https://avatars.githubusercontent.com/u/26401354" />
-                    <p class="font-medium">W&amp;B</p>
-                  </div>
-                </div>
+              <div class="flex flex-col items-center gap-2 skill-card reveal">
+                <img alt="Hugging Face" class="w-16 h-16"
+                  src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" />
+                <p class="font-medium text-center">Hugging Face</p>
               </div>
-
-              <!-- Col 3: Robotics & Embedded -->
-              <div class="lg:border-l-4 border-t-4 lg:border-t-0 bd-skill-3 lg:pl-6 lg:pr-6">
-                <h3 class="text-sm font-semibold text-[var(--fg-muted)] uppercase tracking-widest mb-6">Robotics &amp; Embedded</h3>
-                <div class="grid grid-cols-2 gap-6">
-                  <div class="flex flex-col items-center gap-2 skill-card">
-                    <img alt="ROS" class="w-24 h-16 p-2 rounded-lg bg-white"
-                      src="https://upload.wikimedia.org/wikipedia/commons/b/bb/Ros_logo.svg" />
-                    <p class="font-medium">ROS</p>
-                  </div>
-                  <div class="flex flex-col items-center gap-2 skill-card">
-                    <img alt="NVIDIA Jetson" class="w-16 h-16"
-                      src="https://upload.wikimedia.org/wikipedia/commons/a/a4/NVIDIA_logo.svg" />
-                    <p class="font-medium">NVIDIA Jetson</p>
-                  </div>
-                  <div class="flex flex-col items-center gap-2 skill-card">
-                    <img alt="ESP32" class="w-16 h-16"
-                      src="https://upload.wikimedia.org/wikipedia/commons/2/22/Logo_von_Espressif.png" />
-                    <p class="font-medium">ESP32</p>
-                  </div>
-                  <div class="flex flex-col items-center gap-2 skill-card">
-                    <img alt="Arduino" class="w-16 h-16"
-                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg" />
-                    <p class="font-medium">Arduino</p>
-                  </div>
-                </div>
+              <div class="flex flex-col items-center gap-2 skill-card reveal">
+                <img alt="ROS" class="w-24 h-16 p-2 rounded-lg bg-white"
+                  src="https://upload.wikimedia.org/wikipedia/commons/b/bb/Ros_logo.svg" />
+                <p class="font-medium text-center">ROS</p>
               </div>
-
-              <!-- Col 4: Programming Languages -->
-              <div class="lg:border-l-4 border-t-4 lg:border-t-0 bd-skill-4 lg:pl-6">
-                <h3 class="text-sm font-semibold text-[var(--fg-muted)] uppercase tracking-widest mb-6">Programming Languages</h3>
-                <div class="grid grid-cols-2 gap-6">
-                  <div class="flex flex-col items-center gap-2 skill-card">
-                    <img alt="Python" class="w-16 h-16"
-                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" />
-                    <p class="font-medium">Python</p>
-                  </div>
-                  <div class="flex flex-col items-center gap-2 skill-card">
-                    <img alt="C++" class="w-16 h-16"
-                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" />
-                    <p class="font-medium">C++</p>
-                  </div>
-                  <div class="flex flex-col items-center gap-2 skill-card">
-                    <img alt="MATLAB" class="w-16 h-16"
-                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matlab/matlab-original.svg" />
-                    <p class="font-medium">MATLAB</p>
-                  </div>
-                  <div class="flex flex-col items-center gap-2 skill-card">
-                    <img alt="R" class="w-16 h-16"
-                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/r/r-original.svg" />
-                    <p class="font-medium">R</p>
-                  </div>
-                </div>
+              <div class="flex flex-col items-center gap-2 skill-card reveal">
+                <img alt="Docker" class="w-16 h-16"
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" />
+                <p class="font-medium text-center">Docker</p>
+              </div>
+              <div class="flex flex-col items-center gap-2 skill-card reveal">
+                <img alt="Weights & Biases" class="w-16 h-16 rounded-lg"
+                  src="https://avatars.githubusercontent.com/u/26401354" />
+                <p class="font-medium text-center">W&amp;B</p>
+              </div>
+              <div class="flex flex-col items-center gap-2 skill-card reveal">
+                <img alt="AWS" class="w-16 h-16"
+                  src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" />
+                <p class="font-medium text-center">AWS</p>
+              </div>
+              <div class="flex flex-col items-center gap-2 skill-card reveal">
+                <img alt="Google Cloud" class="w-16 h-16"
+                  src="https://upload.wikimedia.org/wikipedia/commons/5/51/Google_Cloud_logo.svg" />
+                <p class="font-medium text-center">Google Cloud</p>
               </div>
             </div>
           </div>
         </section>
-        <section class="px-4 sm:px-8 lg:px-20 py-12 sm:py-20">
-          <div class="max-w-6xl mx-auto">
-            <h2 class="text-xl sm:text-2xl font-bold leading-tight tracking-tight text-white mb-6 sm:mb-12 reveal">
-              Selected Certifications
-            </h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8 justify-items-center">
-
-              <!-- Data Science Diploma Program ITPE -->
-              <div
-                class="panel rounded-xl p-4 sm:p-6 flex flex-col items-start gap-4 transition-colors duration-300 reveal hover-card">
-                <div class="flex items-center gap-4">
-                  <img src="images/logos/itpe.webp" alt="DeepLearning.AI Logo" class="h-8 w-auto rounded" />
-                  <h3 class="text-[#16202b] text-xl font-semibold">Data Science Diploma</h3>
-                </div>
-                <p class="text-muted">
-                  <span class="mr-2">2021</span>|<span class="ml-2"></span><span class="text-xs">Instituto Tecnológico
-                    del Petróleo y Energía</span>
-                </p>
-                <p class="text-muted">60 hours diploma program covering Data cleaning, engineering and analysis, machine
-                  learning fundamentals, and data visualization.</p>
-                <div class="flex flex-wrap gap-2">
-                  <a href="images/ipte_diploma.pdf" target="_blank"
-                    class="mt-2 inline-flex items-center justify-center px-4 py-2 rounded-full btn-brand font-semibold transition-colors hover:scale-105">
-                    Download PDF
-                  </a>
-                </div>
-              </div>
-
-              <!-- CS50's Introduction to AI -->
-              <div
-                class="panel rounded-xl p-6 flex flex-col items-start gap-4 transition-colors duration-300 reveal hover-card">
-                <div class="flex items-center gap-4">
-                  <img src="images/logos/cs50.webp" alt="CS50 Logo" class="h-8 w-auto rounded" />
-                  <h3 class="text-[#16202b] text-xl font-semibold">CS50's Introduction to AI</h3>
-                </div>
-                <p class="text-muted">
-                  <span class="mr-2">2024</span>|<span class="ml-2">Harvard University - CS50</span>
-                </p>
-                <p class="text-muted">Comprehensive course combining search algorithms, logic, machine learning, neural
-                  networks, and language processing through hands-on Python projects.</p>
-                <a href="https://courses.edx.org/certificates/19bc0f7ea0e745a5923f29a596d4ad71" target="_blank"
-                  class="mt-2 inline-flex items-center justify-center px-4 py-2 rounded-full btn-brand font-semibold transition-colors">View
-                  Certificate</a>
-              </div>
-
-              <!-- Machine Learning Specialization -->
-              <div
-                class="panel rounded-xl p-6 flex flex-col items-start gap-4 transition-colors duration-300 reveal hover-card">
-                <div class="flex items-center gap-4">
-                  <img src="images/logos/dlai.webp" alt="DeepLearning.AI Logo" class="h-8 w-auto rounded" />
-                  <h3 class="text-[#16202b] text-xl font-semibold">Machine Learning Specialization</h3>
-                </div>
-                <p class="text-muted">
-                  <span class="mr-2">2024</span>|<span class="ml-2">DeepLearning.AI - Coursera</span>
-                </p>
-                <p class="text-muted">Supervised learning (regression, classification), unsupervised learning
-                  (clustering, recommender systems, RL foundations), and deep learning, along with practical machine
-                  learning workflows.</p>
-                <a href="https://coursera.org/verify/specialization/XH2FMWUHU5Y6" target="_blank"
-                  class="mt-2 inline-flex items-center justify-center px-4 py-2 rounded-full btn-brand font-semibold transition-colors">View
-                  Certificate</a>
-              </div>
-
-            </div>
-            <!-- Additional Certifications -->
-            <div class="mt-16">
-              <!-- <h3 class="text-2xl font-semibold text-center text-white mb-8">Additional Certifications</h3> -->
-              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-5xl mx-auto">
-                <!-- Certification 1 -->
-                <div
-                  class="panel rounded-xl p-4 sm:p-6 hover:border-[var(--brand)]/35 transition-all duration-200 hover:scale-[1.03]">
-                  <div class="flex flex-col items-center h-full">
-                    <h4 class="text-[#16202b] font-medium text-base mb-2 text-center">Astrobiology and the Search for
-                      Extraterrestrial Life</h4>
-                    <div class="flex items-center gap-2 text-[var(--fg-muted)] text-sm mb-4">
-                      <span>2020</span>
-                      <span class="text-[var(--fg-subtle)]">•</span>
-                      <span>Coursera | University of Edinburgh</span>
-                    </div>
-                    <div class="mt-auto w-full">
-                      <a href="images/AstrobiologyUofEdinburgh.pdf" target="_blank"
-                        class="w-full flex items-center justify-center px-4 py-2 text-sm rounded-full btn-brand font-medium transition-colors">
-                        <span>View Certificate</span>
-                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                        </svg>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Certification 2 -->
-                <div
-                  class="panel rounded-xl p-4 sm:p-6 hover:border-[var(--brand)]/35 transition-all duration-200 hover:scale-[1.03]">
-                  <div class="flex flex-col items-center h-full">
-                    <h4 class="text-[#16202b] font-medium text-base mb-2 text-center">Master the Fourier Transform and its
-                      Applications</h4>
-                    <div class="flex items-center gap-2 text-[var(--fg-muted)] text-sm mb-4">
-                      <span>2021</span>
-                      <span class="text-[var(--fg-subtle)]">•</span>
-                      <span>Udemy | Mike X Cohen</span>
-                    </div>
-                    <div class="mt-auto w-full">
-                      <a href="images/Fourier.pdf" target="_blank"
-                        class="w-full flex items-center justify-center px-4 py-2 text-sm rounded-full btn-brand font-medium transition-colors">
-                        <span>View Certificate</span>
-                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                        </svg>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Certification 3 -->
-                <div
-                  class="panel rounded-xl p-4 sm:p-6 hover:border-[var(--brand)]/35 transition-all duration-200 hover:scale-[1.03]">
-                  <div class="flex flex-col items-center h-full">
-                    <h4 class="text-[#16202b] font-medium text-base mb-2 text-center">Building Database Applications in PHP
-                    </h4>
-                    <div class="flex items-center gap-2 text-[var(--fg-muted)] text-sm mb-4">
-                      <span>2021</span>
-                      <span class="text-[var(--fg-subtle)]">•</span>
-                      <span>University of Michigan</span>
-                    </div>
-                    <div class="mt-auto w-full">
-                      <a href="images/PHPUofMichigan.pdf" target="_blank"
-                        class="w-full flex items-center justify-center px-4 py-2 text-sm rounded-full btn-brand font-medium transition-colors">
-                        <span>View Certificate</span>
-                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                        </svg>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-          </div>
-        </section>
-
       </main>
     </div>
     <footer id="contact"
