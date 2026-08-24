@@ -105,24 +105,6 @@
               <article class="grid grid-cols-1 lg:grid-cols-[312px_1fr] gap-0 border-b border-[var(--bd-muted)]">
                 <div class="relative py-3">
                   <div class="aspect-[5/3] overflow-hidden">
-                    <img alt="PIU identity unlearning examples" class="h-full w-full object-contain object-top" src="images/projects/piu/piu-card.png" style="background: var(--bg-surface);"/>
-                  </div>
-                </div>
-                <div class="py-4 lg:py-5 lg:pl-8">
-                  <p class="text-[var(--fg-muted)] text-[11px] uppercase tracking-[0.18em]">First author · Accepted at IJCB · 2026</p>
-                  <h3 class="text-[#16202b] text-lg sm:text-xl font-semibold leading-snug mt-2">PIU: Proximity-guided Identity Unlearning in ID-Conditioned Diffusion Models</h3>
-                  <p class="text-[#66758a] text-sm sm:text-base mt-3 max-w-4xl">Targeted identity unlearning for ID-conditioned diffusion models, aiming to forget requested identity information while preserving generation quality.</p>
-                  <p class="text-[var(--fg-muted)] text-xs mt-2"><a href="https://www.fri.uni-lj.si/en/laboratory/lrv-26" target="_blank" class="hover:text-[var(--fg-primary)] transition-colors">Computer Vision Laboratory</a>, University of Ljubljana</p>
-                  <a href="https://arxiv.org/abs/2605.22311" target="_blank" class="mt-4 inline-flex items-center text-[#5b8dd9] hover:text-[#3d6db5] transition-colors">
-                    <span class="text-sm font-medium">View arXiv</span>
-                    <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-                  </a>
-                </div>
-              </article>
-
-              <article class="grid grid-cols-1 lg:grid-cols-[312px_1fr] gap-0 border-b border-[var(--bd-muted)]">
-                <div class="relative py-3">
-                  <div class="aspect-[5/3] overflow-hidden">
                     <video loop muted playsinline preload="metadata" data-autoplay-visible class="h-full w-full object-contain" style="background: var(--bg-surface);">
                       <source src="images/projects/language_conditioned_token_grounding/query00.mp4" type="video/mp4">
                       <source src="images/projects/language_conditioned_token_grounding/demo.webm" type="video/webm">
@@ -135,8 +117,37 @@
                   <p class="text-[#66758a] text-sm sm:text-base mt-3 max-w-4xl">Language-conditioned queries score the native X-VLA image-token grid to expose which regions matter for the current manipulation step.</p>
                   <p class="text-[var(--fg-muted)] text-xs mt-2"><a href="https://www.vicos.si" target="_blank" class="hover:text-[var(--fg-primary)] transition-colors">Visual Cognitive Systems Laboratory (ViCoS)</a></p>
                   <div class="flex flex-wrap gap-4 mt-4 text-sm">
+                    <a href="research.html#token-grounding" class="inline-flex items-center text-[#5b8dd9] hover:text-[#3d6db5] transition-colors font-medium">Explore project →</a>
                     <a href="https://edgarcancinoe.github.io/projects/xvla_visual_thought/visual-thought-tokens.pdf" target="_blank" class="inline-flex items-center gap-1 text-[#5b8dd9] hover:text-[#3d6db5] transition-colors">
                       Report
+                      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9m-6-6 6 6"></path></svg>
+                    </a>
+                    <a href="https://github.com/edgarcancinoe/XVLA-VisualThought" target="_blank" class="inline-flex items-center gap-1 text-[#5b8dd9] hover:text-[#3d6db5] transition-colors">
+                      Repository
+                      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="grid grid-cols-1 lg:grid-cols-[312px_1fr] gap-0 border-b border-[var(--bd-muted)]">
+                <div class="relative py-3">
+                  <div class="aspect-[5/3] overflow-hidden">
+                    <video loop muted playsinline preload="metadata" data-autoplay-visible class="h-full w-full object-contain" style="background: var(--bg-surface);">
+                      <source src="images/projects/visual_expert_distillation/demo.mp4" type="video/mp4">
+                      <source src="images/projects/visual_expert_distillation/demo.webm" type="video/webm">
+                    </video>
+                  </div>
+                </div>
+                <div class="py-4 lg:py-5 lg:pl-8">
+                  <p class="text-[var(--fg-muted)] text-[11px] uppercase tracking-[0.18em]">Thesis Work · 2026</p>
+                  <h3 class="text-[#16202b] text-lg sm:text-xl font-semibold leading-snug mt-2">Expert Distillation from Frozen VLA Representations for Perceptual Guidance</h3>
+                  <p class="text-[#66758a] text-sm sm:text-base mt-3 max-w-4xl">Recover expert perceptual structure from X-VLA representations such as DINOv2-like tokens or CeDiRNet-aligned maps to support action generation via explicit guidance or representation alignment.</p>
+                  <p class="text-[var(--fg-muted)] text-xs mt-2"><a href="https://www.vicos.si" target="_blank" class="hover:text-[var(--fg-primary)] transition-colors">Visual Cognitive Systems Laboratory (ViCoS)</a></p>
+                  <div class="flex flex-wrap gap-4 mt-4 text-sm">
+                    <a href="research.html#expert-distillation" class="inline-flex items-center text-[#5b8dd9] hover:text-[#3d6db5] transition-colors font-medium">Explore project →</a>
+                    <a href="projects/xvla_visual_thought/masters-thesis.pdf" target="_blank" class="inline-flex items-center gap-1 text-[#5b8dd9] hover:text-[#3d6db5] transition-colors">
+                      Thesis
                       <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9m-6-6 6 6"></path></svg>
                     </a>
                     <a href="https://github.com/edgarcancinoe/XVLA-VisualThought" target="_blank" class="inline-flex items-center gap-1 text-[#5b8dd9] hover:text-[#3d6db5] transition-colors">
@@ -150,25 +161,19 @@
               <article class="grid grid-cols-1 lg:grid-cols-[312px_1fr] gap-0">
                 <div class="relative py-3">
                   <div class="aspect-[5/3] overflow-hidden">
-                    <video loop muted playsinline preload="metadata" data-autoplay-visible class="h-full w-full object-contain" style="background: var(--bg-surface);">
-                      <source src="images/projects/visual_expert_distillation/demo.mp4" type="video/mp4">
-                      <source src="images/projects/visual_expert_distillation/demo.webm" type="video/webm">
-                    </video>
+                    <img alt="PIU identity unlearning examples" class="h-full w-full object-contain object-top" src="images/projects/piu/piu-card.png" style="background: var(--bg-surface);"/>
                   </div>
                 </div>
                 <div class="py-4 lg:py-5 lg:pl-8">
-                  <p class="text-[var(--fg-muted)] text-[11px] uppercase tracking-[0.18em]">Thesis Work · 2026</p>
-                  <h3 class="text-[#16202b] text-lg sm:text-xl font-semibold leading-snug mt-2">Expert Distillation from Frozen VLA Representations for Perceptual Guidance</h3>
-                  <p class="text-[#66758a] text-sm sm:text-base mt-3 max-w-4xl">Recover expert perceptual structure from X-VLA representations such as DINOv2-like tokens or CeDiRNet-aligned maps to can support action-generation via explicit guidance or representation alignment.</p>
-                  <p class="text-[var(--fg-muted)] text-xs mt-2"><a href="https://www.vicos.si" target="_blank" class="hover:text-[var(--fg-primary)] transition-colors">Visual Cognitive Systems Laboratory (ViCoS)</a></p>
+                  <p class="text-[var(--fg-muted)] text-[11px] uppercase tracking-[0.18em]">First author · Accepted at IJCB · 2026</p>
+                  <h3 class="text-[#16202b] text-lg sm:text-xl font-semibold leading-snug mt-2">PIU: Proximity-guided Identity Unlearning in ID-Conditioned Diffusion Models</h3>
+                  <p class="text-[#66758a] text-sm sm:text-base mt-3 max-w-4xl">Targeted identity unlearning for ID-conditioned diffusion models, aiming to forget requested identity information while preserving generation quality.</p>
+                  <p class="text-[var(--fg-muted)] text-xs mt-2"><a href="https://www.fri.uni-lj.si/en/laboratory/lrv-26" target="_blank" class="hover:text-[var(--fg-primary)] transition-colors">Computer Vision Laboratory</a>, University of Ljubljana</p>
                   <div class="flex flex-wrap gap-4 mt-4 text-sm">
-                    <a href="projects/xvla_visual_thought/masters-thesis.pdf" target="_blank" class="inline-flex items-center gap-1 text-[#5b8dd9] hover:text-[#3d6db5] transition-colors">
-                      Thesis
-                      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9m-6-6 6 6"></path></svg>
-                    </a>
-                    <a href="https://github.com/edgarcancinoe/XVLA-VisualThought" target="_blank" class="inline-flex items-center gap-1 text-[#5b8dd9] hover:text-[#3d6db5] transition-colors">
-                      Repository
-                      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    <a href="research.html#piu" class="inline-flex items-center text-[#5b8dd9] hover:text-[#3d6db5] transition-colors font-medium">Explore project →</a>
+                    <a href="https://arxiv.org/abs/2605.22311" target="_blank" class="inline-flex items-center text-[#5b8dd9] hover:text-[#3d6db5] transition-colors">
+                      <span class="text-sm font-medium">View arXiv</span>
+                      <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
                     </a>
                   </div>
                 </div>
@@ -202,7 +207,7 @@
                         <p class="text-[var(--brand)] text-sm font-semibold mb-1">2024 - 2026</p>
                         <h4 class="text-[#16202b] text-2xl font-bold">MSc in Artificial Intelligence</h4>
                         <p class="text-gray-400 text-lg">Erasmus Mundus Joint Master in Artificial Intelligence</p>
-                        <p class="text-gray-200">Specialisation in <strong>Data Science</strong> at the
+                        <p class="text-gray-200">Specialization in <strong>Data Science</strong> at the
                           <strong>University of Ljubljana.</strong>
                         </p><br>
                         <div class="mt-3 grid grid-cols-1 sm:grid-cols-3 gap-4 items-center">

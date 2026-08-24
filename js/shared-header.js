@@ -11,11 +11,12 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
 
   const page = location.pathname.split('/').pop().replace('.html', '') || 'index';
+  const navPage = page === 'research' ? 'projects' : page;
   const active = 'text-[var(--brand)]';
   const inactive = 'text-[var(--fg-subtle)] hover:text-[var(--fg-primary)] transition-colors';
 
   slot.querySelectorAll('[data-nav]').forEach(link => {
-    const isActive = link.dataset.nav === page;
+    const isActive = link.dataset.nav === navPage;
     link.classList.remove(...link.classList);
     if (link.closest('[data-nav-links]')) {
       link.className = `text-sm font-medium ${isActive ? active : inactive}`;
