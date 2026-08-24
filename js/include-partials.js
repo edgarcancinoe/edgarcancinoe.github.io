@@ -35,7 +35,7 @@ function initializePreviewMedia() {
     video.muted = true;
     video.loop = true;
     video.playsInline = true;
-    video.preload = 'metadata';
+    video.preload = video.getAttribute('preload') || 'metadata';
     if (prefersReduced) {
       video.removeAttribute('autoplay');
       video.pause();
