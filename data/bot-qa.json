@@ -1,22 +1,28 @@
 [
   {
-    "q": "What did your thesis on VLAs explore?",
-    "a": "",
-    "link": { "label": "Open the thesis", "href": "projects/xvla_visual_thought/masters-thesis.pdf" }
-  },
-  {
-    "q": "What is PIU about?",
-    "a": "",
-    "link": { "label": "Read the paper", "href": "https://arxiv.org/abs/2605.22311" }
-  },
-  {
     "q": "What are you looking for next?",
-    "a": "",
+    "a": "A role close to research, in real-world settings: staying at the frontier of robot learning and bringing it out of the lab and onto actual robots. Based in Spain and open to relocating.",
     "link": null
   },
   {
+    "q": "What did your thesis on VLAs explore?",
+    "a": "Fine-tuning a vision-language-action model on a real robot, then extracting expert-distilled perceptual information from its multimodal backbone and using it to steer action generation, either as regularization or as explicit guidance.",
+    "link": {
+      "label": "Open the thesis",
+      "href": "projects/xvla_visual_thought/masters-thesis.pdf"
+    }
+  },
+  {
+    "q": "Have you worked with real robots?",
+    "a": "Yes, real robots and full robotic systems: xArm6 and UR5 arms, the SO-101 with LeRobot, NVIDIA Jetson boards, and ROS tying it all together.",
+    "link": {
+      "label": "Robotics projects",
+      "href": "projects.html#robotics"
+    }
+  },
+  {
     "q": "Robotics or AI? Research or engineering?",
-    "a": "",
+    "a": "Both. I'm trained to think scientifically, and I understand the engineering it takes to make an idea work in the real world.",
     "link": null
   }
 ]
