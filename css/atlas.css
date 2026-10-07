@@ -19,6 +19,13 @@
 
 * { box-sizing: border-box; }
 html, body { margin: 0; }
+html {
+  -webkit-tap-highlight-color: transparent; /* our own :active states give press feedback */
+  -webkit-text-size-adjust: 100%;           /* no font inflation in landscape on iOS */
+}
+a, button { touch-action: manipulation; }
+/* Controls, not content: no long-press text selection. Body text stays selectable. */
+.at-btn, .at-bar nav, .at-bot, .at-tag { -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; }
 body {
   background: var(--bg);
   color: var(--ink);
@@ -37,9 +44,9 @@ a { color: inherit; text-decoration: none; }
 /* ── Motion ──
    .in: staggered entrance for above-the-fold content (first paint only).
    .rv: reveal once when scrolled into view (js/atlas.js adds .show). */
-.in { opacity: 0; transform: translateY(10px); animation: at-in 600ms var(--ease-out) forwards; animation-delay: calc(var(--i, 0) * 70ms); }
+.in { opacity: 0; transform: translateY(10px); animation: at-in 400ms var(--ease-out) forwards; animation-delay: calc(var(--i, 0) * 50ms); }
 @keyframes at-in { to { opacity: 1; transform: none; } }
-.js .rv { opacity: 0; transform: translateY(12px); transition: opacity 500ms var(--ease-out), transform 500ms var(--ease-out); }
+.js .rv { opacity: 0; transform: translateY(12px); transition: opacity 400ms var(--ease-out), transform 400ms var(--ease-out); }
 .js .rv.show { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) {
   .in { transform: none; animation: at-fade 300ms ease forwards; animation-delay: 0ms; }
@@ -71,10 +78,10 @@ a { color: inherit; text-decoration: none; }
 /* ── Hero ── */
 .at-hero { padding: 44px 0 0; }
 .at-kicker { display: flex; justify-content: space-between; border-bottom: 1px solid var(--line); padding-bottom: 10px; color: var(--ink2); }
-.at-top { display: grid; grid-template-columns: 3fr 2fr; gap: 48px; padding-top: 26px; }
+.at-top { display: grid; grid-template-columns: 4fr 3fr; gap: 48px; padding-top: 26px; }
 .at-name { font-weight: 800; font-size: clamp(1.25rem, 2vw, 1.6rem); line-height: 1; letter-spacing: -0.02em; margin: 0; text-transform: uppercase; }
 .at-name .dot { color: var(--red); }
-.at-lead { font-size: clamp(1.55rem, 2.7vw, 2.3rem); line-height: 1.16; letter-spacing: -0.028em; margin: 18px 0 0; font-weight: 500; text-wrap: balance; }
+.at-lead { font-size: clamp(1.35rem, 2.2vw, 1.9rem); line-height: 1.2; letter-spacing: -0.024em; margin: 18px 0 0; font-weight: 500; text-wrap: balance; }
 .at-lead b { font-weight: 700; color: var(--red); }
 .at-ctas { display: flex; gap: 8px; margin-top: 22px; flex-wrap: wrap; }
 
@@ -245,6 +252,7 @@ a { color: inherit; text-decoration: none; }
 .at-bot-menu .go { color: var(--ink2); transition: transform 200ms var(--ease-out), color 150ms ease; }
 .at-bot-menu .q .qt { font-family: var(--font-sans); font-size: 13.5px; text-transform: none; letter-spacing: 0; line-height: 1.35; text-wrap: pretty; padding-right: 8px; }
 .at-bot-menu :focus-visible { outline-offset: -2px; }
+.at-bot-menu a:not(.more):active, .at-bot-menu .q:active { background: color-mix(in srgb, var(--ink) 8%, transparent); }
 @media (hover: hover) and (pointer: fine) {
   .at-bot-menu a:not(.more):hover, .at-bot-menu .q:hover { background: var(--ink); color: var(--bg); }
   .at-bot-menu a:not(.more):hover .go, .at-bot-menu .q:hover .go { color: var(--bg); transform: translateX(2px); }
@@ -278,7 +286,7 @@ a { color: inherit; text-decoration: none; }
 @media (max-width: 600px) { #at-bot { display: none; } }
 
 /* ── Responsive ── */
-@media (max-width: 1024px) {
+@media (max-width: 1099px) {
   .at-top { grid-template-columns: 1fr; gap: 28px; }
 }
 @media (max-width: 900px) {
@@ -316,3 +324,14 @@ a { color: inherit; text-decoration: none; }
 .at-ul, .at-spec a.s, .at-txt .lab a, .at-prose a { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; text-decoration-color: color-mix(in srgb, var(--ink) 28%, transparent); transition: color 150ms ease, text-decoration-color 150ms ease; }
 @media (hover: hover) and (pointer: fine) { .at-ul:hover, .at-spec a.s:hover, .at-txt .lab a:hover, .at-prose a:hover { color: var(--red); text-decoration-color: var(--red); } }
 @media (max-width: 360px) { .at-name { font-size: 1.08rem; } }
+
+/* More contrast requested: hairlines and secondary text go full ink. */
+@media (prefers-contrast: more) {
+  :root { --line: rgba(18, 18, 18, .55); --ink2: #2b2a27; }
+  .at-bar { background: var(--bg); -webkit-backdrop-filter: none; backdrop-filter: none; }
+}
+
+/* Worst-case data (break-ui): long unbreakable titles (file names, repo slugs) break only when they must,
+   and a card or plate without media drops the empty frame instead of showing a grey box. */
+.at-h1, .at-lead, .at-card h3, .at-txt h3, .at-plate h2, .at-tl-body h3, .at-prose, .at-card .sum { overflow-wrap: anywhere; }
+.at-fig:has(> .m:empty) { display: none; }
