@@ -2,226 +2,79 @@
 <html lang="en">
 
 <head>
-  <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect" />
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact - Jose Edgar Hernandez</title>
-  <link href="logo.webp" rel="icon" type="image/webp" />
-  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-  <style type="text/tailwindcss">
-    @layer base {
-        :root {
-          --bg-root:        #f5f7fb;
-          --bg-surface:     #eff1f4;
-          --bg-panel:       #ffffff;
-          --bg-panel-strong:#fafbfc;
-          --bd-muted:       #d8dde4;
-          --bd-strong:      #cfd6de;
-
-          --fg-primary:     #181c20;
-          --fg-secondary:   #48515c;
-          --fg-muted:       #66707c;
-          --fg-subtle:      #818995;
-
-          --brand:          #6a727d;
-          --brand-600:      #5c646f;
-          --brand-700:      #4f5660;
-          --brand-800:      #434951;
-          --brand-900:      #373c44;
-          --brand-tint:     #626b75;
-        }
-      }
-    @layer utilities {
-      .panel { background: var(--bg-panel); border: 1px solid color-mix(in srgb, var(--bd-strong) 82%, transparent); box-shadow: none; }
-      .btn-brand { background: var(--brand); color: white; }
-      .btn-brand:hover { background: var(--brand-600); box-shadow: none; }
-      .eyebrow { color: var(--brand); font-size: .72rem; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; }
-      .soft-pill { background: rgba(79,86,96,.06); color: var(--brand-tint); border: 1px solid rgba(79,86,96,.14); }
-      .text-white { color: var(--fg-primary) !important; }
-      .text-gray-400 { color: var(--fg-muted) !important; }
-      .text-gray-300 { color: var(--fg-secondary) !important; }
-      .text-gray-200 { color: var(--fg-secondary) !important; }
-    }
-    html { font-size: 90%; }
-    </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact — J. Edgar Hernandez</title>
+  <meta name="description" content="Get in touch with J. Edgar Hernandez about AI research and engineering." />
+  <meta name="theme-color" content="#efebe2" />
+  <link rel="icon" href="logo.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=IBM+Plex+Mono:wght@400;500&display=swap" />
+  <link rel="stylesheet" href="css/atlas.css" />
+  <script>document.documentElement.classList.add('js');</script>
 </head>
 
-<body style='font-family: "Mozilla Text", "Noto Sans", sans-serif; background: #f5f7fb;'>
-  <div class="relative flex size-full min-h-screen flex-col overflow-x-hidden">
-    <div class="flex min-h-screen flex-col">
-      <div id="site-header"></div>
-      <script src="js/shared-header.js"></script>
-      <main class="flex-1">
-        <section class="py-10 sm:py-16 px-5 sm:px-6">
-          <div class="mx-auto max-w-6xl">
-            <div class="grid grid-cols-1 gap-6 lg:grid-cols-[minmax(0,320px)_minmax(0,1fr)]">
-              <div class="panel rounded-[8px] p-5 sm:p-6">
-                <h1 class="text-3xl font-black tracking-tight text-white sm:text-4xl">Let’s talk</h1>
-                <div class="mt-6 space-y-3">
-                  <div class="p-0">
-                    <p class="text-[var(--fg-muted)] text-xs font-semibold uppercase tracking-[0.16em]">Based In</p>
-                    <p class="text-[#16202b] text-sm font-semibold mt-2">Ljubljana, Slovenia</p>
-                  </div>
-                  <div class="p-0 pt-2">
-                    <p class="text-[var(--fg-muted)] text-xs font-semibold uppercase tracking-[0.16em]">Best For</p>
-                    <p class="text-[#16202b] text-sm font-semibold mt-2">AI Research and Engineering</p>
-                  </div>
-                </div>
-              </div>
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-github" viewBox="0 0 16 16"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></symbol>
+    <symbol id="i-paper" viewBox="0 0 16 16"><g fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"><path d="M3.5 1.5h6l3 3v10h-9z"/><path d="M9.5 1.5v3h3M5.5 8h5M5.5 10.5h5M5.5 13h3"/></g></symbol>
+    <symbol id="i-play" viewBox="0 0 16 16"><g fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"><rect x="1.5" y="3" width="13" height="10" rx="2"/><path d="M6.5 5.8v4.4L10.2 8z" fill="currentColor"/></g></symbol>
+    <symbol id="i-linkedin" viewBox="0 0 16 16"><path fill="currentColor" d="M3.6 5.3H1.3V14h2.3zM2.4 1.6a1.3 1.3 0 1 0 0 2.7 1.3 1.3 0 0 0 0-2.7zM14.7 9.2c0-2.4-1.3-3.9-3.3-3.9-1.1 0-1.9.6-2.2 1.2V5.3H7V14h2.3V9.6c0-1.2.4-2.1 1.5-2.1s1.5.9 1.5 2.1V14h2.4z"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 16 16"><g fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"><rect x="1.5" y="3" width="13" height="10" rx="1"/><path d="M1.8 3.5 8 8.5l6.2-5"/></g></symbol>
+    <symbol id="i-scholar" viewBox="0 0 16 16"><path fill="currentColor" d="M8 1.5 .6 6 8 10.5 15.4 6zM3.4 8.3v3.1c0 1.3 2.1 2.6 4.6 2.6s4.6-1.3 4.6-2.6V8.3L8 11.1z"/></symbol>
+    <symbol id="i-rg" viewBox="0 0 16 16"><rect x="1" y="1" width="14" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.3"/><text x="8" y="11.2" fill="currentColor" font-family="Arial, Helvetica, sans-serif" font-size="7.4" font-weight="700" text-anchor="middle">RG</text></symbol>
+  </svg>
+  <header class="at-bar at-mono">
+    <a href="index.html">J.E. Hernandez</a>
+    <nav aria-label="Primary">
+      <a href="index.html">Index</a>
+      <a href="research.html">Research</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html" aria-current="page">Contact</a>
+    </nav>
+    <span class="r">41.39°N 2.17°E · BCN</span>
+  </header>
 
-              <div class="panel rounded-[8px] p-5 sm:p-6 flex flex-col justify-center">
-                <div class="space-y-3 my-auto">
-                  <a class="flex w-full items-center gap-4 rounded-[5px] p-4 transition-colors hover:bg-[rgba(255,255,255,.92)] border border-transparent hover:border-[var(--bd-strong)]"
-                    href="mailto:edgarcancinoe@exatec.tec.mx">
-                    <div
-                      class="flex size-12 shrink-0 items-center justify-center rounded-md bg-white border border-[var(--bd-strong)] text-white">
-                      <svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path
-                          d="M224,48H32a8,8,0,0,0-8,8V192a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A8,8,0,0,0,224,48Zm-96,85.15L52.57,64H203.43ZM98.71,128,40,181.81V74.19Zm11.84,10.85,12,11.05a8,8,0,0,0,10.82,0l12-11.05,58,53.15H52.57ZM157.29,128,216,74.18V181.82Z">
-                        </path>
-                      </svg>
-                    </div>
-                    <div class="flex-1 min-w-0">
-                      <p class="text-base font-semibold text-white">Email</p>
-                      <p class="text-sm text-[var(--fg-muted)] truncate">edgarcancinoe@exatec.tec.mx</p>
-                    </div>
-                    <button type="button"
-                      class="ml-auto inline-flex items-center gap-2 justify-center rounded-full border border-[var(--bd-strong)] px-5 h-12 text-base text-gray-200 hover:text-[#16202b] hover:border-[var(--brand)] transition-colors shrink-0"
-                      aria-label="Copy email" title="Copy to clipboard" data-copy="edgarcancinoe@exatec.tec.mx">
-                      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
-                      </svg>
-                      <span class="hidden sm:inline">Copy</span>
-                    </button>
-                  </a>
-                  <a class="flex w-full items-center gap-4 rounded-[5px] p-4 transition-colors hover:bg-[rgba(255,255,255,.92)] border border-transparent hover:border-[var(--bd-strong)]"
-                    href="mailto:jh65312@student.uni-lj.si">
-                    <div
-                      class="flex size-12 shrink-0 items-center justify-center rounded-md bg-white border border-[var(--bd-strong)] text-white">
-                      <svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path
-                          d="M224,48H32a8,8,0,0,0-8,8V192a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A8,8,0,0,0,224,48Zm-96,85.15L52.57,64H203.43ZM98.71,128,40,181.81V74.19Zm11.84,10.85,12,11.05a8,8,0,0,0,10.82,0l12-11.05,58,53.15H52.57ZM157.29,128,216,74.18V181.82Z">
-                        </path>
-                      </svg>
-                    </div>
-                    <div class="flex-1 min-w-0">
-                      <p class="text-base font-semibold text-white">Academic Email</p>
-                      <p class="text-sm text-[var(--fg-muted)] truncate">jh65312@student.uni-lj.si</p>
-                    </div>
-                    <button type="button"
-                      class="ml-auto inline-flex items-center gap-2 justify-center rounded-full border border-[var(--bd-strong)] px-5 h-12 text-base text-gray-200 hover:text-[#16202b] hover:border-[var(--brand)] transition-colors shrink-0"
-                      aria-label="Copy email" title="Copy to clipboard" data-copy="jh65312@student.uni-lj.si">
-                      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
-                      </svg>
-                      <span class="hidden sm:inline">Copy</span>
-                    </button>
-                  </a>
-                  <a class="flex items-center gap-4 rounded-[5px] p-4 transition-colors hover:bg-[rgba(255,255,255,.92)] border border-transparent hover:border-[var(--bd-strong)]"
-                    href="https://www.linkedin.com/in/edgar-cancino/" target="_blank">
-                    <div
-                      class="flex size-12 shrink-0 items-center justify-center rounded-md bg-white border border-[var(--bd-strong)] text-white">
-                      <svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path
-                          d="M216,24H40A16,16,0,0,0,24,40V216a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V40A16,16,0,0,0,216,24Zm0,192H40V40H216V216ZM96,112v64a8,8,0,0,1-16,0V112a8,8,0,0,1,16,0Zm88,28v36a8,8,0,0,1-16,0V140a20,20,0,0,0-40,0v36a8,8,0,0,1-16,0V112a8,8,0,0,1,15.79-1.78A36,36,0,0,1,184,140ZM100,84A12,12,0,1,1,88,72,12,12,0,0,1,100,84Z">
-                        </path>
-                      </svg>
-                    </div>
-                    <div>
-                      <p class="text-base font-semibold text-white">LinkedIn</p>
-                      <p class="text-sm text-[var(--fg-muted)]">linkedin.com/in/edgar-cancino</p>
-                    </div>
-                  </a>
-                  <a class="flex items-center gap-4 rounded-[5px] p-4 transition-colors hover:bg-[rgba(255,255,255,.92)] border border-transparent hover:border-[var(--bd-strong)]"
-                    href="https://github.com/edgarcancinoe" target="_blank">
-                    <div
-                      class="flex size-12 shrink-0 items-center justify-center rounded-md bg-white border border-[var(--bd-strong)] text-white">
-                      <svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path
-                          d="M208.31,75.68A59.78,59.78,0,0,0,202.93,28,8,8,0,0,0,196,24a59.75,59.75,0,0,0-48,24H124A59.75,59.75,0,0,0,76,24a8,8,0,0,0-6.93,4,59.78,59.78,0,0,0-5.38,47.68A58.14,58.14,0,0,0,56,104v8a56.06,56.06,0,0,0,48.44,55.47A39.8,39.8,0,0,0,96,192v8H72a24,24,0,0,1-24-24A40,40,0,0,0,8,136a8,8,0,0,0,0,16,24,24,0,0,1,24,24,40,40,0,0,0,40,40H96v16a8,8,0,0,0,16,0V192a24,24,0,0,1,48,0v40a8,8,0,0,0,16,0V192a39.8,39.8,0,0,0-8.44-24.53A56.06,56.06,0,0,0,216,112v-8A58.14,58.14,0,0,0,208.31,75.68ZM200,112a40,40,0,0,1-40,40H112a40,40,0,0,1-40-40v-8a41.74,41.74,0,0,1,6.9-22.48A8,8,0,0,0,80,73.83a43.81,43.81,0,0,1,.79-33.58,43.88,43.88,0,0,1,32.32,20.06A8,8,0,0,0,119.82,64h32.35a8,8,0,0,0,6.74-3.69,43.87,43.87,0,0,1,32.32-20.06A43.81,43.81,0,0,1,192,73.83a8.09,8.09,0,0,0,1,7.65A41.72,41.72,0,0,1,200,104Z">
-                        </path>
-                      </svg>
-                    </div>
-                    <div>
-                      <p class="text-base font-semibold text-white">GitHub</p>
-                      <p class="text-sm text-[var(--fg-muted)]">github.com/edgarcancinoe</p>
-                    </div>
-                  </a>
-                </div>
-              </div>
-            </div>
-        </section>
-      </main>
-      <footer id="contact"
-        class="border-t border-solid border-t-[var(--bd-muted)] px-5 sm:px-10 py-4 z-50"
-        style="background: color-mix(in srgb, var(--bg-root) 94%, transparent);">
-        <div class="max-w-7xl mx-auto flex justify-between items-center text-white">
-          <div class="flex items-center gap-3">
-            <p class="text-[var(--fg-secondary)] text-sm"> 2026<span class="text-subtle mr-2 ml-2">|</span>
-              <span class="sm:hidden"> J.E.H.C.E.</span>
-              <span class="hidden sm:inline"> Jose Edgar Hernandez Cancino Estrada</span>
-            </p>
-            <!-- <span class="text-subtle">|</span> -->
-            <!-- <p class="text-[var(--fg-secondary)] text-sm">edgarcancinoe@gmail.com</p> -->
-          </div>
-          <div class="hidden sm:flex items-center gap-4">
-            <a class="text-gray-300 hover:text-[var(--brand)] transition-colors"
-              href="https://www.linkedin.com/in/edgar-cancino/">
-              <svg class="feather feather-linkedin" fill="none" height="20" stroke="currentColor" stroke-linecap="round"
-                stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20"
-                xmlns="http://www.w3.org/2000/svg">
-                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                <rect height="12" width="4" x="2" y="9"></rect>
-                <circle cx="4" cy="4" r="2"></circle>
-              </svg>
-            </a>
-            <a class="text-gray-300 hover:text-[var(--brand)] transition-colors"
-              href="https://github.com/edgarcancinoe">
-              <svg class="feather feather-github" fill="none" height="20" stroke="currentColor" stroke-linecap="round"
-                stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20"
-                xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-                </path>
-              </svg>
-            </a>
-          </div>
+  <main class="at-wrap">
+    <section class="at-page">
+      <div class="at-kicker at-mono in" style="--i:0"><span>Contact</span><span>Get in touch</span></div>
+      <div class="at-top">
+        <div class="in" style="--i:1">
+          <h1 class="at-h1 at-x" style="margin-top:0">Let’s talk.</h1>
         </div>
-      </footer>
+        <dl class="at-spec in" style="--i:2">
+          <div><dt class="at-mono">Based In</dt><dd>Barcelona, Spain</dd></div>
+          <div><dt class="at-mono">Best For</dt><dd>AI Research and Robotics Engineering</dd></div>
+        </dl>
+      </div>
+      <div class="at-contact in" style="--i:3">
+        <div class="at-crow"><span class="k at-mono">Email</span><span class="v">edgarcancinoe@gmail.com</span><span class="a at-mono"><button type="button" class="at-btn" data-copy="edgarcancinoe@gmail.com">Copy</button><a class="at-btn fill" href="mailto:edgarcancinoe@gmail.com"><svg aria-hidden="true"><use href="#i-mail"/></svg>Write →</a></span></div>
+        <div class="at-crow"><span class="k at-mono">LinkedIn</span><span class="v">linkedin.com/in/edgar-cancino</span><span class="a at-mono"><a class="at-btn fill" href="https://www.linkedin.com/in/edgar-cancino/" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-linkedin"/></svg>Open ↗</a></span></div>
+        <div class="at-crow"><span class="k at-mono">GitHub</span><span class="v">github.com/edgarcancinoe</span><span class="a at-mono"><a class="at-btn fill" href="https://github.com/edgarcancinoe" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-github"/></svg>Open ↗</a></span></div>
+        <div class="at-crow"><span class="k at-mono">Google Scholar</span><span class="v">scholar.google.com</span><span class="a at-mono"><a class="at-btn fill" href="https://scholar.google.com/citations?user=yNqv2bcAAAAJ" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-scholar"/></svg>Open ↗</a></span></div>
+        <div class="at-crow"><span class="k at-mono">ResearchGate</span><span class="v">researchgate.net</span><span class="a at-mono"><a class="at-btn fill" href="https://www.researchgate.net/profile/Jose-Hernandez-Cancino-Estrada-2" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-rg"/></svg>Open ↗</a></span></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="at-foot at-mono">
+    <div class="at-wrap">
+      <span class="at-copy"><span>edgarcancinoe@gmail.com</span><button type="button" class="at-btn" data-copy="edgarcancinoe@gmail.com">Copy</button></span>
+      <div class="links">
+        <a class="at-btn" href="https://github.com/edgarcancinoe" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-github"/></svg>GitHub ↗</a>
+        <a class="at-btn" href="https://www.linkedin.com/in/edgar-cancino/" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a class="at-btn" href="https://scholar.google.com/citations?user=yNqv2bcAAAAJ" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-scholar"/></svg>Scholar ↗</a>
+        <a class="at-btn" href="https://www.researchgate.net/profile/Jose-Hernandez-Cancino-Estrada-2" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-rg"/></svg>ResearchGate ↗</a>
+        <a class="at-btn" href="res/Jose_E_Hernandez_CV.pdf" target="_blank" rel="noopener">CV ↓</a>
+      </div>
+      <span class="c">© 2026 J. Edgar Hernandez</span>
     </div>
-  </div>
+  </footer>
 
-  <script>
-    // Copy-to-clipboard buttons
-    document.querySelectorAll('[data-copy]').forEach(function (btn) {
-      btn.addEventListener('click', async function (e) {
-        // prevent parent anchors (like mailto) from firing
-        e.preventDefault();
-        e.stopPropagation();
-        const text = this.getAttribute('data-copy');
-        try {
-          await navigator.clipboard.writeText(text);
-          const original = this.textContent;
-          this.textContent = 'Copied';
-          this.style.borderColor = 'var(--brand)';
-          this.style.color = 'var(--fg-primary)';
-          setTimeout(() => { this.textContent = original; this.style.borderColor = ''; this.style.color = ''; }, 1500);
-        } catch (e) {
-          console.error('Copy failed', e);
-        }
-      });
-    });
-
-  </script>
-
+  <div id="at-bot" data-root=""></div>
+  <script src="js/atlas.js"></script>
+  <script src="js/bot.js" defer></script>
 </body>
 
 </html>

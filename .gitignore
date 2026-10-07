@@ -1,1 +1,15 @@
+# Editor / agent tooling (local only)
 .vscode/*
+.claude/*
+.agents/*
+skills-lock.json
+
+# Dependencies (rebuild with `npm install`)
+node_modules/
+
+# Python
+__pycache__/
+*.pyc
+
+# macOS
+.DS_Store

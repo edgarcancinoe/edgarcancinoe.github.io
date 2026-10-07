@@ -1,0 +1,13 @@
+{
+  "dependencies": {
+    "bot-avatars": "^0.2.2",
+    "img-fx": "^0.5.1",
+    "three": "^0.186.1"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2"
+  },
+  "scripts": {
+    "build:bot": "esbuild js/src/bot.jsx --bundle --minify --format=iife --jsx=automatic --define:process.env.NODE_ENV='\"production\"' --outfile=js/bot.js"
+  }
+}

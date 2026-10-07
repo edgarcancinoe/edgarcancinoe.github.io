@@ -3,532 +3,212 @@
 
 <head>
   <meta charset="utf-8" />
-  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-  <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect" />
-  <title>Jose Edgar Hernandez - Portfolio</title>
-  <link href="logo.webp" rel="icon" type="image/webp" />
-  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-  <style type="text/tailwindcss">
-    @layer base {
-      :root {
-        --bg-root:        #f5f7fb;
-        --bg-surface:     #eff1f4;
-        --bg-panel:       #ffffff;
-        --bg-panel-strong:#fafbfc;
-        --bd-muted:       #d8dde4;
-        --bd-strong:      #cfd6de;
-
-        --fg-primary:     #181c20;
-        --fg-secondary:   #48515c;
-        --fg-muted:       #66707c;
-        --fg-subtle:      #818995;
-
-        --brand:          #6a727d;
-        --brand-600:      #5c646f;
-        --brand-700:      #4f5660;
-        --brand-800:      #434951;
-        --brand-900:      #373c44;
-        --brand-tint:     #626b75;
-
-        --accent-600:     #8a919b;
-        --accent-800:     #d2d7de;
-
-        --shadow-strong:  0 6px 18px rgba(2,10,22,.08);
-      }
-    }
-
-    @layer utilities {
-      .text-muted  { color: var(--fg-muted); }
-      .text-subtle { color: var(--fg-subtle); }
-      .panel       { background: var(--bg-panel); border: 1px solid color-mix(in srgb, var(--bd-strong) 90%, transparent); box-shadow: none; }
-      .btn-brand   { background: var(--brand); color: white; }
-      .btn-brand:hover { background: var(--brand-600); box-shadow: none; }
-      .btn-ui      { display: inline-flex; align-items: center; justify-content: center; min-width: 8.75rem; padding: .72rem 1.35rem; border-radius: 9999px; border: 1px solid var(--brand-700); background: var(--brand-700); color: white; font-size: .95rem; font-weight: 600; line-height: 1; letter-spacing: .01em; transition: transform .18s ease, background-color .18s ease, border-color .18s ease, box-shadow .18s ease; box-shadow: 0 1px 0 rgba(255,255,255,.08) inset; }
-      .btn-ui:hover { background: var(--brand-800); border-color: var(--brand-800); transform: translateY(-1px); box-shadow: 0 8px 20px rgba(55,60,68,.12); }
-      .btn-ui:focus-visible { outline: none; box-shadow: 0 0 0 3px rgba(245,247,251,.9), 0 0 0 5px rgba(67,73,81,.45); }
-      .btn-ui-sm   { min-width: 7.5rem; padding: .68rem 1.2rem; font-size: .88rem; }
-      .btn-ui-lg   { min-width: 12rem; padding: .88rem 1.7rem; font-size: 1rem; }
-      .ring-brand  { box-shadow: 0 0 0 2px var(--bg-root), 0 0 0 4px var(--brand); }
-      .surface-elevated { background: var(--bg-panel-strong); border: 1px solid color-mix(in srgb, var(--bd-strong) 92%, transparent); box-shadow: none; }
-      .eyebrow { color: var(--brand); font-size: .72rem; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; }
-      .soft-pill { background: rgba(79,86,96,.06); color: var(--brand-tint); border: 1px solid rgba(79,86,96,.14); }
-      .section-shell { border: 1px solid color-mix(in srgb, var(--bd-strong) 90%, transparent); background: var(--bg-panel-strong); box-shadow: none; }
-
-      .grad-brand  { background: #eceff3; }
-      .grad-accent { background: #eceff3; }
-      .grad-slate  { background: #eceff3; }
-
-      .bd-skill-1 { border-color: color-mix(in srgb, var(--brand) 54%, transparent); }
-      .bd-skill-2 { border-color: color-mix(in srgb, var(--brand) 30%, transparent); }
-      .bd-skill-3 { border-color: color-mix(in srgb, var(--accent-600) 28%, transparent); }
-      .bd-skill-4 { border-color: color-mix(in srgb, var(--brand-800) 40%, transparent); }
-      .text-white { color: var(--fg-primary) !important; }
-      .text-gray-400 { color: var(--fg-muted) !important; }
-      .text-gray-300 { color: var(--fg-secondary) !important; }
-      .text-gray-200 { color: var(--fg-secondary) !important; }
-    }
-    .skill-card {
-      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
-    }
-    .skill-card:hover {
-      transform: none;
-      box-shadow: none;
-    }
-    html { scroll-behavior: smooth; font-size: 90%; }
-    .reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
-    .reveal.show { opacity: 1; transform: none; }
-    @media (prefers-reduced-motion: reduce) {
-      .reveal { transition: none; opacity: 1; transform: none; }
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>J. Edgar Hernandez — Robot learning research</title>
+  <meta name="description" content="J. Edgar Hernandez works on generative and robot learning: vision-language-action models, multimodal reasoning and representation alignment." />
+  <meta name="theme-color" content="#efebe2" />
+  <link rel="icon" href="logo.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=IBM+Plex+Mono:wght@400;500&display=swap" />
+  <link rel="stylesheet" href="css/atlas.css" />
+  <script>document.documentElement.classList.add('js');</script>
 </head>
 
 <body>
-  <div class="relative flex size-full min-h-screen flex-col group/design-root overflow-x-hidden"
-    style='font-family: "Mozilla Text", "Noto Sans", sans-serif; background: #f5f7fb;'>
-    <div class="layout-container flex h-full grow flex-col">
-      <div id="site-header"></div>
-      <script src="js/shared-header.js"></script>
-      <main class="flex-1 pb-24">
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-github" viewBox="0 0 16 16"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></symbol>
+    <symbol id="i-paper" viewBox="0 0 16 16"><g fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"><path d="M3.5 1.5h6l3 3v10h-9z"/><path d="M9.5 1.5v3h3M5.5 8h5M5.5 10.5h5M5.5 13h3"/></g></symbol>
+    <symbol id="i-scholar" viewBox="0 0 16 16"><path fill="currentColor" d="M8 1.5 .6 6 8 10.5 15.4 6zM3.4 8.3v3.1c0 1.3 2.1 2.6 4.6 2.6s4.6-1.3 4.6-2.6V8.3L8 11.1z"/></symbol>
+    <symbol id="i-rg" viewBox="0 0 16 16"><rect x="1" y="1" width="14" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.3"/><text x="8" y="11.2" fill="currentColor" font-family="Arial, Helvetica, sans-serif" font-size="7.4" font-weight="700" text-anchor="middle">RG</text></symbol>
+  </svg>
+  <header class="at-bar at-mono">
+    <a href="index.html">J.E. Hernandez</a>
+    <nav aria-label="Primary">
+      <a href="index.html" aria-current="page">Index</a>
+      <a href="research.html">Research</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <span class="r">41.39°N 2.17°E · BCN</span>
+  </header>
 
-        <section id="research" class="px-4 sm:px-8 lg:px-20 py-10 sm:py-14" style="background: var(--bg-surface);">
-          <div class="max-w-7xl mx-auto">
-            <div class="flex flex-col xl:flex-row xl:items-end xl:justify-between gap-5 mb-8">
-              <div class="w-full reveal">
-                <h2 class="text-xl sm:text-2xl font-bold leading-tight tracking-tight text-white mb-3">Research Directions</h2>
-                <!-- <p class="text-[var(--fg-secondary)] text-sm sm:text-base">Vision-Language-Action (VLA), generative learning. </p> -->
-                <p class="text-[var(--fg-secondary)] text-sm sm:text-base mt-2">Interested in robotic control (VLA, world models), multimodal reasoning, and representation alignment.</p>
-              </div>
-            </div>
-
-            <div class="reveal">
-              <article class="grid grid-cols-1 lg:grid-cols-[312px_1fr] gap-0 border-b border-[var(--bd-muted)]">
-                <div class="relative py-3">
-                  <div class="aspect-[5/3] overflow-hidden">
-                    <video loop muted playsinline preload="none" poster="images/projects/language_conditioned_token_grounding/query00-poster.webp" data-autoplay-visible class="h-full w-full object-contain" style="background: var(--bg-surface);">
-                      <source src="images/projects/language_conditioned_token_grounding/query00-web.mp4" type="video/mp4">
-                    </video>
-                  </div>
-                </div>
-                <div class="py-4 lg:py-5 lg:pl-8">
-                  <p class="text-[var(--fg-muted)] text-[11px] uppercase tracking-[0.18em]">Research Project · 2026</p>
-                  <h3 class="text-[#16202b] text-lg sm:text-xl font-semibold leading-snug mt-2">Token Grounding in Vision-Language-Action Models</h3>
-                  <p class="text-[#66758a] text-sm sm:text-base mt-3 max-w-4xl">Language-conditioned queries score the native X-VLA image-token grid to expose which regions matter for the current manipulation step.</p>
-                  <p class="text-[var(--fg-muted)] text-xs mt-2"><a href="https://www.vicos.si" target="_blank" class="hover:text-[var(--fg-primary)] transition-colors">Visual Cognitive Systems Laboratory (ViCoS)</a></p>
-                  <div class="flex flex-wrap gap-4 mt-4 text-sm">
-                    <a href="research.html#token-grounding" class="inline-flex items-center text-[#5b8dd9] hover:text-[#3d6db5] transition-colors font-medium">Explore →</a>
-                    <a href="https://edgarcancinoe.github.io/projects/xvla_visual_thought/visual-thought-tokens.pdf" target="_blank" class="inline-flex items-center gap-1 text-[#5b8dd9] hover:text-[#3d6db5] transition-colors">
-                      Report
-                      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9m-6-6 6 6"></path></svg>
-                    </a>
-                    <a href="https://github.com/edgarcancinoe/XVLA-VisualThought" target="_blank" class="inline-flex items-center gap-1 text-[#5b8dd9] hover:text-[#3d6db5] transition-colors">
-                      Repository
-                      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-                    </a>
-                  </div>
-                </div>
-              </article>
-
-              <article class="grid grid-cols-1 lg:grid-cols-[312px_1fr] gap-0 border-b border-[var(--bd-muted)]">
-                <div class="relative py-3">
-                  <div class="aspect-[5/3] overflow-hidden">
-                    <video loop muted playsinline preload="metadata" data-autoplay-visible class="h-full w-full object-contain" style="background: var(--bg-surface);">
-                      <source src="images/projects/visual_expert_distillation/demo.mp4" type="video/mp4">
-                      <source src="images/projects/visual_expert_distillation/demo.webm" type="video/webm">
-                    </video>
-                  </div>
-                </div>
-                <div class="py-4 lg:py-5 lg:pl-8">
-                  <p class="text-[var(--fg-muted)] text-[11px] uppercase tracking-[0.18em]">Thesis Work · 2026</p>
-                  <h3 class="text-[#16202b] text-lg sm:text-xl font-semibold leading-snug mt-2">Expert Distillation from Frozen VLA Representations for Perceptual Guidance</h3>
-                  <p class="text-[#66758a] text-sm sm:text-base mt-3 max-w-4xl">Recover expert perceptual structure from X-VLA representations such as DINOv2-like tokens or CeDiRNet-aligned maps to support action generation via explicit guidance or representation alignment.</p>
-                  <p class="text-[var(--fg-muted)] text-xs mt-2"><a href="https://www.vicos.si" target="_blank" class="hover:text-[var(--fg-primary)] transition-colors">Visual Cognitive Systems Laboratory (ViCoS)</a></p>
-                  <div class="flex flex-wrap gap-4 mt-4 text-sm">
-                    <a href="research.html#expert-distillation" class="inline-flex items-center text-[#5b8dd9] hover:text-[#3d6db5] transition-colors font-medium">Explore →</a>
-                    <a href="projects/xvla_visual_thought/masters-thesis.pdf" target="_blank" class="inline-flex items-center gap-1 text-[#5b8dd9] hover:text-[#3d6db5] transition-colors">
-                      Thesis
-                      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9m-6-6 6 6"></path></svg>
-                    </a>
-                    <a href="https://github.com/edgarcancinoe/XVLA-VisualThought" target="_blank" class="inline-flex items-center gap-1 text-[#5b8dd9] hover:text-[#3d6db5] transition-colors">
-                      Repository
-                      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-                    </a>
-                  </div>
-                </div>
-              </article>
-
-              <article class="grid grid-cols-1 lg:grid-cols-[312px_1fr] gap-0">
-                <div class="relative py-3">
-                  <div class="aspect-[5/3] overflow-hidden">
-                    <img alt="PIU identity unlearning examples" class="h-full w-full object-contain object-top" src="images/projects/piu/piu-card.png" style="background: var(--bg-surface);"/>
-                  </div>
-                </div>
-                <div class="py-4 lg:py-5 lg:pl-8">
-                  <p class="text-[var(--fg-muted)] text-[11px] uppercase tracking-[0.18em]">First author · Accepted at IJCB · 2026</p>
-                  <h3 class="text-[#16202b] text-lg sm:text-xl font-semibold leading-snug mt-2">PIU: Proximity-guided Identity Unlearning in ID-Conditioned Diffusion Models</h3>
-                  <p class="text-[#66758a] text-sm sm:text-base mt-3 max-w-4xl">Targeted identity unlearning for ID-conditioned diffusion models, aiming to forget requested identity information while preserving generation quality.</p>
-                  <p class="text-[var(--fg-muted)] text-xs mt-2"><a href="https://www.fri.uni-lj.si/en/laboratory/lrv-26" target="_blank" class="hover:text-[var(--fg-primary)] transition-colors">Computer Vision Laboratory</a>, University of Ljubljana</p>
-                  <div class="flex flex-wrap gap-4 mt-4 text-sm">
-                    <a href="research.html#piu" class="inline-flex items-center text-[#5b8dd9] hover:text-[#3d6db5] transition-colors font-medium">Explore →</a>
-                    <a href="https://arxiv.org/abs/2605.22311" target="_blank" class="inline-flex items-center text-[#5b8dd9] hover:text-[#3d6db5] transition-colors">
-                      <span class="text-sm font-medium">View arXiv</span>
-                      <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-                    </a>
-                  </div>
-                </div>
-              </article>
-
-            </div>
-
-            <div class="flex justify-center pt-8 reveal">
-              <a href="projects.html" class="btn-ui btn-ui-lg">
-                See more
-              </a>
-            </div>
+  <main class="at-wrap">
+    <section class="at-hero">
+      <div class="at-kicker at-mono in" style="--i:0"><span>Research index · Vol. 2026</span><span>Robotics × Machine learning</span></div>
+      <div class="at-top">
+        <div class="in" style="--i:1">
+          <h1 class="at-name at-x">J. Edgar Hernandez<span class="dot">.</span></h1>
+          <p class="at-lead"><b>Generative and robot learning</b>: vision-language-action models, multimodal reasoning and representation alignment.</p>
+          <div class="at-ctas at-mono">
+            <a class="at-btn fill" href="research.html">Research →</a>
+            <a class="at-btn" href="projects.html">All projects →</a>
+            <a class="at-btn" href="https://github.com/edgarcancinoe" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-github"/></svg>GitHub ↗</a>
+            <a class="at-btn" href="https://scholar.google.com/citations?user=yNqv2bcAAAAJ" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-scholar"/></svg>Scholar ↗</a>
+            <a class="at-btn" href="res/Jose_E_Hernandez_CV.pdf" target="_blank" rel="noopener">CV ↓</a>
           </div>
-        </section>
-
-        <section class="px-4 sm:px-8 lg:px-20 py-16 sm:py-28">
-          <div class="max-w-7xl mx-auto">
-            <h2 class="text-xl sm:text-2xl font-bold leading-tight tracking-tight text-white mb-6 sm:mb-16 reveal">
-              Trajectory
-            </h2>
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-16">
-              <div>
-                <h3 class="text-base font-semibold text-[var(--fg-muted)] uppercase tracking-widest mb-8">Education</h3>
-                <div class="relative pl-6 sm:pl-10 border-l-2 border-[var(--bd-muted)]">
-                  <!-- EMAI Master entry with three universities -->
-                  <div class="timeline-item mb-12 reveal">
-                    <div class="flex items-start gap-4">
-                      <img alt="EMAI Program" class="w-12 h-12 rounded-full object-contain bg-white p-1"
-                        src="images/logos/emai.webp" />
-                      <div class="flex-1">
-                        <p class="text-[var(--brand)] text-sm font-semibold mb-1">2024 - 2026</p>
-                        <h4 class="text-[#16202b] text-2xl font-bold">MSc in Artificial Intelligence</h4>
-                        <p class="text-gray-400 text-lg">Erasmus Mundus Joint Master in Artificial Intelligence</p>
-                        <p class="text-gray-200">Specialization in <strong>Data Science</strong> at the
-                          <strong>University of Ljubljana.</strong>
-                        </p><br>
-                        <div class="mt-3 grid grid-cols-1 sm:grid-cols-3 gap-4 items-center">
-                          <div class="flex flex-col items-center text-center gap-2">
-                            <img alt="UPF Logo" class="h-12 object-contain bg-white rounded p-0"
-                              src="images/logos/upf.webp" />
-                            <p class="text-[var(--fg-secondary)] text-sm">Universitat Pompeu Fabra -
-                              Barcelona<br /><span class="text-subtle">2024</span></p>
-                          </div>
-                          <div class="flex flex-col items-center text-center gap-2">
-                            <img alt="Sapienza Logo" class="h-12 object-contain bg-white rounded p-0"
-                              src="images/logos/unirm.webp" />
-                            <p class="text-[var(--fg-secondary)] text-sm">Sapienza Università di Roma<br /><span
-                                class="text-muted">2025</span></p>
-                          </div>
-                          <div class="flex flex-col items-center text-center gap-2">
-                            <img alt="University of Ljubljana Logo" class="h-12 object-contain bg-white rounded p-0"
-                              src="images/logos/uol.webp" />
-                            <p class="text-[var(--fg-secondary)] text-sm">University of Ljubljana<br /><span
-                                class="text-muted"> 2025-2026</span></p>
-                          </div>
-                        </div>
-                        <p class="text-muted mt-2">Research‑focused Erasmus Mundus programme integrating machine
-                          learning and modern AI across leading European universities.</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="timeline-item mb-12 reveal">
-                    <div class="flex items-start gap-4">
-                      <img alt="Tecnologico de Monterrey Logo"
-                        class="w-12 h-12 rounded-full object-contain bg-white p-1" src="images/logos/tec.webp" />
-                      <div class="flex-1">
-                        <p class="text-[var(--brand)] text-sm font-semibold mb-1">2021 - 2024</p>
-                        <h4 class="text-[#16202b] text-2xl font-bold">BSc in Robotics and Digital Systems</h4>
-                        <p class="text-muted text-lg mt-1">Tecnologico de Monterrey</p>
-                        <ul class="list-disc pl-5 text-muted mt-2 space-y-1">
-                          Focused on digital and embedded systems, intelligent AI and robotics systems, automation, and
-                          control logic.
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- <div class="timeline-item mb-12 reveal">
-                    <div class="flex items-start gap-4">
-                      <img alt="Tecnologico de Monterrey Logo"
-                        class="w-12 h-12 rounded-full object-contain bg-white p-1" src="images/logos/tec.webp" />
-                      <div class="flex-1">
-                        <p class="text-[var(--brand)] text-sm font-semibold mb-1">2019 – 2021</p>
-                        <h4 class="text-[#16202b] text-2xl font-bold">BSc in Physics Engineering (incomplete)</h4>
-                        <p class="text-muted text-lg mt-1">Tecnológico de Monterrey</p>
-                        <p class="text-gray-300 text-sm">Studied 2 years in the program, focusing on:</p>
-                        <ul class="list-disc pl-5 text-muted mt-2 space-y-1">
-                          <li>Mathematical modeling and applied physics</li>
-                          <li>Theoretical foundations in engineering and science</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div> -->
-
-
-                </div>
-              </div>
-              <div>
-                <h3 class="text-base font-semibold text-[var(--fg-muted)] uppercase tracking-widest mb-8">Experience</h3>
-                <div class="relative pl-6 sm:pl-10 border-l-2 border-[var(--bd-muted)]">
-
-                  <!-- SAVEWARE (reverse order item 3) -->
-                  <!-- <div class="timeline-item mb-12">
-                    <div class="flex items-start gap-4">
-                      <div class="panel w-12 h-12 rounded-full overflow-hidden flex items-center justify-center">
-                        <img alt="SAVEWARE Logo" src="images/logos/sw.webp"
-                          class="w-11 h-11 rounded-full object-cover bg-white p-0.5" />
-                      </div>
-                      <div class="flex-1">
-                        <p class="text-[var(--brand)] text-sm font-semibold mb-1">March 2022 - Present</p>
-                        <h4 class="text-[#16202b] text-2xl font-bold">Co-Founder, Data Engineer & Machine Learning Engineer
-                        </h4>
-                        <p class="text-muted text-lg mt-1">SAVEWARE</p>
-                        <p class="text-muted mt-2">Building a data-driven platform to optimize <strong>manual labor
-                            operations</strong> in bulk and pallet cargo plants across LATAM.</p>
-                        <ul class="text-muted mt-2 list-disc pl-5 space-y-1">
-                          <li>Developing predictive models for operation duration estimation using
-                            <strong>attention-based regression techniques</strong> to model heteroskedastic probability
-                            distributions.
-                          </li>
-                          <li>Designing <strong>end-to-end data pipelines</strong> for ingestion, cleaning, processing,
-                            and sanitization, integrating <strong>PostgreSQL</strong> back-ends with <strong>FastAPI
-                              microservices</strong>.</li>
-                          <li>Created models to accurately <strong>estimate operational costs</strong> based on the
-                            quantity of material moved.</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div> -->
-
-                  <!-- Kavraki Lab, Rice University (reverse order item 2) -->
-                  <div class="timeline-item mb-12">
-                    <div class="flex items-start gap-4">
-                      <img alt="Rice University Logo" class="w-12 h-12 rounded-full object-contain bg-white p-1"
-                        src="images/logos/rice.webp" />
-                      <div class="flex-1">
-                        <p class="text-[var(--brand)] text-sm font-semibold mb-1">January 2024 - February 2024</p>
-                        <h4 class="text-[#16202b] text-2xl font-bold">Robotics Lab Assistant</h4>
-                        <p class="text-muted text-lg mt-1">Kavraki Lab, Rice University</p>
-                        <p class="text-muted mt-2">• Designed and implemented a ROS system for integrating motion
-                          planning and Samsung Labs’ SceneGrasp for multi-object 3D reconstruction and grasp pose
-                          estimation of robotic manipulators using RGB-D data.<br />
-                          • Developed a ROS package for pick-and-place using ArUco markers; validated in simulation and
-                          on hardware.</p>
-                      </div>
-                    </div>
-                  </div>
-
-
-                  <!-- Steelcase (reverse order item 1) -->
-                  <div class="timeline-item mb-12">
-                    <div class="flex items-start gap-4">
-                      <img alt="Steelcase Logo" class="w-12 h-12 rounded-full object-contain bg-white p-1"
-                        src="images/logos/sc.webp" />
-                      <div class="flex-1">
-                        <p class="text-[var(--brand)] text-sm font-semibold mb-1">March 2022 - October 2023</p>
-                        <h4 class="text-[#16202b] text-2xl font-bold">Business Automation Intern</h4>
-                        <p class="text-muted text-lg mt-1">Steelcase</p>
-                        <p class="text-muted mt-2">• Developed and implemented automation solutions for business
-                          processes for internal clients.<br />
-                          • Utilized Agile methodology and technologies such as UiPath RPA, Excel VBA, Power Automate,
-                          and Python.</p>
-                      </div>
-                    </div>
-                  </div>
-
-
-                </div>
-              </div>
-            </div>
-            <div class="text-center mt-16">
-              <a href="res/Jose_E_Hernandez_CV.pdf" target="_blank"
-                class="btn-ui btn-ui-lg mx-auto">
-                <span class="truncate">Curriculum Vitae</span>
-              </a>
-            </div>
-          </div>
-        </section>
-
-        <section class="px-4 sm:px-8 lg:px-20 py-12 sm:py-20" style="background: var(--bg-surface);">
-          <div class="max-w-6xl mx-auto">
-            <h2 class="text-xl sm:text-2xl font-bold leading-tight tracking-tight text-white mb-10 reveal">Work Stack</h2>
-            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-6 sm:gap-8 text-white">
-              <div class="flex flex-col items-center gap-2 skill-card reveal">
-                <img alt="PyTorch" class="w-16 h-16"
-                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" />
-                <p class="font-medium text-center">PyTorch</p>
-              </div>
-              <div class="flex flex-col items-center gap-2 skill-card reveal">
-                <img alt="Hugging Face" class="w-16 h-16"
-                  src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" />
-                <p class="font-medium text-center">Hugging Face</p>
-              </div>
-              <div class="flex flex-col items-center gap-2 skill-card reveal">
-                <img alt="ROS" class="w-24 h-16 p-2 rounded-lg bg-white"
-                  src="https://upload.wikimedia.org/wikipedia/commons/b/bb/Ros_logo.svg" />
-                <p class="font-medium text-center">ROS</p>
-              </div>
-              <div class="flex flex-col items-center gap-2 skill-card reveal">
-                <img alt="Docker" class="w-16 h-16"
-                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" />
-                <p class="font-medium text-center">Docker</p>
-              </div>
-              <div class="flex flex-col items-center gap-2 skill-card reveal">
-                <img alt="Weights & Biases" class="w-16 h-16 rounded-lg"
-                  src="https://avatars.githubusercontent.com/u/26401354" />
-                <p class="font-medium text-center">W&amp;B</p>
-              </div>
-              <div class="flex flex-col items-center gap-2 skill-card reveal">
-                <img alt="AWS" class="w-16 h-16"
-                  src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" />
-                <p class="font-medium text-center">AWS</p>
-              </div>
-              <div class="flex flex-col items-center gap-2 skill-card reveal">
-                <img alt="Google Cloud" class="w-16 h-16"
-                  src="https://upload.wikimedia.org/wikipedia/commons/5/51/Google_Cloud_logo.svg" />
-                <p class="font-medium text-center">Google Cloud</p>
-              </div>
-            </div>
-          </div>
-        </section>
-      </main>
-    </div>
-    <footer id="contact"
-      class="fixed bottom-0 left-0 right-0 border-t border-solid border-t-[var(--bd-muted)] px-5 sm:px-10 py-2 sm:py-4 z-50"
-      style="background: color-mix(in srgb, var(--bg-surface) 80%, transparent);">
-      <div class="max-w-7xl mx-auto flex justify-between items-center text-white">
-        <div class="flex items-center gap-3">
-          <p class="text-[var(--fg-secondary)] text-sm"> 2026<span class="text-subtle mr-2 ml-2">|</span>
-            <span class="sm:hidden"> J.E.H.C.E.</span>
-            <span class="hidden sm:inline"> J Edgar Hernandez</span>
-          </p>
-          <!-- <span class="text-subtle">|</span> -->
-          <!-- <p class="text-[var(--fg-secondary)] text-sm">edgarcancinoe@gmail.com</p> -->
         </div>
-        <div class="hidden sm:flex items-center gap-4">
-          <a class="text-gray-300 hover:text-[var(--brand)] transition-colors"
-            href="https://www.linkedin.com/in/edgar-cancino/">
-            <svg class="feather feather-linkedin" fill="none" height="20" stroke="currentColor" stroke-linecap="round"
-              stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20"
-              xmlns="http://www.w3.org/2000/svg">
-              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-              <rect height="12" width="4" x="2" y="9"></rect>
-              <circle cx="4" cy="4" r="2"></circle>
-            </svg>
-          </a>
-          <a class="text-gray-300 hover:text-[var(--brand)] transition-colors" href="https://github.com/edgarcancinoe">
-            <svg class="feather feather-github" fill="none" height="20" stroke="currentColor" stroke-linecap="round"
-              stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20"
-              xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-              </path>
-            </svg>
-          </a>
-        </div>
+        <dl class="at-spec in" style="--i:2">
+          <div><dt class="at-mono">Education</dt><dd>
+            <span class="it"><span class="p deg">MSc Artificial Intelligence</span><span class="y at-mono">2026</span><a class="s at-mono" href="https://www.upf.edu/web/emai" target="_blank" rel="noopener">Erasmus Mundus · EMAI ↗</a></span>
+            <span class="it"><span class="p deg">BSc Robotics Engineering</span><span class="y at-mono">2024</span><span class="s at-mono">Tec de Monterrey</span></span>
+          </dd></div>
+          <div><dt class="at-mono">Thesis</dt><dd><span class="it"><a class="p at-ul" href="projects/xvla_visual_thought/masters-thesis.pdf" target="_blank" rel="noopener">Visual Thought Tokens for Vision-Language-Action Models</a><span class="y at-mono">2026</span></span></dd></div>
+          <div><dt class="at-mono">Published</dt><dd><span class="it"><a class="p at-ul" href="https://arxiv.org/abs/2605.22311" target="_blank" rel="noopener">PIU: Proximity-guided Identity Unlearning</a><span class="y at-mono">IJCB 2026</span><span class="s at-mono">First author · <a class="at-ul" href="https://scholar.google.com/citations?user=yNqv2bcAAAAJ" target="_blank" rel="noopener">All publications ↗</a></span></span></dd></div>
+          <div><dt class="at-mono">Languages</dt><dd><span class="it"><span class="p">English · Spanish · Italian <span class="at-mono lvl">A2</span></span></span></dd></div>
+        </dl>
       </div>
-    </footer>
-  </div>
+      <div class="at-caps in" style="--i:3">
+        <div class="at-cap"><span class="at-mono k">01</span><h3>Robot learning</h3><p>VLA models, imitation and reinforcement learning for manipulation.</p></div>
+        <div class="at-cap"><span class="at-mono k">02</span><h3>Representations</h3><p>Alignment, distillation and token-level grounding in large models.</p></div>
+        <div class="at-cap"><span class="at-mono k">03</span><h3>Generative models</h3><p>Diffusion and score-based models, identity unlearning.</p></div>
+        <div class="at-cap"><span class="at-mono k">04</span><h3>Robotics systems</h3><p>ROS, motion planning and visual servoing on real hardware.</p></div>
+      </div>
+      <div class="at-stack in" style="--i:4">
+        <span class="at-mono k">Stack</span>
+        <ul class="at-mono">
+          <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" alt="" loading="lazy" decoding="async" /><span>PyTorch</span></li>
+          <li><img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" alt="" loading="lazy" decoding="async" /><span>Hugging Face</span></li>
+          <li><img class="tile" src="images/logos/lerobot.webp" alt="" loading="lazy" decoding="async" /><span>LeRobot</span></li>
+          <li><img src="https://upload.wikimedia.org/wikipedia/commons/b/bb/Ros_logo.svg" alt="" loading="lazy" decoding="async" /><span>ROS</span></li>
+          <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="" loading="lazy" decoding="async" /><span>Docker</span></li>
+          <li><img src="https://avatars.githubusercontent.com/u/26401354" alt="" loading="lazy" decoding="async" /><span>W&amp;B</span></li>
+          <li><img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="" loading="lazy" decoding="async" /><span>AWS</span></li>
+          <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" alt="" loading="lazy" decoding="async" /><span>Google Cloud</span></li>
+        </ul>
+      </div>
+    </section>
 
-  <style>
-    /* Reveal animation */
-    .reveal {
-      opacity: 0;
-      transform: translateY(12px);
-      transition: opacity .6s ease, transform .6s ease;
-    }
+    <section id="research" aria-labelledby="research-h">
+      <div class="at-sec rv"><h2 id="research-h" class="at-x">Selected research</h2><a class="at-mono" href="research.html">All research →</a></div>
 
-    .reveal.show {
-      opacity: 1;
-      transform: none;
-    }
+      <article class="at-plate rv">
+        <div class="at-num at-x" aria-hidden="true">01</div>
+        <figure class="at-fig">
+          <div class="m fit"><img src="images/projects/piu/piu-card.png" alt="PIU identity unlearning examples: target, anchor and unlearned identities" loading="lazy" decoding="async" /></div>
+          <figcaption class="at-mono">Fig. 01</figcaption>
+        </figure>
+        <div class="at-txt">
+          <p class="at-venue at-mono">IJCB 2026 · First author</p>
+          <h3 class="at-x">PIU: Proximity-guided Identity Unlearning in ID-Conditioned Diffusion Models</h3>
+          <p class="d">PIU protects a chosen identity in ID-conditioned diffusion models by re-teaching what its identity conditioning means, so the model stops generating that person while image quality stays intact.</p>
+          <p class="lab at-mono"><a href="https://www.fri.uni-lj.si/en/laboratory/lrv-26" target="_blank" rel="noopener">Computer Vision Laboratory</a>, University of Ljubljana</p>
+          <div class="at-acts at-mono">
+            <a class="at-btn fill" href="research.html#piu">Explore →</a>
+            <a class="at-btn" href="https://arxiv.org/abs/2605.22311" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-paper"/></svg>arXiv ↗</a>
+            <a class="at-btn" href="https://github.com/edgarcancinoe/piu-unlearning" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-github"/></svg>Code ↗</a>
+          </div>
+        </div>
+      </article>
 
-    /* Card hover interaction */
-    .hover-card {
-      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
-      will-change: transform;
-    }
+      <article class="at-plate rv">
+        <div class="at-num at-x" aria-hidden="true">02</div>
+        <figure class="at-fig">
+          <div class="m">
+            <video muted loop playsinline preload="none" data-autoplay-visible poster="images/projects/visual_expert_distillation/demo-poster.webp" aria-label="Robot manipulation demo with distilled perceptual guidance">
+              <source src="images/projects/visual_expert_distillation/demo-web.mp4" type="video/mp4" />
+              <source src="images/projects/visual_expert_distillation/demo.webm" type="video/webm" />
+            </video>
+          </div>
+          <figcaption class="at-mono">Fig. 02</figcaption>
+        </figure>
+        <div class="at-txt">
+          <p class="at-venue at-mono">MSc thesis · 2026</p>
+          <h3 class="at-x">Expert Distillation from Frozen VLA Representations for Perceptual Guidance</h3>
+          <p class="d">Recover expert perceptual structure from X-VLA representations, such as DINOv2-like tokens or CeDiRNet-aligned maps, to support action generation via explicit guidance or representation alignment.</p>
+          <p class="lab at-mono"><a href="https://www.vicos.si" target="_blank" rel="noopener">Visual Cognitive Systems Laboratory (ViCoS)</a></p>
+          <div class="at-acts at-mono">
+            <a class="at-btn fill" href="research.html#expert-distillation">Explore →</a>
+            <a class="at-btn" href="projects/xvla_visual_thought/masters-thesis.pdf" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-paper"/></svg>Thesis ↗</a>
+            <a class="at-btn" href="https://github.com/edgarcancinoe/XVLA-VisualThought" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-github"/></svg>Code ↗</a>
+          </div>
+        </div>
+      </article>
 
-    .hover-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-strong);
-      border-color: var(--brand);
-    }
+      <article class="at-plate rv">
+        <div class="at-num at-x" aria-hidden="true">03</div>
+        <figure class="at-fig">
+          <div class="m">
+            <video muted loop playsinline preload="none" data-autoplay-visible poster="images/projects/language_conditioned_token_grounding/query00-poster.webp" aria-label="Token grounding heatmaps over the robot's camera view">
+              <source src="images/projects/language_conditioned_token_grounding/query00-web.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <figcaption class="at-mono">Fig. 03</figcaption>
+        </figure>
+        <div class="at-txt">
+          <p class="at-venue at-mono">Research project · 2026</p>
+          <h3 class="at-x">Token Grounding in Vision-Language-Action Models</h3>
+          <p class="d">Language-conditioned queries score the native X-VLA image-token grid to expose which regions matter for the current manipulation step.</p>
+          <p class="lab at-mono"><a href="https://www.vicos.si" target="_blank" rel="noopener">Visual Cognitive Systems Laboratory (ViCoS)</a></p>
+          <div class="at-acts at-mono">
+            <a class="at-btn fill" href="research.html#token-grounding">Explore →</a>
+            <a class="at-btn" href="projects/xvla_visual_thought/visual-thought-tokens.pdf" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-paper"/></svg>Report ↗</a>
+            <a class="at-btn" href="https://github.com/edgarcancinoe/XVLA-VisualThought" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-github"/></svg>Code ↗</a>
+          </div>
+        </div>
+      </article>
+    </section>
 
-    /* Image subtle zoom on hover */
-    .hover-zoom {
-      transition: transform .35s ease;
-    }
+    <section aria-labelledby="trajectory-h">
+      <div class="at-sec rv"><h2 id="trajectory-h" class="at-x">Trajectory</h2><a class="at-mono" href="res/Jose_E_Hernandez_CV.pdf" target="_blank" rel="noopener">Full CV ↓</a></div>
+      <ol class="at-tl">
+        <li class="at-tl-item rv">
+          <span class="at-tl-date at-mono">2024 — 2026</span>
+          <span class="at-tl-rail"><span class="at-tl-node"><img src="images/logos/emai.webp" alt="Erasmus Mundus Joint Master in AI" loading="lazy" decoding="async" /></span></span>
+          <div class="at-tl-body">
+            <h3>MSc Artificial Intelligence</h3>
+            <p class="org at-mono">Erasmus Mundus · UPF Barcelona → Sapienza Rome → Univ. of Ljubljana</p>
+            <p class="d">Specialization in data science at the University of Ljubljana; thesis at ViCoS on perceptual guidance for vision-language-action models.</p>
+          </div>
+        </li>
+        <li class="at-tl-item rv">
+          <span class="at-tl-date at-mono">2024 — 2024</span>
+          <span class="at-tl-rail"><span class="at-tl-node"><img src="images/logos/rice.webp" alt="Rice University" loading="lazy" decoding="async" /></span></span>
+          <div class="at-tl-body">
+            <h3>Robotics Lab Assistant</h3>
+            <p class="org at-mono">Kavraki Lab · Rice University</p>
+            <p class="d">ROS system integrating motion planning with SceneGrasp for multi-object 3D reconstruction and grasp pose estimation from RGB-D; pick-and-place validated in simulation and on hardware.</p>
+          </div>
+        </li>
+        <li class="at-tl-item rv">
+          <span class="at-tl-date at-mono">2022 — 2023</span>
+          <span class="at-tl-rail"><span class="at-tl-node"><img src="images/logos/sc.webp" alt="Steelcase" loading="lazy" decoding="async" /></span></span>
+          <div class="at-tl-body">
+            <h3>Business Automation Intern</h3>
+            <p class="org at-mono">Steelcase</p>
+            <p class="d">Automation for internal business processes with Python, UiPath RPA, Power Automate and Excel VBA, in an Agile team.</p>
+          </div>
+        </li>
+        <li class="at-tl-item rv">
+          <span class="at-tl-date at-mono">2021 — 2024</span>
+          <span class="at-tl-rail"><span class="at-tl-node"><img src="images/logos/tec.webp" alt="Tecnológico de Monterrey" loading="lazy" decoding="async" /></span></span>
+          <div class="at-tl-body">
+            <h3>BSc Robotics &amp; Digital Systems</h3>
+            <p class="org at-mono">Tecnológico de Monterrey</p>
+            <p class="d">Digital and embedded systems, intelligent and robotic systems, automation and control.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+  </main>
 
-    .hover-card:hover .hover-zoom,
-    .group:hover .hover-zoom {
-      transform: scale(1.04);
-    }
-  </style>
+  <footer class="at-foot at-mono">
+    <div class="at-wrap">
+      <span class="at-copy"><span>edgarcancinoe@gmail.com</span><button type="button" class="at-btn" data-copy="edgarcancinoe@gmail.com">Copy</button></span>
+      <div class="links">
+        <a class="at-btn" href="https://github.com/edgarcancinoe" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-github"/></svg>GitHub ↗</a>
+        <a class="at-btn" href="https://www.linkedin.com/in/edgar-cancino/" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a class="at-btn" href="https://scholar.google.com/citations?user=yNqv2bcAAAAJ" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-scholar"/></svg>Scholar ↗</a>
+        <a class="at-btn" href="https://www.researchgate.net/profile/Jose-Hernandez-Cancino-Estrada-2" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-rg"/></svg>ResearchGate ↗</a>
+        <a class="at-btn" href="res/Jose_E_Hernandez_CV.pdf" target="_blank" rel="noopener">CV ↓</a>
+      </div>
+      <span class="c">© 2026 J. Edgar Hernandez</span>
+    </div>
+  </footer>
 
-  <script>
-    (function () {
-      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if (prefersReduced) return;
-      const els = document.querySelectorAll('.reveal');
-      const io = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('show');
-            io.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.12 });
-      els.forEach(el => io.observe(el));
-    })();
-  </script>
-
-  <script src="js/include-partials.js"></script>
-  <script>
-    (function () {
-      const btn = document.getElementById('mobileMenuBtn');
-      const menu = document.getElementById('mobileMenu');
-      if (!btn || !menu) return;
-      const iconHam = document.getElementById('iconHamburger');
-      const iconClose = document.getElementById('iconClose');
-      btn.addEventListener('click', () => {
-        const isOpen = !menu.classList.contains('hidden');
-        if (isOpen) {
-          menu.classList.add('hidden');
-          iconHam.classList.remove('hidden');
-          iconClose.classList.add('hidden');
-          btn.setAttribute('aria-expanded', 'false');
-        } else {
-          menu.classList.remove('hidden');
-          iconHam.classList.add('hidden');
-          iconClose.classList.remove('hidden');
-          btn.setAttribute('aria-expanded', 'true');
-        }
-      });
-    })();
-  </script>
-  <script>
-    document.querySelectorAll('[data-copy]').forEach(function (btn) {
-      btn.addEventListener('click', async function (e) {
-        e.preventDefault();
-        e.stopPropagation();
-        const text = this.getAttribute('data-copy');
-        try {
-          await navigator.clipboard.writeText(text);
-          const original = this.dataset.originalHtml || this.innerHTML;
-          this.dataset.originalHtml = original;
-          this.innerHTML = '<span class="text-[10px] font-medium">Copied</span>';
-          this.style.borderColor = 'var(--brand)';
-          this.style.color = 'var(--fg-primary)';
-          setTimeout(() => { this.innerHTML = original; this.style.borderColor = ''; this.style.color = ''; }, 1500);
-        } catch (e) {
-          console.error('Copy failed', e);
-        }
-      });
-    });
-  </script>
+  <div id="at-bot" data-root=""></div>
+  <script src="js/atlas.js"></script>
+  <script src="js/bot.js" defer></script>
 </body>
 
 </html>

@@ -1,0 +1,32 @@
+[
+  {
+    "q": "What is a vision-language-action model?",
+    "a": "",
+    "link": null
+  },
+  {
+    "q": "What is PIU about?",
+    "a": "",
+    "link": { "label": "Read the paper", "href": "https://arxiv.org/abs/2605.22311" }
+  },
+  {
+    "q": "What did your thesis explore?",
+    "a": "",
+    "link": { "label": "Open the thesis", "href": "projects/xvla_visual_thought/masters-thesis.pdf" }
+  },
+  {
+    "q": "Which projects should I look at first?",
+    "a": "",
+    "link": { "label": "All projects", "href": "projects.html" }
+  },
+  {
+    "q": "What are you looking for next?",
+    "a": "",
+    "link": null
+  },
+  {
+    "q": "How did you get from robotics into AI research?",
+    "a": "",
+    "link": null
+  }
+]
