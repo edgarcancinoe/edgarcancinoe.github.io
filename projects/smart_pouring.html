@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Smart Pouring: Watering Plants from Phone Videos — J. Edgar Hernandez</title>
+  <meta name="description" content="SmolVLA fine-tuned on 48 phone videos of my own hands to water plants in a LIBERO simulation, with recovery data and a two-number grasp memory." />
+  <meta name="theme-color" content="#efebe2" />
+  <link rel="icon" href="../logo.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=IBM+Plex+Mono:wght@400;500&display=swap" />
+  <link rel="stylesheet" href="../css/atlas.css" />
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-github" viewBox="0 0 16 16"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></symbol>
+    <symbol id="i-paper" viewBox="0 0 16 16"><g fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"><path d="M3.5 1.5h6l3 3v10h-9z"/><path d="M9.5 1.5v3h3M5.5 8h5M5.5 10.5h5M5.5 13h3"/></g></symbol>
+    <symbol id="i-play" viewBox="0 0 16 16"><g fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"><rect x="1.5" y="3" width="13" height="10" rx="2"/><path d="M6.5 5.8v4.4L10.2 8z" fill="currentColor"/></g></symbol>
+    <symbol id="i-linkedin" viewBox="0 0 16 16"><path fill="currentColor" d="M3.6 5.3H1.3V14h2.3zM2.4 1.6a1.3 1.3 0 1 0 0 2.7 1.3 1.3 0 0 0 0-2.7zM14.7 9.2c0-2.4-1.3-3.9-3.3-3.9-1.1 0-1.9.6-2.2 1.2V5.3H7V14h2.3V9.6c0-1.2.4-2.1 1.5-2.1s1.5.9 1.5 2.1V14h2.4z"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 16 16"><g fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"><rect x="1.5" y="3" width="13" height="10" rx="1"/><path d="M1.8 3.5 8 8.5l6.2-5"/></g></symbol>
+    <symbol id="i-scholar" viewBox="0 0 16 16"><path fill="currentColor" d="M8 1.5 .6 6 8 10.5 15.4 6zM3.4 8.3v3.1c0 1.3 2.1 2.6 4.6 2.6s4.6-1.3 4.6-2.6V8.3L8 11.1z"/></symbol>
+    <symbol id="i-rg" viewBox="0 0 16 16"><rect x="1" y="1" width="14" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.3"/><text x="8" y="11.2" fill="currentColor" font-family="Arial, Helvetica, sans-serif" font-size="7.4" font-weight="700" text-anchor="middle">RG</text></symbol>
+  </svg>
+  <header class="at-bar at-mono">
+    <a href="../index.html">J.E. Hernandez</a>
+    <nav aria-label="Primary">
+      <a href="../index.html">Index</a>
+      <a href="../research.html">Research</a>
+      <a href="../projects.html" aria-current="page">Projects</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+    <span class="r">Spain · Open to relocation</span>
+  </header>
+
+  <main class="at-wrap">
+    <article class="at-page at-article">
+      <a class="at-back at-mono" href="../projects.html">← All projects</a>
+      <div class="at-kicker at-mono in" style="--i:0"><span>Humanoid robot learning challenge</span><span>2026</span></div>
+      <h1 class="at-h1 at-x in" style="--i:1">Smart Pouring: Teaching a Robot to Water Plants from 48 Phone Videos of My Hands</h1>
+      <div class="at-tags at-mono in" style="--i:2"><span class="at-tag">SmolVLA</span><span class="at-tag">LeRobot</span><span class="at-tag">LIBERO</span><span class="at-tag">Imitation Learning</span><span class="at-tag">DAgger</span></div>
+      <figure class="at-fig in" style="--i:3"><div class="m"><video muted loop playsinline preload="metadata" data-autoplay-visible poster="../images/projects/smart_pouring/hero-poster.webp" aria-label="My pour filmed with a phone, next to the trained policy watering the same plant from a new mug position"><source src="../images/projects/smart_pouring/hero.mp4" type="video/mp4" /></video></div></figure>
+      <div class="at-acts at-mono in" style="--i:4"><a class="at-btn fill" href="https://github.com/edgarcancinoe/smart-pouring" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-github"/></svg>Code ↗</a><a class="at-btn" href="https://huggingface.co/collections/edgarcancinoe/smart-pouring-6ad14d90214376f367e0a6f8" target="_blank" rel="noopener">Models &amp; datasets ↗</a><a class="at-btn" href="smart_pouring/experiments.html">Experiment tracker →</a></div>
+
+      <div class="at-sec rv"><h2 class="at-x">Overview</h2></div>
+      <div class="at-prose rv">
+        <p><strong>How far can a handful of phone videos take a robot?</strong> I filmed myself pouring water from a mug into three plants, 48 times. Those videos became the training data for a Panda arm in a custom LIBERO scene that follows the command <em>“water the left / middle / right plant”</em>.</p>
+        <p>An episode only counts if the robot does all three steps: grasps the mug, pours at least half of the 10 water droplets into the commanded pot, and puts the mug back within 3&nbsp;cm of where it started.</p>
+      </div>
+      <figure class="at-fig rv"><div class="m"><video muted loop playsinline preload="metadata" data-autoplay-visible poster="../images/projects/smart_pouring/task-poster.webp" aria-label="The Panda watering the left, middle and right plant from three mug positions"><source src="../images/projects/smart_pouring/task.mp4" type="video/mp4" /></video></div></figure>
+
+      <div class="at-sec rv"><h2 class="at-x">From phone video to training data</h2></div>
+      <div class="at-prose rv">
+        <ul>
+          <li><strong>Track:</strong> a ChArUco board gives the camera pose and an ArUco marker on the mug gives its 6-D pose in every frame.</li>
+          <li><strong>Replay:</strong> in simulation the robot grasps the mug and its hand follows my tracked pour at a fixed grip. Pours tilt past the arm’s joint limits, so each clip uses the flattest hand tilt that stays within them. 47 of 48 replays succeed.</li>
+          <li><strong>Export:</strong> the successful replays become a LeRobot dataset (20&nbsp;fps, two camera views) in SmolVLA-LIBERO format.</li>
+        </ul>
+      </div>
+      <figure class="at-fig rv"><div class="m"><video muted loop playsinline preload="metadata" data-autoplay-visible poster="../images/projects/smart_pouring/phone_to_robot-poster.webp" aria-label="My pour with its tracked mug pose, the mug replaying it alone in simulation, and the Panda replaying it holding the mug"><source src="../images/projects/smart_pouring/phone_to_robot.mp4" type="video/mp4" /></video></div></figure>
+
+      <div class="at-sec rv"><h2 class="at-x">What it took</h2></div>
+      <div class="at-prose rv">
+        <ul>
+          <li><strong>Grasping:</strong> trained on raw replays, the policy memorised the four mug spots and grasped only 27% of the time. Shifting the mug ±3&nbsp;cm, DART recovery data and 30% state dropout took grasping to 90% at trained spots and 80% at new ones.</li>
+          <li><strong>Memory:</strong> SmolVLA only sees the present, so once the mug is lifted it forgets where it came from. Adding the hand’s offset from the grasp point to the state (two numbers plus a “holding” flag) lifted put-back from 15% to 63%, beating a learned image memory (31%).</li>
+          <li><strong>Recovery:</strong> DART pushes over the whole task, then one round of HG-DAgger, where a scripted teacher takes over whenever the policy drifts 1–2&nbsp;cm from the demo. DAgger was the biggest single gain and doubled success at new spots.</li>
+        </ul>
+      </div>
+
+      <div class="at-sec rv"><h2 class="at-x">Results</h2></div>
+      <div class="at-prose rv">
+        <p>Final model, fine-tuned from the SmolVLA-LIBERO checkpoint, over 360 trials (3 seeds × 120, 90&nbsp;s each). The untuned checkpoint scores 0%.</p>
+        <ul>
+          <li><strong>96%</strong> grasp the mug (97% at trained spots, 94% at new ones)</li>
+          <li><strong>68%</strong> water the commanded plant</li>
+          <li><strong>50%</strong> complete the whole task, including putting the mug back</li>
+        </ul>
+        <p>New mug spots, 7–10&nbsp;cm from any recorded one, remain the weak point. Next steps are demos across the whole table instead of four fixed spots, and more DAgger rounds.</p>
+      </div>
+      <figure class="at-fig rv"><div class="m fit"><img src="../images/projects/smart_pouring/spot_map.png" alt="Top view of the table: grasp, water and success rate per mug start spot for the final model" loading="lazy" decoding="async" /></div></figure>
+      <figure class="at-fig rv"><div class="m"><video muted loop playsinline preload="metadata" data-autoplay-visible poster="../images/projects/smart_pouring/rollouts-poster.webp" aria-label="Successful rollouts of the final policy from trained and new mug spots, and typical failures"><source src="../images/projects/smart_pouring/rollouts.mp4" type="video/mp4" /></video></div></figure>
+    </article>
+  </main>
+
+  <footer class="at-foot at-mono">
+    <div class="at-wrap">
+      <span class="at-copy"><span>edgarcancinoe@gmail.com</span><button type="button" class="at-btn" data-copy="edgarcancinoe@gmail.com">Copy</button></span>
+      <div class="links">
+        <a class="at-btn" href="https://github.com/edgarcancinoe" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-github"/></svg>GitHub ↗</a>
+        <a class="at-btn" href="https://www.linkedin.com/in/edgar-cancino/" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a class="at-btn" href="https://scholar.google.com/citations?user=yNqv2bcAAAAJ" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-scholar"/></svg>Scholar ↗</a>
+        <a class="at-btn" href="https://www.researchgate.net/profile/Jose-Hernandez-Cancino-Estrada-2" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-rg"/></svg>ResearchGate ↗</a>
+        <a class="at-btn" href="../res/Jose_E_Hernandez_CV.pdf" target="_blank" rel="noopener">CV ↓</a>
+      </div>
+      <span class="c">© 2026 J. Edgar Hernandez</span>
+    </div>
+  </footer>
+
+  <div id="at-bot" data-root="../"></div>
+  <script src="../js/atlas.js"></script>
+  <script src="../js/bot.js" defer></script>
+</body>
+
+</html>
