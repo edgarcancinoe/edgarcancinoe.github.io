@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Smart Pouring: Experiment Ladder | Jose Edgar Hernandez</title>
+<meta name="description" content="Every SmolVLA model trained for the Smart Pouring project: grasp, watering and success rates at trained and new mug spots.">
+<link href="../../logo.png" rel="icon" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+Condensed:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: an engineering datasheet. Title block on top, a MEASURE switch (grasping / watering / success / plot),
+   then one titled section per step with a fixed-grid table of models. Deliberately single-theme: printed paper. */
+:root {
+  --paper: #f7f6f2; --sheet: #fbfaf7; --band: #efede6; --ink: #141414; --mid: #5f5f5a; --faint: #a3a39c;
+  --hair: rgba(20, 20, 20, .14); --sig: #d9480f; --ok: #2b8a3e; --amber: #e8a317; --led-off: #e2e0d8;
+  --sans: "IBM Plex Sans Condensed", "Arial Narrow", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+  color-scheme: light;
+}
+* { box-sizing: border-box }
+body { background: var(--paper); color: var(--ink); font: 13px/1.45 var(--sans) }
+.page { padding-inline: 20px; padding-block: 28px 64px }
+.sheet { max-width: 1080px; margin: 0 auto; border: 1.5px solid var(--ink); background: var(--sheet) }
+button { font: inherit; cursor: pointer; color: inherit }
+button:active { transform: scale(.97) }
+
+/* title block */
+.top { display: grid; grid-template-columns: 1fr auto; border-bottom: 1.5px solid var(--ink) }
+.title { padding: 16px 18px; min-width: 0 }
+.pn { font: 500 11px var(--mono); letter-spacing: .08em; color: var(--mid) }
+h1 { font: 700 30px/1.05 var(--sans); letter-spacing: -.015em; margin: 4px 0 0; text-transform: uppercase; text-wrap: balance }
+.block { display: grid; grid-template-columns: auto auto; border-left: 1.5px solid var(--ink); font: 11px var(--mono); font-variant-numeric: tabular-nums }
+.block div { padding: 6px 12px; border-bottom: 1px solid var(--hair); border-right: 1px solid var(--hair) }
+.block div:nth-child(2n) { border-right: 0 }
+.block b { display: block; font-weight: 500; color: var(--mid); font-size: 9.5px; letter-spacing: .1em }
+@media (max-width: 640px) { .top { grid-template-columns: 1fr } .block { border-left: 0; border-top: 1px solid var(--hair) } }
+
+/* measure switch */
+.mode { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 0; padding: 10px 18px; border-bottom: 1px solid var(--hair); font: 11px var(--mono); color: var(--mid); letter-spacing: .08em }
+.mode > span { margin-right: 12px }
+.mode .sep { width: 1px; height: 18px; background: var(--hair); margin: 0 10px }
+.mode button { border: 1px solid var(--ink); background: transparent; padding: 5px 12px; font: 600 11px var(--mono); letter-spacing: .08em }
+.mode button + button { border-left: 0 }
+.mode button[aria-pressed="true"] { background: var(--ink); color: var(--sheet) }
+.mode .hint { margin-left: auto; color: var(--faint); letter-spacing: .04em }
+
+/* steps */
+.step { border-bottom: 1px solid var(--hair) }
+.step-h { display: flex; align-items: center; gap: 14px; background: var(--band); padding: 0 12px 0 18px }
+.step-h .fold { flex: 1; display: flex; align-items: baseline; gap: 14px; border: 0; background: none; padding: 8px 0; text-align: left; min-width: 0 }
+.step-h .pn { font-weight: 600; color: var(--sig) }
+.step-h b { font: 700 14px var(--sans); text-transform: uppercase; letter-spacing: .04em }
+.step-h .tag { font: 11px var(--mono); color: var(--mid) }
+.step-h .caret { margin-left: auto; font: 13px var(--mono); color: var(--mid) }
+.step-h .add { border: 0; background: none; font: 600 10.5px var(--mono); letter-spacing: .08em; color: var(--mid); padding: 4px 6px }
+.step-h .add:hover { color: var(--sig) }
+.step.shut .tablewrap { display: none }
+.tablewrap { overflow-x: auto }
+table { width: 100%; border-collapse: collapse; table-layout: fixed; font-variant-numeric: tabular-nums; min-width: 760px }
+th { position: relative; font: 500 9.5px var(--mono); letter-spacing: .1em; color: var(--mid); text-align: left; padding: 7px 10px 5px; border-bottom: 1px solid var(--hair); text-transform: uppercase; white-space: nowrap; overflow: hidden; text-overflow: ellipsis }
+td { padding: 5px 10px; border-bottom: 1px solid var(--hair); vertical-align: middle; overflow: hidden }
+tr:last-child td { border-bottom: 0 }
+th:first-child, td:first-child { padding-left: 18px }
+th.del-c, td.del-c { width: 40px; padding: 0 6px 0 0; text-align: right }
+.empty td { color: var(--faint); font: 11px var(--mono); letter-spacing: .04em; padding-block: 10px }
+
+/* column grip */
+.grip { position: absolute; top: 0; bottom: 0; right: 0; width: 9px; cursor: col-resize; touch-action: none }
+.grip::after { content: ""; position: absolute; right: 3px; top: 6px; bottom: 6px; width: 1px; background: var(--hair) }
+.grip:hover::after, .grip.dragging::after { background: var(--sig); width: 2px }
+
+/* fields, borderless until touched */
+input, select { font: inherit; color: inherit; background: transparent; border: 0; border-radius: 0; padding: 3px 4px; margin: 0 -4px; width: calc(100% + 8px) }
+input:hover { background: rgba(20, 20, 20, .05) }
+input:focus, select:focus { outline: 1.5px solid var(--sig); outline-offset: 0; background: #fff }
+button:focus-visible { outline: 1.5px solid var(--sig); outline-offset: 2px }
+input[type=number] { -moz-appearance: textfield }
+input[type=number]::-webkit-inner-spin-button { -webkit-appearance: none }
+.mdl input { font: 500 12.5px var(--mono) }
+.mdl-in { display: flex; align-items: center; gap: 4px; min-width: 0 }
+.mdl-in input { flex: 1; min-width: 0; width: auto }
+.nt { flex: none; border: 0; background: none; font: 600 10px var(--mono); letter-spacing: .06em; color: var(--mid); padding: 2px 4px; white-space: nowrap }
+.nt:hover { color: var(--sig) }
+.bdg { flex: none; width: 13px; height: 13px; border-radius: 50%; border: 1.5px dashed var(--faint); background: var(--b, transparent); padding: 0; margin: 0 2px }
+.bdg.on { border: 0 }
+#pal { position: fixed; z-index: 10; display: flex; gap: 6px; padding: 7px; background: #fff; border: 1px solid var(--ink); box-shadow: 0 4px 14px rgba(20, 20, 20, .16) }
+#pal[hidden] { display: none }
+#pal button { width: 18px; height: 18px; border-radius: 50%; border: 0; padding: 0; background: var(--b) }
+#pal button[aria-pressed="true"] { outline: 2px solid var(--ink); outline-offset: 2px }
+#pal button.none { background: none; border: 1.5px dashed var(--faint); font: 11px/1 var(--mono); color: var(--mid) }
+.mdl-in input.bdg-t { flex: none; width: auto; field-sizing: content; min-width: 3ch; font: 600 10px var(--mono); letter-spacing: .06em; text-transform: uppercase; color: #fff; background: var(--b); border-radius: 3px; padding: 2px 6px; margin: 0 }
+.mdl-in input.bdg-t::placeholder { color: rgba(255, 255, 255, .7) }
+.handle { flex: none; cursor: grab; color: var(--faint); font: 12px/1 var(--mono); letter-spacing: -2px; padding: 4px 2px; touch-action: none; user-select: none }
+.handle:hover { color: var(--sig) }
+tr.lifting { background: #fff; box-shadow: 0 2px 10px rgba(20, 20, 20, .14); position: relative; z-index: 2 }
+tr.lifting .handle { cursor: grabbing; color: var(--sig) }
+tr.best td { background: rgba(217, 72, 15, .1) }
+tr.best td:first-child { box-shadow: inset 3px 0 0 var(--sig) }
+tr.ann td { padding-block: 2px; border-top: 0 }
+tr.ann .n, tr.ann .nlab { opacity: .72 }
+tr.ann input { pointer-events: none }
+.nlab { display: block; padding-left: 22px; font: 500 10.5px var(--mono); letter-spacing: .06em; color: var(--mid); white-space: nowrap }
+.st { display: flex; align-items: center; gap: 6px }
+.st::before { content: ""; flex: none; width: 6px; height: 6px; border-radius: 50%; background: var(--faint) }
+.st[data-v="done"]::before { background: var(--ok) }
+.st[data-v="training"]::before, .st[data-v="evaluating"]::before, .st[data-v="generating data"]::before { background: var(--sig); animation: blink 1.2s steps(2) infinite }
+.st[data-v="trained"]::before { background: var(--amber) }
+.st[data-v="dropped"] select { text-decoration: line-through; color: var(--faint) }
+@keyframes blink { 50% { opacity: .25 } }
+.st select { font: 10.5px var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--mid); -webkit-appearance: none; appearance: none; cursor: pointer; width: auto; margin: 0 }
+.loss input { font: 500 12.5px var(--mono); width: 5.4em }
+.n { display: flex; align-items: center; white-space: nowrap; font: 500 12.5px var(--mono) }
+.n input { width: 3.2em; text-align: right; font: inherit; margin-right: 2px }
+.n .all { display: inline-block; width: 3.2em; text-align: right; padding: 3px 2px 3px 0 }
+.n small { color: var(--mid); margin-left: 6px; font-size: 11px; width: 3.4em }
+.n small.odd { color: var(--sig) }
+.none { color: var(--faint) }
+.led { display: inline-flex; gap: 2px; margin-left: 4px }
+.led i { width: 5px; height: 10px; background: var(--led-off) }
+.led i.on { background: var(--ink) }
+.led.sum i.on { background: var(--sig) }
+.star { color: var(--sig); font-size: 11px; margin-left: 5px; line-height: 1 }
+.del { border: 0; background: none; color: var(--faint); font: 13px var(--mono); padding: 4px }
+.del:hover { color: var(--sig) }
+.del.armed { color: var(--sheet); background: var(--sig); font: 600 9.5px var(--mono); letter-spacing: .06em; padding: 3px 5px }
+
+/* plot mode */
+td.fig { padding: 6px 18px 4px 10px }
+svg.fig { display: block; width: 100%; height: 86px; overflow: visible }
+.fig .grid { stroke: var(--hair); stroke-width: 1 }
+.fig .axis { font: 9px var(--mono); fill: var(--mid); letter-spacing: .06em }
+.fig .b-tr { fill: var(--ink) }
+.fig .b-nw { fill: rgba(217, 72, 15, .14); stroke: var(--sig); stroke-width: 1.2 }
+.fig .v { font: 600 10.5px var(--mono); fill: var(--ink) }
+.fig .v.nw-l { fill: var(--sig) }
+.fig .empty-t { font: 10.5px var(--mono); fill: var(--faint) }
+.fig .l-tr, .fig .l-nw { fill: none; stroke-width: 1.6 }
+.fig .l-tr { stroke: var(--ink) } .fig .l-nw { stroke: var(--sig) }
+.fig .d-tr { fill: var(--ink) } .fig .d-nw { fill: var(--sig) }
+.fig .ref { stroke: var(--mid); stroke-width: 1; stroke-dasharray: 3 3 }
+.key { display: inline-flex; align-items: center; gap: 6px }
+
+.foot:not(:has(span:not(:empty))) { display: none }  /* nothing to say: no footer */
+.foot { display: flex; gap: 8px 22px; flex-wrap: wrap; padding: 8px 18px; border-top: 1.5px solid var(--ink); font: 10.5px var(--mono); color: var(--mid); letter-spacing: .04em }
+.foot .msg.err { color: var(--sig) }
+@media (max-width: 900px) { .led { display: none } }  /* narrow screens: numbers only, no meters */
+@media (prefers-reduced-motion: reduce) { *, *::before { animation: none !important } button:active { transform: none } }
+</style>
+</head>
+<body>
+<div class="page"><div class="sheet">
+  <div class="top">
+    <div class="title"><div class="pn">SP-EVAL · SMOLVLA WATERING POLICY</div><h1>Grasp experiment ladder</h1></div>
+    <div class="block" id="block"></div>
+  </div>
+  <div class="mode" id="mode"></div>
+  <main id="steps"></main>
+  <div class="foot" id="foot"></div>
+</div></div>
+
+<script>
+const STEPS = [
+  { key: "fixed",   title: "Fixed spots",   tag: "reference" },
+  { key: "shift",   title: "Shifted mug",   tag: "pick the base" },
+  { key: "dropout", title: "Shifted + state dropout", tag: "30% of states hidden, shifted data" },
+  { key: "dart",    title: "R-DART",        tag: "pushes on the reach only" },
+  { key: "dartsd",  title: "R-DART + state dropout", tag: "30% of states hidden, R-DART xl data" },
+  { key: "memory",  title: "Memory",        tag: "remember the grasp, R-DART xl + state dropout" },
+  { key: "fulldart", title: "Full-DART + state dropout", tag: "pushes on reach, carry, pour and put-back; rel memory" },
+  { key: "anchor",  title: "Anchored pour", tag: "anchored pour data; top 1-2 configurations only" },
+  { key: "dagger",  title: "DAgger",        tag: "data" },
+];
+const BADGES = { red: "#d9480f", amber: "#c98a0a", green: "#2b8a3e", blue: "#1c6dd0", violet: "#7048e8", grey: "#5f5f5a" };  // a row's badge: one of these + badgeText
+const STATUS = ["planned", "pending", "queued", "generating data", "training", "trained", "evaluating", "done", "dropped"];
+// each measure: the db field prefix of its trained / new counts (all = their sum)
+const MEASURES = [["grasp", "Grasping", "grasp", "mug lifted"], ["water", "Watering", "full_watered", "watered = at least 5 of the 10 droplets in the commanded plant"],
+                  ["success", "Success", "full", "watered and mug put back · best row: score = ⅓ trained + ⅔ new success rate"]];
+const NS = [5, 25, "5t90", "10t90", "10t90s10000", "10t90s20000"];  // other evals: a row's n5 / n25 / n5t90 ... object (same field names, + status) shows as an annotation line under it; t<s>: trials up to s seconds (else 60); s<seed>: another seed set
+const nLabel = n => { const [, a, t, sd] = String(n).match(/^(\d+)(?:t(\d+))?(?:s(\d+))?$/); return `N_ACTION_STEPS ${a}${t ? ` · ${t} S` : ""}${sd ? ` · SEED ${sd}` : ""}`; };
+const nShort = n => String(n).replace(/t(\d+)/, "/$1s");
+const TOL_CM = [1, 2, 3, 4, 5, 6, 7];  // put-back tab: a row's tol_trained / tol_new = success counts with the mug back within each distance
+const PLACED_CM = 3;  // the distance success uses
+const PER = 60;  // trials per spot group (24 positions x 5 trials / 2); a count entered without its own n gets this
+
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const local = (k, d) => { try { return JSON.parse(localStorage.getItem(k)) ?? d; } catch { return d; } };
+const keep = (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} };
+let db = null, canWrite = false, rows = [], pendingRender = false;
+let mode = local("mode", "grasp");                      // per-viewer conveniences: local storage
+if (![...MEASURES.map(m => m[0]), "plot", "tol"].includes(mode)) mode = "grasp";
+const figMode = () => mode === "plot" || mode === "tol";
+const shut = new Set(local("shut", []));
+const hideN = new Set(local("hideN", []));               // rows whose other-N lines are collapsed (then not ranked)
+const widths = local("widths4", {});                    // px per column index, per table kind
+const queues = {};                                      // one write at a time per document
+
+const M = () => MEASURES.find(m => m[0] === mode);
+// a row (its own fields = N 10) followed by one read-only line per other N it was evaluated at
+const others = r => NS.filter(n => r["n" + n]);
+const withEvals = r => [r, ...(hideN.has(r.id) ? [] : others(r)).map(n => ({ ...r["n" + n], id: r.id + "@n" + n, n, stage: r.stage }))];
+let shown = [];  // every row and its annotation lines
+const rate = (k, n) => (n > 0 && k >= 0 && k <= n) ? k / n : null;
+const pct = (k, n) => rate(k, n) === null ? "" : Math.round(rate(k, n) * 100) + "%";
+const num = v => (v === "" || v === null || v === undefined || isNaN(+v)) ? null : +v;
+const pair = (r, base) => [r[base + "_trained_k"], r[base + "_trained_n"], r[base + "_new_k"], r[base + "_new_n"]];
+const sum = (r, base) => { const [a, an, b, bn] = pair(r, base); return (an || bn) ? { k: (a || 0) + (b || 0), n: (an || 0) + (bn || 0) } : null; };
+
+// the ranking score: success rate weighted 1/3 trained spots, 2/3 new spots (generalisation counts more)
+const score = r => { const t = rate(r.full_trained_k, r.full_trained_n), n = rate(r.full_new_k, r.full_new_n); return t === null || n === null ? null : t / 3 + 2 * n / 3; };
+function bestId() {  // success, plot and put-back modes: by score; the others by their measure's total
+  let b = null, bv = 0;
+  for (const r of shown) {
+    const s = sum(r, M() ? M()[2] : "full"), v = figMode() || mode === "success" ? score(r) : s && rate(s.k, s.n);
+    if (v > bv) { b = r.id; bv = v; }
+  }
+  return b;
+}
+function scoreCell(r) {
+  const v = score(r);
+  return `<td><div class="n">${v === null ? `<span class="all none">—</span>` : `<span class="all">${Math.round(v * 100)}%</span>${led(v * 100, 100, "sum")}`}</div></td>`;
+}
+
+const led = (k, n, cls = "") => { const on = rate(k, n) === null ? 0 : Math.round(rate(k, n) * 10);
+  return `<span class="led ${cls}">${Array.from({ length: 10 }, (_, i) => `<i class="${i < on ? "on" : ""}"></i>`).join("")}</span>`; };
+
+// the highest rate in a column, over every model, so its cells can carry a star
+let tops = {};
+function columnTops() {
+  tops = {};
+  for (const [, , base] of MEASURES) for (const side of ["trained", "new"]) {
+    const f = base + "_" + side;
+    tops[f] = Math.max(0, ...shown.map(r => rate(r[f + "_k"], r[f + "_n"]) ?? 0));
+  }
+}
+const star = (f, k, n) => tops[f] > 0 && rate(k, n) === tops[f] ? `<span class="star" title="best in this column">★</span>` : "";
+
+// one count cell: editable k, then its % and a 10-segment meter; a total other than PER is shown in orange
+function countCell(r, f) {
+  const k = r[f + "_k"], n = r[f + "_n"], ro = canWrite && !r.n ? "" : " disabled";
+  return `<td><div class="n"><input type="number" min="0" step="1" data-f="${f}_k" value="${k ?? ""}" aria-label="${f} count"${ro}>`
+    + (k == null ? `<small class="none">—</small>` : `<small${n && n !== PER ? ` class="odd" title="of ${n}"` : ""}>${pct(k, n)}</small>${led(k, n)}${star(f, k, n)}`) + `</div></td>`;
+}
+function sumCell(r, base) {
+  const s = sum(r, base);
+  return `<td><div class="n">${s ? `<span class="all">${s.k}</span><small${s.n !== 2 * PER ? ` class="odd" title="of ${s.n}"` : ""}>${pct(s.k, s.n)}</small>${led(s.k, s.n, "sum")}` : `<span class="all none">—</span>`}</div></td>`;
+}
+
+// one model's three stages as grouped bars: trained (solid ink) beside new (orange outline), each labelled with its count
+function fig(r) {
+  const W = 560, H = 86, L = 34, T = 12, B = 18, names = ["GRASP", "WATER", "SUCCESS"], bw = 26, gap = 6;
+  const X = i => L + 60 + i * 170, Y = k => T + (1 - k / PER) * (H - T - B), base = Y(0);
+  const grid = [0, 30, 60].map(k => `<line class="grid" x1="${L}" x2="${W - 10}" y1="${Y(k)}" y2="${Y(k)}"/><text class="axis" x="${L - 8}" y="${Y(k) + 3}" text-anchor="end">${k}</text>`).join("")
+    + names.map((n, i) => `<text class="axis" x="${X(i)}" y="${H - 3}" text-anchor="middle">${n}</text>`).join("");
+  const tr = MEASURES.map(m => r[m[2] + "_trained_k"]), nw = MEASURES.map(m => r[m[2] + "_new_k"]);
+  if (tr.some(v => v == null) || nw.some(v => v == null))
+    return `<svg class="fig" viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMinYMid meet">${grid}<text class="empty-t" x="${(W + L) / 2}" y="${Y(30) + 4}" text-anchor="middle">${tr.some(v => v != null) ? "eval incomplete" : "not evaluated yet"}</text></svg>`;
+  const bar = (k, x, cls) => { const y = Y(k), h = Math.max(base - y, 0.75);
+    return `<rect class="${cls}" x="${x}" y="${base - h}" width="${bw}" height="${h}"/><text class="v${cls === "b-nw" ? " nw-l" : ""}" x="${x + bw / 2}" y="${base - h - 3}" text-anchor="middle">${k}</text>`; };
+  return `<svg class="fig" viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMinYMid meet" role="img" aria-label="${esc(r.model)}: trained ${tr.join(", ")}; new ${nw.join(", ")} of ${PER} (grasp, water, success)">${grid}
+    ${tr.map((k, i) => bar(k, X(i) - bw - gap / 2, "b-tr") + bar(nw[i], X(i) + gap / 2, "b-nw")).join("")}</svg>`;
+}
+
+// one model's success as the put-back distance allowed grows: trained (ink) and new (orange) spots, the distance used dashed
+function tolFig(r) {
+  const W = 560, H = 86, L = 34, R = 24, T = 12, B = 18, tr = r.tol_trained, nw = r.tol_new;
+  const X = i => L + 14 + i * (W - L - R - 28) / (TOL_CM.length - 1), Y = k => T + (1 - k / PER) * (H - T - B);
+  const grid = [0, 30, 60].map(k => `<line class="grid" x1="${L}" x2="${W - 10}" y1="${Y(k)}" y2="${Y(k)}"/><text class="axis" x="${L - 8}" y="${Y(k) + 3}" text-anchor="end">${k}</text>`).join("")
+    + TOL_CM.map((c, i) => `<text class="axis" x="${X(i)}" y="${H - 3}" text-anchor="middle">${c} CM</text>`).join("")
+    + `<line class="ref" x1="${X(TOL_CM.indexOf(PLACED_CM))}" x2="${X(TOL_CM.indexOf(PLACED_CM))}" y1="${T - 4}" y2="${Y(0)}"/>`;
+  if (!Array.isArray(tr) || !Array.isArray(nw))
+    return `<svg class="fig" viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMinYMid meet">${grid}<text class="empty-t" x="${(W + L) / 2}" y="${Y(30) + 4}" text-anchor="middle">not scored yet</text></svg>`;
+  const line = (v, c) => `<polyline class="l-${c}" points="${v.map((k, i) => `${X(i)},${Y(k)}`).join(" ")}"/>`
+    + v.map((k, i) => `<circle class="d-${c}" cx="${X(i)}" cy="${Y(k)}" r="2.6"/><text class="v${c === "nw" ? " nw-l" : ""}" x="${X(i)}" y="${c === "tr" ? Y(k) - 5 : Math.min(Y(k) + 12, H - B + 9)}" text-anchor="middle">${k}</text>`).join("");
+  return `<svg class="fig" viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMinYMid meet" role="img" aria-label="${esc(r.model)}: success within ${TOL_CM.join(", ")} cm; trained ${tr.join(", ")}; new ${nw.join(", ")} of ${PER}">${grid}${line(tr, "tr")}${line(nw, "nw")}</svg>`;
+}
+
+const kind = () => figMode() ? "plot" : "table";
+const W = () => (widths[kind()] = widths[kind()] || {});
+// number columns are as wide as their content; the one "auto" column takes the rest, so no column ends in empty space
+const head = () => figMode()
+  ? [["MODEL", "240px"], ["STATE", "130px"], ["LOSS", "72px"], [mode === "plot" ? "GRASP → WATER → SUCCESS · COUNT /60" : "SUCCESS VS PUT-BACK DISTANCE ALLOWED · COUNT /60", "auto", "fig-c"]]
+  : mode === "water"
+  ? [["MODEL", "auto"], ["STATE", "130px"], ["LOSS", "72px"], ["TRAINED /60", "180px"], ["NEW /60", "180px"], ["ALL /120", "165px"],
+     ["DROPS · TRAINED /10", "140px"], ["DROPS · NEW /10", "130px"]]
+  : [["MODEL", "auto"], ["STATE", "130px"], ["LOSS", "72px"], ["TRAINED /60", "180px"], ["NEW /60", "180px"], ["ALL /120", "165px"],
+     ...(mode === "success" ? [["SCORE · ⅓ T + ⅔ N", "150px"]] : [])];
+const DROPS = 10;  // droplets in the mug at the start of a trial; drops_* = mean number that ended in the commanded plant
+function dropCell(r, f) {
+  const v = r[f];
+  return `<td><div class="n">${v == null ? `<span class="all none">—</span>` : `<span class="all">${(+v).toFixed(1)}</span>${led(v, DROPS)}`}</div></td>`;
+}
+function colStyle() {  // once dragged, every column has a px width and the table is their sum: it grows to the right
+  let el = $("#colw"); if (!el) { el = document.createElement("style"); el.id = "colw"; document.head.append(el); }
+  const w = Object.entries(W()), total = w.reduce((a, [, v]) => a + v, 0);
+  el.textContent = w.map(([c, v]) => `table.${kind()} th:nth-child(${+c + 1}) { width: ${v}px !important }`).join("\n")
+    + (w.length ? `\ntable.${kind()} { width: ${total}px; min-width: 0 }`  // narrow screens scroll rather than squeeze the auto column to 0
+       : `\ntable.${kind()} { min-width: ${head().reduce((a, [, v]) => a + (parseInt(v) || 220), 40)}px }`);
+}
+
+function rowHtml(r, best) {
+  const cls = [r.id === best && "best", r.n && "ann"].filter(Boolean).join(" ");
+  const data = figMode() ? `<td class="fig">${mode === "plot" ? fig(r) : tolFig(r)}</td>` : countCell(r, M()[2] + "_trained") + countCell(r, M()[2] + "_new") + sumCell(r, M()[2])
+      + (mode === "water" ? dropCell(r, "drops_trained") + dropCell(r, "drops_new") : "") + (mode === "success" ? scoreCell(r) : "");
+  if (r.n) return `<tr${cls ? ` class="${cls}"` : ""}><td class="mdl"><span class="nlab">↳ ${nLabel(r.n)}</span></td><td><div class="st" data-v="${esc(r.status || "planned")}"><select data-ann="${esc(r.id.slice(0, r.id.lastIndexOf("@n")))}" data-n="${esc(r.n)}" aria-label="Status of this eval"${canWrite ? "" : " disabled"}>${STATUS.map(s => `<option${s === (r.status || "planned") ? " selected" : ""}>${s}</option>`).join("")}</select></div></td><td></td>${data}<td class="del-c">${canWrite ? `<button class="del" data-del-ann="${esc(r.id.slice(0, r.id.lastIndexOf("@n")))}" data-n="${esc(r.n)}" title="Delete this eval" aria-label="Delete eval ${esc(nLabel(r.n))}">×</button>` : ""}</td></tr>`;
+  const ro = canWrite ? "" : " disabled", st = r.status || "planned";
+  const base = `<td class="mdl"><div class="mdl-in">${badge(r, ro)}${canWrite ? `<span class="handle" title="Drag to reorder within this step" aria-hidden="true">⋮⋮</span>` : ""}<input data-f="model" value="${esc(r.model)}" aria-label="Model name"${ro}>${others(r).length ? `<button class="nt" data-nt="${esc(r.id)}" aria-expanded="${!hideN.has(r.id)}" title="${hideN.has(r.id) ? "Show" : "Hide"} other evals: ${others(r).map(nLabel).join(", ")}" aria-label="${hideN.has(r.id) ? "Show" : "Hide"} ${others(r).length} other evals">${hideN.has(r.id) ? "▸" : "▾"}</button>` : ""}</div></td>
+    <td><div class="st" data-v="${esc(st)}"><select data-f="status" aria-label="Status"${ro}>${STATUS.map(s => `<option${s === st ? " selected" : ""}>${s}</option>`).join("")}</select></div></td>
+    <td class="loss"><input type="number" step="any" min="0" data-f="loss" value="${r.loss ?? ""}" placeholder="—" aria-label="Final loss"${ro}></td>`;
+  const tail = canWrite ? `<td class="del-c"><button class="del" title="Delete row" aria-label="Delete ${esc(r.model)}">×</button></td>` : `<td class="del-c"></td>`;
+  return `<tr data-id="${esc(r.id)}"${cls ? ` class="${cls}"` : ""}>${base}${data}${tail}</tr>`;
+}
+
+function badge(r, ro) {  // colour swatch (a select) and, once a colour is set, its editable label
+  const c = BADGES[r.badge];
+  return `<button class="bdg${c ? " on" : ""}" data-bdg="${esc(r.id)}" style="${c ? `--b:${c}` : ""}" title="Badge colour" aria-label="Badge colour: ${esc(r.badge || "none")}"${ro}></button>`
+    + (c ? `<input class="bdg-t" data-f="badgeText" value="${esc(r.badgeText)}" placeholder="label" size="${Math.max(5, (r.badgeText || "").length + 1)}" style="--b:${c}" aria-label="Badge label"${ro}>` : "");
+}
+
+let lifting = null;  // the row being dragged, if any
+function render() {
+  if (lifting || (document.activeElement && document.activeElement.closest("tr[data-id]"))) { pendingRender = true; return; }
+  pendingRender = false;
+  shown = rows.flatMap(withEvals);
+  columnTops();
+  const best = bestId(), evald = rows.filter(r => sum(r, "full")).length;
+  const last = rows.map(r => r.updatedAt || r.createdAt || "").sort().pop();
+  $("#block").innerHTML = `<div><b>DOC NO</b>SP-0413</div><div><b>MODELS</b>${rows.length}</div>
+    <div><b>UPDATED</b>${last ? last.slice(0, 10) : "—"}</div><div><b>EVALUATED</b>${evald}</div>
+    <div><b>TRIALS</b>${evald * 2 * PER}</div><div><b>SEEDS</b>FIXED</div>`;
+  $("#mode").innerHTML = `<span>MEASURE</span>${MEASURES.map(([k, l]) => `<button data-mode="${k}" aria-pressed="${mode === k}">${l.toUpperCase()}</button>`).join("")}
+    <span class="sep"></span><button data-mode="plot" aria-pressed="${mode === "plot"}">PLOT</button><button data-mode="tol" aria-pressed="${mode === "tol"}">PUT-BACK</button>
+    <span class="hint">${mode === "plot" ? "all three stages per model" : mode === "tol" ? "success if the mug may end further from its start (tilt ≤ 15° and watering unchanged)" : M()[3]}</span>`;
+  colStyle();
+  $("#steps").innerHTML = STEPS.map((s, i) => {
+    const rs = rows.filter(r => r.stage === s.key).sort((a, b) => (a.order ?? 0) - (b.order ?? 0)).flatMap(r => shown.filter(x => x.id === r.id || x.id.startsWith(r.id + "@n"))), closed = shut.has(s.key);
+    return `<section class="step${closed ? " shut" : ""}">
+      <div class="step-h"><button class="fold" data-fold="${s.key}" aria-expanded="${!closed}"><span class="pn">STP-0${i + 1}</span><b>${esc(s.title)}</b><span class="tag">${esc(s.tag)} · ${rs.length} model${rs.length === 1 ? "" : "s"}</span><span class="caret">${closed ? "+" : "−"}</span></button>
+        ${canWrite && !closed ? `<button class="add" data-stage="${s.key}">+ ADD</button>` : ""}</div>
+      <div class="tablewrap"><table class="${kind()}"><thead><tr>${head().map(([h, w, c], j) => `<th${c ? ` class="${c}"` : ""} style="width:${w}">${h}<span class="grip" data-col="${j}" title="Drag to resize · double-click to reset all columns"></span></th>`).join("")}<th class="del-c"></th></tr></thead>
+        <tbody>${rs.length ? rs.map(r => rowHtml(r, best)).join("") : `<tr class="empty"><td colspan="${head().length + 1}">NO MODELS IN THIS STEP YET</td></tr>`}</tbody></table></div>
+    </section>`;
+  }).join("");
+  $("#foot").innerHTML = (mode === "tol"
+    ? `<span class="key"><svg width="14" height="10"><line x1="0" x2="14" y1="5" y2="5" stroke="#141414" stroke-width="1.6"/></svg>TRAINED SPOTS (1–4)</span>
+       <span class="key" style="color:var(--sig)"><svg width="14" height="10"><line x1="0" x2="14" y1="5" y2="5" stroke="#d9480f" stroke-width="1.6"/></svg>NEW SPOTS (5–8)</span><span>DASHED: ${PLACED_CM} CM, THE DISTANCE SUCCESS USES</span>`
+    : mode === "plot"
+    ? `<span class="key"><svg width="10" height="10"><rect width="10" height="10" fill="#141414"/></svg>TRAINED SPOTS (1–4)</span>
+       <span class="key" style="color:var(--sig)"><svg width="10" height="10"><rect x=".6" y=".6" width="8.8" height="8.8" fill="rgba(217,72,15,.14)" stroke="#d9480f" stroke-width="1.2"/></svg>NEW SPOTS (5–8)</span><span>Y AXIS 0–60 TRIALS</span>`
+    : "") + `<span class="msg" id="msg"></span>`;  // msg: only saves and errors
+}
+
+function setMsg(t, err) { const m = $("#msg"); if (m) { m.textContent = t; m.classList.toggle("err", !!err); } }
+function write(id, patch) {
+  const ref = db.doc("experiments/" + id);
+  queues[id] = (queues[id] || Promise.resolve()).then(() => ref.update({ ...patch, updatedAt: new Date().toISOString() }))
+    .then(() => setMsg("SAVED"), e => setMsg(e.code === "invalid_argument" ? "READ-ONLY FOR YOU" : "COULD NOT SAVE: " + e.message, true));
+}
+
+document.addEventListener("change", e => {
+  const el = e.target;
+  if (el.dataset.ann && db) {  // an other-N line's status: lives in its row's n<key> object
+    const key = "n" + el.dataset.n, have = rows.find(x => x.id === el.dataset.ann);
+    el.parentElement.dataset.v = el.value;
+    return write(el.dataset.ann, { [key]: { ...(have && have[key]), status: el.value } });
+  }
+  const tr = el.closest("tr[data-id]"); if (!tr || !db || !el.dataset.f) return;
+  const f = el.dataset.f, v = el.type === "number" ? num(el.value) : el.value.trim();
+  if (f === "status") el.parentElement.dataset.v = v;
+  const nf = f.replace(/_k$/, "_n"), have = rows.find(x => x.id === tr.dataset.id);
+  write(tr.dataset.id, { [f]: v, ...(f.endsWith("_k") && v !== null && !(have && have[nf]) ? { [nf]: PER } : {}) });
+});
+document.addEventListener("focusout", () => setTimeout(() => { if (pendingRender) render(); }, 0));
+const pal = document.body.appendChild(Object.assign(document.createElement("div"), { id: "pal", hidden: true }));
+document.addEventListener("click", async e => {
+  const pick = e.target.closest("[data-pick]");  // a colour in the open palette
+  if (pick) { pal.hidden = true; write(pal.dataset.id, { badge: pick.dataset.pick }); return; }
+  const bd = e.target.closest("[data-bdg]");
+  if (bd && db) {
+    bd.blur(); const row = rows.find(x => x.id === bd.dataset.bdg), b = bd.getBoundingClientRect();
+    pal.dataset.id = bd.dataset.bdg;
+    pal.innerHTML = Object.entries(BADGES).map(([k, c]) => `<button data-pick="${k}" style="--b:${c}" aria-label="${k}" title="${k}" aria-pressed="${row && row.badge === k}"></button>`).join("")
+      + `<button class="none" data-pick="" aria-label="No badge" title="No badge">×</button>`;
+    Object.assign(pal.style, { left: b.left + "px", top: b.bottom + 6 + "px" }); pal.hidden = false; return;
+  }
+  if (!e.target.closest("#pal")) pal.hidden = true;
+  const m = e.target.closest("[data-mode]");
+  if (m) { mode = m.dataset.mode; keep("mode", mode); render(); return; }
+  const f = e.target.closest("[data-fold]");
+  const nt = e.target.closest("[data-nt]");  // blur below: render() waits while focus is inside a row
+  if (nt) { nt.blur(); const id = nt.dataset.nt; hideN.has(id) ? hideN.delete(id) : hideN.add(id); keep("hideN", [...hideN]); render(); return; }
+  if (f) { shut.has(f.dataset.fold) ? shut.delete(f.dataset.fold) : shut.add(f.dataset.fold); keep("shut", [...shut]); render(); return; }
+  const add = e.target.closest(".add");
+  if (add && db) {
+    const stage = add.dataset.stage, order = Math.max(0, ...rows.filter(r => r.stage === stage).map(r => r.order ?? 0)) + 1;
+    try { await db.doc("experiments/m" + Date.now().toString(36)).set({ stage, order, model: "new-model", recipe: "", data: "", status: "planned", notes: "", createdAt: new Date().toISOString() });
+      setMsg("ADDED A ROW"); } catch (err) { setMsg("COULD NOT ADD: " + err.message, true); }
+    return;
+  }
+  const del = e.target.closest(".del");
+  if (del && db && del.dataset.delAnn) {  // an other-N line: rewrite its row without that n<key> object (update can't remove a field)
+    if (!del.classList.contains("armed")) { del.classList.add("armed"); del.textContent = "DELETE?"; setTimeout(() => { del.classList.remove("armed"); del.textContent = "×"; }, 3000); return; }
+    const row = rows.find(x => x.id === del.dataset.delAnn); if (!row) return;
+    const { id, ...rest } = row; delete rest["n" + del.dataset.n];
+    try { await db.doc("experiments/" + id).set({ ...rest, updatedAt: new Date().toISOString() }); setMsg("DELETED"); } catch (err) { setMsg("COULD NOT DELETE: " + err.message, true); }
+    return;
+  }
+  if (del && db) {
+    if (!del.classList.contains("armed")) { del.classList.add("armed"); del.textContent = "DELETE?"; setTimeout(() => { del.classList.remove("armed"); del.textContent = "×"; }, 3000); return; }
+    try { await db.doc("experiments/" + del.closest("tr").dataset.id).delete(); setMsg("DELETED"); } catch (err) { setMsg("COULD NOT DELETE: " + err.message, true); }
+  }
+});
+// drag a row by its handle to reorder it inside its own step; the new order is saved as 1, 2, 3, ...
+document.addEventListener("pointerdown", e => {
+  const h = e.target.closest(".handle"); if (!h || !db) return;
+  e.preventDefault();
+  const tr = h.closest("tr"), body = tr.parentElement;
+  lifting = tr; tr.classList.add("lifting");  // no pointer capture: moving the row in the DOM would drop it
+  const move = ev => {
+    const others = [...body.querySelectorAll("tr[data-id]")].filter(r => r !== tr);
+    const before = others.find(r => { const b = r.getBoundingClientRect(); return ev.clientY < b.top + b.height / 2; });
+    if (before ? tr.nextElementSibling !== before : body.lastElementChild !== tr) body.insertBefore(tr, before || null);
+  };
+  document.addEventListener("pointermove", move);
+  const end = () => {
+    document.removeEventListener("pointermove", move); document.removeEventListener("pointerup", end); document.removeEventListener("pointercancel", end);
+    tr.classList.remove("lifting"); lifting = null;
+    [...body.querySelectorAll("tr[data-id]")].forEach((r, i) => {
+      const row = rows.find(x => x.id === r.dataset.id);
+      if (row && row.order !== i + 1) { row.order = i + 1; write(row.id, { order: i + 1 }); }
+    });
+    render();  // also puts each row's N lines back under it
+  };
+  document.addEventListener("pointerup", end); document.addEventListener("pointercancel", end);
+});
+
+// drag a column edge to resize it (all steps at once); double-click resets it
+document.addEventListener("pointerdown", e => {
+  const g = e.target.closest(".grip"); if (!g) return;
+  e.preventDefault();
+  const c = +g.dataset.col, x0 = e.clientX, w0 = g.parentElement.getBoundingClientRect().width;
+  // first drag: freeze every column at its current width, so widening one doesn't squeeze the others
+  [...g.closest("tr").children].forEach((th, i) => { if (W()[i] == null) W()[i] = Math.round(th.getBoundingClientRect().width); });
+  g.classList.add("dragging"); g.setPointerCapture(e.pointerId);
+  const move = ev => { W()[c] = Math.max(48, Math.round(w0 + ev.clientX - x0)); colStyle(); };
+  g.addEventListener("pointermove", move);
+  g.addEventListener("pointerup", () => { g.classList.remove("dragging"); g.removeEventListener("pointermove", move); keep("widths4", widths); }, { once: true });
+});
+document.addEventListener("dblclick", e => {  // reset the whole table to its automatic widths
+  const g = e.target.closest(".grip"); if (!g) return;
+  widths[kind()] = {}; colStyle(); keep("widths4", widths);
+});
+
+render();
+(async () => {
+  try { rows = await (await fetch("experiments.json")).json(); render(); }  // a read-only snapshot of the live tracker
+  catch (err) { setMsg("COULD NOT LOAD THE RESULTS: " + err.message, true); }
+})();
+</script>
+</body>
+</html>
