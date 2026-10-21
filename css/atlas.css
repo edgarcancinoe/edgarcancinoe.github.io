@@ -83,6 +83,7 @@ a { color: inherit; text-decoration: none; }
 .at-name .dot { color: var(--red); }
 .at-lead { font-size: clamp(1.35rem, 2.2vw, 1.9rem); line-height: 1.2; letter-spacing: -0.024em; margin: 18px 0 0; font-weight: 500; text-wrap: balance; }
 .at-lead b { font-weight: 700; color: var(--red); }
+.at-pitch { font-size: 1.05rem; line-height: 1.45; margin: 12px 0 0; max-width: 52ch; opacity: .75; }
 .at-ctas { display: flex; gap: 8px; margin-top: 22px; flex-wrap: wrap; }
 
 /* ── Spec sheet ──
