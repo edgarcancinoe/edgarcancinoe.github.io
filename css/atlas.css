@@ -208,6 +208,45 @@ a { color: inherit; text-decoration: none; }
 .at-article .at-acts { margin-top: 18px; }
 .at-article .at-acts .at-btn { height: 34px; padding: 0 13px; font-size: 11px; }
 
+/* ── Walkthrough figures (research pages): pipeline strip, column labels, side-by-side blocks, charts, equations ── */
+.at-strip { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 12px; padding-top: 22px; }
+.at-strip span { padding: 9px 13px; border: 1px solid var(--ink); border-radius: 2px; background: var(--paper); font-weight: 650; font-size: 14px; line-height: 1.2; letter-spacing: -0.01em; }
+.at-strip span.key { border-color: var(--red); color: var(--red); box-shadow: inset 0 0 0 1px var(--red); }
+.at-strip i { font-style: normal; color: var(--red); }
+/* Labels that sit over the columns (or beside the rows) of a figure grid */
+.at-cols { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); gap: 6px; padding: 2px 0 8px; text-align: center; color: var(--ink2); }
+.at-cols .hi { color: var(--red); }
+.at-article .at-cols + .m, .at-article .at-cols + .m > * { max-height: none; } /* letterboxing would pull the image out from under its labels */
+.at-rows { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 8px; }
+.at-rows .k { display: grid; grid-auto-rows: 1fr; color: var(--ink2); }
+.at-rows .k span { writing-mode: vertical-rl; transform: rotate(180deg); text-align: center; }
+.at-split, .at-pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; margin-top: 28px; align-items: start; }
+.at-split > .at-fig, .at-pair > .at-fig { margin-top: 0; }
+.at-split .at-intro { margin-top: 0; }
+.at-parts { border-top: 2px solid var(--ink); }
+.at-part { padding: 14px 0; border-bottom: 1px solid var(--line); }
+.at-part .k { color: var(--red); }
+.at-part h3 { margin: 6px 0 4px; font-size: 15px; font-weight: 700; letter-spacing: -0.01em; }
+.at-part p { margin: 0; font-size: 14px; line-height: 1.45; color: var(--ink2); }
+.at-part .big { display: block; margin-top: 6px; font-weight: 800; font-size: 2.2rem; line-height: 1; letter-spacing: -0.04em; color: var(--red); }
+/* Charts are drawn at the container's real width (js/charts.js), so these sizes are on-screen pixels */
+.at-chart { padding: 6px 6px 2px; }
+.at-chart .t, .at-eq .t { display: block; margin-bottom: 10px; color: var(--ink2); }
+.at-chart svg, .at-svg { display: block; width: 100%; height: auto; font-family: var(--font-mono); font-size: 11px; }
+.at-chart svg .s, .at-svg .s { font-family: var(--font-sans); font-size: 12.5px; }
+.at-eq { padding: 14px 16px 10px; }
+.at-eq .eqs { overflow-x: auto; }
+.at-eq math { margin: 12px 0; font-size: 1.25rem; }
+.at-eq math, .at-tag math { font-family: "STIX Two Math", "Cambria Math", math; } /* the generic `math` font can lack stretchy brackets and accents */
+.at-eq .tot { color: var(--red); }
+.at-tag math { text-transform: none; font-size: 12px; }
+@media (max-width: 600px) {
+  .at-split, .at-pair { grid-template-columns: 1fr; }
+  .at-eq math { font-size: .9rem; }
+  .at-strip { flex-direction: column; align-items: flex-start; gap: 6px; } /* a vertical pipeline: no arrow left dangling at a line end */
+  .at-strip i { transform: rotate(90deg); margin-left: 14px; }
+}
+
 /* ── Research page (large plates) ── */
 .at-plate.lg { grid-template-columns: 56px minmax(0, 6fr) minmax(0, 5fr); gap: 32px; padding: 36px 0; }
 .at-plate.lg .at-fig .m { aspect-ratio: 16 / 10; }

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Visual Thought Tokens: Perceptual Guidance and Token Grounding for VLAs — J. Edgar Hernandez</title>
+  <meta name="description" content="MSc thesis at ViCoS: a lightweight decoder recovers DINOv2 features, CeDiRNet cloth-corner maps and language-grounded image tokens from a frozen X-VLA, then feeds them back to guide cloth manipulation on a real SO-ARM101." />
+  <meta name="theme-color" content="#efebe2" />
+  <link rel="icon" href="../logo.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=IBM+Plex+Mono:wght@400;500&display=swap" />
+  <link rel="stylesheet" href="../css/atlas.css" />
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-github" viewBox="0 0 16 16"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></symbol>
+    <symbol id="i-paper" viewBox="0 0 16 16"><g fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"><path d="M3.5 1.5h6l3 3v10h-9z"/><path d="M9.5 1.5v3h3M5.5 8h5M5.5 10.5h5M5.5 13h3"/></g></symbol>
+    <symbol id="i-scholar" viewBox="0 0 16 16"><path fill="currentColor" d="M8 1.5 .6 6 8 10.5 15.4 6zM3.4 8.3v3.1c0 1.3 2.1 2.6 4.6 2.6s4.6-1.3 4.6-2.6V8.3L8 11.1z"/></symbol>
+    <symbol id="i-rg" viewBox="0 0 16 16"><rect x="1" y="1" width="14" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.3"/><text x="8" y="11.2" fill="currentColor" font-family="Arial, Helvetica, sans-serif" font-size="7.4" font-weight="700" text-anchor="middle">RG</text></symbol>
+  </svg>
+  <header class="at-bar at-mono">
+    <a href="../index.html">J.E. Hernandez</a>
+    <nav aria-label="Primary">
+      <a href="../index.html">Index</a>
+      <a href="../research.html" aria-current="page">Research</a>
+      <a href="../projects.html">Projects</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+    <span class="r">Spain · Open to relocation</span>
+  </header>
+
+  <main class="at-wrap">
+    <article class="at-page at-article">
+      <a class="at-back at-mono" href="../research.html">← Research</a>
+      <div class="at-kicker at-mono in" style="--i:0"><span>MSc thesis · ViCoS, University of Ljubljana</span><span>2026</span></div>
+      <h1 class="at-h1 at-x in" style="--i:1">Visual Thought Tokens: Reading Perception out of a Robot’s VLA, and Feeding It Back</h1>
+      <div class="at-tags at-mono in" style="--i:2"><span class="at-tag">X-VLA</span><span class="at-tag">Flow matching</span><span class="at-tag">DINOv2</span><span class="at-tag">CeDiRNet</span><span class="at-tag">Token grounding</span><span class="at-tag">SO-ARM101</span><span class="at-tag">LeRobot</span></div>
+      <figure class="at-fig in" style="--i:3"><div class="m"><video muted loop playsinline preload="metadata" data-autoplay-visible poster="../images/projects/visual_expert_distillation/demo-poster.webp" aria-label="Cloth manipulation rollouts next to the cloth-corner direction maps the decoder reads out of the frozen X-VLA"><source src="../images/projects/visual_expert_distillation/demo-web.mp4" type="video/mp4" /><source src="../images/projects/visual_expert_distillation/demo.webm" type="video/webm" /></video></div></figure>
+      <div class="at-acts at-mono in" style="--i:4"><a class="at-btn fill" href="xvla_visual_thought/masters-thesis.pdf" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-paper"/></svg>Thesis ↗</a><a class="at-btn" href="xvla_visual_thought/visual-thought-tokens.pdf" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-paper"/></svg>Token grounding report ↗</a><a class="at-btn" href="https://github.com/edgarcancinoe/XVLA-VisualThought" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-github"/></svg>Code ↗</a><a class="at-btn" href="https://www.vicos.si" target="_blank" rel="noopener">ViCoS ↗</a></div>
+
+      <div class="at-sec rv"><h2 class="at-x">Overview</h2></div>
+      <div class="at-prose rv">
+        <p><strong>Does a robot’s VLA already know where the cloth corner is, and just fail to use it?</strong> Vision-language-action models inherit rich perception from their pretrained vision-language backbone. My thesis asks whether that perception survives inside the model, whether a small decoder can read it back out, and whether handing it to the action head makes grasps better.</p>
+        <p>The model is X-VLA (0.9B, flow-matching action head) on a low-cost SO-ARM101 arm with a front camera and a wrist camera. All data is my own, recorded with LeRobot: 184 colour-cube pick-and-place demos, 70 “pick the cloth by a corner and drop it in the box” demos and 50 cloth-folding demos. Supervised by prof. Danijel Skočaj and dr. Domen Tabernik at the <a href="https://www.vicos.si" target="_blank" rel="noopener">ViCoS lab</a>.</p>
+      </div>
+
+      <div class="at-sec rv"><h2 class="at-x">A decoder that reads the frozen backbone</h2></div>
+      <div class="at-strip at-x rv"><span>Frozen X-VLA tokens</span><i aria-hidden="true">→</i><span class="key">Visual-thought decoder</span><i aria-hidden="true">→</i><span>Expert’s view</span></div>
+      <div class="at-prose rv">
+        <p>The <em>visual-thought decoder</em> is a bank of learned query tokens that cross-attend to X-VLA’s internal token sequence, the fused image-and-instruction tokens the action head already consumes. Its output, the visual-thought tokens, is trained to match an external expert while X-VLA itself stays frozen. The same template gets three different jobs:</p>
+        <ul>
+          <li><strong>DINOv2 features:</strong> reproduce the patch tokens of a DINOv2 ViT-B/14, a strong general-purpose vision model.</li>
+          <li><strong>Cloth-corner maps:</strong> reconstruct the direction fields of CeDiRNet, a ViCoS network whose maps point toward graspable cloth corners.</li>
+          <li><strong>Token grounding:</strong> point at which of X-VLA’s own image tokens matter for the instruction right now.</li>
+        </ul>
+      </div>
+      <figure class="at-fig rv"><div class="m fit"><img src="../images/projects/xvla_visual_thought/decoder.webp" alt="Visual-thought decoder: learned queries pass through self-attention, cross-attention over the projected frozen VLM tokens, and a feed-forward block, repeated L times, producing visual-thought tokens" loading="lazy" decoding="async" /></div></figure>
+
+      <div class="at-sec rv"><h2 class="at-x">What the backbone already knows</h2></div>
+      <div class="at-prose rv">
+        <p>Both experts can be recovered from the frozen X-VLA tokens. Projected to colour with PCA, the decoded DINOv2 tokens (right) organise the scene like the real DINOv2 features (middle): the arm, the table, the cloth and the cube each keep their own colour. A one-layer decoder of about 5M parameters rebuilds the CeDiRNet direction maps with a validation error of 0.015, enough to point at the cloth corners.</p>
+      </div>
+      <figure class="at-fig rv"><div class="at-cols at-mono" aria-hidden="true"><span>Frame</span><span>Real DINOv2</span><span class="hi">Decoded from X-VLA</span></div><div class="m fit"><img src="../images/projects/xvla_visual_thought/dino.webp" alt="Input frame, real DINOv2 features and features decoded from X-VLA, shown as PCA colour maps for a cube scene and a cloth scene" loading="lazy" decoding="async" /></div></figure>
+      <figure class="at-fig rv"><div class="at-cols at-mono" aria-hidden="true"><span class="hi">Cloth-corner direction · sin</span><span class="hi">Cloth-corner direction · cos</span></div><div class="m fit"><img src="../images/projects/xvla_visual_thought/cedirnet.webp" alt="Sine and cosine cloth-corner direction maps decoded from X-VLA, overlaid on the cloth scene" loading="lazy" decoding="async" /></div></figure>
+
+      <div class="at-sec rv" id="token-grounding"><h2 class="at-x">Token grounding: which tokens matter right now?</h2></div>
+      <div class="at-prose rv">
+        <p>X-VLA sees each frame as a 7×7 grid of image tokens. For grounding, the decoder produces a single visual-thought token that acts as a query and scores every cell of that grid, so the answer lives in the same token space the policy acts from. The best few cells are then refined to a 14×14 grid using finer features from X-VLA’s own vision tower. The idea is inspired by MolmoPoint’s pointing tokens.</p>
+        <ul>
+          <li><strong>Data:</strong> 4,069 image–instruction pairs over 2,191 frames, including 1,524 negatives where the named cube isn’t there.</li>
+          <li><strong>Precision first:</strong> a wrong highlight would steer the robot to the wrong object, so models are selected on a precision-weighted F-score (F<sub>0.25</sub>). The best checkpoint reaches <strong>88% precision</strong> at 60% recall on held-out frames.</li>
+          <li><strong>It follows the task, not just the word:</strong> before the grasp the named cube lights up, from both cameras. Once the cube is in the gripper, relevance moves to the box.</li>
+        </ul>
+      </div>
+      <figure class="at-fig rv"><div class="m"><video muted loop playsinline preload="metadata" data-autoplay-visible poster="../images/projects/language_conditioned_token_grounding/query00-poster.webp" aria-label="Language-conditioned relevance over the X-VLA image-token grid during a cube pick-and-place episode"><source src="../images/projects/language_conditioned_token_grounding/query00-web.mp4" type="video/mp4" /></video></div></figure>
+      <figure class="at-fig rv"><div class="m fit"><img src="../images/projects/xvla_visual_thought/grounding.webp" alt="Pick up black cube and place inside white box: before the grasp the selected token covers the black cube; after the grasp it covers the box" loading="lazy" decoding="async" /></div></figure>
+
+      <div class="at-sec rv"><h2 class="at-x">Feeding it back to the policy</h2></div>
+      <div class="at-prose rv">
+        <ul>
+          <li><strong>Implicit guidance:</strong> fine-tune the whole policy with the decoder attached, adding the reconstruction loss to the action loss. The policy’s inputs don’t change; the extra loss only keeps the corner structure recoverable inside the backbone.</li>
+          <li><strong>Explicit guidance:</strong> pass the decoder’s 32×32 cloth-corner tokens straight to the action transformer, either appended to its input for all 24 layers or inserted only at layers 6, 12 and 18, each with an optional learned gate.</li>
+          <li><strong>Fair comparison:</strong> every guided model is compared with a control trained for the same extra steps without guidance, so gains can’t come from training longer.</li>
+        </ul>
+      </div>
+      <figure class="at-fig rv"><div class="m fit"><img src="../images/projects/xvla_visual_thought/guided_xvla.webp" alt="Guided X-VLA pipeline: guidance tokens extracted from the VLM features are fused with the native action-conditioning sequence before the self-attention action transformer" loading="lazy" decoding="async" /></div></figure>
+
+      <div class="at-sec rv"><h2 class="at-x">Results on the real robot</h2><a class="at-mono" href="xvla_visual_thought/masters-thesis.pdf" target="_blank" rel="noopener">Thesis ↗</a></div>
+      <div class="at-prose rv">
+        <p>16 trials per model on each cloth task (four cloth layouts × 4) and 48 on the cube task.</p>
+      </div>
+      <figure class="at-fig at-chart rv">
+        <span class="t at-mono">P(correct corner) · cloth-to-box, 16 trials each</span>
+        <div id="corner" role="img" aria-label="Correct corner on cloth-to-box: baseline 25%, control with the same extra training 50%, implicit 75%, explicit at layers 6/12/18 87.5%, explicit appended to the input 12.5%"></div>
+      </figure>
+      <div class="at-pair rv">
+        <figure class="at-fig at-chart"><span class="t at-mono">Grasp score | correct corner</span><div id="grasp" role="img" aria-label="Grasp score given the correct corner: implicit 67%, layers 6/12/18 39%"></div></figure>
+        <figure class="at-fig at-chart"><span class="t at-mono">P(named cube) · 48 trials</span><div id="cube" role="img" aria-label="Picking the cube of the named colour: without guidance 83%, with DINOv2 guidance 90%"></div></figure>
+      </div>
+      <div class="at-prose rv">
+        <ul>
+          <li><strong>Picking the right corner:</strong> on cloth-to-box, the policy picked the correct corner 50% of the time with extra training alone, <strong>75%</strong> with implicit guidance and <strong>87.5%</strong> with guidance at layers 6/12/18. The original baseline managed 25%.</li>
+          <li><strong>Grasping it:</strong> implicit guidance grasped best once it had found the corner (67% grasp score vs. 39% for layer insertion). Finding the target and grasping it are separate skills.</li>
+          <li><strong>How it enters matters:</strong> appending the same tokens to the input collapsed the policy to 12.5% correct corners. Inserting them at a few layers worked.</li>
+          <li><strong>Folding:</strong> implicit and layer-inserted guidance found the corner 16/16 times, but fold quality stayed low for every model (19–34%).</li>
+          <li><strong>Cubes:</strong> with DINOv2 guidance, picking the cube of the named colour rose from 83% to 90%. The baseline’s failures were hesitations, stopping midway between two cubes; with guidance it committed, though occasionally to the wrong cube (5 of 48).</li>
+        </ul>
+      </div>
+
+      <div class="at-sec rv"><h2 class="at-x">What I took away</h2></div>
+      <div class="at-prose rv">
+        <ul>
+          <li>The backbone holds more task-relevant perception than the action head uses, and a few million parameters are enough to read it out.</li>
+          <li>Guidance reliably helps the policy choose the right target. Turning that into a precise grasp is a separate problem, so I report grasp accuracy given a correct target alongside the usual success rates.</li>
+          <li>Getting X-VLA to work on the SO-ARM101 took real effort: switching LeRobot to end-effector actions, normalising the robot state, training on varied lighting and smoothing commands to reduce shaking. Small camera shifts still hurt it.</li>
+        </ul>
+      </div>
+    </article>
+  </main>
+
+  <footer class="at-foot at-mono">
+    <div class="at-wrap">
+      <span class="at-copy"><span>edgarcancinoe@gmail.com</span><button type="button" class="at-btn" data-copy="edgarcancinoe@gmail.com">Copy</button></span>
+      <div class="links">
+        <a class="at-btn" href="https://github.com/edgarcancinoe" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-github"/></svg>GitHub ↗</a>
+        <a class="at-btn" href="https://www.linkedin.com/in/edgar-cancino/" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a class="at-btn" href="https://scholar.google.com/citations?user=yNqv2bcAAAAJ" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-scholar"/></svg>Scholar ↗</a>
+        <a class="at-btn" href="https://www.researchgate.net/profile/Jose-Hernandez-Cancino-Estrada-2" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-rg"/></svg>ResearchGate ↗</a>
+        <a class="at-btn" href="../res/Jose_E_Hernandez_CV.pdf" target="_blank" rel="noopener">CV ↓</a>
+      </div>
+      <span class="c">© 2026 J. Edgar Hernandez</span>
+    </div>
+  </footer>
+
+  <div id="at-bot" data-root="../"></div>
+  <script src="../js/atlas.js"></script>
+  <script src="../js/charts.js"></script>
+  <script>
+  (() => {
+    // thesis, real-robot trials (%)
+    atChart.bars('corner', [['Baseline', [['Baseline', 25, 'dim'], ['Same extra training', 50, 'base']]],
+                            ['Guided', [['Implicit', 75, 'base'], ['Explicit · layers 6/12/18', 87.5, 'hi'], ['Explicit · appended to input', 12.5, 'ink']]]], { label: 210 });
+    atChart.bars('grasp', [[null, [['Implicit', 67, 'hi'], ['Layers 6/12/18', 39, 'base']]]], { label: 120 });
+    atChart.bars('cube', [[null, [['No guidance', 83, 'dim'], ['DINOv2 guidance', 90, 'hi']]]], { label: 120 });
+  })();
+  </script>
+  <script src="../js/bot.js" defer></script>
+</body>
+
+</html>

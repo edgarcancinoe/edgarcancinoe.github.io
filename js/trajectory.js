@@ -17,9 +17,9 @@ const DATA = [
       { key: 'UL', name: 'Ljubljana', full: 'University of Ljubljana', logo: 'uol', from: 2025.67, to: 2026.67 },
     ],
     built: [
-      P('PIU: Proximity-guided Identity Unlearning', 'research.html#piu', 2026, 'UL'),
-      P('Expert Distillation for Perceptual Guidance', 'research.html#expert-distillation', 2026, 'UL'),
-      P('Token Grounding in VLA Models', 'research.html#token-grounding', 2026, 'UL'),
+      P('PIU: Proximity-guided Identity Unlearning', 'projects/piu.html', 2026, 'UL'),
+      P('Expert Distillation for Perceptual Guidance', 'projects/xvla_visual_thought.html', 2026, 'UL'),
+      P('Token Grounding in VLA Models', 'projects/xvla_visual_thought.html#token-grounding', 2026, 'UL'),
       P('NoisyGNN: Robust GNNs Under Noisy Labels', 'projects/gnn_noisy_labels.html', 2025, 'Sapienza'),
       P('Uncertainty-Aware Road Obstacle Identification', 'projects/maybe_obstacle.html', 2025, 'Sapienza'),
       P('Embedded Sensor Monitoring System', 'projects/sapienza_iot.html', 2025, 'Sapienza'),

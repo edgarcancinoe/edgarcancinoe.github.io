@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PIU: Proximity-guided Identity Unlearning — J. Edgar Hernandez</title>
+  <meta name="description" content="IJCB 2026 paper: PIU makes Arc2Face stop generating a chosen identity by redirecting its conditioning to a nearby anchor identity, updating 4.29% of parameters while every other identity stays the same." />
+  <meta name="theme-color" content="#efebe2" />
+  <link rel="icon" href="../logo.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=IBM+Plex+Mono:wght@400;500&display=swap" />
+  <link rel="stylesheet" href="../css/atlas.css" />
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-github" viewBox="0 0 16 16"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></symbol>
+    <symbol id="i-paper" viewBox="0 0 16 16"><g fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"><path d="M3.5 1.5h6l3 3v10h-9z"/><path d="M9.5 1.5v3h3M5.5 8h5M5.5 10.5h5M5.5 13h3"/></g></symbol>
+    <symbol id="i-scholar" viewBox="0 0 16 16"><path fill="currentColor" d="M8 1.5 .6 6 8 10.5 15.4 6zM3.4 8.3v3.1c0 1.3 2.1 2.6 4.6 2.6s4.6-1.3 4.6-2.6V8.3L8 11.1z"/></symbol>
+    <symbol id="i-rg" viewBox="0 0 16 16"><rect x="1" y="1" width="14" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.3"/><text x="8" y="11.2" fill="currentColor" font-family="Arial, Helvetica, sans-serif" font-size="7.4" font-weight="700" text-anchor="middle">RG</text></symbol>
+  </svg>
+  <header class="at-bar at-mono">
+    <a href="../index.html">J.E. Hernandez</a>
+    <nav aria-label="Primary">
+      <a href="../index.html">Index</a>
+      <a href="../research.html" aria-current="page">Research</a>
+      <a href="../projects.html">Projects</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+    <span class="r">Spain · Open to relocation</span>
+  </header>
+
+  <main class="at-wrap">
+    <article class="at-page at-article">
+      <a class="at-back at-mono" href="../research.html">← Research</a>
+      <div class="at-kicker at-mono in" style="--i:0"><span>First author · IJCB</span><span>2026</span></div>
+      <h1 class="at-h1 at-x in" style="--i:1">PIU: Proximity-guided Identity Unlearning in ID-Conditioned Diffusion Models</h1>
+      <div class="at-tags at-mono in" style="--i:2"><span class="at-tag">Identity unlearning</span><span class="at-tag">Diffusion models</span><span class="at-tag">Arc2Face</span><span class="at-tag">ArcFace</span><span class="at-tag">Cross-attention</span></div>
+      <div class="at-split in" style="--i:3">
+        <div>
+          <p class="at-lead">Protects a chosen identity in ID-conditioned diffusion models by <b>re-teaching what its identity conditioning means.</b></p>
+          <div class="at-acts at-mono"><a class="at-btn fill" href="https://arxiv.org/abs/2605.22311" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-paper"/></svg>arXiv ↗</a><a class="at-btn" href="https://github.com/edgarcancinoe/piu-unlearning" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-github"/></svg>Code ↗</a><a class="at-btn" href="piu/PIU_poster.pdf" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-paper"/></svg>Poster ↗</a><a class="at-btn" href="https://www.fri.uni-lj.si/en/laboratory/lrv-26" target="_blank" rel="noopener">Laboratory ↗</a></div>
+        </div>
+        <figure class="at-fig">
+          <div class="at-cols at-mono" aria-hidden="true"><span>Target ID</span><span class="hi">Anchor ID</span><span>After unlearning</span></div>
+          <div class="m fit"><img src="../images/projects/piu/unlearn.webp" width="480" height="484" alt="Three examples: a target identity, the anchor identity chosen for it, and what the model generates for the target after unlearning" decoding="async" /></div>
+        </figure>
+      </div>
+
+      <div class="at-sec rv"><h2 class="at-x">The setting</h2></div>
+      <div class="at-strip at-x rv"><span>Face</span><i aria-hidden="true">→</i><span>ArcFace embedding</span><i aria-hidden="true">→</i><span>Arc2Face</span><i aria-hidden="true">→</i><span>New photos of that person</span></div>
+
+      <div class="at-sec rv"><h2 class="at-x">Method</h2></div>
+      <div class="at-split rv">
+        <figure class="at-fig at-chart">
+          <span class="t at-mono">ArcFace identity space · schematic</span>
+          <svg class="at-svg" viewBox="0 0 420 290" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Schematic of the ArcFace identity space: the target identity is redirected to a nearby anchor identity, other identities stay where they are">
+            <defs><marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="var(--red)"/></marker></defs>
+            <circle cx="210" cy="150" r="128" fill="none" stroke="var(--ink2)" stroke-opacity=".5" stroke-dasharray="3 5"/>
+            <g fill="var(--ink2)" opacity=".35">
+              <circle cx="120" cy="80" r="8"/><circle cx="300" cy="66" r="8"/><circle cx="330" cy="170" r="8"/><circle cx="150" cy="230" r="8"/>
+              <circle cx="260" cy="250" r="8"/><circle cx="96" cy="166" r="8"/><circle cx="210" cy="54" r="8"/>
+            </g>
+            <text class="s" x="300" y="48" text-anchor="middle" fill="var(--ink2)">retained</text>
+            <circle cx="192" cy="156" r="11" fill="var(--ink)"/>
+            <text class="s" x="192" y="190" text-anchor="middle" fill="var(--ink)" font-weight="650">target</text>
+            <circle cx="262" cy="130" r="11" fill="var(--red)"/>
+            <text class="s" x="262" y="110" text-anchor="middle" fill="var(--red)" font-weight="650">anchor</text>
+            <path d="M206 151 L244 137" stroke="var(--red)" stroke-width="2.5" fill="none" marker-end="url(#ah)"/>
+          </svg>
+          <figcaption class="at-mono">Anchor = a nearby identity (cosine similarity)</figcaption>
+        </figure>
+        <div class="at-parts">
+          <div class="at-part"><span class="k at-mono">01</span><h3>Forget loss</h3><p>Target conditioning → generates the anchor</p></div>
+          <div class="at-part"><span class="k at-mono">02</span><h3>Preservation loss</h3><p>Every other identity → unchanged</p></div>
+          <div class="at-part"><span class="big at-x">4.29%</span><h3>of parameters updated</h3><p>Identity-sensitive cross-attention layers only</p></div>
+        </div>
+      </div>
+      <figure class="at-fig at-eq rv">
+        <span class="t at-mono">Loss · from the paper</span>
+        <div class="eqs">
+          <math display="block"><msub><mover accent="true"><mi>ε</mi><mo>ˆ</mo></mover><mtext>forget</mtext></msub><mo>=</mo><msub><mi>ε</mi><msup><mi>θ</mi><mo>∗</mo></msup></msub><mo stretchy="false">(</mo><msub><mi>z</mi><mi>t</mi></msub><mo>,</mo><mi>t</mi><mo>,</mo><msub><mi>c</mi><mi>a</mi></msub><mo stretchy="false">)</mo><mo>−</mo><mi>η</mi><mo>[</mo><msub><mi>ε</mi><msup><mi>θ</mi><mo>∗</mo></msup></msub><mo stretchy="false">(</mo><msub><mi>z</mi><mi>t</mi></msub><mo>,</mo><mi>t</mi><mo>,</mo><msub><mi>c</mi><mi>f</mi></msub><mo stretchy="false">)</mo><mo>−</mo><msub><mi>ε</mi><msup><mi>θ</mi><mo>∗</mo></msup></msub><mo stretchy="false">(</mo><msub><mi>z</mi><mi>t</mi></msub><mo>,</mo><mi>t</mi><mo>,</mo><msub><mi>c</mi><mi>a</mi></msub><mo stretchy="false">)</mo><mo>]</mo></math>
+          <math display="block"><msub><mi>ℒ</mi><mtext>forget</mtext></msub><mo>=</mo><mi>𝔼</mi><mo>‖</mo><msub><mi>ε</mi><mi>θ</mi></msub><mo stretchy="false">(</mo><msub><mi>z</mi><mi>t</mi></msub><mo>,</mo><mi>t</mi><mo>,</mo><msub><mi>c</mi><mi>f</mi></msub><mo stretchy="false">)</mo><mo>−</mo><msub><mover accent="true"><mi>ε</mi><mo>ˆ</mo></mover><mtext>forget</mtext></msub><msubsup><mo>‖</mo><mn>2</mn><mn>2</mn></msubsup></math>
+          <math display="block"><msub><mi>ℒ</mi><mtext>preserve</mtext></msub><mo>=</mo><mi>𝔼</mi><mo>‖</mo><msub><mi>ε</mi><mi>θ</mi></msub><mo stretchy="false">(</mo><msub><mi>z</mi><msub><mi>t</mi><mi>r</mi></msub></msub><mo>,</mo><msub><mi>t</mi><mi>r</mi></msub><mo>,</mo><msub><mi>c</mi><mi>r</mi></msub><mo stretchy="false">)</mo><mo>−</mo><msub><mi>ε</mi><msup><mi>θ</mi><mo>∗</mo></msup></msub><mo stretchy="false">(</mo><msub><mi>z</mi><msub><mi>t</mi><mi>r</mi></msub></msub><mo>,</mo><msub><mi>t</mi><mi>r</mi></msub><mo>,</mo><msub><mi>c</mi><mi>r</mi></msub><mo stretchy="false">)</mo><msubsup><mo>‖</mo><mn>2</mn><mn>2</mn></msubsup></math>
+          <math display="block" class="tot"><mi>ℒ</mi><mo>=</mo><msub><mi>ℒ</mi><mtext>forget</mtext></msub><mo>+</mo><mi>λ</mi><msub><mi>ℒ</mi><mtext>preserve</mtext></msub></math>
+        </div>
+        <div class="at-tags at-mono"><span class="at-tag"><math><msup><mi>θ</mi><mo>∗</mo></msup></math>&nbsp;frozen Arc2Face</span><span class="at-tag"><math><mi>θ</mi></math>&nbsp;model being trained</span><span class="at-tag"><math><msub><mi>c</mi><mi>f</mi></msub></math>&nbsp;target ID</span><span class="at-tag"><math><msub><mi>c</mi><mi>a</mi></msub></math>&nbsp;anchor ID</span><span class="at-tag"><math><msub><mi>c</mi><mi>r</mi></msub></math>&nbsp;retained IDs</span></div>
+      </figure>
+
+      <div class="at-sec rv"><h2 class="at-x">Everyone else stays the same</h2></div>
+      <figure class="at-fig rv">
+        <div class="at-rows"><div class="k at-mono" aria-hidden="true"><span>Before</span><span>After</span></div><div class="m fit"><img src="../images/projects/piu/retained.webp" width="642" height="268" alt="Five retained identities generated before (top row) and after (bottom row) unlearning a target: they look the same" loading="lazy" decoding="async" /></div></div>
+      </figure>
+
+      <div class="at-sec rv"><h2 class="at-x">Results</h2><a class="at-mono" href="https://arxiv.org/abs/2605.22311" target="_blank" rel="noopener">Paper ↗</a></div>
+      <div class="at-tags at-mono rv"><span class="at-tag">Arc2Face</span><span class="at-tag">CelebA-HQ · 50 target identities</span><span class="at-tag">vs SISS · UCE · WID</span></div>
+      <figure class="at-fig at-chart rv">
+        <span class="t at-mono">Identity similarity · forget ↓ vs retain ↑</span>
+        <div id="ism" role="img" aria-label="Forget ISM versus retain ISM: Arc2Face 0.78/0.75, SISS 0.59/0.58, UCE 0.59/0.70, WID 0.32/0.44, PIU 0.31/0.72"></div>
+      </figure>
+      <div class="at-pair rv">
+        <figure class="at-fig at-chart"><span class="t at-mono">SRK ↑ · removal + keep</span><div id="srk" role="img" aria-label="SRK: Arc2Face 0.99, SISS 0.98, UCE 1.00, WID 49.28, PIU 88.96"></div></figure>
+        <figure class="at-fig at-chart"><span class="t at-mono">ΔKD on retained ↓ · image quality</span><div id="kd" role="img" aria-label="Kernel distance change on retained identities: SISS 8.14, UCE 1.26, WID 3.36, PIU 0.39"></div></figure>
+      </div>
+    </article>
+  </main>
+
+  <footer class="at-foot at-mono">
+    <div class="at-wrap">
+      <span class="at-copy"><span>edgarcancinoe@gmail.com</span><button type="button" class="at-btn" data-copy="edgarcancinoe@gmail.com">Copy</button></span>
+      <div class="links">
+        <a class="at-btn" href="https://github.com/edgarcancinoe" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-github"/></svg>GitHub ↗</a>
+        <a class="at-btn" href="https://www.linkedin.com/in/edgar-cancino/" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a class="at-btn" href="https://scholar.google.com/citations?user=yNqv2bcAAAAJ" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-scholar"/></svg>Scholar ↗</a>
+        <a class="at-btn" href="https://www.researchgate.net/profile/Jose-Hernandez-Cancino-Estrada-2" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-rg"/></svg>ResearchGate ↗</a>
+        <a class="at-btn" href="../res/Jose_E_Hernandez_CV.pdf" target="_blank" rel="noopener">CV ↓</a>
+      </div>
+      <span class="c">© 2026 J. Edgar Hernandez</span>
+    </div>
+  </footer>
+
+  <div id="at-bot" data-root="../"></div>
+  <script src="../js/atlas.js"></script>
+  <script src="../js/charts.js"></script>
+  <script>
+  (() => {
+    const { t, svg, draw, bars } = atChart;
+    // IJCB 2026 poster table: forget ISM, retain ISM, SRK, ΔKD on retained
+    const M = [['Arc2Face', 0.78, 0.75, 0.99, null], ['SISS', 0.59, 0.58, 0.98, 8.14], ['UCE', 0.59, 0.70, 1.00, 1.26],
+               ['WID', 0.32, 0.44, 49.28, 3.36], ['PIU', 0.31, 0.72, 88.96, 0.39]];
+    const tone = (n) => n === 'PIU' ? 'hi' : n === 'Arc2Face' ? 'dim' : 'base';
+
+    draw('ism', (W) => { // x: forget ISM (lower = better), y: retain ISM (higher = better)
+      const H = Math.round(Math.min(330, Math.max(260, W * 0.42))), L = 46, R = 14, T = 8, B = 44, x0 = 0.25, x1 = 0.85, y0 = 0.40, y1 = 0.80;
+      const X = (v) => L + (v - x0) / (x1 - x0) * (W - L - R), Y = (v) => T + (y1 - v) / (y1 - y0) * (H - T - B);
+      let s = `<rect x="${L}" y="${T}" width="${X(0.45) - L}" height="${Y(0.68) - T}" fill="var(--red)" opacity=".07"/>` + t(L + 8, T + 18, 'ideal: forgets, keeps', { fill: 'var(--red)', sans: true });
+      for (const v of [0.3, 0.4, 0.5, 0.6, 0.7, 0.8]) s += `<line x1="${X(v)}" x2="${X(v)}" y1="${T}" y2="${H - B}" stroke="var(--line)"/>` + t(X(v), H - B + 17, v.toFixed(1), { a: 'middle', fill: 'var(--ink2)' });
+      for (const v of [0.4, 0.5, 0.6, 0.7, 0.8]) s += `<line x1="${L}" x2="${W - R}" y1="${Y(v)}" y2="${Y(v)}" stroke="var(--line)"/>` + t(L - 8, Y(v) + 4, v.toFixed(1), { a: 'end', fill: 'var(--ink2)' });
+      s += t((L + W - R) / 2, H - 6, 'forget ISM ↓ (target still recognised)', { a: 'middle', fill: 'var(--ink2)', sans: true });
+      s += `<text class="s" transform="translate(13 ${(T + H - B) / 2}) rotate(-90)" text-anchor="middle" fill="var(--ink2)">retain ISM ↑ (others kept)</text>`;
+      for (const [n, f, r] of M) {
+        const hi = n === 'PIU', left = X(f) > W - R - 80;
+        s += `<circle cx="${X(f)}" cy="${Y(r)}" r="${hi ? 8 : 6}" ${{ hi: 'fill="var(--red)"', dim: 'fill="var(--ink2)" opacity=".35"', base: 'fill="var(--ink2)"' }[tone(n)]}/>`;
+        s += t(X(f) + (left ? -13 : 13), Y(r) + 4, n, { a: left ? 'end' : 'start', fill: hi ? 'var(--red)' : 'var(--ink)', w: hi ? 650 : 0, sans: true });
+      }
+      return svg(W, H, s);
+    });
+    bars('srk', [[null, M.map((r) => [r[0], r[3], tone(r[0])])]], { label: 78, fmt: (v) => v.toFixed(2) });
+    bars('kd', [[null, M.filter((r) => r[4] != null).map((r) => [r[0], r[4], tone(r[0])])]], { label: 78, max: 9, fmt: (v) => v.toFixed(2) });
+  })();
+  </script>
+  <script src="../js/bot.js" defer></script>
+</body>
+
+</html>
