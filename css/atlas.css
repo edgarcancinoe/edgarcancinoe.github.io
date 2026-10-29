@@ -224,6 +224,7 @@ a { color: inherit; text-decoration: none; }
 .at-split > .at-fig, .at-pair > .at-fig { margin-top: 0; }
 .at-split .at-intro { margin-top: 0; }
 .at-parts { border-top: 2px solid var(--ink); }
+.at-sec + .at-parts { margin-top: 4px; border-top: 0; } /* the section rule already sits on top */
 .at-part { padding: 14px 0; border-bottom: 1px solid var(--line); }
 .at-part .k { color: var(--red); }
 .at-part h3 { margin: 6px 0 4px; font-size: 15px; font-weight: 700; letter-spacing: -0.01em; }

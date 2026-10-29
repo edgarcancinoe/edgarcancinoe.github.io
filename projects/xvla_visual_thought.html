@@ -44,54 +44,52 @@
 
       <div class="at-sec rv"><h2 class="at-x">Overview</h2></div>
       <div class="at-prose rv">
-        <p><strong>Does a robot’s VLA already know where the cloth corner is, and just fail to use it?</strong> Vision-language-action models inherit rich perception from their pretrained vision-language backbone. My thesis asks whether that perception survives inside the model, whether a small decoder can read it back out, and whether handing it to the action head makes grasps better.</p>
-        <p>The model is X-VLA (0.9B, flow-matching action head) on a low-cost SO-ARM101 arm with a front camera and a wrist camera. All data is my own, recorded with LeRobot: 184 colour-cube pick-and-place demos, 70 “pick the cloth by a corner and drop it in the box” demos and 50 cloth-folding demos. Supervised by prof. Danijel Skočaj and dr. Domen Tabernik at the <a href="https://www.vicos.si" target="_blank" rel="noopener">ViCoS lab</a>.</p>
+        <p><strong>Does a robot’s VLA already know where the cloth corner is, and just fail to use it?</strong> My thesis reads perception out of a frozen VLA with a small decoder, then feeds it back to the action head.</p>
+        <p>X-VLA (0.9B) on an SO-ARM101 arm, trained on my own LeRobot demos: 184 cube, 70 cloth-to-box and 50 folding. Supervised by prof. Danijel Skočaj and dr. Domen Tabernik at the <a href="https://www.vicos.si" target="_blank" rel="noopener">ViCoS lab</a>.</p>
       </div>
 
       <div class="at-sec rv"><h2 class="at-x">A decoder that reads the frozen backbone</h2></div>
       <div class="at-strip at-x rv"><span>Frozen X-VLA tokens</span><i aria-hidden="true">→</i><span class="key">Visual-thought decoder</span><i aria-hidden="true">→</i><span>Expert’s view</span></div>
       <div class="at-prose rv">
-        <p>The <em>visual-thought decoder</em> is a bank of learned query tokens that cross-attend to X-VLA’s internal token sequence, the fused image-and-instruction tokens the action head already consumes. Its output, the visual-thought tokens, is trained to match an external expert while X-VLA itself stays frozen. The same template gets three different jobs:</p>
+        <p>Learned queries cross-attend to X-VLA’s internal tokens and learn to match an expert. X-VLA stays frozen. One decoder, three jobs:</p>
         <ul>
-          <li><strong>DINOv2 features:</strong> reproduce the patch tokens of a DINOv2 ViT-B/14, a strong general-purpose vision model.</li>
-          <li><strong>Cloth-corner maps:</strong> reconstruct the direction fields of CeDiRNet, a ViCoS network whose maps point toward graspable cloth corners.</li>
-          <li><strong>Token grounding:</strong> point at which of X-VLA’s own image tokens matter for the instruction right now.</li>
+          <li><strong>DINOv2:</strong> rebuild the patch tokens of a DINOv2 ViT-B/14.</li>
+          <li><strong>CeDiRNet:</strong> rebuild its cloth-corner direction maps.</li>
+          <li><strong>Token grounding:</strong> point at the image tokens the instruction needs.</li>
         </ul>
       </div>
       <figure class="at-fig rv"><div class="m fit"><img src="../images/projects/xvla_visual_thought/decoder.webp" alt="Visual-thought decoder: learned queries pass through self-attention, cross-attention over the projected frozen VLM tokens, and a feed-forward block, repeated L times, producing visual-thought tokens" loading="lazy" decoding="async" /></div></figure>
 
       <div class="at-sec rv"><h2 class="at-x">What the backbone already knows</h2></div>
       <div class="at-prose rv">
-        <p>Both experts can be recovered from the frozen X-VLA tokens. Projected to colour with PCA, the decoded DINOv2 tokens (right) organise the scene like the real DINOv2 features (middle): the arm, the table, the cloth and the cube each keep their own colour. A one-layer decoder of about 5M parameters rebuilds the CeDiRNet direction maps with a validation error of 0.015, enough to point at the cloth corners.</p>
+        <p>Both experts can be read back out. A ~5M-parameter decoder rebuilds the corner maps with a validation error of 0.015.</p>
       </div>
       <figure class="at-fig rv"><div class="at-cols at-mono" aria-hidden="true"><span>Frame</span><span>Real DINOv2</span><span class="hi">Decoded from X-VLA</span></div><div class="m fit"><img src="../images/projects/xvla_visual_thought/dino.webp" alt="Input frame, real DINOv2 features and features decoded from X-VLA, shown as PCA colour maps for a cube scene and a cloth scene" loading="lazy" decoding="async" /></div></figure>
       <figure class="at-fig rv"><div class="at-cols at-mono" aria-hidden="true"><span class="hi">Cloth-corner direction · sin</span><span class="hi">Cloth-corner direction · cos</span></div><div class="m fit"><img src="../images/projects/xvla_visual_thought/cedirnet.webp" alt="Sine and cosine cloth-corner direction maps decoded from X-VLA, overlaid on the cloth scene" loading="lazy" decoding="async" /></div></figure>
 
       <div class="at-sec rv" id="token-grounding"><h2 class="at-x">Token grounding: which tokens matter right now?</h2></div>
       <div class="at-prose rv">
-        <p>X-VLA sees each frame as a 7×7 grid of image tokens. For grounding, the decoder produces a single visual-thought token that acts as a query and scores every cell of that grid, so the answer lives in the same token space the policy acts from. The best few cells are then refined to a 14×14 grid using finer features from X-VLA’s own vision tower. The idea is inspired by MolmoPoint’s pointing tokens.</p>
+        <p>One visual-thought token scores each cell of X-VLA’s 7×7 image-token grid, and the best cells are refined to 14×14. Inspired by MolmoPoint’s pointing tokens.</p>
         <ul>
-          <li><strong>Data:</strong> 4,069 image–instruction pairs over 2,191 frames, including 1,524 negatives where the named cube isn’t there.</li>
-          <li><strong>Precision first:</strong> a wrong highlight would steer the robot to the wrong object, so models are selected on a precision-weighted F-score (F<sub>0.25</sub>). The best checkpoint reaches <strong>88% precision</strong> at 60% recall on held-out frames.</li>
-          <li><strong>It follows the task, not just the word:</strong> before the grasp the named cube lights up, from both cameras. Once the cube is in the gripper, relevance moves to the box.</li>
+          <li><strong>Data:</strong> 4,069 image–instruction pairs, 1,524 of them negatives.</li>
+          <li><strong>Precision first:</strong> a wrong highlight sends the robot to the wrong object. Best checkpoint: <strong>88% precision</strong> at 60% recall.</li>
+          <li><strong>Follows the task:</strong> the named cube lights up before the grasp, the box after.</li>
         </ul>
       </div>
       <figure class="at-fig rv"><div class="m"><video muted loop playsinline preload="metadata" data-autoplay-visible poster="../images/projects/language_conditioned_token_grounding/query00-poster.webp" aria-label="Language-conditioned relevance over the X-VLA image-token grid during a cube pick-and-place episode"><source src="../images/projects/language_conditioned_token_grounding/query00-web.mp4" type="video/mp4" /></video></div></figure>
       <figure class="at-fig rv"><div class="m fit"><img src="../images/projects/xvla_visual_thought/grounding.webp" alt="Pick up black cube and place inside white box: before the grasp the selected token covers the black cube; after the grasp it covers the box" loading="lazy" decoding="async" /></div></figure>
 
       <div class="at-sec rv"><h2 class="at-x">Feeding it back to the policy</h2></div>
-      <div class="at-prose rv">
-        <ul>
-          <li><strong>Implicit guidance:</strong> fine-tune the whole policy with the decoder attached, adding the reconstruction loss to the action loss. The policy’s inputs don’t change; the extra loss only keeps the corner structure recoverable inside the backbone.</li>
-          <li><strong>Explicit guidance:</strong> pass the decoder’s 32×32 cloth-corner tokens straight to the action transformer, either appended to its input for all 24 layers or inserted only at layers 6, 12 and 18, each with an optional learned gate.</li>
-          <li><strong>Fair comparison:</strong> every guided model is compared with a control trained for the same extra steps without guidance, so gains can’t come from training longer.</li>
-        </ul>
+      <div class="at-parts rv">
+        <div class="at-part"><span class="k at-mono">01</span><h3>Implicit guidance</h3><p>Reconstruction loss added while fine-tuning. Inputs unchanged.</p></div>
+        <div class="at-part"><span class="k at-mono">02</span><h3>Explicit guidance</h3><p>32×32 corner tokens into the action transformer, at layers 6/12/18 or appended to its input.</p></div>
+        <div class="at-part"><span class="k at-mono">03</span><h3>Fair comparison</h3><p>Every guided model has a control trained for the same extra steps.</p></div>
       </div>
       <figure class="at-fig rv"><div class="m fit"><img src="../images/projects/xvla_visual_thought/guided_xvla.webp" alt="Guided X-VLA pipeline: guidance tokens extracted from the VLM features are fused with the native action-conditioning sequence before the self-attention action transformer" loading="lazy" decoding="async" /></div></figure>
 
       <div class="at-sec rv"><h2 class="at-x">Results on the real robot</h2><a class="at-mono" href="xvla_visual_thought/masters-thesis.pdf" target="_blank" rel="noopener">Thesis ↗</a></div>
       <div class="at-prose rv">
-        <p>16 trials per model on each cloth task (four cloth layouts × 4) and 48 on the cube task.</p>
+        <p>16 trials per model on each cloth task, 48 on cubes.</p>
       </div>
       <figure class="at-fig at-chart rv">
         <span class="t at-mono">P(correct corner) · cloth-to-box, 16 trials each</span>
@@ -103,20 +101,17 @@
       </div>
       <div class="at-prose rv">
         <ul>
-          <li><strong>Picking the right corner:</strong> on cloth-to-box, the policy picked the correct corner 50% of the time with extra training alone, <strong>75%</strong> with implicit guidance and <strong>87.5%</strong> with guidance at layers 6/12/18. The original baseline managed 25%.</li>
-          <li><strong>Grasping it:</strong> implicit guidance grasped best once it had found the corner (67% grasp score vs. 39% for layer insertion). Finding the target and grasping it are separate skills.</li>
-          <li><strong>How it enters matters:</strong> appending the same tokens to the input collapsed the policy to 12.5% correct corners. Inserting them at a few layers worked.</li>
           <li><strong>Folding:</strong> implicit and layer-inserted guidance found the corner 16/16 times, but fold quality stayed low for every model (19–34%).</li>
-          <li><strong>Cubes:</strong> with DINOv2 guidance, picking the cube of the named colour rose from 83% to 90%. The baseline’s failures were hesitations, stopping midway between two cubes; with guidance it committed, though occasionally to the wrong cube (5 of 48).</li>
+          <li><strong>Cubes:</strong> the baseline’s misses were hesitations between two cubes. With guidance it committed, sometimes to the wrong one (5 of 48).</li>
         </ul>
       </div>
 
       <div class="at-sec rv"><h2 class="at-x">What I took away</h2></div>
       <div class="at-prose rv">
         <ul>
-          <li>The backbone holds more task-relevant perception than the action head uses, and a few million parameters are enough to read it out.</li>
-          <li>Guidance reliably helps the policy choose the right target. Turning that into a precise grasp is a separate problem, so I report grasp accuracy given a correct target alongside the usual success rates.</li>
-          <li>Getting X-VLA to work on the SO-ARM101 took real effort: switching LeRobot to end-effector actions, normalising the robot state, training on varied lighting and smoothing commands to reduce shaking. Small camera shifts still hurt it.</li>
+          <li>The backbone knows more than the action head uses. A few million parameters can read it out.</li>
+          <li>Guidance picks the right target. Grasping it well is a separate problem.</li>
+          <li>Getting X-VLA running on the SO-ARM101 took work: end-effector actions, state normalisation, varied lighting and smoothed commands. Small camera shifts still hurt it.</li>
         </ul>
       </div>
     </article>

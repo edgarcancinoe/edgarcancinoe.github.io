@@ -97,13 +97,20 @@
 
       <div class="at-sec rv"><h2 class="at-x">Results</h2><a class="at-mono" href="https://arxiv.org/abs/2605.22311" target="_blank" rel="noopener">Paper ↗</a></div>
       <div class="at-tags at-mono rv"><span class="at-tag">Arc2Face</span><span class="at-tag">CelebA-HQ · 50 target identities</span><span class="at-tag">vs SISS · UCE · WID</span></div>
+      <div class="at-prose rv">
+        <ul>
+          <li><strong>ISM:</strong> identity similarity. Low on the target means it’s forgotten, high on everyone else means they’re kept.</li>
+          <li><strong>SRK:</strong> one score for removal and keep together.</li>
+          <li><strong>KD:</strong> kernel distance, an image-quality metric. ΔKD is how much it changes on the kept identities after unlearning, so lower is better.</li>
+        </ul>
+      </div>
       <figure class="at-fig at-chart rv">
         <span class="t at-mono">Identity similarity · forget ↓ vs retain ↑</span>
         <div id="ism" role="img" aria-label="Forget ISM versus retain ISM: Arc2Face 0.78/0.75, SISS 0.59/0.58, UCE 0.59/0.70, WID 0.32/0.44, PIU 0.31/0.72"></div>
       </figure>
       <div class="at-pair rv">
         <figure class="at-fig at-chart"><span class="t at-mono">SRK ↑ · removal + keep</span><div id="srk" role="img" aria-label="SRK: Arc2Face 0.99, SISS 0.98, UCE 1.00, WID 49.28, PIU 88.96"></div></figure>
-        <figure class="at-fig at-chart"><span class="t at-mono">ΔKD on retained ↓ · image quality</span><div id="kd" role="img" aria-label="Kernel distance change on retained identities: SISS 8.14, UCE 1.26, WID 3.36, PIU 0.39"></div></figure>
+        <figure class="at-fig at-chart"><span class="t at-mono">ΔKD on retained ↓ · kernel distance (image quality)</span><div id="kd" role="img" aria-label="Kernel distance change on retained identities: SISS 8.14, UCE 1.26, WID 3.36, PIU 0.39"></div></figure>
       </div>
     </article>
   </main>
