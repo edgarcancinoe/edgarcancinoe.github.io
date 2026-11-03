@@ -1,0 +1,107 @@
+<!doctype html>
+<!-- Local palette prototype. Never commit: pushing main publishes the whole repo. Delete once a direction is applied to css/atlas.css. -->
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Palette Prototype</title>
+<style>
+  html, body { margin: 0; height: 100%; background: #f5f5f7; }
+  iframe { display: block; width: 100%; height: 100%; border: 0; }
+  form { position: fixed; left: 50%; bottom: 16px; transform: translateX(-50%); display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 14px; width: max-content; max-width: calc(100vw - 16px); box-sizing: border-box; padding: 8px 12px; border-radius: 16px; background: rgba(29, 29, 31, .78); -webkit-backdrop-filter: blur(20px) saturate(180%); backdrop-filter: blur(20px) saturate(180%); box-shadow: 0 8px 28px rgba(0, 0, 0, .22); color: #fff; font: 500 12px/1 -apple-system, BlinkMacSystemFont, system-ui, sans-serif; }
+  @media (prefers-reduced-transparency: reduce) { form { background: #1d1d1f; -webkit-backdrop-filter: none; backdrop-filter: none; } }
+  fieldset { display: flex; align-items: center; gap: 2px; margin: 0; padding: 0; border: 0; }
+  legend { float: left; margin-right: 6px; color: rgba(255, 255, 255, .62); }
+  label { position: relative; display: block; padding: 7px 9px; border-radius: 9px; cursor: pointer; white-space: nowrap; }
+  label:active { transform: scale(.97); }
+  label:has(:checked) { background: rgba(255, 255, 255, .2); }
+  label:has(:focus-visible) { outline: 2px solid #fff; outline-offset: 1px; }
+  input { position: absolute; opacity: 0; pointer-events: none; }
+  select { height: 28px; padding: 0 6px; border: 0; border-radius: 9px; background: rgba(255, 255, 255, .2); color: inherit; font: inherit; }
+  option { color: #1d1d1f; }
+</style>
+</head>
+<body>
+<iframe id="f" title="Site preview"></iframe>
+<form id="c">
+  <fieldset><legend>Colour</legend>
+    <label><input type="radio" name="color" value="current" />Current</label>
+    <label><input type="radio" name="color" value="graphite" />Graphite</label>
+    <label><input type="radio" name="color" value="blue" />Blue</label>
+    <label><input type="radio" name="color" value="pine" />Pine</label>
+  </fieldset>
+  <fieldset><legend>Type</legend>
+    <label><input type="radio" name="type" value="atlas" />Mono labels</label>
+    <label><input type="radio" name="type" value="system" />System</label>
+  </fieldset>
+  <select name="page" aria-label="Page">
+    <option value="index.html">Home</option>
+    <option value="research.html">Research</option>
+    <option value="projects.html">Projects</option>
+    <option value="contact.html">Contact</option>
+    <option value="projects/piu.html">PIU (charts)</option>
+    <option value="projects/smart_pouring.html">Smart Pouring</option>
+  </select>
+</form>
+<script>
+const neutrals = '--bg:#f5f5f7;--paper:#fff;--ink:#1d1d1f;--ink2:#6e6e73;--line:rgba(0,0,0,.12);';
+const PALETTES = {
+  graphite: `:root{${neutrals}--red:#1d1d1f;--red-press:#000}`,
+  blue: `:root{${neutrals}--red:#0066cc;--red-press:#0055ab}`,
+  pine: `:root{--bg:#f4f5f3;--paper:#fff;--ink:#1b1f1d;--ink2:#646b67;--line:rgba(0,0,0,.12);--red:#1f5c4d;--red-press:#17473b}`,
+};
+// Restraint: one accent on what you can act on (current page, primary button, hover, selection, chart highlight). Everything else is ink.
+const RESTRAINT = `
+  .at-bar { background: color-mix(in srgb, var(--bg) 78%, transparent); border-bottom-color: var(--line); }
+  .at-bar nav a { color: var(--ink2); }
+  .at-bar nav a[aria-current] { color: var(--red); }
+  .at-lead b, .at-spec .deg, .at-name .dot, .tc-detail h3, .at-part .big, .at-eq .tot { color: var(--ink); }
+  .at-cap .k, .at-venue, .at-part .k, .at-card .meta .y, .tc-detail .k, .at-bot-menu .n, .at-tl-item.now .at-tl-date { color: var(--ink2); }
+  .at-num { -webkit-text-stroke-color: var(--ink2); }
+  .at-sec, .at-caps, .at-foot, .at-contact, .at-parts { border-width: 1px; }
+  .at-btn:not(.fill) { border-color: color-mix(in srgb, var(--ink) 28%, transparent); }
+  .at-fig::before, .at-fig::after { border-color: color-mix(in srgb, var(--ink) 35%, transparent); }
+  .at-fig .m { background: #e8e8ed; }
+  .at-fig .m > * { filter: none; }
+  .at-article .at-fig .m { background: #eeeef1; }
+  .at-card h3 a:hover { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  .tc-bar { border-color: color-mix(in srgb, var(--ink) 28%, transparent); }
+  .tc--graphite, .tc--orange { --fill: #3a3a3c; --fill-fg: #fff; }
+  .tc[data-fill="exp"] .tc-bar.exp[aria-pressed="true"], .tc[data-fill="edu"] .tc-bar.edu[aria-pressed="true"] { color: var(--fill-fg); outline: 2px solid var(--red); outline-offset: 1px; }
+  .at-tl-item.now .at-tl-node::after { box-shadow: 0 0 0 3px var(--bg); }
+  .at-bot-btn { filter: grayscale(1) brightness(1.6); }
+`;
+const SYSTEM = `
+  :root { --font-x: var(--font-sans); --font-mono: var(--font-sans); }
+  .at-mono { font-size: 12px; letter-spacing: 0; text-transform: none; }
+  .at-x, .at-bot-menu .qq { font-stretch: normal; font-variation-settings: normal; }
+  .at-name { text-transform: none; font-size: clamp(1.4rem, 2.2vw, 1.75rem); font-weight: 700; }
+  .at-sec h2 { text-transform: none; font-size: 1.15rem; }
+  .at-btn { border-radius: 8px; }
+  .at-tag { border-radius: 6px; }
+  .at-spec .lvl, .at-spec .y, .at-spec .s, .at-fig figcaption, .at-acts .at-btn, .at-tag, .tc-bar .t, .tc-uni .m, .tc-tip { font-size: 12px; }
+  .at-stack li { font-size: 11.5px; }
+  .tc-glabel { font-size: 11px; }
+`;
+const f = document.getElementById('f'), c = document.getElementById('c');
+const css = () => (PALETTES[c.color.value] ? PALETTES[c.color.value] + RESTRAINT : '') + (c.type.value === 'system' ? SYSTEM : '');
+function apply() {
+  const d = f.contentDocument;
+  if (!d || !d.head) return;
+  let s = d.getElementById('proto');
+  if (!s) { s = d.createElement('style'); s.id = 'proto'; d.head.append(s); }
+  if (s.textContent !== css()) s.textContent = css();
+}
+const initial = new URLSearchParams(location.hash.slice(1));
+c.color.value = initial.get('color') || 'graphite';
+c.type.value = initial.get('type') || 'atlas';
+c.page.value = initial.get('page') || 'index.html';
+setInterval(apply, 30); // shortcut: polling, because load fires only after every video, which flashes the old theme; fine for a throwaway page
+f.src = c.page.value;
+c.addEventListener('change', (e) => {
+  if (e.target.name === 'page') f.src = c.page.value;
+  location.replace('#' + new URLSearchParams(new FormData(c)));
+});
+</script>
+</body>
+</html>

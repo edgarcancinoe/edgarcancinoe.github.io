@@ -27,7 +27,7 @@ const DATA = [
       P('Image Synthesis via Score Matching', 'projects/score_based_generative_modeling.html', 2024, 'UPF'),
     ] },
   { id: 'rice', kind: 'exp', from: 2024.0, to: 2024.17, years: '2024 — 2024', logo: 'rice',
-    title: 'Robotics Lab Assistant', org: 'Kavraki Lab · Rice University',
+    title: 'Visiting Researcher', org: 'Kavraki Lab · Rice University',
     desc: 'ROS system integrating motion planning with SceneGrasp for multi-object 3D reconstruction and grasp pose estimation from RGB-D; pick-and-place validated in simulation and on hardware.',
     tags: ['ROS', 'Motion planning', 'RGB-D grasping', 'UR5'],
     built: [P('SceneGrasp: 3D Reconstruction, Pose & Grasp', 'projects/scene_grasp.html', 2024, 'Rice')] },
