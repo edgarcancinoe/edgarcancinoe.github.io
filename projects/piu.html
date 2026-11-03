@@ -6,11 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>PIU: Proximity-guided Identity Unlearning — J. Edgar Hernandez</title>
   <meta name="description" content="IJCB 2026 paper: PIU makes Arc2Face stop generating a chosen identity by redirecting its conditioning to a nearby anchor identity, updating 4.29% of parameters while every other identity stays the same." />
-  <meta name="theme-color" content="#efebe2" />
+  <meta name="theme-color" content="#f5f5f7" />
   <link rel="icon" href="../logo.png" type="image/png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=IBM+Plex+Mono:wght@400;500&display=swap" />
   <link rel="stylesheet" href="../css/atlas.css" />
   <script>document.documentElement.classList.add('js');</script>
 </head>
@@ -37,7 +34,7 @@
     <article class="at-page at-article">
       <a class="at-back at-mono" href="../research.html">← Research</a>
       <div class="at-kicker at-mono in" style="--i:0"><span>First author · IJCB</span><span>2026</span></div>
-      <h1 class="at-h1 at-x in" style="--i:1">PIU: Proximity-guided Identity Unlearning in ID-Conditioned Diffusion Models</h1>
+      <h1 class="at-h1 in" style="--i:1">PIU: Proximity-guided Identity Unlearning in ID-Conditioned Diffusion Models</h1>
       <div class="at-tags at-mono in" style="--i:2"><span class="at-tag">Identity unlearning</span><span class="at-tag">Diffusion models</span><span class="at-tag">Arc2Face</span><span class="at-tag">ArcFace</span><span class="at-tag">Cross-attention</span></div>
       <div class="at-split in" style="--i:3">
         <div>
@@ -50,15 +47,15 @@
         </figure>
       </div>
 
-      <div class="at-sec rv"><h2 class="at-x">The setting</h2></div>
-      <div class="at-strip at-x rv"><span>Face</span><i aria-hidden="true">→</i><span>ArcFace embedding</span><i aria-hidden="true">→</i><span>Arc2Face</span><i aria-hidden="true">→</i><span>New photos of that person</span></div>
+      <div class="at-sec rv"><h2>The setting</h2></div>
+      <div class="at-strip rv"><span>Face</span><i aria-hidden="true">→</i><span>ArcFace embedding</span><i aria-hidden="true">→</i><span>Arc2Face</span><i aria-hidden="true">→</i><span>New photos of that person</span></div>
 
-      <div class="at-sec rv"><h2 class="at-x">Method</h2></div>
+      <div class="at-sec rv"><h2>Method</h2></div>
       <div class="at-split rv">
         <figure class="at-fig at-chart">
           <span class="t at-mono">ArcFace identity space · schematic</span>
           <svg class="at-svg" viewBox="0 0 420 290" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Schematic of the ArcFace identity space: the target identity is redirected to a nearby anchor identity, other identities stay where they are">
-            <defs><marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="var(--red)"/></marker></defs>
+            <defs><marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="var(--accent)"/></marker></defs>
             <circle cx="210" cy="150" r="128" fill="none" stroke="var(--ink2)" stroke-opacity=".5" stroke-dasharray="3 5"/>
             <g fill="var(--ink2)" opacity=".35">
               <circle cx="120" cy="80" r="8"/><circle cx="300" cy="66" r="8"/><circle cx="330" cy="170" r="8"/><circle cx="150" cy="230" r="8"/>
@@ -67,16 +64,16 @@
             <text class="s" x="300" y="48" text-anchor="middle" fill="var(--ink2)">retained</text>
             <circle cx="192" cy="156" r="11" fill="var(--ink)"/>
             <text class="s" x="192" y="190" text-anchor="middle" fill="var(--ink)" font-weight="650">target</text>
-            <circle cx="262" cy="130" r="11" fill="var(--red)"/>
-            <text class="s" x="262" y="110" text-anchor="middle" fill="var(--red)" font-weight="650">anchor</text>
-            <path d="M206 151 L244 137" stroke="var(--red)" stroke-width="2.5" fill="none" marker-end="url(#ah)"/>
+            <circle cx="262" cy="130" r="11" fill="var(--accent)"/>
+            <text class="s" x="262" y="110" text-anchor="middle" fill="var(--accent)" font-weight="650">anchor</text>
+            <path d="M206 151 L244 137" stroke="var(--accent)" stroke-width="2.5" fill="none" marker-end="url(#ah)"/>
           </svg>
           <figcaption class="at-mono">Anchor = a nearby identity (cosine similarity)</figcaption>
         </figure>
         <div class="at-parts">
           <div class="at-part"><span class="k at-mono">01</span><h3>Forget loss</h3><p>Target conditioning → generates the anchor</p></div>
           <div class="at-part"><span class="k at-mono">02</span><h3>Preservation loss</h3><p>Every other identity → unchanged</p></div>
-          <div class="at-part"><span class="big at-x">4.29%</span><h3>of parameters updated</h3><p>Identity-sensitive cross-attention layers only</p></div>
+          <div class="at-part"><span class="big">4.29%</span><h3>of parameters updated</h3><p>Identity-sensitive cross-attention layers only</p></div>
         </div>
       </div>
       <figure class="at-fig at-eq rv">
@@ -90,12 +87,12 @@
         <div class="at-tags at-mono"><span class="at-tag"><math><msup><mi>θ</mi><mo>∗</mo></msup></math>&nbsp;frozen Arc2Face</span><span class="at-tag"><math><mi>θ</mi></math>&nbsp;model being trained</span><span class="at-tag"><math><msub><mi>c</mi><mi>f</mi></msub></math>&nbsp;target ID</span><span class="at-tag"><math><msub><mi>c</mi><mi>a</mi></msub></math>&nbsp;anchor ID</span><span class="at-tag"><math><msub><mi>c</mi><mi>r</mi></msub></math>&nbsp;retained IDs</span></div>
       </figure>
 
-      <div class="at-sec rv"><h2 class="at-x">Everyone else stays the same</h2></div>
+      <div class="at-sec rv"><h2>Everyone else stays the same</h2></div>
       <figure class="at-fig rv">
         <div class="at-rows"><div class="k at-mono" aria-hidden="true"><span>Before</span><span>After</span></div><div class="m fit"><img src="../images/projects/piu/retained.webp" width="642" height="268" alt="Five retained identities generated before (top row) and after (bottom row) unlearning a target: they look the same" loading="lazy" decoding="async" /></div></div>
       </figure>
 
-      <div class="at-sec rv"><h2 class="at-x">Results</h2><a class="at-mono" href="https://arxiv.org/abs/2605.22311" target="_blank" rel="noopener">Paper ↗</a></div>
+      <div class="at-sec rv"><h2>Results</h2><a class="at-mono" href="https://arxiv.org/abs/2605.22311" target="_blank" rel="noopener">Paper ↗</a></div>
       <div class="at-tags at-mono rv"><span class="at-tag">Arc2Face</span><span class="at-tag">CelebA-HQ · 50 target identities</span><span class="at-tag">vs SISS · UCE · WID</span></div>
       <div class="at-prose rv">
         <ul>
@@ -143,15 +140,15 @@
     draw('ism', (W) => { // x: forget ISM (lower = better), y: retain ISM (higher = better)
       const H = Math.round(Math.min(330, Math.max(260, W * 0.42))), L = 46, R = 14, T = 8, B = 44, x0 = 0.25, x1 = 0.85, y0 = 0.40, y1 = 0.80;
       const X = (v) => L + (v - x0) / (x1 - x0) * (W - L - R), Y = (v) => T + (y1 - v) / (y1 - y0) * (H - T - B);
-      let s = `<rect x="${L}" y="${T}" width="${X(0.45) - L}" height="${Y(0.68) - T}" fill="var(--red)" opacity=".07"/>` + t(L + 8, T + 18, 'ideal: forgets, keeps', { fill: 'var(--red)', sans: true });
+      let s = `<rect x="${L}" y="${T}" width="${X(0.45) - L}" height="${Y(0.68) - T}" fill="var(--accent)" opacity=".07"/>` + t(L + 8, T + 18, 'ideal: forgets, keeps', { fill: 'var(--accent)', sans: true });
       for (const v of [0.3, 0.4, 0.5, 0.6, 0.7, 0.8]) s += `<line x1="${X(v)}" x2="${X(v)}" y1="${T}" y2="${H - B}" stroke="var(--line)"/>` + t(X(v), H - B + 17, v.toFixed(1), { a: 'middle', fill: 'var(--ink2)' });
       for (const v of [0.4, 0.5, 0.6, 0.7, 0.8]) s += `<line x1="${L}" x2="${W - R}" y1="${Y(v)}" y2="${Y(v)}" stroke="var(--line)"/>` + t(L - 8, Y(v) + 4, v.toFixed(1), { a: 'end', fill: 'var(--ink2)' });
       s += t((L + W - R) / 2, H - 6, 'forget ISM ↓ (target still recognised)', { a: 'middle', fill: 'var(--ink2)', sans: true });
       s += `<text class="s" transform="translate(13 ${(T + H - B) / 2}) rotate(-90)" text-anchor="middle" fill="var(--ink2)">retain ISM ↑ (others kept)</text>`;
       for (const [n, f, r] of M) {
         const hi = n === 'PIU', left = X(f) > W - R - 80;
-        s += `<circle cx="${X(f)}" cy="${Y(r)}" r="${hi ? 8 : 6}" ${{ hi: 'fill="var(--red)"', dim: 'fill="var(--ink2)" opacity=".35"', base: 'fill="var(--ink2)"' }[tone(n)]}/>`;
-        s += t(X(f) + (left ? -13 : 13), Y(r) + 4, n, { a: left ? 'end' : 'start', fill: hi ? 'var(--red)' : 'var(--ink)', w: hi ? 650 : 0, sans: true });
+        s += `<circle cx="${X(f)}" cy="${Y(r)}" r="${hi ? 8 : 6}" ${{ hi: 'fill="var(--accent)"', dim: 'fill="var(--ink2)" opacity=".35"', base: 'fill="var(--ink2)"' }[tone(n)]}/>`;
+        s += t(X(f) + (left ? -13 : 13), Y(r) + 4, n, { a: left ? 'end' : 'start', fill: hi ? 'var(--accent)' : 'var(--ink)', w: hi ? 650 : 0, sans: true });
       }
       return svg(W, H, s);
     });

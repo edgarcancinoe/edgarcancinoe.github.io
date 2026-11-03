@@ -6,11 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Visual Thought Tokens: Perceptual Guidance and Token Grounding for VLAs — J. Edgar Hernandez</title>
   <meta name="description" content="MSc thesis at ViCoS: a lightweight decoder recovers DINOv2 features, CeDiRNet cloth-corner maps and language-grounded image tokens from a frozen X-VLA, then feeds them back to guide cloth manipulation on a real SO-ARM101." />
-  <meta name="theme-color" content="#efebe2" />
+  <meta name="theme-color" content="#f5f5f7" />
   <link rel="icon" href="../logo.png" type="image/png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=IBM+Plex+Mono:wght@400;500&display=swap" />
   <link rel="stylesheet" href="../css/atlas.css" />
   <script>document.documentElement.classList.add('js');</script>
 </head>
@@ -37,19 +34,19 @@
     <article class="at-page at-article">
       <a class="at-back at-mono" href="../research.html">← Research</a>
       <div class="at-kicker at-mono in" style="--i:0"><span>MSc thesis · ViCoS, University of Ljubljana</span><span>2026</span></div>
-      <h1 class="at-h1 at-x in" style="--i:1">Visual Thought Tokens: Reading Perception out of a Robot’s VLA, and Feeding It Back</h1>
+      <h1 class="at-h1 in" style="--i:1">Visual Thought Tokens: Reading Perception out of a Robot’s VLA, and Feeding It Back</h1>
       <div class="at-tags at-mono in" style="--i:2"><span class="at-tag">X-VLA</span><span class="at-tag">Flow matching</span><span class="at-tag">DINOv2</span><span class="at-tag">CeDiRNet</span><span class="at-tag">Token grounding</span><span class="at-tag">SO-ARM101</span><span class="at-tag">LeRobot</span></div>
       <figure class="at-fig in" style="--i:3"><div class="m"><video muted loop playsinline preload="metadata" data-autoplay-visible poster="../images/projects/visual_expert_distillation/demo-poster.webp" aria-label="Cloth manipulation rollouts next to the cloth-corner direction maps the decoder reads out of the frozen X-VLA"><source src="../images/projects/visual_expert_distillation/demo-web.mp4" type="video/mp4" /><source src="../images/projects/visual_expert_distillation/demo.webm" type="video/webm" /></video></div></figure>
       <div class="at-acts at-mono in" style="--i:4"><a class="at-btn fill" href="xvla_visual_thought/masters-thesis.pdf" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-paper"/></svg>Thesis ↗</a><a class="at-btn" href="xvla_visual_thought/visual-thought-tokens.pdf" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-paper"/></svg>Token grounding report ↗</a><a class="at-btn" href="https://github.com/edgarcancinoe/XVLA-VisualThought" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-github"/></svg>Code ↗</a><a class="at-btn" href="https://www.vicos.si" target="_blank" rel="noopener">ViCoS ↗</a></div>
 
-      <div class="at-sec rv"><h2 class="at-x">Overview</h2></div>
+      <div class="at-sec rv"><h2>Overview</h2></div>
       <div class="at-prose rv">
         <p><strong>Does a robot’s VLA already know where the cloth corner is, and just fail to use it?</strong> My thesis reads perception out of a frozen VLA with a small decoder, then feeds it back to the action head.</p>
         <p>X-VLA (0.9B) on an SO-ARM101 arm, trained on my own LeRobot demos: 184 cube, 70 cloth-to-box and 50 folding. Supervised by prof. Danijel Skočaj and dr. Domen Tabernik at the <a href="https://www.vicos.si" target="_blank" rel="noopener">ViCoS lab</a>.</p>
       </div>
 
-      <div class="at-sec rv"><h2 class="at-x">A decoder that reads the frozen backbone</h2></div>
-      <div class="at-strip at-x rv"><span>Frozen X-VLA tokens</span><i aria-hidden="true">→</i><span class="key">Visual-thought decoder</span><i aria-hidden="true">→</i><span>Expert’s view</span></div>
+      <div class="at-sec rv"><h2>A decoder that reads the frozen backbone</h2></div>
+      <div class="at-strip rv"><span>Frozen X-VLA tokens</span><i aria-hidden="true">→</i><span class="key">Visual-thought decoder</span><i aria-hidden="true">→</i><span>Expert’s view</span></div>
       <div class="at-prose rv">
         <p>Learned queries cross-attend to X-VLA’s internal tokens and learn to match an expert. X-VLA stays frozen. One decoder, three jobs:</p>
         <ul>
@@ -60,14 +57,14 @@
       </div>
       <figure class="at-fig rv"><div class="m fit"><img src="../images/projects/xvla_visual_thought/decoder.webp" alt="Visual-thought decoder: learned queries pass through self-attention, cross-attention over the projected frozen VLM tokens, and a feed-forward block, repeated L times, producing visual-thought tokens" loading="lazy" decoding="async" /></div></figure>
 
-      <div class="at-sec rv"><h2 class="at-x">What the backbone already knows</h2></div>
+      <div class="at-sec rv"><h2>What the backbone already knows</h2></div>
       <div class="at-prose rv">
         <p>Both experts can be read back out. A ~5M-parameter decoder rebuilds the corner maps with a validation error of 0.015.</p>
       </div>
       <figure class="at-fig rv"><div class="at-cols at-mono" aria-hidden="true"><span>Frame</span><span>Real DINOv2</span><span class="hi">Decoded from X-VLA</span></div><div class="m fit"><img src="../images/projects/xvla_visual_thought/dino.webp" alt="Input frame, real DINOv2 features and features decoded from X-VLA, shown as PCA colour maps for a cube scene and a cloth scene" loading="lazy" decoding="async" /></div></figure>
       <figure class="at-fig rv"><div class="at-cols at-mono" aria-hidden="true"><span class="hi">Cloth-corner direction · sin</span><span class="hi">Cloth-corner direction · cos</span></div><div class="m fit"><img src="../images/projects/xvla_visual_thought/cedirnet.webp" alt="Sine and cosine cloth-corner direction maps decoded from X-VLA, overlaid on the cloth scene" loading="lazy" decoding="async" /></div></figure>
 
-      <div class="at-sec rv" id="token-grounding"><h2 class="at-x">Token grounding: which tokens matter right now?</h2></div>
+      <div class="at-sec rv" id="token-grounding"><h2>Token grounding: which tokens matter right now?</h2></div>
       <div class="at-prose rv">
         <p>One visual-thought token scores each cell of X-VLA’s 7×7 image-token grid, and the best cells are refined to 14×14. Inspired by MolmoPoint’s pointing tokens.</p>
         <ul>
@@ -79,7 +76,7 @@
       <figure class="at-fig rv"><div class="m"><video muted loop playsinline preload="metadata" data-autoplay-visible poster="../images/projects/language_conditioned_token_grounding/query00-poster.webp" aria-label="Language-conditioned relevance over the X-VLA image-token grid during a cube pick-and-place episode"><source src="../images/projects/language_conditioned_token_grounding/query00-web.mp4" type="video/mp4" /></video></div></figure>
       <figure class="at-fig rv"><div class="m fit"><img src="../images/projects/xvla_visual_thought/grounding.webp" alt="Pick up black cube and place inside white box: before the grasp the selected token covers the black cube; after the grasp it covers the box" loading="lazy" decoding="async" /></div></figure>
 
-      <div class="at-sec rv"><h2 class="at-x">Feeding it back to the policy</h2></div>
+      <div class="at-sec rv"><h2>Feeding it back to the policy</h2></div>
       <div class="at-parts rv">
         <div class="at-part"><span class="k at-mono">01</span><h3>Implicit guidance</h3><p>Reconstruction loss added while fine-tuning. Inputs unchanged.</p></div>
         <div class="at-part"><span class="k at-mono">02</span><h3>Explicit guidance</h3><p>32×32 corner tokens into the action transformer, at layers 6/12/18 or appended to its input.</p></div>
@@ -87,7 +84,7 @@
       </div>
       <figure class="at-fig rv"><div class="m fit"><img src="../images/projects/xvla_visual_thought/guided_xvla.webp" alt="Guided X-VLA pipeline: guidance tokens extracted from the VLM features are fused with the native action-conditioning sequence before the self-attention action transformer" loading="lazy" decoding="async" /></div></figure>
 
-      <div class="at-sec rv"><h2 class="at-x">Results on the real robot</h2><a class="at-mono" href="xvla_visual_thought/masters-thesis.pdf" target="_blank" rel="noopener">Thesis ↗</a></div>
+      <div class="at-sec rv"><h2>Results on the real robot</h2><a class="at-mono" href="xvla_visual_thought/masters-thesis.pdf" target="_blank" rel="noopener">Thesis ↗</a></div>
       <div class="at-prose rv">
         <p>16 trials per model on each cloth task, 48 on cubes.</p>
       </div>
@@ -106,7 +103,7 @@
         </ul>
       </div>
 
-      <div class="at-sec rv"><h2 class="at-x">What I took away</h2></div>
+      <div class="at-sec rv"><h2>What I took away</h2></div>
       <div class="at-prose rv">
         <ul>
           <li>The backbone knows more than the action head uses. A few million parameters can read it out.</li>

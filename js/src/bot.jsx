@@ -10,7 +10,7 @@ const SIZE = 72;
 // Past that, relay a stand-in pointer just inside the full-strength radius, in the real direction,
 // so the eyes and head track the cursor out to REACH.
 const UNIT = SIZE / 1.5;
-const REACH = 850; // px from the bot's face; beyond this the bot ignores the cursor
+const REACH = 1400; // px from the bot's face; beyond this the bot ignores the cursor
 const GLANCE_EVERY = [5000, 9000]; // ms between glances at a playing video (random in range)
 const GLANCE_FOR = 2200; // ms it holds a glance
 const EMAIL = 'edgarcancinoe@gmail.com';
@@ -224,8 +224,8 @@ function CornerBot({ root }) {
           type="mech"
           size={SIZE}
           theme="light"
-          color="#e5401b"
-          saturation={1}
+          color="#5b9bd5"
+          saturation={0.7}
           brightness={1}
           jumpEvery={0}
           state={asleep ? 'sleeping' : 'default'}
