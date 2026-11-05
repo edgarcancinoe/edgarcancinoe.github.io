@@ -26,6 +26,15 @@ const DATA = [
       P('IoT Smart Parking System', 'projects/smart_parking.html', 2025, 'Sapienza'),
       P('Image Synthesis via Score Matching', 'projects/score_based_generative_modeling.html', 2024, 'UPF'),
     ] },
+  { id: 'anz', kind: 'exp', from: 2026.08, to: 2026.8, years: '2026 — Present', logo: '',
+    title: 'AI Engineer, R&D (Part-Time)', org: 'Anzures',
+    desc: 'Generation pipeline for a diffusion-based virtual try-on product: quantization, LoRA fine-tuning, prompt engineering and systematic quality evaluation.',
+    tags: ['Diffusion models', 'LoRA fine-tuning', 'Quantization', 'Evaluation'], built: [] },
+  { id: 'sw', kind: 'exp', from: 2022.17, to: 2025.67, years: '2022 — 2025', logo: 'sw', row: 2,
+    title: 'Machine Learning Engineer (Part-Time)', org: 'Saveware · Startup project at Lavatap, Monterrey',
+    desc: 'Built the AI for a trailer-loading time prediction product: an attention-based model with uncertainty estimation, trained on data collected in-house and outperforming XGBoost, linear regression and SVR baselines.',
+    tags: ['Attention models', 'Uncertainty estimation', 'Data pipelines'],
+    built: [P('Attention-Driven Gaussian Modeling', 'projects/truck_loading_durations.html', 2025, 'Saveware')] },
   { id: 'rice', kind: 'exp', from: 2024.0, to: 2024.17, years: '2024 — 2024', logo: 'rice',
     title: 'Visiting Researcher', org: 'Kavraki Lab · Rice University',
     desc: 'ROS system integrating motion planning with SceneGrasp for multi-object 3D reconstruction and grasp pose estimation from RGB-D; pick-and-place validated in simulation and on hardware.',
@@ -35,7 +44,7 @@ const DATA = [
     title: 'Business Automation Intern', org: 'Steelcase',
     desc: 'Automation for internal business processes with Python, UiPath RPA, Power Automate and Excel VBA, in an Agile team.',
     tags: ['Python', 'UiPath RPA', 'Power Automate', 'Excel VBA'], built: [] },
-  { id: 'bsc', kind: 'edu', from: 2021.6, to: 2024.45, years: '2021 — 2024', logo: 'tec',
+  { id: 'bsc', kind: 'edu', from: 2019.6, to: 2024.45, years: '2019 — 2024', logo: 'tec',
     title: 'BSc Robotics & Digital Systems', org: 'Tecnológico de Monterrey',
     desc: 'Digital and embedded systems, intelligent and robotic systems, automation and control.',
     tags: ['ROS', 'Control', 'Computer vision', 'Embedded systems'],
@@ -51,14 +60,14 @@ const DATA = [
     ] },
 ];
 const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;');
-const logo = (f) => `<img src="${R}images/logos/${f}.webp" alt="" />`;
+const logo = (f) => (f ? `<img src="${R}images/logos/${f}.webp" alt="" />` : '');
 const tags = (t) => `<div class="at-tags at-mono">${t.map((x) => `<span class="at-tag">${esc(x)}</span>`).join('')}</div>`;
 
 // ── Chart ──
-const T0 = 2021.4, T1 = 2026.8;
+const T0 = 2019.4, T1 = 2026.8;
 const x = (t) => ((t - T0) / (T1 - T0)) * 100;
 function chart(style = 'graphite', fill = 'exp') {
-  const years = [2022, 2023, 2024, 2025, 2026];
+  const years = [2020, 2021, 2022, 2023, 2024, 2025, 2026];
   const ticks = years.map((y) => `<span class="tc-tick" style="left:${x(y)}%" data-p="${x(y)}"></span>`).join('');
   let i = 0;
   const bar = (sel, kind, label, lg, from, to, cls = '') =>
@@ -70,7 +79,7 @@ function chart(style = 'graphite', fill = 'exp') {
   }).join('');
   const edu = bar('bsc', 'edu', 'BSc Robotics · Tec', bsc.logo, bsc.from, bsc.to)
     + bar('msc', 'edu', 'MSc AI · Erasmus Mundus', msc.logo, msc.from, msc.to).replace('</button>', ticks3 + '</button>');
-  const exp = DATA.filter((d) => d.kind === 'exp').map((d) => bar(d.id, 'exp', d.id === 'rice' ? 'Rice' : 'Steelcase', d.logo, d.from, d.to)).join('');
+  const exp = DATA.filter((d) => d.kind === 'exp').map((d) => bar(d.id, 'exp', { anz: 'Anzures', sw: 'Saveware', rice: 'Rice', sc: 'Steelcase' }[d.id], d.logo, d.from, d.to, d.row === 2 ? 'r2' : '')).join('');
 
   // Projects grouped under the institution that produced them.
   const groups = [
