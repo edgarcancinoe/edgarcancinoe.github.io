@@ -32,7 +32,7 @@ const DATA = [
     tags: ['Diffusion models', 'LoRA fine-tuning', 'Quantization', 'Evaluation'], built: [] },
   { id: 'sw', kind: 'exp', from: 2022.17, to: 2025.67, years: '2022 — 2025', logo: 'sw', row: 2,
     title: 'Machine Learning Engineer (Part-Time)', org: 'Saveware · Startup project at Lavatap, Monterrey',
-    desc: 'Built the AI for a trailer-loading time prediction product: an attention-based model with uncertainty estimation, trained on data collected in-house and outperforming XGBoost, linear regression and SVR baselines.',
+    desc: 'Built the AI for a trailer-loading time prediction product: attention pooling over each load\'s sub-operations with a heteroskedastic Gaussian head, trained on data collected in-house. Test MAE of 9 minutes, with 88% of loads inside the 90% prediction interval.',
     tags: ['Attention models', 'Uncertainty estimation', 'Data pipelines'],
     built: [P('Attention-Driven Gaussian Modeling', 'projects/truck_loading_durations.html', 2025, 'Saveware')] },
   { id: 'rice', kind: 'exp', from: 2024.0, to: 2024.17, years: '2024 — 2024', logo: 'rice',
