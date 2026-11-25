@@ -29,6 +29,9 @@ jobs:
         uses: actions/upload-pages-artifact@v5
         with:
           path: '.'
+      # shortcut: GitHub listed the fresh artifact too late for deploy-pages (Nov 2026); remove once deploys pass without it
+      - name: Wait for artifact to be listed
+        run: sleep 30
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
